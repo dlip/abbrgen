@@ -1,0 +1,3 @@
+# abbrgen
+
+Abbreviation generator
