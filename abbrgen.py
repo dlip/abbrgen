@@ -16,7 +16,7 @@ limit = 0
 line_no = 0
 min_chars = 3
 min_improvement = 40
-banned_suffixes = "qj"
+banned_suffixes = "qjz"
 # avoid same finger bigrams (sequences which use the same key in a row)
 avoid_sfb = True
 layout_qwerty = """
@@ -168,5 +168,5 @@ with open("words.txt") as file:
             log.info(line)
             output += line + "\n"
 
-    with open("abbr.txt", "w") as file:
+    with open("abbr.tsv", "w") as file:
         file.write(output)

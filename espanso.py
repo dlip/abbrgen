@@ -3,6 +3,7 @@ import csv
 expand_trigger = ",;"
 alt_suffix_1 = "q"
 alt_suffix_2 = "j"
+alt_suffix_3 = "z"
 seen = {}
 output = "matches:\n"
 line_no = 0
@@ -35,16 +36,18 @@ def add_abbr(word, trigger):
     seen[trigger] = word
 
 
-with open("abbr.txt") as file:
+with open("abbr.tsv") as file:
     file = csv.reader(file, delimiter="\t")
     for line in file:
         line_no += 1
-        if len(line) > 1 and line[1]:
+        if line[1]:
             add_abbr(line[0], line[1])
-        if len(line) > 2 and line[2]:
+        if line[2]:
             add_abbr(line[2], f"{line[1]}{alt_suffix_1}")
-        if len(line) > 3 and line[3]:
+        if line[3]:
             add_abbr(line[3], f"{line[1]}{alt_suffix_2}")
+        if line[4]:
+            add_abbr(line[4], f"{line[1]}{alt_suffix_3}")
 
 with open("abbr.yml", "w") as file:
     file.write(output)

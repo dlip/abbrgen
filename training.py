@@ -8,7 +8,7 @@ seen = {}
 output = "matches:\n"
 line_no = 0
 
-with open("abbr.txt") as abbr_file:
+with open("abbr.tsv") as abbr_file:
     abbr_file = csv.reader(abbr_file, delimiter="\t")
     index = 0
     words = ""
