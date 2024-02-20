@@ -47,4 +47,4 @@ t   a   y   h    th   f   w    ti   n   b
 
 If you just want to try it out you can [install Espanso](https://espanso.org/install/) and copy the file [abbr.yml](abbr.yml) to its match directory `~/.config/espanso/match/`
 
-If you want to add/update words, the `abbr.yml` file is very verbose so I recommend reading on so you can edit `abbr.tsv` then generate the file again from that.
+The `abbr.yml` file is very verbose, so if you want to add/update words I recommend reading on so you can edit `abbr.tsv` then generate the file again from that.
