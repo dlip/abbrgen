@@ -6,7 +6,7 @@ There are many frequent words we type every day, this goal is to be able to type
 
 ## Usage
 
-- [install Espanso](https://espanso.org/install/)
+- [Install Espanso](https://espanso.org/install/)
 - Copy the file [abbr.yml](abbr.yml) to its match directory `~/.config/espanso/match/`
 - The default trigger is ',;'. Read below about setting up a trigger key so you can automate typing this on one key
 - Have a look at [abbr.tsv](abbr.tsv) to see the the second column for the abbrevation
@@ -17,7 +17,7 @@ There are many frequent words we type every day, this goal is to be able to type
 | look | lo | looked | looking | looks |
 | give | gi | given | giving | gives |
 
-It also adds the past, continuing and plural version of each word. You can select the alt versions by adding extra character on the end of the word before the trigger. My alt suffixes are 'qjz', here is how I use it:
+You can access the alt versions of a word by adding a suffix on the end of the word before the trigger. The default suffixes are 'qjz', here is how you can use it:
 
 | Input | Output |
 | ----- | ------ |
@@ -35,6 +35,12 @@ Other features are auto capitalization and suffixes for punctuation characters '
 | Lo,   | Look,  |
 | Lo;   | Look;  |
 
+It might be preferable to disable `undo_backspace` in `~/.config/espanso/config/default.yml` in case you want to backspace without loosing the whole word
+
+```
+undo_backspace: false
+```
+
 The `abbr.yml` file is very verbose, so if you want to add/update words I recommend reading on so you can edit `abbr.tsv` then generate the file again from that.
 
 ### Setup
@@ -44,7 +50,7 @@ The `abbr.yml` file is very verbose, so if you want to add/update words I recomm
 - Install [Python 3.11+](https://www.python.org/downloads/)
 - Run `pip install -r requirements.txt`
 
-#### Nix
+#### Nix (Alternative to Python setup)
 
 If you have [Nix](https://nixos.org/download) you can run `nix develop` to get into a shell with Python and the required dependencies. If you have [direnv](https://direnv.net/docs/installation.html) also, you can run `direnv allow` instead to have the dependencies available as soon as you change to the directory.
 
@@ -58,7 +64,7 @@ To run the commands use `python <file>`
 
 ### abbrgen.py
 
-This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`. It also tries to add verb tenses with the data in `verbs-conjugations.json`, and plurals using [inflect](https://pypi.org/project/inflect/). Its not perfect, so if someone knows a better way please let me know.
+This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`. It also tries to add verb tenses with the data in `verbs-conjugations.json`, and plurals using [inflect](https://pypi.org/project/inflect/). Its not perfect but it should be useful as a starting point for you continue improving `abbr.tsv` on your own.
 
 I recommend changing the keyboard layout to whatever you use qwerty etc. Since it uses that to try to avoid abbreviations with "Same Finger Bigrams" (SFBs) which is pressing two keys with the same finger in succession.
 
