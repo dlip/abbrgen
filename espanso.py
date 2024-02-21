@@ -1,6 +1,8 @@
 import csv
 
+# suffix to add to the end of an abbreviation to trigger the expansion
 expand_trigger = ",;"
+# suffix to add before the trigger to use the alternate forms in `abbr.tsv`
 alt_suffix_1 = "q"
 alt_suffix_2 = "j"
 alt_suffix_3 = "z"

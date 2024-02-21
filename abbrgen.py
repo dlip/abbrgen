@@ -14,9 +14,12 @@ used = {}
 seen = {}
 limit = 0
 line_no = 0
+# any word shorter than this will be excluded
 min_chars = 3
+# any percent improvement this will not be considered and the word might be excluded if there are no other options
 min_improvement = 40
-banned_suffixes = "qjz"
+# the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms
+banned_suffixes = "qjz;,."
 # avoid same finger bigrams (sequences which use the same key in a row)
 avoid_sfb = True
 layout_qwerty = """
@@ -39,6 +42,7 @@ wlypkzfou'
 crstbxneia
 qjvdgmh/,.
 """
+# change this to your keyboard layout
 keyboard_layout = layout_canary
 keyboard_finger_maping = """
 1234455678
