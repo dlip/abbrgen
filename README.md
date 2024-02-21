@@ -58,13 +58,13 @@ If you have [Nix](https://nixos.org/download) you can run `nix develop` to get i
 
 Clone the repo `git clone https://github.com/dlip/abbrgen.git` and change to the directory with `cd abbrgen`
 
-To run the commands use `python <file>`
+To run the commands use `python <file.py>`
 
 ## Commands
 
 ### abbrgen.py
 
-This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`. It also tries to add verb tenses with the data in `verbs-conjugations.json`, and plurals using [inflect](https://pypi.org/project/inflect/). Its not perfect but it should be useful as a starting point for you continue improving `abbr.tsv` on your own.
+This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`. It also tries to add verb tenses with the data in `verbs-conjugations.json`, and plurals using [inflect](https://pypi.org/project/inflect/). Its not perfect but it should be useful as a starting point for you to continue improving `abbr.tsv` on your own.
 
 I recommend changing the keyboard layout to whatever you use qwerty etc. Since it uses that to try to avoid abbreviations with "Same Finger Bigrams" (SFBs) which is pressing two keys with the same finger in succession.
 
