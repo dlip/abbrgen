@@ -1,15 +1,16 @@
 # abbrgen
 
-Abbreviation generator to make writing common english words quicker.
+Abbreviation generator for [Espanso](https://espanso.org/) to make writing common english words shorter.
 
-There are many frequent words we type every day, this goal is to be able to type a letter eg. 't' followed by a trigger eg. ',;' and it will result in 'the ' being outputed.
-The trigger just needs to be a character or two that is unique so you wouldn't type it normally.
-The current approach uses [Espanso](https://espanso.org/) but it could be made to work with other text expander software.
-There is software/programmable keyboards which allow you to bind multiple characters to a key so it becomes a single press.
+There are many frequent words we type every day, this goal is to be able to type a letter eg. 't' followed by a trigger and it will result in 'the ' being outputed.
 
-The program reads a file of words listed by frequency eg. `words.txt` and generates a file that looks like the following:
+## Usage
 
-[abbr.tsv](abbr.tsv)
+- [install Espanso](https://espanso.org/install/)
+- Copy the file [abbr.yml](abbr.yml) to its match directory `~/.config/espanso/match/`
+- The default trigger is ',;'. Read below about setting up a trigger key so you can automate typing this on one key
+- Have a look at [abbr.tsv](abbr.tsv) to see the the second column for the abbrevation
+- Try typing `lo,;` to output 'look '
 
 | Word | Abbr | Alt1 | Alt2 | Alt3 |
 | ---- | ---- | ---- | ---- | ---- |
@@ -33,10 +34,6 @@ Other features are auto capitalization and suffixes for punctuation characters '
 | Lo.   | Look.  |
 | Lo,   | Look,  |
 | Lo;   | Look;  |
-
-## Usage
-
-If you just want to try it out you can [install Espanso](https://espanso.org/install/) and copy the file [abbr.yml](abbr.yml) to its match directory `~/.config/espanso/match/`
 
 The `abbr.yml` file is very verbose, so if you want to add/update words I recommend reading on so you can edit `abbr.tsv` then generate the file again from that.
 
