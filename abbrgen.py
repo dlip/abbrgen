@@ -16,7 +16,7 @@ limit = 0
 line_no = 0
 # any word shorter than this will be excluded
 min_chars = 3
-# any percent improvement this will not be considered and the word might be excluded if there are no other options
+# any percent improvement below this will not be considered and the word might be excluded if there are no other options
 min_improvement = 40
 # the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms
 banned_suffixes = "qjz;,."
