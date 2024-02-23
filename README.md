@@ -64,14 +64,16 @@ To run the commands use `python <file.py>`
 
 ### abbrgen.py
 
-This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`. It also tries to add verb tenses with the data in `verbs-conjugations.json`, and plurals using [inflect](https://pypi.org/project/inflect/). Its not perfect but it should be useful as a starting point for you to continue improving `abbr.tsv` on your own.
+This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`. The approach it uses is:
 
-The approach it uses is:
-
+- Read word frequency list `words.txt`
 - Generate all combinations of the letters in the word which start with the first letter and keep the order from left to right
 - Reject abbreviations it has already used
 - Reject abbreviations that are shorter than a minimum amount of characters or don't provide a minimum percentage improvement over typing the full word
+- Add verb tenses with the data in `verbs-conjugations.json`
+- Add plurals using [inflect](https://pypi.org/project/inflect/)
 - Try to avoid abbreviations which involve "Same Finger Bigrams" (SFBs) which is pressing two keys with the same finger in succession
+- Outputs the result in tsv format to `abbr.tsv`
 
 I recommend changing the keyboard layout to ensure the SFBs feature works for you
 
@@ -88,6 +90,8 @@ min_chars = 3
 min_improvement = 40
 # the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms
 banned_suffixes = "qjz;,."
+# output the words with no abbreviation found so you can add them by hand
+output_all = True
 # avoid same finger bigrams (sequences which use the same key in a row)
 avoid_sfb = True
 ```

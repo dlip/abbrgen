@@ -17,6 +17,8 @@ with open("abbr.tsv") as abbr_file:
         for line in abbr_file:
             word = line[0]
             abbr = line[1]
+            if not abbr:
+                continue
             words += f"{word} "
             abbrs += abbr + (" " * (len(word) + 1 - len(abbr)))
             index += 1

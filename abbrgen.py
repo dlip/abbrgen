@@ -20,6 +20,8 @@ min_chars = 3
 min_improvement = 40
 # the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms
 banned_suffixes = "qjz;,."
+# output the words with no abbreviation found so you can add them by hand
+output_all = True
 # avoid same finger bigrams (sequences which use the same key in a row)
 avoid_sfb = True
 layout_qwerty = """
@@ -156,7 +158,8 @@ with open("words.txt") as file:
         word = word.strip()
         abbr = find_abbr(word)
 
-        if abbr:
+        if output_all or abbr:
+            abbr = abbr or ""
             alt = ["", "", ""]
             if word in verb_data:
                 verb = verb_data[word]
