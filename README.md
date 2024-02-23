@@ -1,8 +1,8 @@
 # abbrgen
 
-Abbreviation generator for [Espanso](https://espanso.org/) to make writing common english words shorter.
+Abbreviation generator for [Espanso](https://espanso.org/)
 
-There are many frequent words we type every day, this goal is to be able to type a letter eg. 't' followed by a trigger and it will result in 'the ' being outputed.
+There are many frequent words we type repeatedly every day, using text expansion we can save keystrokes by shortening these to unique abbreviations so we might type 't' followed by a trigger key and it will result in 'the ' being outputed. The goal here isn't to have abbreviations for every word, just ones with a high return for the effort it takes to memorize them. When creating a list like this, it can be very time consuming so you can use this to help to automate at least the initial file you can improve on.
 
 ## Usage
 
@@ -66,7 +66,14 @@ To run the commands use `python <file.py>`
 
 This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`. It also tries to add verb tenses with the data in `verbs-conjugations.json`, and plurals using [inflect](https://pypi.org/project/inflect/). Its not perfect but it should be useful as a starting point for you to continue improving `abbr.tsv` on your own.
 
-I recommend changing the keyboard layout to whatever you use qwerty etc. Since it uses that to try to avoid abbreviations with "Same Finger Bigrams" (SFBs) which is pressing two keys with the same finger in succession.
+The approach it uses is:
+
+- Generate all combinations of the letters in the word which start with the first letter and keep the order from left to right
+- Reject abbreviations it has already used
+- Reject abbreviations that are shorter than a minimum amount of characters or don't provide a minimum percentage improvement over typing the full word
+- Try to avoid abbreviations which involve "Same Finger Bigrams" (SFBs) which is pressing two keys with the same finger in succession
+
+I recommend changing the keyboard layout to ensure the SFBs feature works for you
 
 ```python
 keyboard_layout = layout_canary
