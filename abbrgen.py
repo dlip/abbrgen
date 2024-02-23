@@ -12,18 +12,7 @@ p = inflect.engine()
 
 used = {}
 seen = {}
-limit = 0
 line_no = 0
-# any word shorter than this will be excluded
-min_chars = 3
-# any percent improvement below this will not be considered and the word might be excluded if there are no other options
-min_improvement = 40
-# the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms
-banned_suffixes = "qjz;,."
-# output the words with no abbreviation found so you can add them by hand
-output_all = True
-# avoid same finger bigrams (sequences which use the same key in a row)
-avoid_sfb = True
 layout_qwerty = """
 qwertyuiop
 asdfghjkl;
@@ -44,8 +33,22 @@ wlypkzfou'
 crstbxneia
 qjvdgmh/,.
 """
-# change this to your keyboard layout
+
+# stop after processing this many lines in words.txt
+limit = 0
+# any word shorter than this will be excluded
+min_chars = 3
+# any percent improvement below this will not be considered and the word might be excluded if there are no other options
+min_improvement = 40
+# the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms
+banned_suffixes = "qjz;,."
+# output the words with no abbreviation found so you can add them by hand
+output_all = False
+# avoid same finger bigrams (sequences which use the same key in a row)
+avoid_sfb = True
+# change this to your keyboard layout to avoid sfbs, ensure its listed above
 keyboard_layout = layout_canary
+
 keyboard_finger_maping = """
 1234455678
 1234455678
