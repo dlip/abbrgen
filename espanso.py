@@ -34,6 +34,14 @@ def add_abbr(word, trigger):
         f'    replace: "{word}; "\n'
         f"    propagate_case: true\n"
         f'    uppercase_style: "capitalize_words"\n'
+        f'  - trigger: "{trigger}:{expand_trigger}"\n'
+        f'    replace: "{word}: "\n'
+        f"    propagate_case: true\n"
+        f'    uppercase_style: "capitalize_words"\n'
+        f'  - trigger: "{trigger}?{expand_trigger}"\n'
+        f'    replace: "{word}? "\n'
+        f"    propagate_case: true\n"
+        f'    uppercase_style: "capitalize_words"\n'
     )
     seen[trigger] = word
 
