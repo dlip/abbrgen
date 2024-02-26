@@ -171,6 +171,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 ## Credits
 
-- [English frequency list](https://github.com/frekwencja/most-common-words-multilingual/blob/main/data/wordfrequency.info/en.txt)
+- [English frequency list](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists/Contemporary_fiction)
 - [Verb conjugations](https://github.com/Drulac/English-Verbs-Conjugates/blob/master/verbs-conjugations.json)
 - [inflect](https://pypi.org/project/inflect/)
