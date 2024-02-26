@@ -19,13 +19,14 @@ crstbxneia
 qjvdgmh/,.
 """
 
+finger_maping = """
+1234455678
+1234455678
+1234455678
+"""
+
 
 def get_layout_mapping(layout):
-    finger_maping = """
-    1234455678
-    1234455678
-    1234455678
-    """
     layout_map = {}
     for i in range(0, len(layout)):
         layout_map[layout[i]] = finger_maping[i]
