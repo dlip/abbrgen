@@ -3,36 +3,7 @@ import logging
 import sys
 import json
 import inflect
-
-log = logging.getLogger(__name__)
-log.addHandler(logging.StreamHandler(sys.stdout))
-log.setLevel(logging.DEBUG)
-
-p = inflect.engine()
-
-used = {}
-seen = {}
-line_no = 0
-layout_qwerty = """
-qwertyuiop
-asdfghjkl;
-zxcvbnm,./
-"""
-layout_colemak = """
-qwfpgjluy;
-arstdhneio
-zxcvbkm,./
-"""
-layout_colemak_dh = """
-qwfpbjluy;
-arstgmneio
-zxcdvkh,./
-"""
-layout_canary = """
-wlypkzfou'
-crstbxneia
-qjvdgmh/,.
-"""
+import layout
 
 # stop after processing this many lines in words.txt
 limit = 0
@@ -46,17 +17,20 @@ banned_suffixes = "qjz;,."
 output_all = False
 # avoid same finger bigrams (sequences which use the same key in a row)
 avoid_sfb = True
-# change this to your keyboard layout to avoid sfbs, ensure its listed above
-keyboard_layout = layout_canary
+# change this to your keyboard layout to avoid sfbs, ensure its listed in layout.py
+keyboard_layout = layout.canary
 
-keyboard_finger_maping = """
-1234455678
-1234455678
-1234455678
-"""
-keyboard_layout_map = {}
-for i in range(0, len(keyboard_layout)):
-    keyboard_layout_map[keyboard_layout[i]] = keyboard_finger_maping[i]
+# internal variables
+log = logging.getLogger(__name__)
+log.addHandler(logging.StreamHandler(sys.stdout))
+log.setLevel(logging.DEBUG)
+
+p = inflect.engine()
+
+used = {}
+seen = {}
+line_no = 0
+keyboard_layout_map = layout.get_layout_mapping(keyboard_layout)
 
 
 def find_combinations(s, prefix="", index=0):

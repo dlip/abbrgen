@@ -94,8 +94,8 @@ banned_suffixes = "qjz;,."
 output_all = False
 # avoid same finger bigrams (sequences which use the same key in a row)
 avoid_sfb = True
-# change this to your keyboard layout to avoid sfbs, ensure its listed above
-keyboard_layout = layout_canary
+# change this to your keyboard layout to avoid sfbs, ensure its listed in layout.py
+keyboard_layout = layout.canary
 ```
 
 ### espanso.py
