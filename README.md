@@ -12,30 +12,30 @@ However, compiling such a list manually can be a daunting task. This is where ab
 - Copy the file [abbr.yml](abbr.yml) to its match directory `~/.config/espanso/match/`
 - The default trigger is ',;'. Read below about setting up a trigger key so you can automate typing this on one key
 - Have a look at [abbr.tsv](abbr.tsv) to see the the second column for the abbrevation
-- Try typing `lo,;` to output 'look '
+- Try typing `l,;` to output 'look '
 
-| Word | Abbr | Alt1 | Alt2 | Alt3 |
-| ---- | ---- | ---- | ---- | ---- |
-| look | lo | looked | looking | looks |
-| give | gi | given | giving | gives |
+| Word | Abbr | Alt1   | Alt2    | Alt3  |
+| ---- | ---- | ------ | ------- | ----- |
+| look | l    | looked | looking | looks |
+| give | ge   | given  | giving  | gives |
 
 You can access the alt versions of a word by adding a suffix on the end of the word before the trigger. The default suffixes are 'qjz', here is how you can use it:
 
-| Input | Output |
-| ----- | ------ |
-| lo    | look   |
-| loq   | looked |
-| loj   | looking |
-| loz   | looks  |
+| Input | Output  |
+| ----- | ------- |
+| l     | look    |
+| lq    | looked  |
+| lj    | looking |
+| lz    | looks   |
 
 Other features are auto capitalization and suffixes for punctuation characters '.,;' so you don't have to backspace to remove the automatic spacing then add the punctuation:
 
 | Input | Output |
 | ----- | ------ |
-| Lo    | Look   |
-| Lo.   | Look.  |
-| Lo,   | Look,  |
-| Lo;   | Look;  |
+| L     | Look   |
+| L.    | Look.  |
+| L,    | Look,  |
+| L;    | Look;  |
 
 It might be preferable to disable `undo_backspace` in `~/.config/espanso/config/default.yml` in case you want to backspace without loosing the whole word
 
