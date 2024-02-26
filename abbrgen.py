@@ -15,22 +15,24 @@ min_improvement = 40
 banned_suffixes = "qjz;,."
 # output the words with no abbreviation found so you can add them by hand
 output_all = False
-# avoid same finger bigrams (sequences which use the same key in a row)
-avoid_sfb = True
-# change this to your keyboard layout to avoid sfbs, ensure its listed in layout.py
+# change this to your keyboard layout, ensure its listed in layout.py
 keyboard_layout = layout.canary
+# change this to the effort map for your keyboard shape: effort_map_standard, effort_map_matrix
+effort_map = layout.effort_map_matrix
+# this is the effort multiplier to penalize same finger bigrams (sequences which use the same key in a row)
+sfb_multiplier = 2
 
 # internal variables
 log = logging.getLogger(__name__)
 log.addHandler(logging.StreamHandler(sys.stdout))
 log.setLevel(logging.DEBUG)
 
+calc = layout.EffortCalculator(keyboard_layout, effort_map, sfb_multiplier)
 p = inflect.engine()
 
 used = {}
 seen = {}
 line_no = 0
-keyboard_layout_map = layout.get_layout_mapping(keyboard_layout)
 
 
 def find_combinations(s, prefix="", index=0):
@@ -63,14 +65,8 @@ def find_combinations(s, prefix="", index=0):
     return result
 
 
-def has_sfb(abbr):
-    for i in range(0, len(abbr) - 1):
-        if keyboard_layout_map[abbr[i]] == keyboard_layout_map[abbr[i + 1]]:
-            return True
-    return False
-
-
 def find_abbr(word):
+    word = word.lower()
     log.debug(f"=== {word} ===")
     if len(word) < min_chars:
         log.debug(f"rejected: minimum chars less than {min_chars}")
@@ -78,15 +74,12 @@ def find_abbr(word):
     if word in seen:
         log.debug(f"rejected: already seen")
         return None
-    for c in word:
-        if c not in keyboard_layout:
-            log.debug(f"rejected: letter '{c}' not in keyboard layout")
-            return None
 
     seen[word] = True
     combinations = find_combinations(word)
     combinations.sort(key=len)
     sfb_option = None
+    options = []
     for abbr in combinations:
         log.debug(abbr)
         if not abbr in used:
@@ -95,23 +88,24 @@ def find_abbr(word):
                 continue
             improvement = ((len(word) - len(abbr)) / len(word)) * 100
             if improvement >= min_improvement:
-                if avoid_sfb and has_sfb(abbr):
-                    if not sfb_option:
-                        sfb_option = abbr
-                    log.debug(f"avoided: has sfb. improvement: {improvement}")
-                    continue
-                log.debug(f"selected: improvement: {improvement}")
-                used[abbr] = word
-                return abbr
+                try:
+                    effort = calc.calculate(abbr)
+                    log.debug(f"effort: {effort}")
+                    options.append({"abbr": abbr, "effort": effort})
+                except Exception as e:
+                    log.debug(e)
             else:
-                log.debug(f"rejected: improvement insufficient: {improvement}")
-                if sfb_option:
-                    log.debug(f"fallback to sfb option: {sfb_option}")
-                    used[sfb_option] = word
-                    return sfb_option
-                return None
+                log.debug(f"rejected: improvement insufficient ({improvement}%)")
+                break
         else:
             log.debug("rejected: already used")
+
+    if options:
+        options.sort(key=lambda x: x["effort"])
+        abbr = options[0]["abbr"]
+        log.debug(f"selected: {abbr}")
+        used[abbr] = word
+        return abbr
 
     log.debug("dropped: no abbr found")
     return None

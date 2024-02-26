@@ -68,18 +68,14 @@ To run the commands use `python <file.py>`
 
 This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`. The approach it uses is:
 
-- Read word frequency list `words.txt`
 - Generate all combinations of the letters in the word which start with the first letter and keep the order from left to right
 - Reject abbreviations it has already used
 - Reject abbreviations that are shorter than a minimum amount of characters or don't provide a minimum percentage improvement over typing the full word
+- Score remaining abbreviations by effort and select the best option
 - Add verb tenses with the data in `verbs-conjugations.json`
 - Add plurals using [inflect](https://pypi.org/project/inflect/)
-- Try to avoid abbreviations which involve "Same Finger Bigrams" (SFBs) which is pressing two keys with the same finger in succession
-- Outputs the result in tsv format to `abbr.tsv`
 
-I recommend changing the keyboard layout to ensure the SFBs feature works for you
-
-Here are some other settings you might want to change in [abbrgen.py](abbrgen.py):
+Here are some settings you might want to change in [abbrgen.py](abbrgen.py):
 
 ```python
 # stop after processing this many lines in words.txt
@@ -92,10 +88,12 @@ min_improvement = 40
 banned_suffixes = "qjz;,."
 # output the words with no abbreviation found so you can add them by hand
 output_all = False
-# avoid same finger bigrams (sequences which use the same key in a row)
-avoid_sfb = True
-# change this to your keyboard layout to avoid sfbs, ensure its listed in layout.py
+# change this to your keyboard layout, ensure its listed in layout.py
 keyboard_layout = layout.canary
+# change this to the effort map for your keyboard shape: effort_map_standard, effort_map_matrix
+effort_map = layout.effort_map_matrix
+# this is the effort multiplier to penalize same finger bigrams (sequences which use the same key in a row)
+sfb_multiplier = 2
 ```
 
 ### espanso.py
