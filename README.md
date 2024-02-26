@@ -2,7 +2,9 @@
 
 Abbreviation generator for [Espanso](https://espanso.org/)
 
-There are many frequent words we type repeatedly every day, using text expansion we can save keystrokes by shortening these to unique abbreviations so we might type 't' followed by a trigger key and it will result in 'the ' being outputed. The goal here isn't to have abbreviations for every word, just ones with a high return for the effort it takes to memorize them. When creating a list like this, it can be very time consuming so you can use this to help to automate at least the initial file you can improve on.
+Every day, we find ourselves typing commonly used words repetitively, consuming time and effort. Text expansion offers a solution by allowing us to replace these frequently used words with unique abbreviations, thereby saving keystrokes. For instance, typing 't' followed by a trigger key could automatically generate 'the '. The objective isn't to abbreviate every word, but rather to focus on those that offer significant savings for the effort invested in memorization.
+
+However, compiling such a list manually can be a daunting task. This is where abbrgen comes in handy, it helps by automating the generation of the initial list and streamlines the process of importing them into Espanso, so you can enhance and customize them over time.
 
 ## Usage
 

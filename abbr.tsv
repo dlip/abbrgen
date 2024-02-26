@@ -24,6 +24,7 @@ make	m	made	making	makes
 just	j			justs
 think	tn	thought	thinking	thinks
 time	tm	timed	timing	times
+there	the			theres
 out	o			outs
 come	co	come	coming	comes
 people	p			peoples
@@ -32,7 +33,7 @@ year	ye			years
 some	so			somes
 want	wa	wanted	wanting	wants
 when	we			whens
-which	wc			whiches
+which	whi			whiches
 like	l	liked	liking	likes
 other	ot			others
 could	cu			coulds
@@ -41,7 +42,7 @@ here	he			heres
 look	lo	looked	looking	looks
 more	mo			mores
 these	ts			theses
-thing	tg			things
+thing	thi			things
 well	wl			wells
 because	be			becauses
 also	al			alsoes
@@ -87,8 +88,11 @@ talk	tk	talked	talking	talks
 keep	ke	kept	keeping	keeps
 leave	le	left	leaving	leaves
 help	hl	helped	helping	helps
+where	whe			wheres
 same	se			sames
+while	whl			whiles
 start	sr	started	starting	starts
+three	thr			threes
 high	hi			highs
 every	ev			everies
 another	an			anothers
@@ -132,7 +136,7 @@ government	gv			governments
 next	nt			nexts
 city	ci			cities
 company	cm			companies
-story	sy			stories
+story	sto			stories
 today	ty			todays
 move	mv	moved	moving	moves
 must	mt			musts
@@ -150,7 +154,7 @@ read	re	read	reading	reads
 anything	ay			anythings
 nothing	no			nothings
 small	sl			smalls
-month	mn			months
+month	mon			months
 program	pm	programmed	programming	programs
 maybe	mb			maybes
 under	un			unders
@@ -177,6 +181,7 @@ mother	mr			mothers
 real	ra			reals
 best	bs			bests
 long	ln	longed	longing	longs
+water	wat	watered	watering	waters
 young	yu			youngs
 okay	ok			okays
 both	bh			boths
@@ -184,6 +189,7 @@ service	ser			services
 area	ar			areas
 important	im			importants
 person	ps			people
+thank	tha	thanked	thanking	thanks
 someone	sn			someones
 change	cg	changed	changing	changes
 however	hw			howevers
@@ -193,16 +199,19 @@ everything	ey			everythings
 national	nl			nationals
 four	fo			fours
 girl	gl			girls
+watch	wac	watched	watching	watches
 until	ut			untils
 father	ft			fathers
 create	cr			creates
 information	in			information
-learn	lr	learnt	learning	learns
+learn	lea	learnt	learning	learns
+least	les			leasts
 already	ae			alreadies
 kill	kl	killed	killing	kills
 minute	min			minutes
-party	pt			parties
+party	par			parties
 include	ic	included	including	includes
+stand	sta	stood	standing	stands
 together	tog			togethers
 follow	fl	followed	following	follows
 health	ht			healths
@@ -210,24 +219,29 @@ remember	rm	remembered	remembering	remembers
 often	of			oftens
 reason	rs			reasons
 speak	sk	spoken	speaking	speaks
-black	bk			blacks
+black	bla			blacks
 member	mem			members
 community	ct			communities
 once	oc			onces
 social	soc			socials
 news	nw			news
+allow	alo	allowed	allowing	allows
 body	by			bodies
 lead	ld	led	leading	leads
 continue	ce	continued	continuing	continues
-whether	whe			whethers
+whether	wht			whethers
 enough	en			enoughs
-level	ll	leveled	leveling	levels
+spend	spe	spent	spending	spends
+level	lev	leveled	leveling	levels
 political	pc			politicals
 almost	as			almosts
 university	uv			universities
+stay	sy	staid	staying	stays
+later	lat			laters
 five	fv			fives
 probably	pro			probablies
 center	cen			centers
+among	amo			amongs
 public	pu			publics
 else	el			elses
 history	hs			histories
@@ -238,7 +252,9 @@ office	oi			offices
 course	cou			courses
 research	rc			researches
 door	dr			doors
+white	wit			whites
 several	sev			severals
+court	cor			courts
 grow	gw	grown	growing	grows
 better	bet			betters
 open	op	opened	opening	opens
@@ -250,8 +266,9 @@ second	sec			seconds
 street	str			streets
 everyone	eve			everyones
 policy	pol			policies
-table	tb			tables
-human	hn			humans
+table	tab			tables
+sorry	sor			sorries
+human	hum			humans
 please	ple	pleased	pleasing	pleases
 hope	hp	hoped	hoping	hopes
 process	prc			processes
@@ -259,27 +276,34 @@ teacher	tc			teachers
 data	da			datas
 offer	or	offered	offering	offers
 death	de			deaths
+whole	who			wholes
 experience	ex			experiences
 easy	es			easies
 education	ed			educations
-build	bd	built	building	builds
+build	bul	built	building	builds
 expect	ep	expected	expecting	expects
 himself	him			themselves
-sense	ss	sensed	sensing	senses
+sense	sen	sensed	sensing	senses
 across	acr			acrosses
+early	ear			earlies
 college	cl			colleges
 music	mc			musics
 appear	ap	appeared	appearing	appears
 mind	md			minds
+class	cla			classes
 police	poi			polices
 effect	ef			effects
 season	sea			seasons
+heart	hea			hearts
 possible	pos			possibles
-serve	sv	served	serving	serves
+serve	srv	served	serving	serves
+break	bre	broken	breaking	breaks
 although	at			althoughs
 market	mk			markets
+force	for	forced	forcing	forces
 require	reu			requires
 listen	lis	listened	listening	listens
+agree	agr	agreed	agreeing	agrees
 according	ad			accordings
 anyone	any			anyones
 baby	bb			babies
@@ -304,10 +328,10 @@ receive	rv	received	receiving	receives
 value	va	valued	valuing	values
 pick	pk	picked	picking	picks
 phone	ph	phoned	phoning	phones
-thanks	tha			thankss
+thanks	thk			thankss
 event	et			events
 drive	dv	driven	driving	drives
-strong	sto			strongs
+strong	stn			strongs
 reach	rh		reaching	reaches
 remain	rn	remained	remaining	remains
 explain	ei	explained	explaining	explains
@@ -316,6 +340,9 @@ model	ml			models
 perhaps	per			perhapss
 relationship	rel			relationships
 fine	fn			fines
+movie	mov			movies
+field	fie			fields
+raise	rai	raised	raising	raises
 player	pla			players
 couple	cp			couples
 million	mil			millions
@@ -326,25 +353,30 @@ difference	df			differences
 light	lh	lighted	lighting	lights
 development	dl			developments
 federal	fed			federals
-former	for			formers
+former	fom			formers
 role	rl			roles
 pretty	pre			pretties
 myself	mye			ourselves
 view	vi			views
+price	pri			prices
 effort	efo			efforts
 nice	nc			nices
 quite	qu			quites
+along	aln			alongs
 voice	vo	voiced	voicing	voices
 finally	fy			finallies
 department	dm			departments
 either	eh			eithers
 toward	tw			towards
-leader	lea			leaders
+leader	led			leaders
+photo	pho			photos
+space	spa			spaces
 project	prt			projects
 return	ret	returned	returning	returns
 position	pot			positions
-special	spe			specials
+special	spc			specials
 film	fm	filmed	filming	films
+major	mao			majors
 type	tp	typed	typing	types
 article	art			articles
 chance	cha			chances
@@ -353,33 +385,42 @@ economic	em			economics
 situation	sit			situations
 choose	cho	chosen	choosing	chooses
 practice	pra	practiced	practicing	practices
+cause	cau	caused	causing	causes
 happy	hy			happies
 science	sci			sciences
 join	jo	joined	joining	joins
+teach	tea	taught	teaching	teaches
 develop	dev	developed	developing	develops
+share	sha	shared	sharing	shares
 yourself	yr			yourselves
 carry	cy	carried	carrying	carries
+clear	cle	cleared	clearing	clears
 brother	bro			brothers
 matter	mat	mattered	mattering	matters
 dead	dd			deads
 image	ia			images
 simply	sim			simplies
+post	pt	posted	posting	posts
 society	soi			societies
 picture	pic			pictures
-paper	pp			papers
+piece	pie			pieces
+paper	pap			papers
 energy	eg			energies
 personal	pes			personals
-building	bul			buildings
+building	bud			buildings
 military	mit			militaries
 doctor	doc			doctors
 activity	av			activities
 exactly	exa			exactlies
+media	med			medias
 evidence	evi			evidences
 product	prd			products
 realize	rea	realized	realizing	realizes
+save	sv	saved	saving	saves
 technology	tec			technologies
-catch	cc	caught	catching	catches
+catch	cat	caught	catching	catches
 comment	com	commented	commenting	comments
+color	col	colored	coloring	colors
 cover	cv	covered	covering	covers
 describe	des	described	describing	describes
 guess	ge	guessed	guessing	guesses
@@ -401,7 +442,8 @@ certain	cer			certains
 whatever	wv			whatevers
 half	hf			halves
 video	vd			videos
-third	td			thirds
+throw	thw	thrown	throwing	throws
+third	thd			thirds
 recent	rec			recents
 available	ava			availables
 ready	ry			readies
@@ -415,6 +457,7 @@ likely	lk			likelies
 county	cot			counties
 future	fut			futures
 whose	ws			whoses
+shoot	sho	shot	shooting	shoots
 industry	ir			industries
 general	gen			generals
 stuff	sf	stuffed	stuffing	stuffs
@@ -423,25 +466,31 @@ attention	ate			attentions
 forget	fog	forgotten	forgetting	forgets
 risk	rk	risked	risking	risks
 focus	fs			focuses
+short	shr			shorts
 condition	cod			conditions
 daughter	dh			daughters
 author	au			authors
+truth	tru			truths
 upon	up			upons
 husband	hb			husbands
 period	pei			periods
 series	sei			series
 order	od	ordered	ordering	orders
 officer	ofi			officers
+close	clo	closed	closing	closes
 computer	cop			computers
 thought	thu			thoughts
 economy	eco			economies
+bank	bk			banks
 behavior	bv			behaviors
+sound	son	sounded	sounding	sounds
 certainly	cet			certainlies
 nearly	nr			nearlies
 increase	inc	increased	increasing	increases
-north	nh			norths
+north	nor			norths
+blood	blo			bloods
 culture	cul			cultures
-medical	med			medicals
+medical	mei			medicals
 everybody	eb			everybodies
 difficult	dif			difficults
 language	lu			languages
@@ -451,7 +500,8 @@ population	pop			populations
 worker	wor			workers
 draw	dw	drawn	drawing	draws
 drop	dp	dropped	dropping	drops
-private	pri			privates
+earth	eat			earths
+private	prv			privates
 tonight	ton			tonights
 letter	let			letters
 simple	sip			simples
@@ -462,15 +512,17 @@ nature	nau			natures
 administration	adm			administrations
 common	cmo			commons
 message	mes			messages
-enjoy	eo	enjoyed	enjoying	enjoys
+enjoy	eno	enjoyed	enjoying	enjoys
 similar	sil			similars
 congress	cog			congresses
 attack	ak	attacked	attacking	attacks
-amount	amo			amounts
+amount	amu			amounts
 analysis	ana			analyses
+store	sre	stored	storing	stores
 defense	dn			defenses
 performance	pf			performances
 hospital	hos			hospitals
+board	boa			boards
 protect	poc	protected	protecting	protects
 century	ceu			centuries
 summer	sum			summers
@@ -486,14 +538,16 @@ agency	age			agencies
 usually	us			usuallies
 significant	sig			significants
 ability	abi			abilities
-statement	sta			statements
+statement	stm			statements
 entire	ent			entires
 democrat	dem			democrats
+floor	flo			floors
 serious	ses			seriouses
 career	car			careers
 dollar	dol			dollars
 vote	vt	voted	voting	votes
 compare	coa	compared	comparing	compares
+south	sot			souths
 forward	fw			forwards
 subject	sb			subjects
 financial	fin			financials
@@ -504,11 +558,14 @@ reduce	red	reduced	reducing	reduces
 sister	sis			sisters
 quality	qa			qualities
 quickly	qi			quicklies
+press	prs	pressed	pressing	presses
 worry	wy	worried	worrying	worries
 accept	ace	accepted	accepting	accepts
-enter	ee	entered	entering	enters
+enter	ene	entered	entering	enters
 mention	men	mentioned	mentioning	mentions
-movement	mov			movements
+plant	pln	planted	planting	plants
+movement	mot			movements
+scene	sce			scenes
 section	set			sections
 treatment	tre			treatments
 benefit	ben			benefits
@@ -517,19 +574,28 @@ candidate	can			candidates
 approach	ah			approaches
 determine	det			determines
 resource	rer			resources
+claim	cli	claimed	claiming	claims
+prove	pov			proves
 somebody	sob			somebodies
 knowledge	kn			knowledges
 rather	rat			rathers
 hang	hg	hanged	hanging	hangs
+sport	spo			sports
+argue	arg	argued	arguing	argues
 left	lf			lefts
 meeting	met			meetings
+skill	ski			skills
 feeling	fel			feelings
 despite	dep			despites
 degree	deg			degrees
+crime	cri			crimes
+occur	ocu	occurred	occurring	occurs
 imagine	ima	imagined	imagining	imagines
 king	kg			kings
-present	prs	presented	presenting	presents
+present	prn	presented	presenting	presents
+seven	see			sevens
 foreign	foi			foreigns
+laugh	lau	laughed	laughing	laughs
 disease	dis			diseases
 lady	ly			ladies
 beyond	bey			beyonds
@@ -538,19 +604,23 @@ finish	fis			finishes
 design	dei			designs
 concern	coc	concerned	concerning	concerns
 recognize	rg	recognized	recognizing	recognizes
+apply	apl			applies
 prepare	prp	prepared	preparing	prepares
 network	nk			networks
 success	suc			successes
 district	dit			districts
 physical	phy			physicals
 growth	gh			growths
-standard	stn			standards
-theory	the			theories
+standard	san			standards
+theory	thy			theories
+staff	stf			staffs
+legal	leg			legals
 september	sep			septembers
 outside	os			outsides
 strategy	sty			strategies
-clearly	cle			clearlies
+clearly	cly			clearlies
 property	pry			properties
+final	fia			finals
 authority	aut			authorities
 perfect	pef			perfects
 method	meh			methods
@@ -559,32 +629,40 @@ impact	ip			impacts
 indicate	ini			indicates
 committee	coi			committees
 supposed	suo			supposeds
+dream	dre	dreamt	dreaming	dreams
 training	tra			trainings
 central	cea			centrals
 option	opi			options
-particularly	par			particularlies
-completely	col			completelies
+eight	eig			eights
+particularly	pai			particularlies
+completely	coy			completelies
 opinion	opn			opinions
+main	mn			mains
 interview	iw			interviews
+exist	exi	existed	existing	exists
 remove	rem	removed	removing	removes
 dark	dk			darks
 union	uo			unions
 professor	prf			professors
 pressure	peu			pressures
 purpose	pur			purposes
+stage	sag			stages
 herself	her			themselves
 artist	ari			artists
 employee	emp			employees
+avoid	avo	avoided	avoiding	avoids
 account	aco			accounts
 release	ras	released	releasing	releases
 environment	env			environments
-specific	spc			specifics
+treat	trt	treated	treating	treats
+specific	spi			specifics
 version	ve			versions
 reality	rei			realities
-visit	vs	visited	visiting	visits
+visit	vis	visited	visiting	visits
 club	cb			clubs
 justice	ju			justices
-river	rr			rivers
+river	riv			rivers
+brain	bra			brains
 memory	mer			memories
 camera	cae			cameras
 global	glo			globals
@@ -593,7 +671,7 @@ arrive	arv	arrived	arriving	arrives
 notice	not	noticed	noticing	notices
 detail	dea			details
 challenge	chl	challenged	challenging	challenges
-argument	arg			arguments
+argument	aru			arguments
 nobody	nb			nobodies
 weapon	wp			weapons
 station	sti			stations
@@ -613,11 +691,14 @@ assume	asu			assumes
 writer	wri			writers
 perform	pem	performed	performing	performs
 credit	cre			credits
+green	gre			greens
 marriage	mar			marriages
 operation	ope			operations
 indeed	ine			indeeds
+sleep	sle	slept	sleeping	sleeps
 necessary	ns			necessaries
 reveal	rev	revealed	revealing	reveals
+agent	agn			agents
 access	acs			accesses
 debate	deb	debated	debating	debates
 contain	cnt	contained	containing	contains
@@ -625,13 +706,16 @@ beat	bt	beaten	beating	beats
 democratic	der			democratics
 glass	gs			glasses
 improve	io	improved	improving	improves
+adult	adu			adults
+trade	trd	traded	trading	trades
 religious	rig			religiouses
 review	rw			reviews
 address	adr			addresses
 association	aso			associations
 measure	mea	measured	measuring	measures
+stock	stc			stocks
 lawyer	lw			lawyers
-production	prn			productions
+production	pod			productions
 relate	rae	related	relating	relates
 middle	mid			middles
 management	mag			managements
@@ -639,138 +723,176 @@ original	ol			originals
 victim	vc			victims
 cancer	cac			cancers
 speech	sph			speeches
-particular	pai			particulars
+particular	pac			particulars
+trial	tri			trials
 none	nn			nones
 weight	wei			weights
 tomorrow	tom			tomorrows
-positive	pov			positives
+positive	psi			positives
 citizen	cit			citizens
 establish	est			establishes
 executive	eu			executives
 politics	pli			politicss
+stick	sic			sticks
 customer	cus			customers
 manager	mge			managers
 publish	pub			publishes
 popular	pou			populars
+ahead	ahe			aheads
 conference	cf			conferences
+total	tot			totals
 discover	div			discovers
 direction	die			directions
 sunday	sun			sundays
 maintain	mai	maintained	maintaining	maintains
-majority	mao			majorities
+majority	may			majorities
+peace	pea			peaces
 dinner	din			dinners
 partner	pan			partners
 user	ue			users
+above	abo			aboves
 therefore	tf			therefores
+tough	tou			toughs
 owner	ow			owners
+shall	shl			shalls
 inside	isi			insides
+voter	vot			voters
 june	jn			junes
 mountain	mou			mountains
+range	ran			ranges
+coach	coh	coached	coaching	coaches
 friday	frd			fridays
 attorney	ato			attorneys
 unless	ul			unlesses
 expert	exe			experts
 structure	stu			structures
-budget	bud			budgets
+budget	bug			budgets
 insurance	inu			insurances
 text	tx			texts
 freedom	fre			freedoms
+crazy	cra			crazies
 reader	rad			readers
-march	mh	marched	marching	marches
-machine	mac			machines
+style	stl			styles
+march	mac	marched	marching	marches
+machine	mah			machines
 november	nov			novembers
 generation	ger			generations
 income	ino			incomes
+admit	adi	admitted	admitting	admits
+hello	hel			helloes
 onto	oo			ontoes
-throughout	thr			throughouts
+mouth	moh			mouths
+throughout	thg			throughouts
+shake	shk			shakes
 threat	tht			threats
 solution	sol			solutions
 travel	trv	traveled	traveling	travels
-scientist	sce			scientists
+scientist	scn			scientists
 obviously	ob			obviouslies
 refer	rf			refers
+alone	ale			alones
+drink	dri	drunk	drinking	drinks
 investigation	inv			investigations
-senator	sen			senators
+senator	sna			senators
 unit	ui			units
-photograph	pho			photographs
+photograph	pht			photographs
 july	jy			julies
 television	tel			televisions
 sexual	sx			sexuals
-prevent	prv	prevented	preventing	prevents
+radio	rao			radios
+prevent	pev	prevented	preventing	prevents
 modern	mod			moderns
-senate	sna			senates
+senate	snt			senates
 violence	vl			violences
+touch	toc	touched	touching	touches
 feature	fea			features
 audience	aud			audiences
 evening	evn			evenings
+front	fro			fronts
+score	sco			scores
 suffer	suf	suffered	suffering	suffers
 spring	spr			springs
+civil	civ			civils
 safety	saf			safeties
 weekend	wek			weekends
-normal	nor			normals
+worth	wot			worths
+title	tit			titles
+normal	nom			normals
 yard	yd			yards
-finger	fie			fingers
+finger	fir			fingers
+tend	td			tends
 mission	mis			missions
 eventually	evt			eventuallies
-participant	pac			participants
+participant	pip			participants
+hotel	hot			hotels
 judge	jd	judged	judging	judges
 pattern	pae			patterns
 institution	int			institutions
-faith	fh			faiths
+faith	fai			faiths
 professional	pof			professionals
 reflect	ref	reflected	reflecting	reflects
 folk	fk			folks
 surface	sur			surfaces
-client	cli			clients
-traditional	trd			traditionals
+client	cln			clients
+edge	ee			edges
+traditional	trn			traditionals
 council	cun			councils
 device	dvi			devices
 environmental	eni			environmentals
 responsibility	rb			responsibilities
+chair	cai			chairs
 internet	inr			internets
 october	oct			octobers
+funny	fun			funnies
 immediately	ime			immediatelies
 investment	ive			investments
 effective	efe			effectives
-previous	pev			previouses
+previous	pvi			previouses
 content	cne			contents
 consumer	cos			consumers
 element	elm			elements
 nuclear	nuc			nuclears
-spirit	spi			spirits
+spirit	sir			spirits
 directly	dy			directlies
 afraid	afr			afraids
 define	def			defines
 handle	han	handled	handling	handles
+track	trc	tracked	tracking	tracks
 announce	ano	announced	announcing	announces
 journal	ja			journals
 heavy	hv			heavies
 collection	clc			collections
 soldier	sod			soldiers
 governor	gov			governors
-shoulder	sho			shoulders
+fish	fh	fished	fishing	fish
+shoulder	shu			shoulders
 cultural	cut			culturals
 successful	sue			successfuls
+trust	trs	trusted	trusting	trusts
 suddenly	sud			suddenlies
 interested	ite			interesteds
 deliver	del	delivered	delivering	delivers
 saturday	sat			saturdays
 editor	edi			editors
+fresh	frs			freshes
 anybody	anb			anybodies
 destroy	dey			destroys
-critical	cri			criticals
-agreement	agr			agreements
+critical	crt			criticals
+agreement	agm			agreements
 powerful	pow			powerfuls
 researcher	reh			researchers
 concept	cnc			concepts
 willing	wil			willings
+band	bd			bands
+marry	mry	married	marrying	marries
 promise	prm	promised	promising	promises
 easily	eas			easilies
 restaurant	rst			restaurants
-league	leg			leagues
+league	leu			leagues
 senior	sni			seniors
 capital	cap			capitals
 anymore	anr			anymores
+april	apr			aprils
 potential	pon			potentials
 quick	qk			quicks
 magazine	mga			magazines
@@ -784,9 +906,10 @@ generally	gy			generallies
 mistake	mia			mistakes
 strike	sri			strikes
 battle	bat	battled	battling	battles
-corner	cor			corners
+basic	bas			basics
+corner	crn			corners
 target	tar			targets
-driver	dri			drivers
+driver	drv			drivers
 beginning	beg			beginnings
 religion	rio			religions
 crisis	crs			crises
@@ -798,33 +921,38 @@ object	obe	objected	objecting	objects
 express	exr			expresses
 encourage	enc	encouraged	encouraging	encourages
 blog	bg			blogs
+smile	smi	smiled	smiling	smiles
 belief	bel			beliefs
+block	blc			blocks
 debt	db			debts
 labor	lb			labors
 understanding	ur			understandings
 neighborhood	ng			neighborhoods
 contract	cnr			contracts
 species	sps			species
-additional	adi			additionals
+additional	ado			additionals
 sample	sam			samples
 involved	inl			involveds
 mostly	mos			mostlies
 concerned	cnd			concerneds
+apple	ape			apples
 conduct	cnu			conducts
 wonderful	wod			wonderfuls
 library	lib			libraries
 prison	pis			prisons
 attempt	atm	attempted	attempting	attempts
 complete	cmp	completed	completing	completes
+sales	sal			saless
 gift	gf			gifts
 refuse	rfu	refused	refusing	refuses
 garden	gar	gardened	gardening	gardens
 introduce	itr	introduced	introducing	introduces
 christian	chs			christians
 definitely	den			definitelies
+plane	pne			planes
 vehicle	vh			vehicles
-examine	exi	examined	examining	examines
-application	apl			applications
+examine	eam	examined	examining	examines
+application	api			applications
 thousand	ths			thousands
 coffee	cof			coffees
 billion	bil			billions
@@ -833,45 +961,56 @@ ignore	ign	ignored	ignoring	ignores
 welcome	wel	welcomed	welcoming	welcomes
 gold	gd			golds
 jump	jm	jumped	jumping	jumps
-planet	pln			planets
+planet	plt			planets
 location	loc			locations
 amazing	ama			amazings
 principle	pin			principles
 promote	pom			promotes
 search	seh	searched	searching	searches
+alive	ali			alives
 possibility	pob			possibilities
 otherwise	oh			otherwises
 remind	rmi	reminded	reminding	reminds
-healthy	hea			healthies
+healthy	het			healthies
+horse	hor			horses
 advantage	adv			advantages
 commercial	cme			commercials
+steal	sel			steals
+basis	bai			bases
 context	cx			contexts
 highly	hig			highlies
 christmas	cht			christmass
 strength	sth			strengths
-monday	mon			mondays
+monday	moa			mondays
+beach	bec			beaches
 survey	suv			surveys
 writing	wrt			writings
 master	mas			masters
+scale	sca			scales
 resident	rsi			residents
 football	fb			footballs
-failure	fai			failures
+sweet	swe			sweets
+failure	fal			failures
 reporter	rpo			reporters
 commit	cmi			commits
 associate	asc			associates
 vision	vn			visions
-function	fun			functions
+function	fuc			functions
+truly	try			trulies
 average	ave			averages
 stupid	sid			stupids
 chinese	che			chinese
 connection	cni			connections
+stone	sne			stones
 hundred	hun			hundreds
+truck	trk			trucks
 afternoon	aft			afternoons
 responsible	reb			responsibles
 secretary	sey			secretaries
 apparently	apa			apparentlies
-southern	sot			southerns
-totally	tot			totallies
+smart	sma			smarts
+southern	soh			southerns
+totally	toa			totallies
 western	wes			westerns
 collect	clt	collected	collecting	collects
 conflict	cnl			conflicts
@@ -885,25 +1024,28 @@ variety	var			varieties
 perspective	pep			perspectives
 document	dou			documents
 presence	pen			presences
-lesson	les			lessons
+stare	sar	stared	staring	stares
+lesson	len			lessons
 limit	lm			limits
-appreciate	apr	appreciated	appreciating	appreciates
+appreciate	apc	appreciated	appreciating	appreciates
 observe	obs	observed	observing	observes
 currently	cue			currentlies
-crowd	cw	crowded	crowding	crowds
+crowd	cro	crowded	crowding	crowds
 apartment	apm			apartments
-survive	srv			survives
-guest	gt			guests
+survive	siv			survives
+guest	gue			guests
 protection	pec			protections
 intelligence	ing			intelligences
 yesterday	yt			yesterdays
 somewhere	sow			somewheres
 border	bor			borders
-reading	rai			readings
+reading	rag			readings
+terms	ter			termss
 leadership	lp			leaderships
+chief	cie			chiefs
 attitude	ati			attitudes
 website	wb			websites
-seriously	sel			seriouslies
+seriously	sro			seriouslies
 actual	acu			actuals
 recall	rca	recalled	recalling	recalls
 negative	neg			negatives
@@ -911,7 +1053,7 @@ connect	cec	connected	connecting	connects
 distance	dia			distances
 regular	rgu			regulars
 climate	clm			climates
-relation	rao			relations
+relation	rti			relations
 flight	fli			flights
 dangerous	dan			dangerouses
 aspect	asp			aspects
@@ -921,64 +1063,83 @@ january	jan			januaries
 independent	inp			independents
 volume	vu			volumes
 online	onl			onlines
-theater	tea			theaters
+theater	tet			theaters
+speed	sed			speeds
+aware	awa			awares
 identity	ide			identities
 demand	ded	demanded	demanding	demands
+extra	ext			extras
+guard	gua	guarded	guarding	guards
 demonstrate	dmo			demonstrates
+fully	ful			fullies
 tuesday	tue			tuesdays
-facility	fal			facilities
+facility	fat			facilities
 august	aug			augusts
 institute	ist			institutes
+below	bew			belows
 living	liv			livings
 european	eur			europeans
 quarter	qr			quarters
-basically	bas			basicallies
+basically	bac			basicallies
 forest	fos			forests
 multiple	mp			multiples
-background	bac			backgrounds
-settle	stl	settled	settling	settles
-winter	wit			winters
+twice	twi			twices
+cross	css	crossed	crossing	crosses
+background	bak			backgrounds
+settle	stt	settled	settling	settles
+winter	wie			winters
 presidential	ped			presidentials
 operate	opr	operated	operating	operates
+daily	dai			dailies
 division	dvo			divisions
 slowly	slo			slowlies
 advice	adc			advices
 reaction	rac			reactions
 injury	iny			injuries
 ticket	tic			tickets
+grade	gra			grades
+birth	bir			births
 painting	pag			paintings
 outcome	om			outcomes
+enemy	eny			enemies
 damage	dam	damaged	damaging	damages
+being	bei			beings
+storm	srm	stormed	storming	storms
+shape	shp			shapes
 commission	cms			commissions
-captain	cat			captains
+captain	cpa			captains
+troop	trp			troops
 female	fem			females
 minister	mie			ministers
 neighbor	nei			neighbors
 mental	mel			mentals
 software	sof			softwares
 finding	fid			findings
+lord	lr			lords
 temperature	tem			temperatures
 quiet	qe			quiets
-spread	spa			spreads
+spread	sra			spreads
 bright	brg			brights
 influence	ifl	influenced	influencing	influences
 kick	kk	kicked	kicking	kicks
 annual	anu			annuals
-procedure	pod			procedures
+procedure	por			procedures
 respect	rse			respects
-tradition	tri			traditions
-threaten	trt	threatened	threatening	threatens
+tradition	tad			traditions
+threaten	ten	threatened	threatening	threatens
 primary	pim			primaries
-strange	sra			stranges
+strange	srn			stranges
+actor	atr			actors
 blame	bm			blames
 active	aci			actives
 depend	dnd	depended	depending	depends
-clothes	clo			clothess
+clothes	clh			clothess
 affair	afa			affairs
 contact	cna			contacts
 category	cag			categories
+topic	top			topics
 victory	vic			victories
-direct	dre	directed	directing	directs
+direct	drc	directed	directing	directs
 towards	tow			towardss
 ensure	ens			ensures
 expression	exs			expressions
@@ -988,32 +1149,36 @@ possibly	poy			possiblies
 technique	teh			techniques
 intend	itn	intended	intending	intends
 impossible	ib			impossibles
+moral	mor			morals
 academic	aca			academics
-somehow	soh			somehows
+somehow	sme			somehows
 gather	gat	gathered	gathering	gathers
-scientific	scn			scientifics
+scientific	sct			scientifics
 african	afi			africans
-participate	pap			participates
+participate	pia			participates
 appropriate	apo			appropriates
 youth	yh			youths
+dress	drs	dressed	dressing	dresses
 straight	srg			straights
 weather	wea			weathers
 recommend	rco	recommended	recommending	recommends
-medicine	mei			medicines
+medicine	mec			medicines
+novel	nol			novels
 obvious	obv			obviouses
-thursday	thd			thursdays
+thursday	tur			thursdays
 exchange	exc			exchanges
 explore	exl	explored	exploring	explores
-extend	ext	extended	extending	extends
+extend	exd	extended	extending	extends
 invite	ivi	invited	inviting	invites
-belong	blo	belonged	belonging	belongs
+belong	bln	belonged	belonging	belongs
 obtain	oba	obtained	obtaining	obtains
+broad	brd			broads
 conclusion	cns			conclusions
 progress	prg			progresses
 surprise	sus	surprised	surprising	surprises
 assessment	ase			assessments
 defend	dfe			defends
-pound	pd			pounds
+pound	pun			pounds
 correct	crc	corrected	correcting	corrects
 married	mad			marrieds
 slightly	sli			slightlies
@@ -1022,45 +1187,57 @@ historical	hc			historicals
 meaning	meg			meanings
 supply	sul	supplied	supplying	supplies
 ourselves	our			ourselvess
+honey	hon			honeys
 consequence	cse			consequences
 unique	uni			uniques
 regulation	rgl			regulations
+award	awr			awards
 bottom	bot			bottoms
 excuse	exu	excused	excusing	excuses
 familiar	fam			familiars
-classroom	cla			classrooms
+classroom	cls			classrooms
 reference	rfe			references
 emerge	eme			emerges
+lunch	lun			lunches
 desire	dsi	desired	desiring	desires
 instruction	isr			instructions
 emergency	emr			emergencies
-thinking	thi			thinkings
+thinking	tin			thinkings
 french	frn			frenches
 combine	cmb			combines
 december	dce			decembers
 anywhere	ane			anywheres
 chicken	chc			chickens
+train	tai	trained	training	trains
+abuse	abu			abuses
 construction	cno			constructions
 wednesday	wed			wednesdays
 deserve	dse	deserved	deserving	deserves
 famous	fao			famouses
 intervention	itv			interventions
+grand	grn			grands
 confirm	cfi	confirmed	confirming	confirms
+lucky	luc			luckies
 insist	ii	insisted	insisting	insists
+coast	cas			coasts
+proud	pud			prouds
 fourth	fot			fourths
+angry	ang			angries
 native	nai			natives
 supreme	spm			supremes
 baseball	bae			baseballs
+email	ema			emails
 accident	acd			accidents
 growing	gro			growings
 struggle	sru			struggles
 revenue	rve			revenues
-expand	exd	expanded	expanding	expands
-launch	lau			launches
+expand	epa	expanded	expanding	expands
+launch	lan			launches
+trend	ted			trends
 repeat	rpe	repeated	repeating	repeats
-breath	bre			breaths
+breath	brt			breaths
 inch	ih			inches
-terrible	ter			terribles
+terrible	tei			terribles
 relatively	rey			relativelies
 complex	cox			complexes
 generate	gea			generates
@@ -1069,21 +1246,27 @@ forever	fov			forevers
 corporate	crp			corporates
 prefer	pfe	preferred	preferring	prefers
 except	ece			excepts
+cheap	chp			cheaps
 literature	lit			literatures
+mayor	myo			mayors
 importance	imp			importances
 danger	dag			dangers
 emotional	emo			emotionals
-capture	cau			captures
+capture	cpu			captures
 traffic	trf			traffics
-fucking	fuc			fuckings
+fucking	fuk			fuckings
+plate	pte			plates
 equipment	equ			equipments
-select	sle			selects
+select	slc			selects
 studio	sdi			studios
 expensive	exv			expensives
-secret	sct			secrets
-engine	ene			engines
+secret	srt			secrets
+engine	egi			engines
+adopt	aop	adopted	adopting	adopts
+panel	pal			panels
 circle	cir			circles
-critic	crt			critics
+critic	cic			critics
+solve	sov			solves
 episode	epi			episodes
 requirement	rqu			requirements
 politician	poa			politicians
@@ -1091,59 +1274,71 @@ colleague	clg			colleagues
 disappear	dip			disappears
 predict	pet	predicted	predicting	predicts
 exercise	erc	exercised	exercising	exercises
+tired	tir			tireds
 democracy	dmc			democracies
 ultimately	um			ultimatelies
 setting	seg			settings
+honor	hn			honors
+works	wok			workss
 unfortunately	uf			unfortunatelies
+theme	tme			themes
 united	unt			uniteds
 educational	edu			educationals
+empty	emt	emptied	emptying	empties
 comfortable	cmr			comfortables
 investigate	ina			investigates
 useful	use			usefuls
 pocket	pok			pockets
 digital	dig			digitals
-plenty	plt			plenties
+plenty	ply			plenties
 entirely	enr			entirelies
 afford	afo	afforded	affording	affords
-teaching	tei			teachings
+sugar	sug			sugars
+teaching	teg			teachings
 conservative	cnv			conservatives
-chairman	cai			chairmen
-bridge	brd			bridges
+chairman	cim			chairmen
+error	ero			errors
+bridge	bid			bridges
 specifically	spf			specificallies
-flower	flo	flowered	flowering	flowers
+flower	flw	flowered	flowering	flowers
 universe	unv			universes
 acknowledge	ack	acknowledged	acknowledging	acknowledges
 coverage	cve			coverages
+crew	cw			crews
 locate	loa			locates
 balance	bal	balanced	balancing	balances
+equal	eqa			equals
 zone	z			zones
 wedding	wen			weddings
 joke	jk	joked	joking	jokes
 minority	mio			minorities
+sight	sih			sights
 russian	rus			russians
-soviet	sov			soviets
+soviet	sie			soviets
 profit	pfi			profits
 careful	caf			carefuls
 gender	ged			genders
-ocean	oe			oceans
+ocean	oce			oceans
 unidentified	und			unidentifieds
-circumstance	cic			circumstances
+grant	grt			grants
+circumstance	cis			circumstances
 declare	dcl	declared	declaring	declares
 domestic	dom			domestics
 organize	org			organizes
 english	enl			englishes
 neither	net			neithers
-surround	sro	surrounded	surrounding	surrounds
+surround	srd	surrounded	surrounding	surrounds
 manner	mnn			manners
 surprised	srp			surpriseds
-percentage	pea			percentages
+percentage	peg			percentages
 massive	mav			massives
-winner	wie			winners
-honest	hon			honests
+cloud	clu			clouds
+winner	wir			winners
+honest	hes			honests
 propose	pse	proposed	proposing	proposes
-sentence	snt			sentences
+sentence	snc			sentences
 request	rqe	requested	requesting	requests
-appearance	ape			appearances
+appearance	apn			appearances
 regarding	rga			regardings
 excellent	ecl			excellents
 criminal	crm			criminals
@@ -1151,30 +1346,38 @@ beauty	beu			beauties
 bottle	bol			bottles
 component	cpo			components
 jewish	je			jewishes
-yours	ys			yours
+yours	you			yours
+dance	dac	danced	dancing	dances
+shirt	shi			shirts
 plastic	pls			plastics
 indian	idi			indians
-stress	sre	stressed	stressing	stresses
+tooth	toh			teeth
+stress	srs	stressed	stressing	stresses
 illegal	ile			illegals
 significantly	sif			significantlies
 february	feb			februaries
 constitution	cst			constitutions
 definition	dfi			definitions
 uncle	uc			uncles
-suppose	spo	supposed	supposing	supposes
+metal	mta			metals
+album	alb			albums
+suppose	sos	supposed	supposing	supposes
 investor	ivt			investors
-eastern	eat			easterns
+fruit	fru			fruits
+eastern	eae			easterns
 valley	val			valleys
 largely	lar			largelies
-abortion	abo			abortions
-chapter	chp			chapters
-commitment	cim			commitments
+abortion	abr			abortions
+chapter	cpe			chapters
+commitment	cin			commitments
 celebrate	cel			celebrates
 arrest	are	arrested	arresting	arrests
+prime	pme			primes
 urban	ub			urbans
 internal	ita			internals
 bother	boh			bothers
 proposal	psa			proposals
+shift	sht	shifted	shifting	shifts
 capacity	cay			capacities
 guilty	gul			guilties
 catholic	cah			catholics
@@ -1182,16 +1385,19 @@ variable	vb			variables
 convention	cvn			conventions
 jury	jr			juries
 incident	ici			incidents
+climb	clb	climbed	climbing	climbs
 hearing	hei			hearings
 everywhere	ew			everywheres
 payment	pay			payments
-conclude	clu	concluded	concluding	concludes
-scream	sca	screamed	screaming	screams
-surgery	sug			surgeries
-shadow	sha			shadows
+conclude	cld	concluded	concluding	concludes
+scream	scm	screamed	screaming	screams
+surgery	suy			surgeries
+shadow	shd			shadows
 witness	wis			witnesses
 increasingly	icr			increasinglies
+chest	ces			chests
 amendment	ame			amendments
+paint	pit	painted	painting	paints
 complain	cml	complained	complaining	complains
 extent	ete			extents
 pleasure	plu			pleasures
@@ -1203,28 +1409,36 @@ expectation	exo			expectations
 accuse	aus			accuses
 knock	ko	knocked	knocking	knocks
 previously	pel			previouslies
-corporation	cro			corporations
-sector	sco			sectors
+corporation	cpr			corporations
+sector	seo			sectors
 experiment	epe			experiments
+match	mtc			matches
 farmer	far			farmers
+rare	rr			rares
 confidence	cfd			confidences
+bunch	bun			bunches
 northern	noh			northerns
 speaker	sek			speakers
-breast	bra			breasts
+breast	brs			breasts
 contribution	cnb			contributions
-creative	cra			creatives
+creative	crv			creatives
 interaction	itc			interactions
+doubt	dob	doubted	doubting	doubts
 pursue	pus			pursues
 overall	ove			overalls
+nurse	nur			nurses
 package	pak			packages
+weird	wer			weirds
 difficulty	dil			difficulties
 hardly	har			hardlies
+daddy	dad			daddies
 estimate	esi			estimates
 invest	ies	invested	investing	invests
 personally	pey			personallies
 notion	noi			notions
 explanation	epl			explanations
 airport	air			airports
+chain	chn			chains
 expose	epo			exposes
 convince	cvi			convinces
 channel	cal			channels
@@ -1232,262 +1446,312 @@ carefully	crf			carefullies
 estate	esa			estates
 initial	iti			initials
 purchase	puc			purchases
-birthday	bir			birthdays
+guide	gud	guided	guiding	guides
+forth	foh			forths
+birthday	bit			birthdays
 improvement	imr			improvements
 ancient	anc			ancients
+ought	oug			oughts
 escape	esc	escaped	escaping	escapes
+trail	til			trails
+brown	brw			browns
 fashion	fas			fashions
-length	len			lengths
+length	leh			lengths
+sheet	she			sheets
 funding	fud			fundings
 meanwhile	mw			meanwhiles
+fault	fau			faults
 barely	bar			barelies
 eliminate	eli			eliminates
-motion	mot			motions
+motion	moi			motions
 essential	ese			essentials
+apart	apt			aparts
 combination	cma			combinations
 limited	lim			limiteds
 description	dsc			descriptions
 implement	iml			implements
-proper	por			propers
+proper	pp			propers
 marketing	mak			marketings
 approve	apv	approved	approving	approves
 regional	rgi			regionals
 muscle	muc			muscles
-creation	crn			creations
+creation	cei			creations
 typically	typ			typicallies
 spending	spn			spendings
 instrument	isu			instruments
+thick	thc			thicks
 kiss	ks	kissed	kissing	kisses
 increased	ice			increaseds
 inspire	isp	inspired	inspiring	inspires
-separate	sar	separated	separating	separates
+separate	sae	separated	separating	separates
+noise	nos			noises
 yellow	yl			yellows
+cycle	cyc	cycled	cycling	cycles
 signal	sia	signaled	signaling	signals
 golden	gol			goldens
 reject	rct	rejected	rejecting	rejects
 inform	ifo	informed	informing	informs
 perception	pce			perceptions
-visitor	vis			visitors
+visitor	vit			visitors
 contrast	ctr			contrasts
 judgment	jg			judgments
 representative	rpr			representatives
 regime	rgm			regimes
 merely	mey			merelies
 producer	pue			producers
+route	rou			routes
 typical	tyi			typicals
 analyst	anl			analysts
+elect	elc			elects
+smell	sml	smelt	smelling	smells
 disability	dib			disabilities
-comparison	cpa			comparisons
-rating	ran			ratings
-campus	cas			campuses
+comparison	cpi			comparisons
+rating	rtn			ratings
+campus	cps			campuses
 assess	aes			assesses
+solid	sld			solids
 branch	brn	branched	branching	branches
 somewhat	soa			somewhats
 gentleman	gm			gentlemans
 opposition	opo			oppositions
 suspect	sut	suspected	suspecting	suspects
+aside	asi			asides
 athlete	ath			athletes
 opening	oni			openings
 prayer	pye			prayers
-frequently	fru			frequentlies
+frequently	frt			frequentlies
 employ	eml	emploied	employing	employs
-basketball	bak			basketballs
+basketball	bab			basketballs
 existing	exg			existings
 revolution	rvo			revolutions
-emotion	emt			emotions
+click	clk			clicks
+emotion	emi			emotions
 platform	plf			platforms
+frame	fra	framed	framing	frames
 appeal	aea	appealed	appealing	appeals
 quote	qo	quoted	quoting	quotes
+brand	ban	branded	branding	brands
 enable	ena			enables
 legislation	lei			legislations
-addition	ado			additions
+addition	adn			additions
 oppose	ops			opposes
 immigration	imi			immigrations
+asset	ast			assets
 observation	obr			observations
+taste	tas	tasted	tasting	tastes
 decline	dci			declines
-attract	atr	attracted	attracting	attracts
+attract	ata	attracted	attracting	attracts
 household	hou			households
-breathe	brt	breathed	breathing	breathes
+breathe	brh	breathed	breathing	breathes
 existence	eis			existences
 mirror	mir			mirrors
+pilot	pil			pilots
 relief	rie			reliefs
 warning	war			warnings
 heaven	hev			heavens
 literally	lir			literallies
 quit	qt	quitted	quitting	quits
 calorie	cao			calories
+vast	vs			vasts
 german	gem			germen
 employer	emy			employers
-technical	ten			technicals
+technical	tch			technicals
 disaster	dsa			disasters
 display	diy			displays
 bathroom	bah			bathrooms
 succeed	scd	succeeded	succeeding	succeeds
 consistent	csi			consistents
-agenda	agn			agendas
-enforcement	eno			enforcements
-silence	sie			silences
+agenda	aga			agendas
+enforcement	efr			enforcements
+silence	sln			silences
 journalist	ji			journalists
+bible	bib			bibles
 queen	qn			queens
 divide	did	divided	dividing	divides
 expense	epn			expenses
+cream	cem			creams
 exposure	eps			exposures
 priority	pio			priorities
+angel	agl			angels
 journey	jou			journeys
 relevant	rva			relevants
-cheese	ces			cheeses
+cheese	cee			cheeses
 schedule	sch			schedules
 bedroom	bed			bedrooms
-selection	slc			selections
+selection	slt			selections
 perfectly	pfc			perfectlies
+wheel	wee			wheels
 veteran	vet			veterans
 disagree	dsg			disagrees
 characteristic	cte			characteristics
 protein	prot			proteins
 resolution	rso			resolutions
 regard	rgr			regards
-engineer	egi			engineers
-depression	drs			depressions
+fewer	few			fewers
+engineer	egn			engineers
+waste	was	wasted	wasting	wastes
+print	pnt	printed	printing	prints
+depression	dro			depressions
+upper	upe			uppers
 visual	via			visuals
 initiative	iat			initiatives
+gate	gt			gates
 whenever	whv			whenevers
+entry	etr			entries
 japanese	jp			japanese
-assistance	asi			assistances
+assistance	asa			assistances
 height	heg			heights
-compete	cpe	competed	competing	competes
+compete	comp	competed	competing	competes
 essentially	esn			essentiallies
+phase	pha			phases
 recover	rcv			recovers
-criticism	cis			criticisms
-faculty	fau			faculties
+criticism	cti			criticisms
+faculty	fay			faculties
 achievement	acv			achievements
 alcohol	alc			alcohols
 therapy	thp			therapies
 offense	ofe			offenses
 killer	kr			killers
 personality	pso			personalities
-landscape	lan			landscapes
+landscape	lad			landscapes
 deeply	dly			deeplies
 reasonable	rab			reasonables
-transition	trn			transitions
-fairly	fay			fairlies
-column	cln			columns
+transition	tan			transitions
+fairly	fil			fairlies
+column	cum			columns
 button	but			buttons
 opponent	one			opponents
 immigrant	img			immigrants
 distribution	dst			distributions
-pregnant	peg			pregnants
+pregnant	pna			pregnants
 unable	ua			unables
 alternative	alt			alternatives
 violent	vio			violents
 portion	port			portions
 acquire	aqu			acquires
-suicide	sic			suicides
-stretch	stc	stretched	stretching	stretches
+suicide	sde			suicides
+stretch	src	stretched	stretching	stretches
 deficit	dfc			deficits
 symptom	smp			symptoms
+solar	sla			solars
 complaint	cpl			complaints
 capable	cab			capables
 analyze	aly	analyzed	analyzing	analyzes
-scared	sae			scareds
-supporter	sor			supporters
+scared	sad			scareds
+supporter	supo			supporters
 twenty	twe			twenties
 pretend	pnd	pretended	pretending	pretends
 philosophy	phi			philosophies
 childhood	chd			childhoods
+lower	low	lowered	lowering	lowers
 wealth	wet			wealths
 welfare	wef			welfares
 poverty	pve			poverties
 prosecutor	psc			prosecutors
 spiritual	spu			spirituals
-double	dob	doubled	doubling	doubles
+double	dub	doubled	doubling	doubles
 evaluate	eva			evaluates
 israeli	isa			israelis
+reply	rpy	replied	replying	replies
 knife	kf			knives
+round	ron			rounds
 detective	dct			detectives
 disorder	dso			disorders
 creature	cru			creatures
-closely	cls			closelies
+closely	csl			closelies
 industrial	idu			industrials
 housing	hoi			housings
 regardless	rge			regardlesses
 numerous	num			numerouses
 command	cmd	commanded	commanding	commands
-shooting	sht			shootings
+shooting	shg			shootings
+dozen	don			dozens
+layer	lay			layers
+bread	bad			breads
 exception	ecp			exceptions
 passion	pas			passions
 highway	hih			highways
 commander	cad			commanders
-extreme	etr			extremes
+extreme	etm			extremes
 publication	pul			publications
-fellow	few			fellows
+fellow	fow			fellows
 mystery	myt			mysteries
-championship	cpi			championships
+championship	cpn			championships
 install	itl			installs
 liberty	liy			liberties
 beneath	beh			beneaths
 passenger	psn			passengers
 physician	phs			physicians
-graduate	gra			graduates
+graduate	grd			graduates
+sharp	sap			sharps
 substance	sub			substances
 atmosphere	ats			atmospheres
 muslim	mul			muslims
 passage	psg			passages
 pepper	pee			peppers
-emphasize	ema	emphasized	emphasizing	emphasizes
+emphasize	ems	emphasized	emphasizing	emphasizes
+cable	cbl			cables
 square	squ			squares
 recipe	rci			recipes
 beside	bes			besides
 vegetable	veg			vegetables
 accomplish	acm			accomplishes
-silent	sln			silents
+habit	hab			habits
 discovery	dsr			discoveries
 recovery	rce			recoveries
-territory	tet			territories
+territory	tey			territories
 girlfriend	gir			girlfriends
 consist	cons	consisted	consisting	consists
-surely	suy			surelies
+surely	sry			surelies
+proof	poo			proofs
 nervous	ner			nervouses
 immediate	imd			immediates
 parking	prk			parkings
 unusual	unu			unusuals
-engineering	egn			engineerings
+engineering	ege			engineerings
 advance	ada			advances
 anonymous	aon			anonymouses
-contemporary	coy			contemporaries
+contemporary	cnp			contemporaries
 jail	jl	jailed	jailing	jails
+rural	rur			rurals
 interpretation	ito			interpretations
 breakfast	brk			breakfasts
-severe	see			severes
+severe	sve			severes
 profile	pfl			profiles
 saving	sav			savings
-adjust	adu			adjusts
+brief	brf			briefs
+adjust	ads			adjusts
 reduction	rdu			reductions
 constantly	cny			constantlies
-assist	ast			assists
+assist	ais			assists
+bitch	bic			bitches
 constant	csa			constants
 permit	pmi	permitted	permitting	permits
-primarily	pia			primarilies
+primarily	pir			primarilies
 entertainment	eta			entertainments
 academy	acy			academies
 teaspoon	tes			teaspoons
-transfer	trs			transfers
-usual	uu			usuals
-clinical	cin			clinicals
+transfer	taf			transfers
+usual	usu			usuals
+clinical	cia			clinicals
+swear	swa	sworn	swearing	swears
 avenue	avn			avenues
-priest	pie			priests
+priest	pst			priests
 employment	epy			employments
 relax	rx	relaxed	relaxing	relaxes
 transform	trm			transforms
+grass	grs			grasses
 narrow	nao			narrows
 ethnic	eth			ethnics
 scholar	scl			scholars
 edition	edo			editions
 abandon	aba			abandons
-practical	pal			practicals
+practical	pct			practicals
 infection	ife			infections
 musical	mua			musicals
 suggestion	sge			suggestions
 resistance	rsa			resistances
+smoke	smo	smoked	smoking	smokes
 prince	pnc			princes
 illness	iln			illnesses
 embrace	emb			embraces
@@ -1497,180 +1761,212 @@ evaluation	evl			evaluations
 opposite	osi			opposites
 awesome	awe			awesomes
 switch	swi	switched	switching	switches
+iraqi	ira			iraqis
 perceive	pci			perceives
 fundamental	fua			fundamentals
 phrase	phr			phrases
 assumption	asm			assumptions
 designer	dsn			designers
 planning	plg			plannings
-leading	led			leadings
+leading	lai			leadings
 widely	wid			widelies
 occasion	oca			occasions
 approximately	ax			approximatelies
-retire	rti	retired	retiring	retires
+retire	rtr	retired	retiring	retires
 elsewhere	els			elsewheres
 festival	fes			festivals
 secure	scu			secures
-attach	ata	attached	attaching	attaches
-mechanism	mec			mechanisms
+attach	atc	attached	attaching	attaches
+mechanism	mch			mechanisms
 intention	ien			intentions
 scenario	snr			scenarios
 incredible	inb			incredibles
-spanish	san			spanishes
-strongly	srn			stronglies
+spanish	sai			spanishes
+strongly	sog			stronglies
 racial	ral			racials
-transportation	trp			transportations
+transportation	tap			transportations
 boyfriend	boy			boyfriends
 consideration	csd			considerations
-retirement	rtr			retirements
+prior	prr			priors
+retirement	rte			retirements
 rarely	rar			rarelies
 joint	jt			joints
 preserve	psr	preserved	preserving	preserves
 enormous	enu			enormouses
 cigarette	cig			cigarettes
-factory	fat			factories
+factory	fct			factories
 valuable	vau			valuables
-electric	elc			electrics
+electric	elt			electrics
+giant	gia			giants
+slave	slv			slaves
 submit	sbm			submits
 effectively	efc			effectivelies
-monitor	moi			monitors
+monitor	mto			monitors
 resolve	rsl			resolves
 remaining	rma			remainings
 participation	pao			participations
-stream	stm			streams
+stream	sem			streams
 origin	ori			origins
 congressional	cng			congressionals
+tower	tor			towers
 license	lic	licensed	licensing	licenses
-twitter	twi			twitters
+twitter	twt			twitters
 impose	imo			imposes
 innocent	ioc			innocents
 curriculum	cuc			curriculums
 insight	isg			insights
 investigator	ivg			investigators
+virus	vir			viruses
 hurricane	hur			hurricanes
 accurate	aur			accurates
-provision	pvi			provisions
+provision	pvo			provisions
 communicate	cmc	communicated	communicating	communicates
 vary	vy			varies
 jacket	jc			jackets
 increasing	ica			increasings
-equally	eqa			equallies
+equally	eql			equallies
 implication	imc			implications
 fiction	fic			fictions
-protest	pst	protested	protesting	protests
+protest	pros	protested	protesting	protests
 mama	mm			mamas
-criteria	cie			criterias
-potentially	pnt			potentiallies
-assault	asa			assaults
+imply	imy	implied	implying	implies
+shock	shc	shocked	shocking	shocks
+criteria	cta			criterias
+dirty	drt			dirties
+potentially	pni			potentiallies
+assault	asl			assaults
+anger	aer			angers
 dramatic	dra			dramatics
 enhance	eha			enhances
+math	mh			maths
+favor	fvo	favored	favoring	favors
 prospect	psp			prospects
-settlement	sem			settlements
+settlement	slm			settlements
 justify	js			justifies
-formal	fom			formals
-virtually	vir			virtuallies
+depth	deh			depths
+juice	juc			juices
+formal	foa			formals
+virtually	vil			virtuallies
 gallery	gal			galleries
 tension	tns			tensions
-throat	toa			throats
+throat	tat			throats
+draft	drf			drafts
 reputation	rpa			reputations
 index	ix			indexes
-normally	nom			normallies
+normally	noa			normallies
+motor	mtr			motors
 enterprise	enp			enterprises
-salary	sal			salaries
-moreover	mor			moreovers
+salary	say			salaries
+moreover	mre			moreovers
 cousin	csn			cousins
 ordinary	oy			ordinaries
 evolution	evo			evolutions
-helpful	hel			helpfuls
+helpful	hep			helpfuls
 competitive	cmv			competitives
 lovely	lov			lovelies
 fishing	fih			fishings
 anxiety	ant			anxieties
 carbon	crb			carbons
+essay	eay			essays
 islamic	ism			islamics
-stranger	sag			strangers
+drama	drm			dramas
+stranger	sng			strangers
 urge	ug	urged	urging	urges
-fifth	ff			fifths
-formula	foa			formulas
-potato	poo			potatoes
+fifth	fif			fifths
+formula	frm			formulas
+potato	pta			potatoes
 monster	mst			monsters
 telephone	tep	telephoned	telephoning	telephones
 excited	eci			exciteds
-criticize	cti	criticized	criticizing	criticizes
-prisoner	pir			prisoners
+criticize	ctc	criticized	criticizing	criticizes
+prisoner	pnr			prisoners
 discipline	dsp			disciplines
 negotiation	nea			negotiations
 butter	bue			butter
-desert	drt	deserted	deserting	deserts
+desert	dee	deserted	deserting	deserts
 complicated	cpc			complicateds
+prize	pze			prizes
+blind	bli	blinded	blinding	blinds
 assign	asg			assigns
 bullet	ble			bullets
-awareness	awa			awarenesses
+awareness	awn			awarenesses
 sequence	sqe			sequences
 illustrate	ilu			illustrates
 provider	pvd			providers
+minor	mno			minors
 activist	atv			activists
 vacation	vac			vacations
+weigh	weg	weighed	weighing	weighs
 gang	gg			gangs
 privacy	piv			privacies
+clock	cok			clocks
 arrange	ara	arranged	arranging	arranges
-penalty	pna			penalties
-stomach	sma			stomachs
+penalty	pnl			penalties
+stomach	smc			stomachs
 concert	conc			concerts
 originally	orn			originallies
-statistics	sai			statisticss
-electronic	elt			electronics
-properly	ply			properlies
+statistics	sas			statisticss
+electronic	elo			electronics
+properly	prop			properlies
 bureau	bur			bureaus
 and/or	a/			and/ors
 classic	csc			classics
 recommendation	rcm			recommendations
 exciting	ect			excitings
+maker	mke			makers
 impression	ims			impressions
 broken	bok			brokens
 battery	bay			batteries
 narrative	nav			narratives
+arise	ars			arises
 delivery	dli			deliveries
 forgive	frg	forgiven	forgiving	forgives
 visible	vib			visibles
 heavily	hey			heavilies
 junior	jun			juniors
 diversity	dve			diversities
-string	sng			strings
+string	stg			strings
 lawsuit	law			lawsuits
-latter	lat			latters
+latter	lae			latters
 deputy	deu			deputies
 restore	rsr			restores
+buddy	buy			buddies
 psychological	psh			psychologicals
-besides	bei			besidess
+besides	bsi			besidess
 intense	its			intenses
 friendly	fry			friendlies
 hungry	hug			hungries
+sauce	sau			sauces
 dominate	doi			dominates
-testing	teg			testings
+testing	tst			testings
+trick	tik	tricked	tricking	tricks
 fantasy	fan			fantasies
 absence	abe			absences
 offensive	ofs			offensives
 symbol	smb			symbols
 recognition	rcg			recognitions
-detect	dee			detects
-tablespoon	tab			tablespoons
+detect	dte			detects
+tablespoon	tae			tablespoons
 construct	csr			constructs
 approval	aro			approvals
 whereas	whr			whereass
 defensive	dfs			defensives
 independence	idn			independences
-apologize	api	apologized	apologizing	apologizes
+apologize	aol	apologized	apologizing	apologizes
+asian	asn			asians
+ghost	gho			ghosts
 involvement	ivo			involvements
 permanent	pma			permanents
-whisper	whi	whispered	whispering	whispers
+whisper	whs	whispered	whispering	whispers
+mouse	mue			mice
 airline	ail			airlines
 founder	fon			founders
 objective	obc			objectives
 nowhere	now			nowheres
 phenomenon	phe			phenomena
 evolve	elv			evolves
-silver	siv			silvers
+exact	eac			exacts
+silver	slr			silvers
 universal	une			universals
 teenager	tna			teenagers
 crucial	cua			crucials
@@ -1678,13 +1974,14 @@ viewer	vw			viewers
 ridiculous	rid			ridiculouses
 chocolate	choc			chocolates
 sensitive	sns			sensitives
-grandmother	grn			grandmothers
+grandmother	grm			grandmothers
 missile	msi			missiles
-roughly	rou			roughlies
+roughly	rog			roughlies
 constitutional	csu			constitutionals
 adventure	ade			adventures
 genetic	gc			genetics
-related	rte			relateds
+related	rela			relateds
+swing	swn	swung	swinging	swings
 ultimate	ult			ultimates
 manufacturer	mau			manufacturers
 unknown	uk			unknowns
@@ -1692,94 +1989,110 @@ survival	sua			survivals
 dimension	dim			dimensions
 resist	ris			resists
 darkness	dar			darknesses
-guarantee	gua	guaranteed	guaranteeing	guarantees
+guarantee	gur	guaranteed	guaranteeing	guarantees
 historic	his			historics
 educator	edc			educators
+rough	roh			roughs
 personnel	psl			personnels
 confront	cfr			confronts
-terrorist	tor			terrorists
-occupy	ocu			occupies
-emphasis	ems			emphases
+terrorist	toi			terrorists
+royal	roy			royals
+elite	eit			elites
+occupy	ocp			occupies
+emphasis	eph			emphases
 destruction	dsu			destructions
+inner	ier			inners
 proceed	pcd	proceeded	proceeding	proceeds
-violate	vil			violates
-finance	fia			finances
-champion	cpn			champions
-advise	ads	advised	advising	advises
+violate	vie			violates
+finance	fae			finances
+champion	cio			champions
+advise	avi	advised	advising	advises
 initially	ity			initiallies
-advanced	adn			advanceds
+advanced	avc			advanceds
 unlikely	uy			unlikelies
-barrier	bai			barriers
-advocate	avo			advocates
-horrible	hor			horribles
-burden	bun			burdens
-violation	vit			violations
+barrier	bie			barriers
+advocate	avt			advocates
+label	lab	labeled	labeling	labels
+horrible	hob			horribles
+burden	bde			burdens
+violation	vin			violations
 unlike	unl			unlikes
+idiot	ido			idiots
 lifetime	lif			lifetimes
-working	wok			workings
+working	woi			workings
 ongoing	ong			ongoings
 routine	rot			routines
-presentation	psi			presentations
+presentation	pno			presentations
 mexican	mex			mexicans
-stadium	sad			stadiums
-translate	tan	translated	translating	translates
+stadium	sdu			stadiums
+translate	tnl	translated	translating	translates
 mortgage	mog			mortgages
-sheriff	she			sheriffs
-clinic	cii			clinics
-coalition	cio			coalitions
+sheriff	sef			sheriffs
+clinic	cc			clinics
+coalition	cto			coalitions
 naturally	nal			naturallies
 hopefully	hop			hopefullies
-smooth	smo			smooths
+smooth	smt			smooths
 advertising	avr			advertisings
-interpret	ier			interprets
+interpret	iep			interprets
 dismiss	dsm			dismisses
-apparent	apn			apparents
-arrangement	arn			arrangements
+apparent	arn			apparents
+arrangement	arm			arrangements
 incorporate	ico			incorporates
+split	spl			splits
 brilliant	bia			brilliants
-storage	sog			storages
-framework	fra			frameworks
-honestly	hot			honestlies
+storage	stor			storages
+framework	frw			frameworks
+honestly	hoy			honestlies
 assure	asr	assured	assuring	assures
 utility	uti			utilities
 aggressive	ags			aggressives
-cookie	cok			cookies
+cookie	cki			cookies
 terror	teo			terrors
 wealthy	weh			wealthies
 update	upa			updates
-alliance	ali			alliances
+forum	fum			forums
+alliance	ala			alliances
 possess	pose	possessed	possessing	possesses
-empire	emi			empires
+empire	epr			empires
 curious	cuo			curiouses
 calculate	calc	calculated	calculating	calculates
-testimony	tey			testimonies
+hurry	huy	hurried	hurrying	hurries
+testimony	tsi			testimonies
 elementary	eln			elementaries
+stake	sak			stakes
 precisely	pcs			preciselies
+given	giv			givens
 substantial	sbs			substantials
 depending	dni			dependings
 glance	gla			glances
 tissue	tis			tissues
-concentration	cei			concentrations
+concentration	ctn			concentrations
 developer	dvl			developers
+found	fod	founded	founding	founds
 ballot	bao			ballots
 consume	csm			consumes
 overcome	ovr			overcomes
 biological	bio			biologicals
 chamber	chb			chambers
-similarly	sir			similarlies
+similarly	siy			similarlies
 developing	dvp			developings
-expansion	epa			expansions
+tiger	tig			tigers
+ratio	rto			ratios
+lover	lor			lovers
+expansion	ean			expansions
 encounter	ecu			encounters
 occasionally	ocs			occasionallies
 unemployment	unp			unemployments
-laboratory	lab			laboratories
+awful	awf			awfuls
+laboratory	lao			laboratories
 administrator	ami			administrators
 quarterback	qb			quarterbacks
 rocket	roc			rockets
 preparation	prep			preparations
 relative	rav			relatives
 confident	cfe			confidents
-strategic	srt			strategics
+strategic	sac			strategics
 marine	mri			marines
 publisher	puh			publishers
 innovation	iov			innovations
@@ -1787,173 +2100,209 @@ highlight	hil	highlighted	highlighting	highlights
 fighter	fit			fighters
 electricity	ely			electricities
 instance	isn			instances
-fortune	frt			fortunes
+fortune	ftu			fortunes
 freeze	fee	frozen	freezing	freezes
 variation	vai			variations
+armed	ard			armeds
 negotiate	ngo			negotiates
 laughter	lag			laughters
 wisdom	wio			wisdoms
 correspondent	crd			correspondents
 mixture	mix			mixtures
-assistant	asn			assistants
+assistant	ait			assistants
 retain	rta			retains
 tomato	tma			tomatoes
 testify	tef	testified	testifying	testifies
 ingredient	igr			ingredients
 galaxy	gx			galaxies
 qualify	ql			qualifies
-scheme	scm			schemes
-concentrate	cta	concentrated	concentrating	concentrates
+scheme	shm			schemes
+concentrate	cone	concentrated	concentrating	concentrates
 contest	cts			contests
 introduction	itu			introductions
 boundary	bou			boundaries
+tube	tb			tubes
 versus	ver			versuses
 regularly	rgy			regularlies
-tongue	tou			tongues
-palestinian	pni			palestinians
-fiscal	fil			fiscals
+screw	srw	screwed	screwing	screws
+tongue	tng			tongues
+palestinian	pale			palestinians
+fiscal	fsc			fiscals
+creek	crk			creeks
 accompany	acp			accompanies
-terrorism	toi			terrorisms
+terrorism	tos			terrorisms
 respondent	rsn			respondents
 narrator	nra			narrators
-voting	vot			votings
+voting	voi			votings
 refugee	rfg			refugees
 assembly	asb			assemblies
+fraud	fad			frauds
 limitation	lia			limitations
 partnership	pah			partnerships
+crash	crh	crashed	crashing	crashes
 representation	rps			representations
 ministry	miy			ministries
 register	rgs			registers
 comedy	cmy			comedies
 infrastructure	ifr			infrastructures
 organic	ora			organics
+islam	ila			islams
 diverse	dvr			diverses
 intellectual	iel			intellectuals
+tight	tih			tights
 absolute	abl			absolutes
 dialogue	dal			dialogues
 frequency	frc			frequencies
+tribe	trb			tribes
 external	etn			externals
 appointment	aoi			appointments
 convert	cvr			converts
-surprising	srs			surprisings
+surprising	surp			surprisings
 mobile	mob			mobiles
 establishment	esb			establishments
-worried	woi			worrieds
-shopping	shp			shoppings
+worried	wre			worrieds
+shopping	sop			shoppings
 celebrity	ceb			celebrities
 congressman	cgr			congressmen
 impress	ipr	impressed	impressing	impresses
 taxpayer	tax			taxpayers
+adapt	adp			adapts
 publicly	puy			publiclies
-clothing	clh			clothings
+pride	pid			prides
+clothing	cth			clothings
 rapidly	rap			rapidlies
 domain	doa			domains
 mainly	mal			mainlies
 ceiling	ceg			ceilings
-shelter	shl	sheltered	sheltering	shelters
+alter	alr			alters
+shelter	shel	sheltered	sheltering	shelters
 random	ram			randoms
 obligation	obl			obligations
 shower	shw			showers
-asleep	asl			asleeps
+asleep	alp			asleeps
 musician	mun			musicians
 extraordinary	eto			extraordinaries
-ceremony	cem			ceremonies
-guideline	gud			guidelines
+ceremony	cey			ceremonies
+guideline	gun			guidelines
 comfort	cfo	comforted	comforting	comforts
 pregnancy	pny			pregnancies
 borrow	bow	borrowed	borrowing	borrows
 conventional	cvt			conventionals
-tourist	tos			tourists
+tourist	tus			tourists
 incentive	icn			incentives
-custom	cum			customs
-tournament	tur			tournaments
-satellite	slt			satellites
+custom	cso			customs
+cheek	chk			cheeks
+tournament	tun			tournaments
+satellite	sate			satellites
 nearby	neb			nearbies
-comprehensive	coh			comprehensives
+comprehensive	cph			comprehensives
 stable	sab			stables
 medication	mdi			medications
 script	scp			scripts
 educate	eda	educated	educating	educates
 efficient	efi			efficients
 psychology	pyc			psychologies
+logic	log			logics
 economics	ecn			economicss
 nevertheless	nev			neverthelesses
-thirty	thy			thirties
+thirty	tiy			thirties
 charity	chy			charities
+fiber	fib			fibers
+ideal	ida			ideals
 friendship	fp			friendships
-motivation	moa			motivations
+motivation	mti			motivations
 differently	dfr			differentlies
 reserve	rese			reserves
 observer	ose			observers
-humanity	hum			humanities
+humanity	hua			humanities
 survivor	surv			survivors
+fence	fen	fenced	fencing	fences
 quietly	qy			quietlies
+humor	huo			humors
 funeral	fue			funerals
 spokesman	sok			spokesmen
 extension	ets			extensions
+loose	los			looses
 historian	hit			historians
-chemical	cia			chemicals
-singer	sne			singers
-specialist	spl			specialists
+chemical	cil			chemicals
+singer	sgr			singers
+drunk	dru			drunks
+onion	ono			onions
+specialist	scs			specialists
 missing	mig			missings
 distribute	dsb			distributes
+silly	sly			sillies
 reflection	rfl			reflections
-shortly	shr			shortlies
+shortly	shy			shortlies
 database	dat			databases
 remote	rmo			remotes
 permission	pms			permissions
 remarkable	rek			remarkables
 everyday	evr			everydays
 lifestyle	lil			lifestyles
+sweep	swp			sweeps
 naked	nd			nakeds
 sufficient	sfi			sufficients
-consumption	cnp			consumptions
+consumption	csp			consumptions
 capability	cpy			capabilities
 emission	eio			emissions
 sidebar	sib			sidebars
 dealer	dae			dealers
 measurement	meu			measurements
+vital	vta			vitals
 impressive	imv			impressives
 fantastic	fta			fantastics
-adviser	avi			advisers
+adviser	aie			advisers
 yield	yi	yielded	yielding	yields
 imagination	imt			imaginations
 radical	rdi			radicals
 tragedy	trg			tragedies
-consultant	csl			consultants
+scary	scy			scaries
+consultant	conu			consultants
 lieutenant	lin			lieutenants
-attractive	atc			attractives
+upset	ups	upset	upsetting	upsets
+attractive	arc			attractives
 drawing	drw			drawings
 defeat	dfa			defeats
+newly	new			newlies
 scandal	snd			scandals
 ambassador	amb			ambassadors
+bench	bnc			benches
 counter	coun	countered	countering	counters
 horror	hro			horrors
 vulnerable	vul			vulnerables
 prevention	pvn			preventions
 segment	sgm			segments
 constitute	ctu			constitutes
+badly	bly			badlies
+bless	bls	blessed	blessing	blesses
 literary	lte			literaries
+magic	mgi			magics
 implementation	ipl			implementations
 legitimate	lem			legitimates
 slight	slg			slights
+strip	stp	stripped	stripping	strips
 desperate	desp			desperates
 distant	dnt			distants
 preference	pfr			preferences
 politically	plc			politicallies
 feedback	fec			feedbacks
 italian	ial			italians
-detailed	dai			detaileds
-cooperation	cpr			cooperations
+detailed	dle			detaileds
+buyer	bye			buyers
+cooperation	cope			cooperations
 profession	pfs			professions
 incredibly	icd			incrediblies
 orange	ore			oranges
 killing	kil			killings
-photographer	pht			photographers
+photographer	phg			photographers
 running	run			runnings
 engagement	ega			engagements
 differ	dff			differs
+pitch	pih			pitches
 extensive	eti			extensives
+salad	saa			salads
+grace	grc			graces
 divorce	dvc	divorced	divorcing	divorces
 vessel	ves			vessels
 assignment	aig			assignments
@@ -1963,31 +2312,35 @@ canadian	cdi			canadians
 efficiency	efy			efficiencies
 memorial	mol			memorials
 proposed	psd			proposeds
-entity	eny			entities
+entity	ety			entities
 iphone	iph			iphones
-punishment	pun			punishments
+punishment	pum			punishments
+pause	pau	paused	pausing	pauses
 romantic	rom			romantics
 economist	ecm			economists
+latin	lti			latins
 decent	dcn			decents
+craft	cft			craft
 poetry	poe			poetries
-thread	ted			threads
 wooden	wde			woodens
 confuse	cfu			confuses
-privilege	pil			privileges
+privilege	pig			privileges
 characterize	cze			characterizes
 decrease	dcr			decreases
 resort	ror			resorts
 legacy	lec			legacies
 frankly	frk			franklies
 cancel	cce			cancels
-derive	drv			derives
-formation	frm			formations
-grandfather	grd			grandfathers
+scope	soe			scopes
+formation	fti			formations
+grandfather	grf			grandfathers
+hence	hen			hences
 margin	mrg			margins
+wound	wou			wounds
 exhibition	exb			exhibitions
 legislature	lel			legislatures
 furthermore	fur			furthermores
-portrait	pit			portraits
+portrait	pora			portraits
 sustain	sust			sustains
 uniform	uno			uniforms
 painful	paf			painfuls
@@ -1997,146 +2350,169 @@ tactic	tac			tactics
 inflation	ifa			inflations
 hunting	hut			huntings
 physically	phc			physicallies
+flesh	fle			fleshes
 temporary	tmp			temporaries
-steady	sed			steadies
+nerve	nrv			nerves
+steady	sdy			steadies
 headline	hed			headlines
-sudden	sde			suddens
-successfully	scs			successfullies
+sudden	sdn			suddens
+successfully	scf			successfullies
 defendant	dfd			defendants
-satisfy	sas	satisfied	satisfying	satisfies
+satisfy	sfy	satisfied	satisfying	satisfies
 entrance	etc			entrances
 aircraft	aic			aircraft
 withdraw	wih			withdraws
 cabinet	cbi			cabinets
-repeatedly	rpy			repeatedlies
+repeatedly	ray			repeatedlies
 happiness	hap			happinesses
 admission	ams			admissions
-correlation	cto			correlations
-proportion	prop			proportions
+correlation	core			correlations
+proportion	pror			proportions
 dispute	dut			disputes
+candy	cdy			candies
 reward	rew			rewards
-counselor	cso			counselors
+counselor	cous			counselors
 recording	rcr			recordings
-explosion	elo			explosions
+explosion	eso			explosions
 appoint	aot			appoints
+couch	cuh			couches
 cognitive	cgn			cognitives
-furniture	fir			furniture
+furniture	ftr			furniture
 significance	sgn			significances
-grateful	grt			gratefuls
+grateful	gru			gratefuls
 commissioner	comi			commissioners
-tremendous	tru			tremendouses
+shelf	slf			shelves
+tremendous	teu			tremendouses
 warrior	wai			warriors
 physics	pyi			physicss
 garage	gag			garages
 flavor	fla			flavors
 squeeze	sze	squeezed	squeezing	squeezes
-prominent	pme			prominents
-satisfaction	sac			satisfactions
+prominent	pmt			prominents
+fifty	fiy			fifties
+oven	oe			ovens
+satisfaction	sao			satisfactions
 discrimination	dcm			discriminations
 recession	rcs			recessions
-allegation	ale			allegations
+allegation	alg			allegations
 weekly	wey			weeklies
-lately	lae			latelies
+lately	lal			latelies
 restriction	rsc			restrictions
 diamond	dao			diamonds
+crack	cak	cracked	cracking	cracks
 conviction	cvc			convictions
+shine	shn			shines
 playoff	plo			playoffs
-actress	ars			actresses
+actress	actr			actresses
 format	fma			formats
 controversy	ctv			controversies
-grocery	grc			groceries
+grocery	gry			groceries
 headquarters	heu			headquarters
 regulate	rul			regulates
+meter	mte			meters
 olympic	oly			olympics
-celebration	clb			celebrations
+celebration	cbr			celebrations
 handful	had			handfuls
-copyright	cph			copyrights
+copyright	cyr			copyrights
 dependent	dne			dependents
 signature	sga			signatures
 bishop	bis			bishops
 strengthen	srh	strengthened	strengthening	strengthens
 entitle	etl			entitles
-whoever	who			whoevers
+whoever	wov			whoevers
 carrier	cari			carriers
 anniversary	anv			anniversaries
+pizza	pza			pizzas
 ethics	ehi			ethicss
 legend	lge			legends
+eagle	eag			eagles
 scholarship	shs			scholarships
 membership	meb			memberships
-standing	sdn			standings
+standing	stan			standings
 possession	posi			possessions
-treaty	try			treaties
+treaty	tay			treaties
 partly	prl			partlies
 consciousness	coni			consciousnesses
 manufacturing	maf			manufacturings
 announcement	aou			announcements
 makeup	map			makeups
-prediction	pct			predictions
-stability	say			stabilities
+prediction	pco			predictions
+stability	sbi			stabilities
+trace	tce	traced	tracing	traces
 norm	nm			norms
+irish	iri			irishes
 genius	gei			geniuses
 gently	get			gentlies
 operator	opa			operators
+rumor	rum			rumors
 tendency	tnd			tendencies
 subsequent	sbe			subsequents
+alien	ain			aliens
 explode	eld	exploded	exploding	explodes
 controversial	ctl			controversials
-maintenance	mte			maintenances
+maintenance	mtn			maintenances
 courage	cug			courages
 exceed	ecd			exceeds
-principal	pip			principals
+principal	pnp			principals
 vaccine	van			vaccines
 identification	idf			identifications
 sandwich	saw			sandwiches
 twelve	twl			twelves
 mainstream	mam			mainstreams
-presidency	pid			presidencies
+presidency	piy			presidencies
 integrity	ieg			integrities
 distinct	dist			distincts
 intelligent	iei			intelligents
-secondary	scy			secondaries
+secondary	soy			secondaries
 hypothesis	hyp			hypotheses
-fifteen	fif			fifteens
+fifteen	fte			fifteens
 nomination	non			nominations
+delay	dla	delayed	delaying	delays
 adjustment	aju			adjustments
-sanction	sao			sanctions
+sanction	sno			sanctions
 render	rnd			renders
 acceptable	acb			acceptables
 mutual	mut			mutuals
-examination	eam			examinations
+examination	eai			examinations
 meaningful	mef			meaningfuls
 communist	comu			communists
 superior	supe			superiors
 currency	cuy			currencies
 collective	clv			collectives
+flame	flm			flames
 guitar	gut			guitars
 doctrine	dot			doctrines
+float	flt	floated	floating	floats
 commerce	come			commerces
 invent	ivn	invented	inventing	invents
+robot	rob			robots
+rapid	rpi			rapids
 respectively	rpc			respectivelies
 particle	pcl			particles
+glove	glv			gloves
 moderate	mde			moderates
 infant	ift			infants
 summary	smr			summaries
 server	srr			servers
-leather	leh			leathers
+leather	lah			leathers
 radiation	rda			radiations
 prompt	pmp			prompts
-composition	cps			compositions
+composition	como			compositions
 operating	ort			operatings
-assert	aer	asserted	asserting	asserts
+assert	aet	asserted	asserting	asserts
 discourse	dco			discourses
 wildlife	wif			wildlives
-soccer	soe			soccers
+soccer	scc			soccers
 mandate	mda			mandates
 downtown	dow			downtowns
 nightmare	nig			nightmares
 barrel	brr			barrels
 homeless	hom			homelesses
+globe	glb			globes
 uncomfortable	unc			uncomfortables
 execute	eut			executes
 gesture	ges			gestures
-receiver	riv			receivers
+receiver	rir			receivers
 horizon	hri			horizons
 diagnosis	das			diagnoses
 considerable	csb			considerables
@@ -2145,26 +2521,31 @@ automatically	auo			automaticallies
 fighting	fgh			fightings
 stroke	srk	stroked	stroking	strokes
 wander	wan	wandered	wandering	wanders
+grain	gri			grains
+beast	bst			beasts
 remark	rmr			remarks
 fabric	fab			fabrics
-civilization	civ			civilizations
+civilization	cvl			civilizations
 corruption	cup			corruptions
 collapse	clp			collapses
 ma'am	m'			ma'ams
-greatly	gre			greatlies
+greatly	gel			greatlies
 workshop	wos			workshops
 inquiry	iqu			inquiries
 admire	amr	admired	admiring	admires
 exclude	elu			excludes
+rifle	rif			rifles
 closet	coe			closets
-reporting	rpi			reportings
-touchdown	toc			touchdowns
-experimental	epr			experimentals
-earnings	ear			earningss
+reporting	rpn			reportings
+curve	cuv	curved	curving	curves
+patch	pch			patches
+touchdown	tod			touchdowns
+experimental	epm			experimentals
+earnings	ern			earningss
 hunter	hue			hunters
-tunnel	tun			tunnels
+tunnel	tul			tunnels
 behave	bev	behaved	behaving	behaves
-motivate	mti			motivates
+motivate	mtv			motivates
 attribute	atu			attributes
 elderly	ede			elderlies
 virtual	vrt			virtuals
@@ -2172,123 +2553,142 @@ minimum	mim			minimums
 weakness	wak			weaknesses
 progressive	pog			progressives
 medium	mdu			mediums
-virtue	vie			virtues
+virtue	vru			virtues
+ounce	oun			ounces
 athletic	atl			athletics
 confusion	cfs			confusions
-legislative	lev			legislatives
-facilitate	fae			facilitates
+legislative	lgi			legislatives
+facilitate	fci			facilitates
 midnight	mih			midnights
 undergo	unr			undergoes
-heritage	het			heritages
-summit	smi			summits
+heritage	hrt			heritages
+summit	sui			summits
+sword	swo			swords
 telescope	tle			telescopes
-donate	don			donates
+donate	dna			donates
+blade	bld			blades
 agriculture	agi			agricultures
-enforce	efr			enforces
+enforce	ere			enforces
 recruit	rcu			recruits
 concerning	crg			concernings
 integrate	iea			integrates
 prescription	pcr			prescriptions
 retail	rtl			retails
-adoption	aop			adoptions
-monthly	moh			monthlies
-deadly	dad			deadlies
+adoption	aio			adoptions
+monthly	moy			monthlies
+deadly	day			deadlies
+grave	grv			graves
 reliable	ria			reliables
-transaction	trc			transactions
-consistently	cil			consistentlies
+transaction	tao			transactions
+consistently	ciy			consistentlies
+mount	mnt			mounts
 bubble	bub	bubbled	bubbling	bubbles
-briefly	brf			brieflies
-absorb	abr			absorbs
-princess	pne			princesses
-blanket	bla			blankets
+briefly	bry			brieflies
+absorb	aor			absorbs
+princess	pns			princesses
+blanket	blk			blankets
 kingdom	km			kingdoms
 anticipate	anp			anticipates
 dedicate	dca			dedicates
 nominee	nin			nominees
-transformation	tas			transformations
+transformation	tam			transformations
 temple	tml			temples
 arrival	aiv			arrivals
-frustration	frs			frustrations
+frustration	fus			frustrations
 changing	cgi			changings
 demonstration	dms			demonstrations
 pollution	put			pollutions
-poster	pte			posters
+poster	ptr			posters
 nonprofit	nop			nonprofits
-guidance	gun			guidances
+guidance	guc			guidances
 exhibit	ehb			exhibits
 interrupt	ieu	interrupted	interrupting	interrupts
-bankruptcy	ban			bankruptcies
+lemon	lmo			lemons
+bankruptcy	bau			bankruptcies
 resign	rsg			resigns
 dominant	dmi			dominants
 invasion	iva			invasions
-sacred	srd			sacreds
 replacement	rpm			replacements
-portray	pora			portrays
+portray	pory			portrays
 distinguish	dih			distinguishes
-consensus	cone			consensuses
+consensus	cose			consensuses
 hardware	haw			hardwares
 korean	ka			koreans
+cabin	cbn			cabins
 dining	dng			dinings
+snake	snk			snakes
 tobacco	tob			tobaccos
 orientation	oro			orientations
-trigger	tig			triggers
-wherever	wer			wherevers
-punish	pns	punished	punishing	punishes
+trigger	tie			triggers
+wherever	wev			wherevers
+punish	pui	punished	punishing	punishes
 depict	dpi			depicts
-input	iu			inputs
+input	ipu			inputs
 seemingly	smg			seeminglies
 widespread	wip			widespreads
-competitor	comp			competitors
+competitor	comt			competitors
 freshman	frh			freshmen
-donation	dna			donations
+donation	dno			donations
 administrative	amt			administratives
-gradually	gru			graduallies
+donor	dor			donors
+gradually	gad			graduallies
 overlook	ovl			overlooks
 toilet	tol			toilets
 pleased	pld			pleaseds
 resemble	rsm			resembles
-ideology	ido			ideologies
+ideology	idl			ideologies
+glory	gly			glories
 maximum	max			maximums
+organ	oga			organs
 starting	star			startings
+brush	bru	brushed	brushing	brushes
+brick	brc			bricks
 reservation	rvt			reservations
+rebel	rbe			rebels
 disappointed	dsd			disappointeds
+valid	vad			valids
 instructor	isc			instructors
 rescue	rsu	rescued	rescuing	rescues
 racism	rim			racisms
-pension	pno			pensions
+pension	pens			pensions
 diabetes	dab			diabetes
 cluster	clus			clusters
+eager	egr			eagers
 marijuana	mru			marijuanas
 combat	cba			combats
 costume	ctm			costumes
+sixth	six			sixths
 frequent	feu			frequents
 inspiration	iso			inspirations
 concrete	conr			concretes
-cooking	cki			cookings
-conspiracy	csp			conspiracies
+cooking	ckn			cookings
+conspiracy	cry			conspiracies
 institutional	ion			institutionals
 garlic	gai			garlics
 drinking	drn			drinkings
-crystal	cry			crystals
+crystal	cyt			crystals
 helicopter	hec			helicopters
-counsel	cous			counsels
+counsel	coue			counsels
 equation	eqt			equations
-sophisticated	sop			sophisticateds
+roman	roa			romen
+sophisticated	soph			sophisticateds
 timing	tim			timings
+opera	oer			operas
 ethical	ehc			ethicals
 indication	idc			indications
-motive	mtv			motives
+motive	miv			motives
+porch	poh			porches
 reinforce	rin			reinforces
-written	wre			writtens
+written	wrn			writtens
 reverse	rvr	reversed	reversing	reverses
 starter	stat			starters
 injure	iju	injured	injuring	injures
 chronic	chro			chronics
-continued	ctn			continueds
+continued	cid			continueds
 exclusive	ecs			exclusives
 colonel	colo			colonels
-abroad	ard			abroads
-thanksgiving	thk			thanksgivings
+abroad	aoa			abroads
+thanksgiving	thv			thanksgivings
 intensity	iet			intensities
 basement	bam			basements
 associated	asd			associateds
@@ -2299,361 +2699,419 @@ essence	esen			essences
 container	cont			containers
 driving	drg			drivings
 dynamic	dyn			dynamics
+plead	pad	pleaded	pleading	pleads
 promotion	pmo			promotions
 uncertainty	una			uncertainties
 ownership	own			ownerships
 officially	ofc			officiallies
-documentary	dor			documentaries
+documentary	doy			documentaries
+flood	fld	flooded	flooding	floods
+guilt	gil			guilts
+alarm	alm			alarms
 turkey	tuk			turkeys
-diagnose	dno			diagnoses
-precious	pco			preciouses
-swallow	swa			swallows
+diagnose	dns			diagnoses
+precious	pcu			preciouses
+swallow	swl			swallows
 initiate	iae			initiates
 fitness	ftn			fitnesses
 restrict	rtc			restricts
+mommy	mmm			mommies
 unexpected	ux			unexpecteds
 agricultural	agc			agriculturals
-sacrifice	scf			sacrifices
-spectrum	srm			spectrums
-dragon	dro			dragons
+sacrifice	srf			sacrifices
+spectrum	spec			spectrums
+dragon	dgo			dragons
 bacteria	bct			bacterias
 pastor	pto			pastors
+cliff	clf			cliffs
 adequate	aeu			adequates
 tackle	tak			tackles
-occupation	ocp			occupations
-compose	como			composes
+occupation	oci			occupations
+compose	coms			composes
+brave	brv			braves
 stimulus	smu			stimuli
 patent	ptn			patents
 powder	pwd			powders
-harsh	hh			harshes
-surprisingly	sry			surprisinglies
-correctly	cey			correctlies
+harsh	has			harshes
+surprisingly	spy			surprisinglies
+correctly	cty			correctlies
 govern	gor			governs
 modest	mds			modests
-shared	shd			shareds
 psychologist	pyh			psychologists
 servant	serv			servants
 overwhelming	ovw			overwhelmings
 elevator	ela			elevators
 hispanic	hip			hispanics
 divine	dvn			divines
-transmission	tam			transmissions
-commonly	cly			commonlies
+transmission	tni			transmissions
+commonly	coml			commonlies
 cowboy	cow			cowboys
 intent	inn			intents
 counseling	csg			counselings
-gentle	gel			gentles
+gentle	gnt			gentles
 rhythm	rhy			rhythms
 complexity	cpx			complexities
-nonetheless	nol			nonethelesses
+nonetheless	neh			nonethelesses
 effectiveness	eft			effectivenesses
 lonely	lon			lonelies
 statistical	stai			statisticals
-longtime	log			longtimes
+longtime	lot			longtimes
 garbage	gab			garbages
 devote	dvt			devotes
 venture	ven	ventured	venturing	ventures
 subtle	sbl			subtles
-civilian	cvl			civilians
+civilian	cva			civilians
 endure	end			endures
 basket	bsk			baskets
-strict	src			stricts
+loser	lse			losers
 franchise	fah			franchises
 prosecution	psu			prosecutions
 lyrics	lyr			lyricss
-compound	cpu			compounds
-architecture	arc			architectures
+compound	cud			compounds
+architecture	arh			architectures
 destination	dest			destinations
 province	pvc			provinces
-lecture	leu	lectured	lecturing	lectures
+lecture	lct	lectured	lecturing	lectures
+spill	sll	spilt	spilling	spills
 genuine	geu			genuines
-upstairs	ups			upstairss
-trading	tad			tradings
+upstairs	upi			upstairss
+trading	tag			tradings
 acceptance	acn			acceptances
 revelation	rvl			revelations
-indicator	ida			indicators
+indicator	idr			indicators
 collaboration	cbo			collaborations
 rhetoric	rhe			rhetorics
 inevitable	iev			inevitables
 monkey	mok			monkeys
 protocol	proc			protocols
 productive	puv			productives
+jeans	jea			jeanss
 companion	coma			companions
 convict	conv			convicts
+boost	bos			boosts
 recipient	rcp			recipients
 practically	pca			practicallies
+array	ary			arrays
 persuade	pua			persuades
 undermine	ude			undermines
+ranch	rah			ranches
+medal	mdl			medals
 endless	edl			endlesses
-translation	tat			translations
+translation	tnt			translations
 conservation	cev			conservations
-habitat	hab			habitats
-contractor	ctc			contractors
-trailer	tai			trailers
-pitcher	pih			pitchers
+habitat	hai			habitats
+contractor	cona			contractors
+trailer	trai			trailers
+pitcher	pitc			pitchers
+towel	toe			towels
 goodbye	god			goodbyes
-dramatically	drm			dramaticallies
+bonus	bon			bonuses
+dramatically	dry			dramaticallies
+genre	gnr			genres
 caller	cll			callers
 hook	hk	hooked	hooking	hooks
 behavioral	ber			behaviorals
 boring	boi			borings
 suspend	susp	suspended	suspending	suspends
 cholesterol	chol			cholesterols
-closed	cld			closeds
-advertisement	avt			advertisements
+closed	ced			closeds
+advertisement	avm			advertisements
 bombing	bom			bombings
-consult	conu			consults
+consult	conl			consults
 expertise	ert			expertises
 creator	crea			creators
-peaceful	pau			peacefuls
+peaceful	pcf			peacefuls
 provided	prov			provideds
-tablet	tae			tablets
+tablet	tlt			tablets
 ruling	rug			rulings
 warming	wam			warmings
 equity	eqi			equities
-rational	rto			rationals
+rational	ril			rationals
 utilize	utl			utilizes
-bitter	bit			bitters
+bitter	btt			bitters
 surgeon	sgo			surgeons
 affordable	afd			affordables
-tennis	tni			tenniss
-artistic	ais			artistics
+tennis	tnn			tenniss
+artistic	arti			artistics
 download	dod			downloads
 suffering	sfe			sufferings
 accuracy	aua			accuracies
 literacy	ltr			literacies
-treasury	teu			treasuries
+treasury	tau			treasuries
 talented	tln			talenteds
-importantly	imy			importantlies
+crown	crw			crowns
+importantly	ipo			importantlies
 invisible	ivb			invisibles
 sergeant	serg			sergeants
 regulatory	rgo			regulatories
+thumb	thb			thumbs
 colony	coo			colonies
 walking	wal			walkings
 accessible	acl			accessibles
 integration	iga			integrations
-spouse	sos			spouses
-excitement	eit			excitements
+spouse	ss			spouses
+excitement	eie			excitements
 residence	rsd			residences
 adolescent	adl			adolescents
-greek	gk			greeks
+greek	grk			greeks
 oxygen	ox			oxygens
-gravity	grv			gravities
+gravity	gav			gravities
 functional	fuo			functionals
 palace	paa			palaces
+echo	eo	echoed	echoing	echoes
 cotton	ctt			cottons
 estimated	esm			estimateds
 endorse	edr			endorses
 lawmaker	lam			lawmakers
 determination	dma			determinations
-simultaneously	siy			simultaneouslies
+flash	fls	flashed	flashing	flashes
+simultaneously	sms			simultaneouslies
 dynamics	dya			dynamicss
-administer	ain			administers
-christianity	ciy			christianities
-distract	drc			distracts
-alleged	alg			allegeds
-statute	sau			statutes
+administer	admi			administers
+christianity	chri			christianities
+distract	disr			distracts
+alleged	ald			allegeds
+statute	stau			statutes
 biology	big			biologies
-follower	fow			followers
+follower	fwe			followers
+nasty	nas			nasties
 evident	evd			evidents
 confess	cofe	confessed	confessing	confesses
 eligible	elg			eligibles
-consent	cose	consented	consenting	consents
-bloody	bld			bloodies
-occasional	oci			occasionals
+consent	cosn	consented	consenting	consents
+bloody	bod			bloodies
+occasional	oco			occasionals
+trunk	tnk			trunks
 prohibit	prh			prohibits
 sustainable	snb			sustainables
+belly	bll			bellies
 banking	bag			bankings
 asshole	ash			assholes
 journalism	jor			journalisms
 obstacle	ost			obstacles
-bastard	bad			bastards
+ridge	rde			ridges
+bastard	bsa			bastards
 apology	apy			apologies
-architect	arh			architects
+tumor	tum			tumors
+architect	ahi			architects
+wrist	wrs			wrists
 harbor	hao			harbors
-handsome	has			handsomes
+handsome	ham			handsomes
 bullshit	bus			bullshits
+realm	rlm			realms
+twist	tws	twisted	twisting	twists
 inspector	ise			inspectors
-surveillance	sla			surveillances
-trauma	tau			traumas
+surveillance	sure			surveillances
+trauma	tua			traumas
 rebuild	rbu			rebuilds
-romance	roa			romances
+romance	rmc			romances
+gross	gss			grosses
 deadline	dln			deadlines
 classical	clas			classicals
 convey	cvy			conveys
-compensation	coms			compensations
+compensation	copn			compensations
 insect	ict			insects
 output	out			outputs
 parliament	pam			parliaments
 opposed	osd			opposeds
-separation	son			separations
-eating	eai			eatings
+separation	sepa			separations
+demon	deo			demons
+eating	ein			eatings
 structural	stru			structurals
-equality	eql			equalities
+equality	eqy			equalities
 logical	loi			logicals
 probability	prb			probabilities
+await	awi			awaits
 generous	gne			generouses
 acquisition	aqi			acquisitions
-custody	cud			custodies
+custody	cust			custodies
 compromise	cpm			compromises
+greet	gee	greeted	greeting	greets
+trash	trh			trashes
 judicial	jud			judicials
 earthquake	ek			earthquakes
 insane	ian			insanes
 realistic	rit			realistics
 assemble	aem			assembles
 necessity	nec			necessities
-parameter	pmt			parameters
+parameter	pmr			parameters
 grip	gp	gripped	gripping	grips
 modify	mof			modifies
-sponsor	sno			sponsors
-mathematics	mah			mathematicss
+sponsor	spon			sponsors
+mathematics	mth			mathematicss
 hallway	hal			hallways
-liability	lai			liabilities
-theoretical	thc			theoreticals
+liability	lbi			liabilities
+crawl	caw	crawled	crawling	crawls
+theoretical	thl			theoreticals
 condemn	cde			condemns
+fluid	flu			fluids
 homeland	hoa			homelands
-technological	tch			technologicals
+technological	tcn			technologicals
 anchor	aho			anchors
-considering	cid			considerings
+considering	cdr			considerings
 conscious	cono			consciouses
 vitamin	vm			vitamins
 known	kw			knowns
 hostage	hog			hostages
 actively	aty			activelies
-teenage	tng			teenages
+teenage	tne			teenages
 retrieve	rtv			retrieves
 processing	pcn			processings
-sentiment	sme			sentiments
+sentiment	sent			sentiments
 offering	ofr			offerings
 convinced	cvd			convinceds
-photography	phg			photographies
+photography	php			photographies
 laptop	lap			laptops
-bounce	bon	bounced	bouncing	bounces
+bounce	boc	bounced	bouncing	bounces
 goodness	gon			goodnesses
 affiliation	afl			affiliations
-blessing	bls			blessings
+punch	pnh	punched	punching	punches
+blessing	blg			blessings
 continuous	coti			continuouses
-landing	lad			landings
-repair	rir	repaired	repairing	repairs
-ritual	ril			rituals
+landing	lnd			landings
+ritual	rtu			rituals
 historically	hio			historicallies
 reminder	rmd			reminders
-slavery	slv			slaveries
+slavery	slav			slaveries
 supervisor	spv			supervisors
 quantity	qua			quantities
 olympics	olm			olympicss
 pleasant	plea			pleasants
+slope	slp			slopes
+skirt	skr			skirts
 outlet	oul			outlets
 curtain	curt			curtains
-declaration	dla			declarations
+declaration	dlt			declarations
 immune	imu			immunes
-calendar	ced			calendars
+calendar	cda			calendars
 paragraph	para			paragraphs
-identical	idl			identicals
+identical	icl			identicals
 regret	ree	regreted	regreting	regrets
 quest	qs			quests
 entrepreneur	etu			entrepreneurs
-specify	spy			specifies
-stumble	sml			stumbles
+specify	spei			specifies
+stumble	stum			stumbles
+elbow	elb			elbows
 outstanding	ous			outstandings
+unity	uny			unities
 manipulate	mip			manipulates
 airplane	aip			airplanes
 portfolio	pfo			portfolios
 mysterious	myr			mysteriouses
 delicious	dlc			deliciouses
-northwest	nos			northwests
+northwest	nrt			northwests
+sweat	swt			sweats
 profound	pfu			profounds
 treasure	tsu			treasures
+flour	flr			flours
 lightly	lig			lightlies
+rally	rll			rallies
 default	dfu			defaults
-alongside	alo			alongsides
+alongside	als			alongsides
 isolate	iol			isolates
 exploration	era			explorations
-enroll	ero			enrolls
+enroll	erl			enrolls
+outer	oue			outers
 charter	char			charters
 southwest	suh			southwests
+arena	aen			arenas
+witch	wic			witches
 upcoming	upc			upcomings
-someday	soy			somedays
-courtesy	cty			courtesies
-statue	stt			statues
+forty	foy			forties
+someday	smd			somedays
+unite	ute	united	uniting	unites
+courtesy	cour			courtesies
 precise	prec			precises
+squad	sqa			squads
 cruise	cui			cruises
 legally	ley			legallies
 embassy	eba			embassies
 patience	pati			patiences
-thereby	thb			therebies
+thereby	teb			therebies
 purple	pup			purples
 electrical	ecr			electricals
 outfit	ouf			outfits
 retired	reti			retireds
+lobby	lob			lobbies
 sidewalk	siw			sidewalks
 runner	rue			runners
-attraction	aio			attractions
+ankle	ank			ankles
+attraction	atra			attractions
 artificial	arf			artificials
+mercy	mrc			mercies
 indigenous	ids			indigenouses
-dancer	dac			dancers
+dancer	dnr			dancers
 candle	cdl			candles
 sexually	sex			sexuallies
 needle	ned			needles
 hidden	hid			hiddens
 chronicle	chrn			chronicles
 suburb	sbu			suburbs
-underlying	uny			underlyings
-sensor	seo			sensors
+toxic	tox			toxics
+underlying	ung			underlyings
+sensor	sso			sensors
 deploy	dlo			deploys
+debut	dbu			debuts
 magnitude	mgn			magnitudes
 suspicion	susi			suspicions
 colonial	coln			colonials
-grandma	grm			grandmas
+grandma	gan			grandmas
 jurisdiction	jur			jurisdictions
-iranian	ira			iranians
-parade	pad			parades
-archive	ahi			archives
+iranian	irn			iranians
+parade	pd			parades
+archive	ahv			archives
 gifted	gif			gifteds
 outdoor	oud			outdoors
 ending	edn			endings
 altogether	alh			altogethers
-burning	bug			burnings
+burning	bni			burnings
 reception	rcn			receptions
+crush	csh	crushed	crushing	crushes
 premise	prem			premises
 automatic	aum			automatics
-mechanical	mch			mechanicals
-credibility	cdy			credibilities
+whale	wha			whales
+mechanical	mca			mechanicals
+credibility	cib			credibilities
+drift	dft			drifts
 loyalty	loy			loyalties
 promising	pmg			promisings
 traveler	tav			travelers
+grief	gie			griefs
 metaphor	mep			metaphors
+skull	sku			skulls
 pursuit	purs			pursuits
-therapist	tap			therapists
-backup	bau			backups
+therapist	ther			therapists
+backup	bap			backups
 workplace	wop			workplaces
 instinct	inst			instincts
 export	ept			exports
+bleed	bee	bled	bleeding	bleeds
 seventh	seve			sevenths
-fixed	fx			fixeds
-broadcast	brc	broadcast	broadcasting	broadcasts
+fixed	fix			fixeds
+broadcast	bca	broadcast	broadcasting	broadcasts
 disclose	dsl	disclosed	disclosing	discloses
 execution	euo			executions
-chuckle	chk			chuckles
-density	dns			densities
-correction	core			corrections
-kinda	kd			kindas
+chuckle	cuk			chuckles
+density	dny			densities
+correction	corc			corrections
+kinda	kin			kindas
 relieve	reli			relieves
 teammate	tmt			teammates
 corridor	cdo			corridors
-enthusiasm	etm			enthusiasms
+enthusiasm	ehu			enthusiasms
 extended	exte			extendeds
 alright	aih			alrights
 productivity	pcv			productivities
 railroad	rod			railroads
-frozen	fro			frozens
+frozen	foe			frozens
 minimize	mini			minimizes
 inspection	ipe			inspections
 expected	epc			expecteds
 nonsense	nse			nonsenses
-theology	thl			theologies
+rider	rdr			riders
+theology	toy			theologies
 terrific	tif			terrifics
-accent	aen			accents
+accent	acc			accents
 invitation	iai			invitations
 oversee	ors			oversees
 awkward	awk			awkwards
@@ -2661,69 +3119,75 @@ registration	rgn			registrations
 suburban	sbr			suburbans
 momentum	mtu			momentums
 instantly	iay			instantlies
+clerk	cek			clerks
 hockey	hoc			hockeys
-proposition	pros			propositions
-ancestor	aet			ancestors
-creativity	crv			creativities
+laser	las			lasers
+proposition	proi			propositions
+ancestor	ance			ancestors
+creativity	cav			creativities
+verse	vrs			verses
 casual	caa			casuals
 objection	obi			objections
 clever	clr			clevers
+shove	shv			shoves
 revolutionary	rvu			revolutionaries
-carbohydrate	crh			carbohydrates
+carbohydrate	cbh			carbohydrates
 reportedly	rol			reportedlies
-forehead	foh			foreheads
-resume	rum			resumes
+forehead	feh			foreheads
+resume	rme			resumes
 carpet	cpt			carpets
-interior	iri			interiors
+interior	iro			interiors
 questionnaire	que			questionnaires
 departure	dau			departures
 behalf	bef			behalves
+graph	grp			graphs
 diplomatic	dlm			diplomatics
-subsidy	sbi			subsidies
+thief	thf			thiefs
+subsidy	sby			subsidies
 fossil	fsi			fossils
-patrol	ptr			patrols
-mechanic	mca			mechanics
+patrol	ptl			patrols
+mechanic	mcn			mechanics
 screening	scg			screenings
 continuing	cong			continuings
 electoral	eca			electorals
 supposedly	sdl			supposedlies
-dignity	dny			dignities
-prophet	poh			prophets
-commentary	comt			commentaries
+dignity	dign			dignities
+prophet	proh			prophets
+commentary	comr			commentaries
 serving	seri			servings
 safely	sfl			safelies
 homework	how			homeworks
-allegedly	ald			allegedlies
+allegedly	aeg			allegedlies
 android	and			androids
+alpha	aph			alphas
 insert	irt			inserts
-mortality	moy			mortalities
+mortality	mrt			mortalities
 contend	cond	contended	contending	contends
 elephant	elp			elephants
-solely	sly			solelies
 continent	cotn			continents
 ecosystem	ecy			ecosystems
+olive	oli			olives
 syndrome	sdr			syndromes
 abstract	abc			abstracts
 accusation	aun			accusations
 coming	cmg			comings
 pickup	pik			pickups
-shuttle	shu			shuttles
-improved	ipo			improveds
+shuttle	shut			shuttles
+improved	ipv			improveds
 calculation	calu			calculations
 innovative	ioa			innovatives
-demographic	deh			demographics
+demographic	dmg			demographics
 accommodate	aom			accommodates
 unfair	ufa			unfairs
-tragic	tag			tragics
-comprise	comr			comprises
+tragic	tg			tragics
+comprise	copr			comprises
 faster	fst			fasters
 nutrition	nut			nutritions
-mentor	mto			mentors
-stance	snc			stances
+mentor	meo			mentors
 rabbit	rbi			rabbits
-contributor	cib			contributors
-cooperate	cope			cooperates
-hesitate	hes			hesitates
+contributor	cbu			contributors
+cooperate	copa			cooperates
+hesitate	hsi			hesitates
 offend	ofd	offended	offending	offends
 exploit	expl			exploits
 likelihood	lik			likelihoods
@@ -2731,37 +3195,40 @@ sibling	sbn			siblings
 southeast	sout			southeasts
 gorgeous	gog			gorgeouses
 undertake	unk			undertakes
-painter	pnr			painters
-residential	rde			residentials
+painter	pain			painters
+residential	rdn			residentials
 counterpart	cep			counterparts
-believer	bli			believers
+believer	blv			believers
 inmate	inm			inmates
-thoroughly	thg			thoroughlies
-filter	flt			filters
+thoroughly	tug			thoroughlies
+freak	fek			freaks
+filter	fer			filters
 pillow	piw			pillows
+orbit	orb			orbits
 likewise	liw			likewises
-passing	pig			passings
+passing	png			passings
 vanish	vas	vanished	vanishing	vanishes
 instructional	iru			instructionals
-mentally	mta			mentallies
+mentally	mtl			mentallies
 neutral	neu			neutrals
-shield	shi			shields
-popularity	piy			popularities
+popularity	popu			popularities
 cartoon	cart			cartoons
 authorize	auh			authorizes
-combined	cbn			combineds
-graphic	grp			graphics
+combined	cbe			combineds
+graphic	grh			graphics
 darling	dlg			darlings
-traditionally	tao			traditionallies
+traditionally	tio			traditionallies
 vendor	ved			vendors
 conceive	coce			conceives
 descend	dcd			descends
 firmly	fim			firmlies
-beloved	blv			beloveds
+beloved	bov			beloveds
 openly	opl			openlies
 gathering	gah			gatherings
+fever	fev			fevers
 preach	peh	preached	preaching	preaches
 interfere	itf	interfered	interfering	interferes
+arrow	arw			arrows
 required	rqi			requireds
 capitalism	capi			capitalisms
 meantime	mtm			meantimes
@@ -2770,118 +3237,131 @@ illusion	ili			illusions
 removal	rmv			removals
 anxious	axi			anxiouses
 organism	orm			organisms
-sculpture	slp			sculptures
-harassment	ham			harassments
+awake	ake	awaked	awaking	awakes
+sculpture	slu			sculptures
+harassment	hae			harassments
 diminish	dsh			diminishes
 helmet	hem			helmets
 certificate	cef			certificates
-tribal	trb			tribals
+tribal	tib			tribals
 sunlight	snl			sunlights
-delete	dle			deletes
 rookie	rok			rookies
-clarify	clf			clarifies
+clarify	cif			clarifies
 hunger	hge			hungers
 practitioner	prac			practitioners
-performer	pmr			performers
-protective	proi			protectives
-programming	png			programmings
-salmon	slm			salmon
-census	css			censuses
-accomplishment	aol			accomplishments
+performer	perf			performers
+protective	prte			protectives
+programming	prog			programmings
+salmon	smn			salmon
+accomplishment	aos			accomplishments
 conscience	cosc			consciences
-fortunately	foy			fortunatelies
+fortunately	ftl			fortunatelies
 minimal	mina			minimals
 molecule	moc			molecules
 supportive	stv			supportives
-threshold	trh			thresholds
+threshold	tsh			thresholds
 inventory	ivr			inventories
-monetary	mtr			monetaries
+monetary	mty			monetaries
 transport	tnp	transported	transporting	transports
+drill	drl	drilled	drilling	drills
 influential	ifu			influentials
 verbal	veb			verbals
 ranking	rak			rankings
+grasp	gas			grasps
 puzzle	pzl			puzzles
 envelope	evp			envelopes
 classify	csf			classifies
 unfortunate	ufo			unfortunates
 scatter	scat	scattered	scattering	scatters
-readily	ray			readilies
+readily	rdl			readilies
 discount	dcu			discounts
-addiction	ait			addictions
+addiction	adic			addictions
 emerging	emg			emergings
-worthy	wot			worthies
+worthy	woh			worthies
 marker	mrk			markers
+juror	juo			jurors
+blend	bnd			blends
 businessman	bum			businessmen
 premium	pmu			premiums
 retailer	reta			retailers
-protester	pror			protesters
+liver	lve			livers
+protester	prts			protesters
 outlook	ouo			outlooks
+elder	elr			elders
 gallon	gao			gallons
 additionally	ady			additionallies
 ignorance	igo			ignorances
 chemistry	chem			chemistries
-sometime	smt			sometimes
-fraction	fct			fractions
+sometime	some			sometimes
+fraction	fco			fractions
 conversion	cvo			conversions
 tolerate	tla			tolerates
+drown	dwn	drowned	drowning	drowns
 citizenship	cih			citizenships
 coordinator	cdn			coordinators
-validity	vad			validities
+validity	vat			validities
 lightning	lih			lightnings
 turtle	tut			turtles
 ambition	abn			ambitions
 worldwide	wol			worldwides
-delicate	dlt			delicates
+added	aed			addeds
+delicate	deli			delicates
 hostile	hst			hostiles
 instruct	irc	instructed	instructing	instructs
-shortage	shg			shortages
+shortage	shor			shortages
 useless	usl			uselesses
+booth	boo			booths
 suspicious	susc			suspiciouses
-transit	tnt			transits
-excite	eie	excited	exciting	excites
+transit	tran			transits
 publishing	pug			publishings
 curiosity	curi			curiosities
 rolling	roi			rollings
+cruel	crl			cruels
 disclosure	dcs			disclosures
 denial	dnl			denials
 secular	secu			seculars
-speculation	spec			speculations
+speculation	speu			speculations
 sympathy	smy			sympathies
-tender	tne			tenders
+tender	tnr			tenders
 inappropriate	iap			inappropriates
 o'clock	o'			o'clocks
-sodium	sdu			sodiums
+sodium	sdm			sodiums
 challenging	chal			challengings
 reliability	rib			reliabilities
 hormone	hrm			hormones
-footage	fte			footages
+footage	fge			footages
+alley	aey			alleys
 coastal	coas			coastals
 partial	part			partials
-flexible	fle			flexibles
+flexible	flx			flexibles
 experienced	eri			experienceds
 mixed	mx			mixeds
 vampire	vp			vampires
 optimistic	opm			optimistics
 dessert	dese			desserts
-northeast	noa			northeasts
-specialize	spei			specializes
+northeast	nrh			northeasts
+specialize	spea			specializes
+fleet	fet			fleets
 availability	avl			availabilities
-compliance	coml			compliances
-astronomer	arm			astronomers
+compliance	comc			compliances
+astronomer	astr			astronomers
 forbid	fob			forbids
 installation	iao			installations
 exclusively	ecv			exclusivelies
 shallow	slw			shallows
+equip	eqp			equips
 equivalent	eqv			equivalents
-betray	bry			betrays
+betray	btr			betrays
 willingness	wig			willingnesses
 banker	bnk			bankers
 interval	irv			intervals
-gasoline	gas			gasolines
+gasoline	gae			gasolines
 encouraging	ecg			encouragings
 bucket	buc			buckets
-laundry	lay			laundries
-constraint	cona			constraints
+theft	tft			thefts
+laundry	lud			laundries
+constraint	cost			constraints
+dying	dyi			dyings
 hatred	hat			hatreds
 jewelry	jw			jewelries
 migration	mgr			migrations
@@ -2889,157 +3369,179 @@ invention	inve			inventions
 loving	lvi			lovings
 revenge	rvn			revenges
 unprecedented	upr			unprecedenteds
-outline	oun			outlines
-halloween	hae			halloweens
-sweetheart	swe			sweethearts
+outline	otl			outlines
+halloween	hlo			halloweens
+sweetheart	swh			sweethearts
 intimate	itm			intimates
-defender	dnr			defenders
-technically	tcn			technicallies
+defender	defe			defenders
+technically	tci			technicallies
 peanut	pnu			peanuts
 unclear	ucl			unclears
-workout	wou			workouts
-wilderness	wir			wildernesses
+workout	wrk			workouts
+wilderness	wld			wildernesses
 compelling	comg			compellings
 eleven	eev			elevens
 backyard	bck			backyards
+alike	alk			alikes
 partially	pari			partiallies
-guardian	gur			guardians
+guardian	gin			guardians
 passionate	pasi			passionates
 scripture	scri			scriptures
+midst	mdt			midsts
 ideological	iog			ideologicals
-thrive	thv			thrives
+thrive	tiv			thrives
 sensitivity	snv			sensitivities
-emotionally	ety			emotionallies
+emotionally	eia			emotionallies
 ignorant	ior			ignorants
 explicitly	eic			explicitlies
 unfold	ufl			unfolds
 headache	heh			headaches
-eternal	ern			eternals
+eternal	eal			eternals
 spectacular	spet			spectaculars
 deposit	dos			deposits
 verdict	vei			verdicts
-accountability	aoa			accountabilities
+accountability	aob			accountabilities
 nominate	nia			nominates
+civic	cii			civics
 uncover	uco			uncovers
 critique	crit			critiques
-tropical	top			tropicals
+tropical	tia			tropicals
 annually	aul			annuallies
-eighth	eig			eighths
+eighth	eih			eighths
+blast	blt			blasts
 corrupt	coru			corrupts
-compassion	copa			compassions
+compassion	cops			compassions
 scratch	sah	scratched	scratching	scratches
 verify	vf			verifies
 offender	ond			offenders
 inherit	ihe			inherits
-strive	sve			strives
-appreciation	apc			appreciations
-canvas	cav			canvases
+chunk	cnk			chunks
+appreciation	aec			appreciations
+canvas	cvs			canvases
 proceedings	pcg			proceedings
-magical	mgi			magicals
-desperately	dry			desperatelies
+magical	mgc			magicals
+loyal	lol			loyals
+desperately	desr			desperatelies
 throne	thn			thrones
-brutal	bru			brutals
+brutal	bua			brutals
+spite	spt			spites
 propaganda	proa			propagandas
+irony	iry			ironies
 projection	pje			projections
-parental	pnl			parentals
+dutch	duc			dutches
+parental	pare			parentals
 disabled	dld			disableds
 collector	cole			collectors
 disappointment	dap			disappointments
-happily	hai			happilies
+happily	hay			happilies
+fancy	fcy			fancies
 listener	lst			listeners
 drawer	daw			drawers
 developmental	dvm			developmentals
 socially	soci			sociallies
-courtroom	cour			courtrooms
-trainer	tin			trainers
-induce	iuc			induces
+courtroom	cout			courtrooms
+trainer	trae			trainers
+induce	iu			induces
 anytime	ayt			anytimes
 morality	mra			moralities
 syrian	syr			syrians
 pipeline	pipe			pipelines
 instant	insa			instants
-doorway	doy			doorways
+spark	spk	sparked	sparking	sparks
+doorway	dwa			doorways
 interface	ief			interfaces
 learner	lne			learners
 placement	plm			placements
 conception	conp			conceptions
-flexibility	flx			flexibilities
-elegant	ean			elegants
+flexibility	flb			flexibilities
+elegant	eleg			elegants
 locker	lok			lockers
 goddamn	goa			goddamns
 import	iot			imports
+stack	sck			stacks
 philosophical	phl			philosophicals
-bicycle	bic			bicycles
+bicycle	biy			bicycles
+vocal	voc			vocals
 destiny	desi			destinies
-ambitious	amu			ambitiouses
+ambitious	ambi			ambitiouses
 unbelievable	unb			unbelievables
 halfway	haf			halfways
-jealous	jea			jealouses
+jealous	jel			jealouses
 invade	ivd			invades
 excessive	eiv			excessives
-countless	cout			countlesses
+countless	coul			countlesses
 sunset	sse			sunsets
 accounting	acg			accountings
 faithful	faf			faithfuls
 freely	fey			freelies
-extract	eac			extracts
+extract	extr			extracts
 adaptation	adap			adaptations
 depressed	drd			depresseds
 emperor	empe			emperors
+wagon	wag			wagons
 columnist	colu			columnists
 jungle	jug			jungles
 embarrassed	emd			embarrasseds
-trillion	til			trillions
+trillion	tli			trillions
 breeze	bze			breezes
 foster	fse			fosters
+venue	veu			venues
 discourage	dcg			discourages
 disturbing	dur			disturbings
 isolation	ioi			isolations
 explicit	expi			explicits
 commodity	comd			commodities
-attendance	aed			attendances
-consequently	conl			consequentlies
-streak	sak			streaks
+attendance	aten			attendances
+consequently	cony			consequentlies
+dough	dog			doughs
+streak	stk			streaks
 similarity	simi			similarities
 dancing	danc			dancings
 petition	peti			petitions
 viable	vab			viables
-breathing	brh			breathings
-balloon	bln			balloons
+breathing	bhi			breathings
+balloon	balo			balloons
 monument	mum			monuments
 reluctant	ruc			reluctants
-warrant	wat			warrants
+warrant	wra			warrants
+stiff	sff			stiffs
 tattoo	ttt			tattoos
 softly	sft			softlies
-graduation	gri			graduations
+graduation	gau			graduations
 deliberately	dlb			deliberatelies
-consecutive	cuv			consecutives
-upgrade	upe			upgrades
+consecutive	cosu			consecutives
+upgrade	ugr			upgrades
 accurately	aue			accuratelies
 strictly	stri			strictlies
 casualty	casu			casualties
+risky	rik			riskies
 banana	bna			bananas
-beneficial	bec			beneficials
-shrink	shk			shrinks
-testament	tst			testaments
-browser	brw			browsers
+beneficial	bne			beneficials
+shrink	sik			shrinks
+usage	usa			usages
+testament	tsa			testaments
+browser	bws			browsers
 processor	prce			processors
+thigh	thh			thighs
 perceived	perc			perceiveds
 talking	tlk			talkings
-merchant	mrc			merchants
+merchant	mrh			merchants
 quantum	qm			quantums
 eyebrow	eye			eyebrows
 surrounding	suro			surroundings
-vocabulary	voc			vocabularies
+vocabulary	voa			vocabularies
 ashamed	aha			ashameds
+radar	raa			radars
 stunning	stun			stunnings
 murderer	mud			murderers
 burger	bge			burgers
 textbook	tex			textbooks
 sensation	sens			sensations
 afterward	afw			afterwards
+charm	chm			charms
+sunny	sny			sunnies
 hammer	hmm	hammered	hammering	hammers
 keyboard	ky			keyboards
 persist	pers			persists
 predator	pred			predators
-bizarre	bie			bizarres
+bizarre	bza			bizarres

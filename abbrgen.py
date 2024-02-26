@@ -120,7 +120,7 @@ def find_abbr(word):
                 log.debug(f"rejected: '{abbr[-1]}' is a banned suffix")
                 continue
             improvement = ((len(word) - len(abbr)) / len(word)) * 100
-            if improvement > min_improvement:
+            if improvement >= min_improvement:
                 if avoid_sfb and has_sfb(abbr):
                     if not sfb_option:
                         sfb_option = abbr
