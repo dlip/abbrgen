@@ -14,6 +14,7 @@ Chording involves pressing multiple keys at the same time, while text expansion 
 - Text expansion can feel more natural in the flow of typing other words
 - Chording can be heaver on the fingers especially if you have heavy key switches
 - There are more possible combinations with text expansion since you can use abbreviatons that repeat letters
+- Text expansion is easier to setup with a standard keyboard
 
 ## Setup
 
@@ -159,7 +160,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 ```
 
-### WIP qmk-chording.py
+### WIP qmk-chorded.py
 
 Chorded importer for QMK
 

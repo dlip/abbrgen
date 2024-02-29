@@ -4,6 +4,7 @@ import sys
 import json
 import inflect
 import layout
+import utils
 
 # stop after processing this many lines in words.txt
 limit = 0
@@ -39,49 +40,6 @@ seen = {}
 line_no = 0
 
 
-def find_combinations(s, prefix="", index=0):
-    """
-    Recursively find every combination of letters in a string from left to right
-    starting with the first character.
-
-    Args:
-    - s: The input string.
-    - prefix: The current combination being built.
-    - index: The current index in the string.
-
-    Returns:
-    - result: A list containing all combinations starting with the first character
-              and excluding the empty string, sorted by shortest string first.
-    """
-    result = []
-    if index == len(s):
-        if prefix:
-            result.append(prefix)
-        return result
-
-    # Include the current character only if it's the first character or part of a previous combination
-    if index == 0 or prefix:
-        result.extend(find_combinations(s, prefix + s[index], index + 1))
-
-    # Exclude the current character
-    result.extend(find_combinations(s, prefix, index + 1))
-
-    return result
-
-
-def find_all_combinations(string):
-    if len(string) == 1:
-        return [string]
-    else:
-        combos = []
-        for i, char in enumerate(string):
-            remaining_chars = string[:i] + string[i + 1 :]
-            sub_combos = find_all_combinations(remaining_chars)
-            for sub_combo in sub_combos:
-                combos.append(char + sub_combo)
-        return combos
-
-
 def find_abbr(word):
     word = word.lower()
     log.debug(f"=== {word} ===")
@@ -93,7 +51,7 @@ def find_abbr(word):
         return None
 
     seen[word] = True
-    combinations = find_combinations(word)
+    combinations = utils.find_combinations(word)
     combinations.sort(key=len)
     sfb_option = None
     options = []
@@ -124,7 +82,7 @@ def find_abbr(word):
         log.debug(f"selected: {abbr}")
         if chorded_mode:
             # need to mark every possible combination as used
-            combinations = find_all_combinations(abbr)
+            combinations = utils.find_all_combinations(abbr)
             for a in combinations:
                 used[a] = word
         else:
