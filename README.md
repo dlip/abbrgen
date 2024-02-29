@@ -75,26 +75,7 @@ This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`. Th
 - Add verb tenses with the data in `verbs-conjugations.json`
 - Add plurals using [inflect](https://pypi.org/project/inflect/)
 
-Here are some settings you might want to change in [abbrgen.py](abbrgen.py):
-
-```python
-# stop after processing this many lines in words.txt
-limit = 0
-# any word shorter than this will be excluded
-min_chars = 3
-# any percent improvement below this will not be considered and the word might be excluded if there are no other options
-min_improvement = 40
-# the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms or punctuation
-banned_suffixes = "qjz;,.:?"
-# output the words with no abbreviation found so you can add them by hand
-output_all = False
-# change this to your keyboard layout, ensure its listed in layout.py
-keyboard_layout = layout.canary
-# change this to the effort map for your keyboard shape: effort_map_standard, effort_map_matrix
-effort_map = layout.effort_map_matrix
-# this is the effort multiplier to penalize same finger bigrams (sequences which use the same key in a row)
-sfb_multiplier = 2
-```
+There are some options that you might want to change near the top of [abbrgen.py](abbrgen.py)
 
 ### espanso.py
 

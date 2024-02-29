@@ -39,7 +39,7 @@ effort_map_matrix = [
 
 
 class EffortCalculator:
-    def __init__(self, layout, effort_map=effort_map_matrix, sfb_multiplier=2):
+    def __init__(self, layout, effort_map, sfb_penalty):
         self.layout = layout
         self.effort_map = effort_map
         self.layout_map = {}
@@ -48,7 +48,7 @@ class EffortCalculator:
             for c in range(0, len(layout[r])):
                 self.layout_map[layout[r][c]] = finger_maping[r][c]
                 self.effort_map[layout[r][c]] = effort_map[r][c]
-        self.sfb_multiplier = sfb_multiplier
+        self.sfb_multiplier = sfb_penalty
 
     def calculate(self, abbr):
         result = 0
@@ -57,12 +57,11 @@ class EffortCalculator:
                 raise Exception(f"rejected: letter '{abbr[i]}' not in keyboard layout")
 
         for i in range(0, len(abbr)):
-            effort = self.effort_map[abbr[i]]
+            result += self.effort_map[abbr[i]]
             # check if sfb
             if (
                 i < len(abbr) - 1
                 and self.layout_map[abbr[i]] == self.layout_map[abbr[i + 1]]
             ):
-                effort *= self.sfb_multiplier
-            result += effort
+                result += self.sfb_multiplier
         return result

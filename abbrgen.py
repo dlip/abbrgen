@@ -19,15 +19,15 @@ output_all = False
 keyboard_layout = layout.canary
 # change this to the effort map for your keyboard shape: effort_map_standard, effort_map_matrix
 effort_map = layout.effort_map_matrix
-# this is the effort multiplier to penalize same finger bigrams (sequences which use the same key in a row)
-sfb_multiplier = 2
+# this is the effort penalty added to sequences with same finger bigrams (using the same finger for 2 keys in a row)
+sfb_penalty = 0.8
 
 # internal variables
 log = logging.getLogger(__name__)
 log.addHandler(logging.StreamHandler(sys.stdout))
 log.setLevel(logging.DEBUG)
 
-calc = layout.EffortCalculator(keyboard_layout, effort_map, sfb_multiplier)
+calc = layout.EffortCalculator(keyboard_layout, effort_map, sfb_penalty)
 p = inflect.engine()
 
 used = {}
