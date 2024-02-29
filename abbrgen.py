@@ -19,6 +19,8 @@ output_all = False
 keyboard_layout = layout.canary
 # change this to the effort map for your keyboard shape: effort_map_standard, effort_map_matrix
 effort_map = layout.effort_map_matrix
+# chorded mode will ensure its possible to chord and remove sfb's and scissors completely
+chorded_mode = True
 # this is the effort penalty added to sequences with same finger bigrams (using the same finger for 2 keys in a row)
 sfb_penalty = 0.8
 # this is the effort penalty added to sequences with scissors (travelling between the top and bottom rows on the same hand)
@@ -67,6 +69,19 @@ def find_combinations(s, prefix="", index=0):
     return result
 
 
+def find_all_combinations(string):
+    if len(string) == 1:
+        return [string]
+    else:
+        combos = []
+        for i, char in enumerate(string):
+            remaining_chars = string[:i] + string[i + 1 :]
+            sub_combos = find_all_combinations(remaining_chars)
+            for sub_combo in sub_combos:
+                combos.append(char + sub_combo)
+        return combos
+
+
 def find_abbr(word):
     word = word.lower()
     log.debug(f"=== {word} ===")
@@ -90,12 +105,13 @@ def find_abbr(word):
                 continue
             improvement = ((len(word) - len(abbr)) / len(word)) * 100
             if improvement >= min_improvement:
-                try:
-                    effort = calc.calculate(abbr, sfb_penalty, scissor_penalty)
-                    log.debug(f"effort: {effort}")
-                    options.append({"abbr": abbr, "effort": effort})
-                except Exception as e:
-                    log.debug(e)
+                effort = calc.calculate(
+                    abbr, sfb_penalty, scissor_penalty, chorded_mode
+                )
+                if not effort:
+                    continue
+                log.debug(f"effort: {effort}")
+                options.append({"abbr": abbr, "effort": effort})
             else:
                 log.debug(f"rejected: improvement insufficient ({improvement}%)")
                 break
@@ -106,7 +122,13 @@ def find_abbr(word):
         options.sort(key=lambda x: x["effort"])
         abbr = options[0]["abbr"]
         log.debug(f"selected: {abbr}")
-        used[abbr] = word
+        if chorded_mode:
+            # need to mark every possible combination as used
+            combinations = find_all_combinations(abbr)
+            for a in combinations:
+                used[a] = word
+        else:
+            used[abbr] = word
         return abbr
 
     log.debug("dropped: no abbreviation found")

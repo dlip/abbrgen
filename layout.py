@@ -61,11 +61,22 @@ class EffortCalculator:
                 self.effort_map[layout[r][c]] = effort_map[r][c]
                 self.hand_row_map[layout[r][c]] = hand_row_maping[r][c]
 
-    def calculate(self, abbr, sfb_penalty, scissor_penalty):
+    def calculate(self, abbr, sfb_penalty, scissor_penalty, chorded_mode):
         result = 0
+        if chorded_mode:
+            seen = set()
+            for char in abbr:
+                if char in seen:
+                    log.debug(
+                        "rejected: duplicate letters not accepted in chorded mode"
+                    )
+                    return
+                seen.add(char)
+
         for i in range(0, len(abbr)):
             if abbr[i] not in self.layout_map:
-                raise Exception(f"rejected: letter '{abbr[i]}' not in keyboard layout")
+                log.debug(f"rejected: letter '{abbr[i]}' not in keyboard layout")
+                return
 
         for i in range(0, len(abbr)):
             result += self.effort_map[abbr[i]]
@@ -73,6 +84,10 @@ class EffortCalculator:
             if i < len(abbr) - 1:
                 # sfb
                 if self.layout_map[abbr[i]] == self.layout_map[abbr[i + 1]]:
+                    if chorded_mode:
+                        log.debug("rejected: SFBs not accepted in chorded mode")
+                        return
+
                     log.debug("Applying SFB penalty")
                     result += sfb_penalty
                 # scissor
@@ -80,6 +95,9 @@ class EffortCalculator:
                 b = self.hand_row_map[abbr[i + 1]]
                 if a != b:
                     if (a < 0 and b < 0) or (a > 0 and b > 0):
+                        if chorded_mode:
+                            log.debug("rejected: scissors not accepted in chorded mode")
+                            return
                         log.debug("Applying scissor penalty")
                         result += scissor_penalty
 
