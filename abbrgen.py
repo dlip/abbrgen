@@ -21,13 +21,15 @@ keyboard_layout = layout.canary
 effort_map = layout.effort_map_matrix
 # this is the effort penalty added to sequences with same finger bigrams (using the same finger for 2 keys in a row)
 sfb_penalty = 0.8
+# this is the effort penalty added to sequences with scissors (travelling between the top and bottom rows on the same hand)
+scissor_penalty = 0.5
 
 # internal variables
-log = logging.getLogger(__name__)
+log = logging.getLogger("abbrgen")
 log.addHandler(logging.StreamHandler(sys.stdout))
 log.setLevel(logging.DEBUG)
 
-calc = layout.EffortCalculator(keyboard_layout, effort_map, sfb_penalty)
+calc = layout.EffortCalculator(keyboard_layout, effort_map)
 p = inflect.engine()
 
 used = {}
@@ -89,7 +91,7 @@ def find_abbr(word):
             improvement = ((len(word) - len(abbr)) / len(word)) * 100
             if improvement >= min_improvement:
                 try:
-                    effort = calc.calculate(abbr)
+                    effort = calc.calculate(abbr, sfb_penalty, scissor_penalty)
                     log.debug(f"effort: {effort}")
                     options.append({"abbr": abbr, "effort": effort})
                 except Exception as e:
@@ -107,7 +109,7 @@ def find_abbr(word):
         used[abbr] = word
         return abbr
 
-    log.debug("dropped: no abbr found")
+    log.debug("dropped: no abbreviation found")
     return None
 
 

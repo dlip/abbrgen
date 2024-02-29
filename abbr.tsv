@@ -27,7 +27,7 @@ when	wn			whens
 get	g	got	getting	gets
 then	tn			thens
 into	i			intoes
-would	wd			woulds
+would	wo			woulds
 there	tr			theres
 could	c			coulds
 don't	d			don'ts
@@ -113,9 +113,8 @@ love	lo	loved	loving	loves
 watch	wat	watched	watching	watches
 anything	ah			anythings
 I'll	il			I'lls
-though	tho			thoughs
+though	tg			thoughs
 left	lf			lefts
-work	wo	worked	working	works
 hair	hi			hairs
 next	nt			nexts
 couldn't	cn			couldn'ts
@@ -153,7 +152,7 @@ name	na	named	naming	names
 since	sne			sinces
 reply	re	replied	replying	replies
 myself	ms			ourselves
-leave	lv	left	leaving	leaves
+leave	lea	left	leaving	leaves
 use	u	used	using	uses
 mind	mi			minds
 maybe	my			maybes
@@ -164,6 +163,7 @@ until	un			untils
 both	bh			boths
 found	fo	founded	founding	founds
 small	sl			smalls
+word	wd			words
 someone	sen			someones
 enough	eh			enoughs
 began	ben			begans
@@ -182,6 +182,7 @@ every	ee			everies
 remember	rr	remembered	remembering	remembers
 three	tre			threes
 stood	sto			stoods
+live	lv	lived	living	lives
 stand	stn	stood	standing	stands
 second	scn			seconds
 sorry	sy			sorries
@@ -249,7 +250,7 @@ together	tet			togethers
 question	qt	questioned	questioning	questions
 anyway	aa			anyways
 blue	bl			blues
-believe	bv	believed	believing	believes
+believe	bie	believed	believing	believes
 sleep	see	slept	sleeping	sleeps
 what's	wts			what'ss
 family	fy			families
@@ -317,7 +318,7 @@ couple	cp			couples
 large	lr			larges
 either	ei			eithers
 five	fv			fives
-jump	jp	jumped	jumping	jumps
+jump	ju	jumped	jumping	jumps
 return	rtn	returned	returning	returns
 able	ab			ables
 alone	aon			alones
@@ -349,7 +350,7 @@ exactly	eat			exactlies
 completely	cy			completelies
 dance	dc	danced	dancing	dances
 story	str			stories
-whatever	wv			whatevers
+whatever	wtr			whatevers
 build	bu	built	building	builds
 speak	sea	spoken	speaking	speaks
 glass	gl			glasses
@@ -368,6 +369,7 @@ force	fre	forced	forcing	forces
 you've	yo			you'ves
 attention	atn			attentions
 mark	mk	marked	marking	marks
+wave	wv	waved	waving	waves
 shout	sot	shouted	shouting	shouts
 begin	bin	begun	beginning	begins
 baby	by			babies
@@ -410,7 +412,7 @@ number	nu	numbered	numbering	numbers
 conversation	cnt			conversations
 chance	can			chances
 we'll	wel			we'lls
-quietly	qy			quietlies
+quietly	qet			quietlies
 town	tw			towns
 blood	bd			bloods
 color	cor	colored	coloring	colors
@@ -450,7 +452,7 @@ except	ect			excepts
 appear	ap	appeared	appearing	appears
 lock	lk	locked	locking	locks
 knock	ko	knocked	knocking	knocks
-bathroom	bar			bathrooms
+bathroom	bm			bathrooms
 movie	mv			movies
 agree	are	agreed	agreeing	agrees
 offer	of	offered	offering	offers
@@ -491,7 +493,7 @@ forget	fet	forgotten	forgetting	forgets
 gotten	gtn			gottens
 smell	sel	smelt	smelling	smells
 press	pss	pressed	pressing	presses
-boyfriend	bie			boyfriends
+boyfriend	bri			boyfriends
 blonde	bne			blondes
 throw	thr	thrown	throwing	throws
 round	ru			rounds
@@ -557,7 +559,7 @@ gently	gy			gentlies
 possible	psi			possibles
 mention	mtn	mentioned	mentioning	mentions
 silent	sie			silents
-definitely	dy			definitelies
+definitely	dnt			definitelies
 brush	brs	brushed	brushing	brushes
 perhaps	peh			perhapss
 groan	gan	groaned	groaning	groans
@@ -573,13 +575,13 @@ remind	rin	reminded	reminding	reminds
 daughter	du			daughters
 serious	ses			seriouses
 girlfriend	gf			girlfriends
-somehow	soh			somehows
+somehow	soe			somehows
 tight	tit			tights
 simply	siy			simplies
 trust	tst	trusted	trusting	trusts
 imagine	ine	imagined	imagining	imagines
 chuckle	ck			chuckles
-shove	sho			shoves
+shove	shv			shoves
 sight	sih			sights
 drag	dg	draged	draging	drags
 they'd	ted			they'ds
@@ -600,7 +602,7 @@ anger	aer			angers
 paint	pin	painted	painting	paints
 bottle	bte			bottles
 comment	con	commented	commenting	comments
-exclaim	ex	exclaimed	exclaiming	exclaims
+exclaim	eci	exclaimed	exclaiming	exclaims
 avoid	aid	avoided	avoiding	avoids
 grow	gw	grown	growing	grows
 mirror	mir			mirrors
@@ -624,7 +626,7 @@ train	trn	trained	training	trains
 stick	sic			sticks
 guard	gar	guarded	guarding	guards
 teeth	teh			teeths
-flash	fh	flashed	flashing	flashes
+flash	fas	flashed	flashing	flashes
 uncle	uc			uncles
 doubt	dot	doubted	doubting	doubts
 visit	vt	visited	visiting	visits
@@ -650,10 +652,10 @@ heavy	hea			heavies
 broken	bon			brokens
 complete	cot	completed	completing	completes
 space	sac			spaces
-brain	bri			brains
+brain	ban			brains
 pants	pns			pantss
 punch	pnc	punched	punching	punches
-shower	soe			showers
+shower	swe			showers
 tongue	tne			tongues
 afternoon	atr			afternoons
 seriously	sei			seriouslies
@@ -661,7 +663,7 @@ further	ftr			furthers
 recognize	rne	recognized	recognizing	recognizes
 computer	cpe			computers
 jacket	jt			jackets
-bottom	bm			bottoms
+bottom	bot			bottoms
 hundred	hre			hundreds
 relax	rea	relaxed	relaxing	relaxes
 sudden	sde			suddens
@@ -711,9 +713,9 @@ view	vi			views
 forever	fer			forevers
 familiar	fir			familiars
 forehead	feh			foreheads
-shoot	soo	shot	shooting	shoots
+shoot	sho	shot	shooting	shoots
 stretch	src	stretched	stretching	stretches
-pound	pd			pounds
+pound	pnd			pounds
 despite	dst			despites
 response	rns			responses
 center	cee			centers
@@ -763,7 +765,7 @@ silver	siv			silvers
 birthday	bir			birthdays
 disgust	dit			disgusts
 embarrass	ers	embarrassed	embarrassing	embarrasses
-bought	bot			boughts
+bought	bg			boughts
 loudly	ll			loudlies
 driver	die			drivers
 murmur	mrr			murmurs
@@ -783,7 +785,7 @@ forgot	fg			forgots
 silently	sny			silentlies
 weekend	wnd			weekends
 guitar	git			guitars
-sweat	swe			sweats
+sweat	swa			sweats
 unless	une			unlesses
 cloud	cod			clouds
 waist	wst			waists
@@ -819,14 +821,14 @@ slide	sli	slid	sliding	slides
 wonderful	wnr			wonderfuls
 bitch	bic			bitches
 reveal	rv	revealed	revealing	reveals
-swing	swn	swung	swinging	swings
+swing	sng	swung	swinging	swings
 truck	trc			trucks
 anywhere	ahr			anywheres
 flower	fle	flowered	flowering	flowers
 upstairs	ur			upstairss
 itself	its			themselves
 wander	wae	wandered	wandering	wanders
-downstairs	dnt			downstairss
+downstairs	dni			downstairss
 football	fta			footballs
 possibly	pos			possiblies
 forest	fst			forests
@@ -847,12 +849,12 @@ absolutely	ast			absolutelies
 orange	one			oranges
 relief	rei			reliefs
 apologize	aie	apologized	apologizing	apologizes
-he'll	h'l			he'lls
+he'll	hll			he'lls
 remove	rm	removed	removing	removes
 crash	cas	crashed	crashing	crashes
 curse	cus	cursed	cursing	curses
 alive	ale			alives
-blanket	ban			blankets
+blanket	bnet			blankets
 receive	rie	received	receiving	receives
 tightly	tih			tightlies
 waste	was	wasted	wasting	wastes
@@ -865,7 +867,7 @@ king	kg			kings
 camera	cae			cameras
 deserve	der	deserved	deserving	deserves
 dirty	drt			dirties
-doorway	dra			doorways
+doorway	dy			doorways
 image	iae			images
 cookie	coi			cookies
 homework	hk			homeworks
@@ -878,9 +880,10 @@ below	bel			belows
 ceiling	cei			ceilings
 click	cli			clicks
 travel	tve	traveled	traveling	travels
+fish	fh	fished	fishing	fish
 nervously	nv			nervouslies
 towel	tel			towels
-shiver	shv	shivered	shivering	shivers
+shiver	sve	shivered	shivering	shivers
 final	fia			finals
 horrible	hie			horribles
 station	sai			stations
@@ -900,12 +903,12 @@ normally	nra			normallies
 machine	min			machines
 stumble	sbe			stumbles
 complain	cai	complained	complaining	complains
-everybody	eb			everybodies
+everybody	erd			everybodies
 truly	try			trulies
 nurse	nrs			nurses
 speed	spd			speeds
 panic	pni			panics
-smooth	smo			smooths
+smooth	soh			smooths
 good-bye	gye			good-byes
 would've	wu			would'ves
 extra	etr			extras
@@ -936,11 +939,11 @@ bench	bnc			benches
 cousin	csn			cousins
 detail	dei			details
 amount	aot			amounts
-backward	bcr			backwards
+backward	bar			backwards
 crush	csh	crushed	crushing	crushes
 cigarette	cit			cigarettes
 faint	fan			faints
-belong	bg	belonged	belonging	belongs
+belong	bng	belonged	belonging	belongs
 stranger	stne			strangers
 beach	beh			beaches
 everywhere	ere			everywheres
@@ -948,8 +951,8 @@ scratch	srh	scratched	scratching	scratches
 history	hit			histories
 restaurant	rnt			restaurants
 event	een			events
-extremely	ety			extremelies
-widen	wdn			widens
+extremely	ex			extremelies
+widen	wid			widens
 clutch	ctc			clutches
 beyond	bnd			beyonds
 happily	hai			happilies
@@ -958,7 +961,7 @@ palm	pm			palms
 amuse	aus	amused	amusing	amuses
 guest	ges			guests
 Saturday	sad			Saturdays
-wooden	wde			woodens
+wooden	wdn			woodens
 worst	wot			worsts
 plastic	pas			plastics
 reality	rit			realities
@@ -967,22 +970,23 @@ announce	anc	announced	announcing	announces
 gotta	got			gottas
 slept	sep			slepts
 she'll	shl			she'lls
-member	mb			members
-choose	cho	chosen	choosing	chooses
+member	mee			members
+choose	coe	chosen	choosing	chooses
 alarm	aar			alarms
 crawl	cw	crawled	crawling	crawls
 dollar	dar			dollars
 knife	kne			knives
-magic	mai			magics
+magic	mg			magics
+paid	pd			paids
 pizza	pia			pizzas
 purse	pus			purses
 chicken	chc			chickens
 plane	pan			planes
-choke	coe	choked	choking	chokes
+choke	cke	choked	choking	chokes
 screw	sew	screwed	screwing	screws
 protest	pte	protested	protesting	protests
 introduce	inr	introduced	introducing	introduces
-sleeve	sve			sleeves
+sleeve	slv			sleeves
 movement	mnt			movements
 loose	lse			looses
 wanna	wna			wannas
@@ -1162,7 +1166,7 @@ thumb	tb			thumbs
 manner	mae			manners
 flush	fsh			flushes
 schedule	scd			schedules
-weather	wtr			weathers
+weather	war			weathers
 casually	csa			casuallies
 difference	dnc			differences
 charm	crm			charms
@@ -1172,7 +1176,7 @@ bounce	bun	bounced	bouncing	bounces
 particularly	pcr			particularlies
 pleasure	psr			pleasures
 sneak	sna	sneaked	sneaking	sneaks
-leader	lea			leaders
+leader	led			leaders
 shriek	sek	shrieked	shrieking	shrieks
 suffer	sfr	suffered	suffering	suffers
 Sunday	sda			Sundays
@@ -1183,10 +1187,10 @@ statement	sten			statements
 ticket	tct			tickets
 chill	cil			chills
 fence	fec	fenced	fencing	fences
-horror	hor			horrors
+horror	hro			horrors
 built	blt			builts
 security	sry			securities
-sidewalk	sdl			sidewalks
+sidewalk	side			sidewalks
 breast	bas			breasts
 curtain	crtn			curtains
 fifty	fty			fifties
@@ -1210,13 +1214,14 @@ outfit	oti			outfits
 rough	roh			roughs
 ain't	a't			ain'ts
 beauty	bey			beauties
+chose	cho			choses
 snake	snk			snakes
 badly	bad			badlies
 daddy	dad			daddies
 describe	dec	described	describing	describes
 desperately	dea			desperatelies
 height	heh			heights
-thigh	tg			thighs
+thigh	thh			thighs
 deeply	dey			deeplies
 friendship	frs			friendships
 winter	wir			winters
@@ -1233,7 +1238,7 @@ claim	cla	claimed	claiming	claims
 nightmare	nte			nightmares
 prefer	pee	preferred	preferring	prefers
 purpose	pro			purposes
-merely	mee			merelies
+merely	mry			merelies
 French	frc			Frenches
 sadly	say			sadlies
 uniform	ui			uniforms
@@ -1273,17 +1278,17 @@ blank	bla			blanks
 fought	fht			foughts
 passenger	psen			passengers
 teenager	tnr			teenagers
-drawn	dwn			drawns
+drawn	dra			drawns
 scary	sca			scaries
 unlike	uni			unlikes
 straighten	sah			straightens
 constantly	ctt			constantlies
-famous	fas			famouses
+famous	fos			famouses
 marriage	mri			marriages
 bound	bud			bounds
 fancy	fac			fancies
 issue	ise			issues
-warmth	war			warmths
+warmth	wrh			warmths
 awhile	ahi			awhiles
 collect	clt	collected	collecting	collects
 concentrate	cnen	concentrated	concentrating	concentrates
@@ -1291,7 +1296,7 @@ disbelief	dsf			disbeliefs
 tighten	tte			tightens
 determine	dtn			determines
 favor	fvr	favored	favoring	favors
-mental	mna			mentals
+mental	mtl			mentals
 forgive	foi	forgiven	forgiving	forgives
 embrace	eae			embraces
 fairly	fay			fairlies
@@ -1299,10 +1304,11 @@ froze	fro			frozes
 insult	iu			insults
 option	oin			options
 resist	rsi			resists
-spoken	spo			spokens
+spoken	skn			spokens
 apple	ape			apples
 general	gnr			generals
 instant	isn			instants
+jeep	jp			jeeps
 emerge	eer			emerges
 neighbor	nh			neighbors
 pressure	pese			pressures
@@ -1311,12 +1317,12 @@ shuffle	shu			shuffles
 briefly	bry			brieflies
 notebook	not			notebooks
 peace	pac			peaces
-string	sng			strings
+string	srg			strings
 stress	sss	stressed	stressing	stresses
 connect	cnet	connected	connecting	connects
 language	lne			languages
-private	pvt			privates
-spring	srg			springs
+private	prte			privates
+spring	sig			springs
 puppy	puy			puppies
 desperate	dte			desperates
 habit	hb			habits

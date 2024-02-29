@@ -1,3 +1,7 @@
+import logging
+
+log = logging.getLogger("abbrgen")
+
 qwerty = [
     ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
     ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";"],
@@ -14,15 +18,21 @@ colemak_dh = [
     ["z", "x", "c", "d", "v", "k", "h", ",", ".", "/"],
 ]
 canary = [
-    ["w", "l", "y", "p", "k", "z", "f", "o", "u", "'"],
-    ["c", "r", "s", "t", "b", "x", "n", "e", "i", "a"],
-    ["q", "j", "v", "d", "g", "m", "h", "/", ",", "."],
+    ["w", "l", "y", "p", "b", "z", "f", "o", "u", "'"],
+    ["c", "r", "s", "t", "g", "m", "n", "e", "i", "a"],
+    ["q", "j", "v", "d", "k", "x", "h", ";", ",", "."],
 ]
 
 finger_maping = [
     [1, 2, 3, 4, 4, 5, 5, 6, 7, 8],
     [1, 2, 3, 4, 4, 5, 5, 6, 7, 8],
     [1, 2, 3, 4, 4, 5, 5, 6, 7, 8],
+]
+
+hand_row_maping = [
+    [-1, -1, -1, -1, -1, 1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [-2, -2, -2, -2, -2, 2, 2, 2, 2, 2],
 ]
 
 # https://colemakmods.github.io/mod-dh/model.html
@@ -39,18 +49,19 @@ effort_map_matrix = [
 
 
 class EffortCalculator:
-    def __init__(self, layout, effort_map, sfb_penalty):
+    def __init__(self, layout, effort_map):
         self.layout = layout
         self.effort_map = effort_map
         self.layout_map = {}
         self.effort_map = {}
+        self.hand_row_map = {}
         for r in range(0, len(layout)):
             for c in range(0, len(layout[r])):
                 self.layout_map[layout[r][c]] = finger_maping[r][c]
                 self.effort_map[layout[r][c]] = effort_map[r][c]
-        self.sfb_multiplier = sfb_penalty
+                self.hand_row_map[layout[r][c]] = hand_row_maping[r][c]
 
-    def calculate(self, abbr):
+    def calculate(self, abbr, sfb_penalty, scissor_penalty):
         result = 0
         for i in range(0, len(abbr)):
             if abbr[i] not in self.layout_map:
@@ -58,10 +69,18 @@ class EffortCalculator:
 
         for i in range(0, len(abbr)):
             result += self.effort_map[abbr[i]]
-            # check if sfb
-            if (
-                i < len(abbr) - 1
-                and self.layout_map[abbr[i]] == self.layout_map[abbr[i + 1]]
-            ):
-                result += self.sfb_multiplier
+            # check penalties
+            if i < len(abbr) - 1:
+                # sfb
+                if self.layout_map[abbr[i]] == self.layout_map[abbr[i + 1]]:
+                    log.debug("Applying SFB penalty")
+                    result += sfb_penalty
+                # scissor
+                a = self.hand_row_map[abbr[i]]
+                b = self.hand_row_map[abbr[i + 1]]
+                if a != b:
+                    if (a < 0 and b < 0) or (a > 0 and b > 0):
+                        log.debug("Applying scissor penalty")
+                        result += scissor_penalty
+
         return result
