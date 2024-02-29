@@ -12,7 +12,7 @@ min_chars = 3
 # any percent improvement below this will not be considered and the word might be excluded if there are no other options
 min_improvement = 40
 # the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms or punctuation
-banned_suffixes = "qjz;,.:?'"
+banned_suffixes = "qjz;,.:?x"
 # output the words with no abbreviation found so you can add them by hand
 output_all = False
 # change this to your keyboard layout, ensure its listed in layout.py
@@ -143,6 +143,10 @@ with open("words.txt") as file:
             plural = p.plural_noun(word)
             if plural:
                 alt[2] = plural
+
+            for a in alt:
+                if a:
+                    seen[a] = True
 
             line = f"{word}\t{abbr}\t" + "\t".join(alt)
             log.info(line)

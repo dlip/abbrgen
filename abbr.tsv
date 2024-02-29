@@ -16,7 +16,6 @@ what	wh			whats
 not	n			nots
 just	j			justs
 like	le	liked	liking	likes
-they	te			they
 this	ts			thiss
 from	fr			froms
 were	we			weres
@@ -28,7 +27,7 @@ get	g	got	getting	gets
 then	tn			thens
 into	i			intoes
 would	wo			woulds
-there	tr			theres
+there	te			theres
 could	c			coulds
 don't	d			don'ts
 down	dn			downs
@@ -36,7 +35,6 @@ time	ti	timed	timing	times
 didn't	di			didn'ts
 want	wa	wanted	wanting	wants
 eye	e			eyes
-them	tm			them
 over	or			overs
 your	yr			yours
 been	bn			beens
@@ -49,7 +47,7 @@ well	wl			wells
 before	be			befores
 more	m			mores
 even	en			evens
-turn	tu	turned	turning	turns
+turn	tr	turned	turning	turns
 come	ce	come	coming	comes
 smile	se	smiled	smiling	smiles
 really	r			reallies
@@ -67,7 +65,6 @@ again	ai			agains
 thing	thi			things
 after	ae			afters
 still	sti			stills
-thought	tt			thoughts
 door	dr			doors
 here	hr			heres
 little	lt			littles
@@ -89,7 +86,6 @@ call	ca	called	calling	calls
 talk	tk	talked	talking	talks
 will	wi			wills
 long	ln	longed	longing	longs
-made	ma			mades
 friend	fi			friends
 knew	kn			knews
 open	oe	opened	opening	opens
@@ -97,7 +93,7 @@ need	nd	needed	needing	needs
 first	ft			firsts
 which	wc			whiches
 people	p			peoples
-that's	tht			that'ss
+that's	tt			that'ss
 sure	su			sures
 seem	sm			seems
 stop	sp	stopped	stopping	stops
@@ -108,19 +104,18 @@ laugh	la	laughed	laughing	laughs
 okay	oa			okays
 close	cs	closed	closing	closes
 came	cm			cames
-told	td			tolds
 love	lo	loved	loving	loves
 watch	wat	watched	watching	watches
 anything	ah			anythings
 I'll	il			I'lls
-though	tg			thoughs
+though	tu			thoughs
 left	lf			lefts
 hair	hi			hairs
 next	nt			nexts
 couldn't	cn			couldn'ts
 yeah	ya			yeahs
 while	wie			whiles
-mean	mn	meant	meaning	means
+mean	ma	meant	meaning	means
 home	ho			homes
 place	pe	placed	placing	places
 school	sc			schools
@@ -143,7 +138,7 @@ side	sd			sides
 sound	sn	sounded	sounding	sounds
 once	oc			onces
 find	fd	found	finding	finds
-toward	trd			towards
+toward	td			towards
 ever	er			evers
 nothing	nn			nothings
 front	fn			fronts
@@ -151,6 +146,7 @@ mother	mr			mothers
 name	na	named	naming	names
 since	sne			sinces
 reply	re	replied	replying	replies
+he's	h'			he'ss
 myself	ms			ourselves
 leave	lea	left	leaving	leaves
 use	u	used	using	uses
@@ -158,10 +154,9 @@ mind	mi			minds
 maybe	my			maybes
 heard	her			heards
 answer	ans	answered	answering	answers
-minute	mte			minutes
+minute	mn			minutes
 until	un			untils
 both	bh			boths
-found	fo	founded	founding	founds
 small	sl			smalls
 word	wd			words
 someone	sen			someones
@@ -211,7 +206,7 @@ care	cr	cared	caring	cares
 phone	ph	phoned	phoning	phones
 reach	ra		reaching	reaches
 realize	ri	realized	realizing	realizes
-follow	fw	followed	following	follows
+follow	fo	followed	following	follows
 decide	de	decided	deciding	decides
 kind	ki			kinds
 she's	ss			she'ss
@@ -297,7 +292,7 @@ young	yn			youngs
 outside	os			outsides
 listen	ltn	listened	listening	listens
 whisper	wse	whispered	whispering	whispers
-won't	won			won'ts
+won't	w'			won'ts
 happy	hy			happies
 ground	grn			grounds
 deep	dp			deeps
@@ -309,7 +304,7 @@ breath	bre			breaths
 sister	ste			sisters
 chair	cir			chairs
 kitchen	kc			kitchens
-matter	mtr	mattered	mattering	matters
+matter	mte	mattered	mattering	matters
 isn't	is			isn'ts
 woman	wan			women
 suppose	sse	supposed	supposing	supposes
@@ -326,7 +321,6 @@ stuff	sf	stuffed	stuffing	stuffs
 short	sht			shorts
 ready	ry			readies
 understand	ut	understood	understanding	understands
-kept	kt			kepts
 plan	pl	planned	planning	plans
 raise	rse	raised	raising	raises
 street	set			streets
@@ -393,11 +387,9 @@ hang	hg	hanged	hanging	hangs
 clothes	cte			clothess
 become	bec	become	becoming	becomes
 manage	man	managed	managing	manages
-meant	men			meants
 game	gm			games
 ignore	io	ignored	ignoring	ignores
 stair	sta			stairs
-taken	ten			takens
 party	py			parties
 sometimes	sts			sometimess
 quiet	qi			quiets
@@ -420,7 +412,6 @@ desk	dk			desks
 dinner	dne			dinners
 horse	hrs			horses
 music	msi			musics
-brought	bht			broughts
 piece	pie			pieces
 anymore	anr			anymores
 beautiful	bf			beautifuls
@@ -430,7 +421,7 @@ although	au			althoughs
 warm	wm	warmed	warming	warms
 enter	ent	entered	entering	enters
 perfect	pet			perfects
-mutter	mer	muttered	muttering	mutters
+mutter	mtr	muttered	muttering	mutters
 softly	sty			softlies
 cross	crs	crossed	crossing	crosses
 shock	shc	shocked	shocking	shocks
@@ -445,7 +436,7 @@ note	no	noted	noting	notes
 yourself	ys			yourselves
 haven't	hen			haven'ts
 lunch	lc			lunches
-tomorrow	tor			tomorrows
+tomorrow	tm			tomorrows
 breathe	bat	breathed	breathing	breathes
 clean	cen	cleaned	cleaning	cleans
 except	ect			excepts
@@ -474,7 +465,6 @@ wrap	wp	wrapt	wrapping	wraps
 pocket	pct			pockets
 hello	hel			helloes
 bother	ber			bothers
-known	knn			knowns
 especially	ese			especiallies
 expression	esn			expressions
 carry	car	carried	carrying	carries
@@ -526,7 +516,7 @@ quick	qu			quicks
 doctor	dct			doctors
 edge	ed			edges
 asleep	ase			asleeps
-twenty	tny			twenties
+twenty	ten			twenties
 barely	bae			barelies
 remain	ren	remained	remaining	remains
 child	chi			children
@@ -543,8 +533,6 @@ giggle	gie			giggles
 bright	bit			brights
 admit	ait	admitted	admitting	admits
 jeans	je			jeanss
-given	gv			givens
-children	cin			childrens
 store	sor	stored	storing	stores
 sweet	swt			sweets
 climb	cb	climbed	climbing	climbs
@@ -565,7 +553,6 @@ perhaps	peh			perhapss
 groan	gan	groaned	groaning	groans
 rock	rc	rocked	rocking	rocks
 blush	bsh	blushed	blushing	blushes
-besides	bse			besidess
 crazy	cra			crazies
 afraid	af			afraids
 chase	chs	chased	chasing	chases
@@ -589,7 +576,7 @@ human	han			humans
 truth	trh			truths
 share	sar	shared	sharing	shares
 concern	crn	concerned	concerning	concerns
-shouldn't	shd			shouldn'ts
+shouldn't	s'			shouldn'ts
 escape	esc	escaped	escaping	escapes
 mumble	ml	mumbled	mumbling	mumbles
 often	otn			oftens
@@ -597,7 +584,7 @@ search	sec	searched	searching	searches
 apparently	aet			apparentlies
 attempt	att	attempted	attempting	attempts
 within	wtn			withins
-memory	mey			memories
+memory	mer			memories
 anger	aer			angers
 paint	pin	painted	painting	paints
 bottle	bte			bottles
@@ -649,7 +636,6 @@ wife	wf			wives
 position	pst			positions
 we've	wee			we'ves
 heavy	hea			heavies
-broken	bon			brokens
 complete	cot	completed	completing	completes
 space	sac			spaces
 brain	ban			brains
@@ -673,13 +659,11 @@ track	tra	tracked	tracking	tracks
 crack	crc	cracked	cracking	cracks
 block	boc			blocks
 handle	hae	handled	handling	handles
-themselves	tv			themselvess
 drove	dro			droves
 seven	sev			sevens
 struggle	stl			struggles
 whether	wet			whethers
 ahead	ahe			aheads
-women	woe			womens
 focus	fcs			focuses
 repeat	ret	repeated	repeating	repeats
 thick	tic			thicks
@@ -749,7 +733,7 @@ button	btn			buttons
 chocolate	cht			chocolates
 refuse	rf	refused	refusing	refuses
 pillow	pio			pillows
-thirty	tiy			thirties
+thirty	tht			thirties
 count	cun	counted	counting	counts
 honestly	hnt			honestlies
 motion	mti			motions
@@ -765,7 +749,7 @@ silver	siv			silvers
 birthday	bir			birthdays
 disgust	dit			disgusts
 embarrass	ers	embarrassed	embarrassing	embarrasses
-bought	bg			boughts
+bought	bht			boughts
 loudly	ll			loudlies
 driver	die			drivers
 murmur	mrr			murmurs
@@ -803,15 +787,13 @@ wrist	wis			wrists
 earth	ert			earths
 action	ati			actions
 circle	cic			circles
-forgotten	ftn			forgottens
 closet	cos			closets
-drunk	dun			drunks
 shape	shp			shapes
 yellow	yw			yellows
 twist	tis	twisted	twisting	twists
 weight	weh			weights
 smart	smt			smarts
-it'll	itl			it'lls
+it'll	i'			it'lls
 prepare	pea	prepared	preparing	prepares
 awake	ak	awaked	awaking	awakes
 certainly	cti			certainlies
@@ -824,7 +806,7 @@ reveal	rv	revealed	revealing	reveals
 swing	sng	swung	swinging	swings
 truck	trc			trucks
 anywhere	ahr			anywheres
-flower	fle	flowered	flowering	flowers
+flower	fw	flowered	flowering	flowers
 upstairs	ur			upstairss
 itself	its			themselves
 wander	wae	wandered	wandering	wanders
@@ -837,19 +819,18 @@ bloody	bod			bloodies
 church	chr			churches
 husband	hsn			husbands
 trick	trk	tricked	tricking	tricks
-yours	yrs			yours
 growl	gro	growled	growling	growls
 Friday	fri			Fridays
 stage	sge			stages
 include	inc	included	including	includes
 invite	ite	invited	inviting	invites
 sharp	srp			sharps
-convince	cnc			convinces
+convince	cin			convinces
 absolutely	ast			absolutelies
 orange	one			oranges
 relief	rei			reliefs
 apologize	aie	apologized	apologizing	apologizes
-he'll	hll			he'lls
+he'll	he'			he'lls
 remove	rm	removed	removing	removes
 crash	cas	crashed	crashing	crashes
 curse	cus	cursed	cursing	curses
@@ -873,13 +854,13 @@ cookie	coi			cookies
 homework	hk			homeworks
 aside	asi			asides
 information	if			information
-fifteen	ff			fifteens
+fifteen	ftn			fifteens
 player	pae			players
 monster	mse			monsters
 below	bel			belows
 ceiling	cei			ceilings
 click	cli			clicks
-travel	tve	traveled	traveling	travels
+travel	tv	traveled	traveling	travels
 fish	fh	fished	fishing	fish
 nervously	nv			nervouslies
 towel	tel			towels
@@ -943,7 +924,7 @@ backward	bar			backwards
 crush	csh	crushed	crushing	crushes
 cigarette	cit			cigarettes
 faint	fan			faints
-belong	bng	belonged	belonging	belongs
+belong	bon	belonged	belonging	belongs
 stranger	stne			strangers
 beach	beh			beaches
 everywhere	ere			everywheres
@@ -951,7 +932,7 @@ scratch	srh	scratched	scratching	scratches
 history	hit			histories
 restaurant	rnt			restaurants
 event	een			events
-extremely	ex			extremelies
+extremely	ety			extremelies
 widen	wid			widens
 clutch	ctc			clutches
 beyond	bnd			beyonds
@@ -961,14 +942,13 @@ palm	pm			palms
 amuse	aus	amused	amusing	amuses
 guest	ges			guests
 Saturday	sad			Saturdays
-wooden	wdn			woodens
+wooden	won			woodens
 worst	wot			worsts
 plastic	pas			plastics
 reality	rit			realities
 wince	wnc			winces
 announce	anc	announced	announcing	announces
 gotta	got			gottas
-slept	sep			slepts
 she'll	shl			she'lls
 member	mee			members
 choose	coe	chosen	choosing	chooses
@@ -987,14 +967,12 @@ screw	sew	screwed	screwing	screws
 protest	pte	protested	protesting	protests
 introduce	inr	introduced	introducing	introduces
 sleeve	slv			sleeves
-movement	mnt			movements
+movement	men			movements
 loose	lse			looses
 wanna	wna			wannas
 difficult	dic			difficults
 frame	fae	framed	framing	frames
-understood	ud			understoods
 unfortunately	uy			unfortunatelies
-written	wre			writtens
 decision	dsi			decisions
 heavily	hei			heavilies
 insist	ist	insisted	insisting	insists
@@ -1007,7 +985,7 @@ judge	jd	judged	judging	judges
 startle	strt			startles
 bunch	bch			bunches
 stream	sem			streams
-they'll	tey			they'lls
+they'll	t'			they'lls
 muscle	msc			muscles
 accident	ain			accidents
 dragon	dan			dragons
@@ -1017,6 +995,7 @@ spirit	sri			spirits
 protect	pec	protected	protecting	protects
 forth	fth			forths
 purple	pp			purples
+bang	bg	banged	banging	bangs
 curious	cis			curiouses
 nearby	ner			nearbies
 nowhere	nre			nowheres
@@ -1033,13 +1012,12 @@ cough	coh	coughed	coughing	coughs
 mountain	mta			mountains
 split	spi			splits
 square	sur			squares
-underneath	uh			underneaths
+underneath	ud			underneaths
 process	pcs			processes
 somebody	sey			somebodies
 classroom	csr			classrooms
 presence	prn			presences
 whose	wos			whoses
-grown	gon			growns
 hidden	hin			hiddens
 serve	srv	served	serving	serves
 female	fea			females
@@ -1057,7 +1035,7 @@ smack	sma			smacks
 stroke	sro	stroked	stroking	strokes
 plant	pln	planted	planting	plants
 impossible	ip			impossibles
-bruise	bis	bruised	bruising	bruises
+bruise	bse	bruised	bruising	bruises
 disappoint	dat			disappoints
 energy	eg			energies
 relieve	ree			relieves
@@ -1076,8 +1054,7 @@ vision	vn			visions
 innocent	ien			innocents
 friendly	fed			friendlies
 jealous	js			jealouses
-swung	sun			swungs
-flame	fla			flames
+flame	fle			flames
 driveway	dri			driveways
 spill	spl	spilt	spilling	spills
 gang	gg			gangs
@@ -1086,7 +1063,7 @@ respect	rst			respects
 inform	im	informed	informing	informs
 lesson	lsn			lessons
 whine	whi	whined	whining	whines
-clench	cec			clenches
+clench	cnc			clenches
 excitement	ein			excitements
 library	lir			libraries
 surface	sfe			surfaces
@@ -1099,7 +1076,6 @@ magazine	mie			magazines
 among	ang			amongs
 leather	lat			leathers
 result	rut			results
-thrown	ton			throwns
 terrible	tee			terribles
 local	lca			locals
 project	prc			projects
@@ -1119,6 +1095,7 @@ grunt	gnt	grunted	grunting	grunts
 o'clock	ol			o'clocks
 entirely	eti			entirelies
 frighten	frh	frightened	frightening	frightens
+shade	shd	shaded	shading	shades
 strength	stnt			strengths
 exchange	ecn			exchanges
 flight	fih			flights
@@ -1148,13 +1125,13 @@ balance	bac	balanced	balancing	balances
 blind	bli	blinded	blinding	blinds
 dangerous	dnr			dangerouses
 particular	pra			particulars
-wrote	wro			wrotes
+wrote	wre			wrotes
 distract	dsa			distracts
 popular	par			populars
 social	sia			socials
 teach	tec	taught	teaching	teaches
 appearance	arn			appearances
-correct	crr	corrected	correcting	corrects
+correct	cec	corrected	correcting	corrects
 public	pic			publics
 sarcastically	sas			sarcasticallies
 guilty	giy			guilties
@@ -1188,12 +1165,11 @@ ticket	tct			tickets
 chill	cil			chills
 fence	fec	fenced	fencing	fences
 horror	hro			horrors
-built	blt			builts
 security	sry			securities
 sidewalk	side			sidewalks
 breast	bas			breasts
 curtain	crtn			curtains
-fifty	fty			fifties
+fifty	ff			fifties
 giant	gin			giants
 recall	rca	recalled	recalling	recalls
 footstep	fts			footsteps
@@ -1212,7 +1188,7 @@ halfway	hay			halfways
 opportunity	ont			opportunities
 outfit	oti			outfits
 rough	roh			roughs
-ain't	a't			ain'ts
+ain't	a'			ain'ts
 beauty	bey			beauties
 chose	cho			choses
 snake	snk			snakes
@@ -1221,14 +1197,14 @@ daddy	dad			daddies
 describe	dec	described	describing	describes
 desperately	dea			desperatelies
 height	heh			heights
-thigh	thh			thighs
+thigh	tg			thighs
 deeply	dey			deeplies
 friendship	frs			friendships
 winter	wir			winters
 witch	wtc			witches
 condition	cnd			conditions
 enemy	eny			enemies
-golden	gln			goldens
+golden	gon			goldens
 master	msr			masters
 throughout	tut			throughouts
 assure	asr	assured	assuring	assures
@@ -1238,7 +1214,7 @@ claim	cla	claimed	claiming	claims
 nightmare	nte			nightmares
 prefer	pee	preferred	preferring	prefers
 purpose	pro			purposes
-merely	mry			merelies
+merely	mey			merelies
 French	frc			Frenches
 sadly	say			sadlies
 uniform	ui			uniforms
@@ -1251,7 +1227,7 @@ various	vr			variouses
 lately	lae			latelies
 pitch	pit			pitches
 accent	acn			accents
-they've	tye			they'ves
+they've	tey			they'ves
 tremble	tle	trembled	trembling	trembles
 cabin	cbn			cabins
 physical	phs			physicals
@@ -1261,24 +1237,22 @@ steady	sdy			steadies
 how's	hos			how'ss
 compare	cpr	compared	comparing	compares
 principal	pci			principals
-forty	fry			forties
+forty	fty			forties
 impress	ies	impressed	impressing	impresses
 mentally	mea			mentallies
 react	rat			reacts
 sandwich	sni			sandwiches
 twelve	tev			twelves
 whilst	wlt			whilsts
-bullet	bue			bullets
+bullet	blt			bullets
 challenge	cene	challenged	challenging	challenges
 command	cad	commanded	commanding	commands
 examine	eie	examined	examining	examines
 appreciate	aei	appreciated	appreciating	appreciates
 tense	tns			tenses
 blank	bla			blanks
-fought	fht			foughts
 passenger	psen			passengers
 teenager	tnr			teenagers
-drawn	dra			drawns
 scary	sca			scaries
 unlike	uni			unlikes
 straighten	sah			straightens
@@ -1296,15 +1270,14 @@ disbelief	dsf			disbeliefs
 tighten	tte			tightens
 determine	dtn			determines
 favor	fvr	favored	favoring	favors
-mental	mtl			mentals
+mental	mnt			mentals
 forgive	foi	forgiven	forgiving	forgives
 embrace	eae			embraces
-fairly	fay			fairlies
+fairly	fry			fairlies
 froze	fro			frozes
 insult	iu			insults
 option	oin			options
 resist	rsi			resists
-spoken	skn			spokens
 apple	ape			apples
 general	gnr			generals
 instant	isn			instants
@@ -1324,7 +1297,7 @@ language	lne			languages
 private	prte			privates
 spring	sig			springs
 puppy	puy			puppies
-desperate	dte			desperates
+desperate	dra			desperates
 habit	hb			habits
 necessary	nsr			necessaries
 nope	np			nopes
@@ -1362,7 +1335,7 @@ similar	sii			similars
 flirt	flt			flirts
 pathetic	phe			pathetics
 supply	spy	supplied	supplying	supplies
-tower	toe			towers
+tower	tor			towers
 engine	enn			engines
 frozen	fon			frozens
 toilet	toi			toilets
@@ -1400,7 +1373,7 @@ luckily	lci			luckilies
 retort	rtr	retorted	retorting	retorts
 captain	cpn			captains
 eaten	ean			eatens
-glove	gve			gloves
+glove	gv			gloves
 owner	onr			owners
 cheese	ces			cheeses
 yank	yk			yanks
@@ -1424,11 +1397,10 @@ freeze	fze	frozen	freezing	freezes
 heaven	hee			heavens
 surprisingly	ssn			surprisinglies
 abruptly	ary			abruptlies
-begun	beu			beguns
 customer	cto			customers
 design	deg			designs
 pride	pid			prides
 interview	itr			interviews
 makeup	mp			makeups
 blast	bls			blasts
-bubble	bb	bubbled	bubbling	bubbles
+bubble	bue	bubbled	bubbling	bubbles
