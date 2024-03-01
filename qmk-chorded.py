@@ -62,8 +62,8 @@ with open("abbr.tsv") as file:
                     alt = alt_keys[i - 1]
                 name = f"c_{abbr}{i}".replace("'", "_")
 
-                output += f'SUBS({name}, "{word}", {", ".join(keys + alt)})\n'
-                output += f'SUBS({name}s, "{word.capitalize()}", {", ".join(keys + alt + shifted_keys)})\n'
+                output += f'SUBS({name}, "{word} ", {", ".join(keys + alt)})\n'
+                output += f'SUBS({name}s, "{word.capitalize()} ", {", ".join(keys + alt + shifted_keys)})\n'
 
 with open("abbr.def", "w") as file:
     file.write(output)
