@@ -2,7 +2,7 @@
 
 Abbreviation generator for chording and text expansion
 
-Every day, we find ourselves typing commonly used words repetitively, consuming time and effort. Text expansion offers a solution by allowing us to replace these frequently used words with unique abbreviations, thereby saving keystrokes. For instance, typing 't' with a trigger key could automatically generate 'the '. The objective isn't to abbreviate every word, but rather to focus on those that offer significant savings for the effort invested in memorization.
+Every day, we find ourselves typing commonly used words repetitively, consuming time and effort. Text expansion offers a solution by allowing us to replace these frequently used words with unique abbreviations, thereby saving keystrokes. For instance, typing 't' with a trigger key could automatically generate 'the '. The objective isn't to abbreviate every word, but rather to focus on those that offer significant savings for the effort invested in memorization. Ideally you also want the abbreviations to be the most comfortable effort wise for your particular keyboard layout (qwerty, colemak, canary etc).
 
 However, compiling such a list manually can be a daunting task. This is where abbrgen comes in handy, it helps by automating the generation of the initial list and streamlines the process of importing them into different tools, so you can enhance and customize them over time.
 
@@ -49,7 +49,7 @@ The approach it uses is:
 - Generate all combinations of the letters in the word which start with the first letter and keep the order from left to right
 - Reject abbreviations it has already used
 - Reject abbreviations that are shorter than a minimum amount of characters or don't provide a minimum percentage improvement over typing the full word
-- Score remaining abbreviations by effort and select the best option
+- Score remaining abbreviations by effort and select the best option depending on your particular keyboard layout and if you are using chorded mode
 - Add verb tenses with the data in `verbs-conjugations.json`
 - Add plurals using [inflect](https://pypi.org/project/inflect/)
 
