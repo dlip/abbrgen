@@ -5,7 +5,7 @@ seen = {}
 output = ""
 line_no = 0
 
-trigger_keys = ["KC_TRIGGER"]
+trigger_keys = ["KC_COMBO"]
 shifted_keys = ["KC_COMBO_SFT"]
 alt_keys = [["KC_COMBO_ALT1"], ["KC_COMBO_ALT2"], ["KC_COMBO_ALT1", "KC_COMBO_ALT2"]]
 
@@ -15,7 +15,10 @@ key_map = {
     "T": "KC_CTL_T",
     "D": "KC_SFT_D",
     "V": "KC_CAG_V",
-    "SCLN": "KC_CAG_SCLN",
+    ";": "KC_CAG_SCLN",
+    ",": "KC_COMMA",
+    ".": "KC_DOT",
+    "'": "KC_QUOT",
     "H": "KC_SFT_H",
     "N": "KC_CTL_N",
     "E": "KC_GUI_E",
@@ -57,9 +60,10 @@ with open("abbr.tsv") as file:
                 alt = []
                 if i != 0:
                     alt = alt_keys[i - 1]
+                name = f"c_{abbr}{i}".replace("'", "_")
 
-                output += f'SUBS({abbr + str(i)}, "{word}", {", ".join(keys + alt)})\n'
-                output += f'SUBS({abbr + str(i)}s, "{word.capitalize()}", {", ".join(keys + alt + shifted_keys)})\n'
+                output += f'SUBS({name}, "{word}", {", ".join(keys + alt)})\n'
+                output += f'SUBS({name}s, "{word.capitalize()}", {", ".join(keys + alt + shifted_keys)})\n'
 
 with open("abbr.def", "w") as file:
     file.write(output)
