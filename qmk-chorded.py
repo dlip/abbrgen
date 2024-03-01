@@ -13,16 +13,15 @@ key_map = {
     "R": "KC_ALT_R",
     "S": "KC_GUI_S",
     "T": "KC_CTL_T",
-    "D": "KC_SFT_D",
     "V": "KC_CAG_V",
-    ";": "KC_CAG_SCLN",
-    ",": "KC_COMMA",
-    ".": "KC_DOT",
-    "'": "KC_QUOT",
     "H": "KC_SFT_H",
     "N": "KC_CTL_N",
     "E": "KC_GUI_E",
     "I": "KC_ALT_I",
+    ";": "KC_CAG_SCLN",
+    ",": "KC_COMMA",
+    ".": "KC_DOT",
+    "'": "KC_QUOT",
 }
 
 
