@@ -2,6 +2,7 @@ import csv
 import utils
 
 limit = 150
+combo_timeout = 100
 
 # Needs to map all of your keys
 key_positions = [
@@ -69,15 +70,19 @@ macros = """#define str(s) #s
 
 """
 
-combos = """#define COMBO(NAME, BINDINGS, KEYPOS) \\
+combos = (
+    """#define COMBO(NAME, BINDINGS, KEYPOS) \\
   combo_##NAME { \\
-    timeout-ms = <80>; \\
+    timeout-ms = <"""
+    + str(combo_timeout)
+    + """>; \\
     bindings = <BINDINGS>; \\
     key-positions = <KEYPOS>; \\
     layers = <0>; \\
   };
 
 """
+)
 line_no = 0
 
 
@@ -99,14 +104,23 @@ def translate_keys(abbr):
     return result
 
 
-def translate_macro(word):
+def translate_macro(word, capitalize=False):
     result = []
-    for k in word:
+    for i, k in enumerate(word):
         k = k.upper()
+        kp = "&kp "
+        if capitalize and i == 0:
+            kp += "LS("
+
         if k in key_map:
-            result.append(f"&kp {key_map[k]}")
+            kp += key_map[k]
         else:
-            result.append(f"&kp {k}")
+            kp += k
+
+        if capitalize and i == 0:
+            kp += ")"
+
+        result.append(kp)
     return result
 
 
@@ -135,7 +149,7 @@ with open("abbr.tsv") as file:
                 alt = []
                 if i != 0:
                     alt = alt_keys[i - 1]
-                name = f"c_{abbr}{chr(ord('a') + i)}".replace("'", "_")
+                name = f'c_{abbr}{"_" * i}'.replace("'", "_")
                 macro = translate_macro(word + " ")
 
                 positions = translate_keys(list(abbr) + trigger_keys + alt)
@@ -143,7 +157,8 @@ with open("abbr.tsv") as file:
                 combos += f'COMBO({name}, &macro_{name}, {" ".join(positions)})\n'
 
                 # shifted
-                macros += f'MACRO(s_{name}, &sk LSHIFT {" ".join(macro)})\n'
+                macro = translate_macro(word + " ", True)
+                macros += f'MACRO(s_{name}, {" ".join(macro)})\n'
                 combos += f'COMBO(s_{name}, &macro_s_{name}, {" ".join(positions + translate_keys(shifted_keys))})\n'
 
 with open("macros.dtsi", "w") as file:
