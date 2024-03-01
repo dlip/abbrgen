@@ -10,15 +10,16 @@ shifted_keys = ["KC_COMBO_SFT"]
 alt_keys = [["KC_COMBO_ALT1"], ["KC_COMBO_ALT2"], ["KC_COMBO_ALT1", "KC_COMBO_ALT2"]]
 
 key_map = {
+    "C": "KC_SFT_C",
     "R": "KC_ALT_R",
     "S": "KC_GUI_S",
     "T": "KC_CTL_T",
-    "V": "KC_CAG_V",
-    "H": "KC_SFT_H",
     "N": "KC_CTL_N",
     "E": "KC_GUI_E",
     "I": "KC_ALT_I",
-    ";": "KC_CAG_SCLN",
+    "A": "KC_SFT_A",
+    "V": "KC_CAG_V",
+    ";": "KC_CAG_SCLN",  # normally KC_SCLN
     ",": "KC_COMMA",
     ".": "KC_DOT",
     "'": "KC_QUOT",
