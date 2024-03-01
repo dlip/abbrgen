@@ -1,7 +1,7 @@
 import csv
 import utils
 
-limit = 100
+limit = 150
 
 # Needs to map all of your keys
 key_positions = [
@@ -41,6 +41,10 @@ key_positions = [
     "COMBO",
 ]
 
+trigger_keys = ["COMBO"]
+shifted_keys = ["COMBO_SFT"]
+alt_keys = [["COMBO_ALT1"], ["COMBO_ALT2"], ["COMBO_ALT1", "COMBO_ALT2"]]
+
 key_map = {
     "'": "QUOT",
     ";": "SEMI",
@@ -76,9 +80,6 @@ combos = """#define COMBO(NAME, BINDINGS, KEYPOS) \\
 """
 line_no = 0
 
-trigger_keys = ["COMBO"]
-shifted_keys = ["COMBO_SFT"]
-alt_keys = [["COMBO_ALT1"], ["COMBO_ALT2"], ["COMBO_ALT1", "COMBO_ALT2"]]
 
 key_positions_map = {}
 for i, key in enumerate(key_positions):
@@ -140,6 +141,10 @@ with open("abbr.tsv") as file:
                 positions = translate_keys(list(abbr) + trigger_keys + alt)
                 macros += f'MACRO({name}, {" ".join(macro)})\n'
                 combos += f'COMBO({name}, &macro_{name}, {" ".join(positions)})\n'
+
+                # shifted
+                macros += f'MACRO(s_{name}, &sk LSHIFT {" ".join(macro)})\n'
+                combos += f'COMBO(s_{name}, &macro_s_{name}, {" ".join(positions + translate_keys(shifted_keys))})\n'
 
 with open("macros.dtsi", "w") as file:
     file.write(macros)
