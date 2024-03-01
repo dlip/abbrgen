@@ -162,7 +162,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 ### qmk-chorded.py
 
-This is a chorded importer for QMK. The approach it takes is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them.
+This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards. The approach it takes is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them.
 
 | Input                           | Output  |
 | ------------------------------- | ------- |
@@ -176,7 +176,7 @@ This is a chorded importer for QMK. The approach it takes is to define combo, sh
 #### Setup
 
 - Setup combos as per this [gboards guide](https://combos.gboards.ca/docs/install/)
-- Add definitions for KC_COMBO, KC_COMBO_SFT, KC_COMBO_ALT1, KC_COMBO_ALT2, and your other thumb keys
+- Add definitions for KC_COMBO, KC_COMBO_SFT, KC_COMBO_ALT1, KC_COMBO_ALT2, and your other thumb keys to your `keymap.c`
 - Move the `#include "g/keymap_combo.h"` line below all your definitions
 
 ```
@@ -211,7 +211,7 @@ KC_NNM_TAB, KC_MED_SPC, KC_SFT_BSPC, KC_COMBO,
 // Punctuation
 SUBS(dot, SS_TAP(X_BSPC)". ", KC_COMBO, KC_DOT)
 SUBS(comma, SS_TAP(X_BSPC)", ", KC_COMBO, KC_COMMA)
-SUBS(scln, SS_TAP(X_BSPC)"; ", KC_COMBO, KC_CAG_SCLN)
+SUBS(scln, SS_TAP(X_BSPC)"; ", KC_COMBO, KC_SCLN)
 SUBS(quot, SS_TAP(X_BSPC)"' ", KC_COMBO, KC_QUOT)
 SUBS(quotS, SS_TAP(X_BSPC)"\" ", KC_COMBO, KC_COMBO_SFT, KC_QUOT)
 SUBS(appve, SS_TAP(X_BSPC)"'ve ", KC_COMBO, KC_QUOT, KC_V)
