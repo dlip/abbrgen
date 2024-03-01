@@ -160,9 +160,69 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 ```
 
-### WIP qmk-chorded.py
+### qmk-chorded.py
 
-Chorded importer for QMK
+This is a chorded importer for QMK. The approach it takes is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them.
+
+| Input                           | Output  |
+| ------------------------------- | ------- |
+| l + combo                       | look    |
+| l + combo + shift               | Look    |
+| l + combo + alt1                | looked  |
+| l + combo + alt2                | looking |
+| l + combo + alt1 + alt2         | looks   |
+| l + combo + shift + alt1 + alt2 | Looks   |
+
+#### Setup
+
+- Setup combos as per this [gboards guide](https://combos.gboards.ca/docs/install/)
+- Add definitions for KC_COMBO, KC_COMBO_SFT, KC_COMBO_ALT1, KC_COMBO_ALT2, and your other thumb keys
+- Move the `#include "g/keymap_combo.h"` line below all your definitions
+
+```
+enum custom_keycodes {
+    KC_COMBO = SAFE_RANGE,
+};
+
+// Other definitions
+
+#define KC_SFT_BSPC MT(MOD_LSFT, KC_BSPC)
+#define KC_NNM_TAB LT(1, KC_TAB)
+#define KC_MED_SPC LT(2, KC_SPC)
+
+#define KC_COMBO_SFT KC_SFT_BSPC
+#define KC_COMBO_ALT1 KC_NNM_TAB
+#define KC_COMBO_ALT2 KC_MED_SPC
+
+#include "g/keymap_combo.h"
+```
+
+- Add the definitions to your thumb keys in the keymap
+
+```
+KC_NNM_TAB, KC_MED_SPC, KC_SFT_BSPC, KC_COMBO,
+```
+
+- Add the following to your `combos.def`. It includes shortcuts for punctuation eg. combo + dot will backspace then add dot plus space for the start of a new sentence. If you have mod tap keys you will have to add a definition for it and change it eg. `KC_S` to `KC_GUI_S`. It also includes `abbr.def` which you will generate next
+
+```
+#include "abbr.def"
+
+// Punctuation
+SUBS(dot, SS_TAP(X_BSPC)". ", KC_COMBO, KC_DOT)
+SUBS(comma, SS_TAP(X_BSPC)", ", KC_COMBO, KC_COMMA)
+SUBS(scln, SS_TAP(X_BSPC)"; ", KC_COMBO, KC_CAG_SCLN)
+SUBS(quot, SS_TAP(X_BSPC)"' ", KC_COMBO, KC_QUOT)
+SUBS(quotS, SS_TAP(X_BSPC)"\" ", KC_COMBO, KC_COMBO_SFT, KC_QUOT)
+SUBS(appve, SS_TAP(X_BSPC)"'ve ", KC_COMBO, KC_QUOT, KC_V)
+SUBS(apps, SS_TAP(X_BSPC)"'s ", KC_COMBO, KC_QUOT, KC_S)
+SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
+```
+
+- Open [qmk-chorded.py] and ensure `key_map` matches any other custom definitions you may have
+- Run `python qmk-chorded.py`
+- It will generate `abbr.def` which you can then copy to your qmk keymap folder
+- Flash your keyboard
 
 ## Credits
 

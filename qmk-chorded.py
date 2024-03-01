@@ -1,14 +1,7 @@
 import csv
 import utils
 
-seen = {}
-output = ""
-line_no = 0
-
-trigger_keys = ["KC_COMBO"]
-shifted_keys = ["KC_COMBO_SFT"]
-alt_keys = [["KC_COMBO_ALT1"], ["KC_COMBO_ALT2"], ["KC_COMBO_ALT1", "KC_COMBO_ALT2"]]
-
+# Needs to match what you have defined in your keymap. If you have other mod tap with alphas you need to map each to a letter. If you aren't using mod tap you can remove the alpha mappings here and restore `KC_SCLN` for semicolon.
 key_map = {
     "C": "KC_SFT_C",
     "R": "KC_ALT_R",
@@ -24,6 +17,14 @@ key_map = {
     ".": "KC_DOT",
     "'": "KC_QUOT",
 }
+
+seen = {}
+output = ""
+line_no = 0
+
+trigger_keys = ["KC_COMBO"]
+shifted_keys = ["KC_COMBO_SFT"]
+alt_keys = [["KC_COMBO_ALT1"], ["KC_COMBO_ALT2"], ["KC_COMBO_ALT1", "KC_COMBO_ALT2"]]
 
 
 def translate_keys(abbr):
