@@ -219,7 +219,7 @@ SUBS(apps, SS_TAP(X_BSPC)"'s ", KC_COMBO, KC_QUOT, KC_S)
 SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
 ```
 
-- Open [qmk-chorded.py] and ensure `key_map` matches any other custom definitions you may have
+- Open [qmk-chorded.py](qmk-chorded.py) and ensure `key_map` matches any other custom definitions you may have
 - Run `python qmk-chorded.py`
 - It will generate `abbr.def` which you can then copy to your qmk keymap folder
 - Flash your keyboard
