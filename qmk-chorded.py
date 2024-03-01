@@ -5,6 +5,10 @@ seen = {}
 output = ""
 line_no = 0
 
+trigger_keys = ["KC_TRIGGER"]
+shifted_keys = ["KC_COMBO_SFT"]
+alt_keys = [["KC_COMBO_ALT1"], ["KC_COMBO_ALT2"], ["KC_COMBO_ALT1", "KC_COMBO_ALT2"]]
+
 key_map = {
     "R": "KC_ALT_R",
     "S": "KC_GUI_S",
@@ -20,14 +24,14 @@ key_map = {
 
 
 def translate_keys(abbr):
-    result = ["KC_TRIGGER"]
+    result = trigger_keys.copy()
     for k in abbr:
         k = k.upper()
         if k in key_map:
             result.append(key_map[k])
         else:
             result.append(f"KC_{k}")
-    return ", ".join(result)
+    return result
 
 
 with open("abbr.tsv") as file:
@@ -36,8 +40,7 @@ with open("abbr.tsv") as file:
         line_no += 1
 
         if line[1]:
-            word = line[0]
-            abbr = line[1]
+            abbr = line.pop(1)
             if abbr in seen:
                 raise Exception(
                     f'Error line {line_no}: already used trigger "{abbr}" for word "{seen[abbr]}"'
@@ -45,15 +48,18 @@ with open("abbr.tsv") as file:
 
             combinations = utils.find_all_combinations(abbr)
             for a in combinations:
-                seen[a] = word
+                seen[a] = line[0]
+
             keys = translate_keys(abbr)
-            output += f'SUBS({abbr}, "{word}", {keys})\n'
-            if line[2]:
-                output += f'SUBS({abbr}1, "{line[2]}", {keys}, KC_COMBO_ALT1)\n'
-            if line[3]:
-                output += f'SUBS({abbr}2, "{line[3]}", {keys}, KC_COMBO_ALT2)\n'
-            if line[4]:
-                output += f'SUBS({abbr}3, "{line[4]}", {keys}, KC_COMBO_ALT3)\n'
+            for i, word in enumerate(line):
+                if not word:
+                    continue
+                alt = []
+                if i != 0:
+                    alt = alt_keys[i - 1]
+
+                output += f'SUBS({abbr + str(i)}, "{word}", {", ".join(keys + alt)})\n'
+                output += f'SUBS({abbr + str(i)}s, "{word.capitalize()}", {", ".join(keys + alt + shifted_keys)})\n'
 
 with open("abbr.def", "w") as file:
     file.write(output)
