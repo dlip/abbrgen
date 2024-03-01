@@ -1,6 +1,8 @@
 import csv
 import utils
 
+limit = 100
+
 # Needs to map all of your keys
 key_positions = [
     "W",
@@ -52,24 +54,23 @@ key_map = {
 seen = {}
 output = ""
 macros = """#define str(s) #s
-#define MACRO(NAME, BINDINGS)
-  macro_##NAME: macro_##NAME {
-      compatible = "zmk,behavior-macro";
-      label = str(macro_##NAME);
-      #binding-cells = <0>;
-      wait-ms = <0>;
-      tap-ms = <10>;
-      bindings = <BINDINGS>;
+#define MACRO(NAME, BINDINGS) \\
+  macro_##NAME: macro_##NAME { \\
+      compatible = "zmk,behavior-macro"; \\
+      #binding-cells = <0>; \\
+      wait-ms = <0>; \\
+      tap-ms = <10>; \\
+      bindings = <BINDINGS>; \\
   };
 
 """
 
-combos = """#define COMBO(NAME, BINDINGS, KEYPOS)
-  combo_##NAME {
-    timeout-ms = <80>;
-    bindings = <BINDINGS>;
-    key-positions = <KEYPOS>;
-    layers = <0>;
+combos = """#define COMBO(NAME, BINDINGS, KEYPOS) \\
+  combo_##NAME { \\
+    timeout-ms = <80>; \\
+    bindings = <BINDINGS>; \\
+    key-positions = <KEYPOS>; \\
+    layers = <0>; \\
   };
 
 """
@@ -97,9 +98,9 @@ def translate_keys(abbr):
     return result
 
 
-def translate_macro(abbr):
+def translate_macro(word):
     result = []
-    for k in abbr:
+    for k in word:
         k = k.upper()
         if k in key_map:
             result.append(f"&kp {key_map[k]}")
@@ -112,6 +113,9 @@ with open("abbr.tsv") as file:
     file = csv.reader(file, delimiter="\t")
     for line in file:
         line_no += 1
+        if line_no > limit:
+            print(f"Stopping at line {limit} due to limit setting")
+            break
 
         if line[1]:
             abbr = line.pop(1)
@@ -130,15 +134,15 @@ with open("abbr.tsv") as file:
                 alt = []
                 if i != 0:
                     alt = alt_keys[i - 1]
-                name = f"c_{abbr}{i}".replace("'", "_")
-                macro = translate_macro(abbr + " ")
+                name = f"c_{abbr}{chr(ord('a') + i)}".replace("'", "_")
+                macro = translate_macro(word + " ")
 
                 positions = translate_keys(list(abbr) + trigger_keys + alt)
                 macros += f'MACRO({name}, {" ".join(macro)})\n'
                 combos += f'COMBO({name}, &macro_{name}, {" ".join(positions)})\n'
 
-with open("macros.def", "w") as file:
+with open("macros.dtsi", "w") as file:
     file.write(macros)
 
-with open("combos.def", "w") as file:
+with open("combos.dtsi", "w") as file:
     file.write(combos)
