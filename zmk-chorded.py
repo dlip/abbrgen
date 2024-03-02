@@ -1,45 +1,17 @@
 import csv
 import utils
 
+# Limit how many rows to process, this approach is a bit inneficient and microcontrollers such as nice nano have quite limited memory so you'll need to lower this if you get out of memory errors when compiling
 limit = 150
+# How long in ms you have to press the combo keys together, you can be pretty relaxed here if combo is its own unique key
 combo_timeout = 100
-
-# Needs to map all of your keys
+# You need to map all of your keys here since zmk combos are offset based
+# You can use an empty string ("") for anything other than letters, punctuation and combo positions such that it adds up to the total numbers of keys on your keyboard
 key_positions = [
-    "W",
-    "L",
-    "Y",
-    "P",
-    "B",
-    "Z",
-    "F",
-    "O",
-    "U",
-    "'",
-    "C",
-    "R",
-    "S",
-    "T",
-    "G",
-    "M",
-    "N",
-    "E",
-    "I",
-    "A",
-    "Q",
-    "J",
-    "V",
-    "D",
-    "K",
-    "X",
-    "H",
-    ";",
-    ",",
-    ".",
-    "COMBO_ALT1",
-    "COMBO_ALT2",
-    "COMBO_SFT",
-    "COMBO",
+    ["W", "L", "Y", "P", "B", "Z", "F", "O", "U", "'"],
+    ["C", "R", "S", "T", "G", "M", "N", "E", "I", "A"],
+    ["Q", "J", "V", "D", "K", "X", "H", ";", ",", "."],
+    ["COMBO_ALT1", "COMBO_ALT2", "COMBO_SFT", "COMBO"],
 ]
 
 trigger_keys = ["COMBO"]
@@ -56,6 +28,7 @@ key_map = {
     "?": "QUESTION",
 }
 
+key_positions = [item for items in key_positions for item in items]
 seen = {}
 output = ""
 macros = """#define str(s) #s
@@ -124,6 +97,7 @@ def translate_macro(word, capitalize=False):
     return result
 
 
+print("Processing abbr.tsv")
 with open("abbr.tsv") as file:
     file = csv.reader(file, delimiter="\t")
     for line in file:
@@ -161,8 +135,11 @@ with open("abbr.tsv") as file:
                 macros += f'MACRO(s_{name}, {" ".join(macro)})\n'
                 combos += f'COMBO(s_{name}, &macro_s_{name}, {" ".join(positions + translate_keys(shifted_keys))})\n'
 
+print("writing macros.dtsi")
 with open("macros.dtsi", "w") as file:
     file.write(macros)
 
 with open("combos.dtsi", "w") as file:
     file.write(combos)
+print("writing combos.dtsi")
+print("done")

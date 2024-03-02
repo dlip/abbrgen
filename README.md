@@ -224,6 +224,30 @@ SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
 - It will generate `abbr.def` which you can then copy to your qmk keymap folder
 - Flash your keyboard
 
+### zmk-chorded.py
+
+This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards. The approach it takes with chording is similar to `qmk-chorded`.
+
+Note: There are some issues with overlapping combos not triggering which I haven't worked out the cause, if you have any idea please let me know
+
+- Open [zmk-chorded.py](zmk-chorded.py) and ensure `key_positions` matches all the key positions on your keyboard
+- Run `python zmk-chorded.py`
+- It will generate `macros.dtsi` and `combos.dtsi` which you can then copy to your zmk keymap folder
+- Include these files in your zmk keymap
+
+```
+  macros {
+    #include "macros.dtsi"
+  };
+
+  combos {
+    compatible = "zmk,combos";
+    #include "combos.dtsi"
+  };
+```
+
+- Flash your keyboard
+
 ## Credits
 
 - [English frequency list](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists/Contemporary_fiction)
