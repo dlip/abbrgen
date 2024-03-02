@@ -228,12 +228,10 @@ SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
 
 This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards. The approach it takes with chording is similar to [qmk-chorded.py](#qmk-chordedpy)
 
-Note: There are some issues with overlapping combos not triggering which I haven't worked out the cause, if you have any idea please let me know
-
 - Open [zmk-chorded.py](zmk-chorded.py) and ensure `key_positions` matches all the key positions on your keyboard
 - Run `python zmk-chorded.py`
 - It will generate `macros.dtsi` and `combos.dtsi` which you can then copy to your zmk keymap folder
-- Include these files in your zmk keymap
+- Include these lines in your zmk keymap keymap file
 
 ```
   macros {
@@ -244,6 +242,14 @@ Note: There are some issues with overlapping combos not triggering which I haven
     compatible = "zmk,combos";
     #include "combos.dtsi"
   };
+```
+
+- Include these lines in your zmk keymap conf file, you may have to increase `CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY` if you are able to fit more combos on your controller
+
+```
+CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY=512
+CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO=10
+CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=10
 ```
 
 - Flash your keyboard
