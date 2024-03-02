@@ -15,7 +15,7 @@ key_positions = [
     ["COMBO_ALT1", "COMBO_ALT2", "COMBO_SFT", "COMBO"],
 ]
 
-# Corne keyboard example
+# 36-key keyboard example
 # key_positions = [
 #     ["", "W", "L", "Y", "P", "B", "Z", "F", "O", "U", "'", ""],
 #     ["", "C", "R", "S", "T", "G", "M", "N", "E", "I", "A", ""],
