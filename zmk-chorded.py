@@ -2,7 +2,8 @@ import csv
 import utils
 
 # Limit how many rows to process, this approach is a bit inneficient and microcontrollers such as nice nano have quite limited memory so you'll need to lower this if you get out of memory errors when compiling
-limit = 150
+# I'm having some issues with chords not working from row 27 'tn' 'then'
+limit = 27
 # How long in ms you have to press the combo keys together, you can be pretty relaxed here if combo is its own unique key
 combo_timeout = 100
 # You need to map all of your keys here since zmk combos are offset based
