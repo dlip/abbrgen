@@ -7,13 +7,21 @@ limit = 27
 # How long in ms you have to press the combo keys together, you can be pretty relaxed here if combo is its own unique key
 combo_timeout = 100
 # You need to map all of your keys here since zmk combos are offset based
-# You can use an empty string ("") for anything other than letters, punctuation and combo positions such that it adds up to the total numbers of keys on your keyboard
+# You can use an empty string ("") for anything other than letters, punctuation and combo positions such that it adds up to the total numbers of keys on your keyboard, check the example below
 key_positions = [
     ["W", "L", "Y", "P", "B", "Z", "F", "O", "U", "'"],
     ["C", "R", "S", "T", "G", "M", "N", "E", "I", "A"],
     ["Q", "J", "V", "D", "K", "X", "H", ";", ",", "."],
     ["COMBO_ALT1", "COMBO_ALT2", "COMBO_SFT", "COMBO"],
 ]
+
+# Corne keyboard example
+# key_positions = [
+#     ["", "W", "L", "Y", "P", "B", "Z", "F", "O", "U", "'", ""],
+#     ["", "C", "R", "S", "T", "G", "M", "N", "E", "I", "A", ""],
+#     ["", "Q", "J", "V", "D", "K", "X", "H", ";", ",", ".", ""],
+#     ["", "COMBO_ALT1", "COMBO_ALT2", "COMBO_SFT", "COMBO", ""],
+# ]
 
 trigger_keys = ["COMBO"]
 shifted_keys = ["COMBO_SFT"]
