@@ -162,7 +162,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 ### qmk-chorded.py
 
-This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards. The approach it takes is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them.
+This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards. The approach it takes with combos is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them.
 
 | Input                           | Output  |
 | ------------------------------- | ------- |
@@ -226,7 +226,7 @@ SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
 
 ### zmk-chorded.py
 
-This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards. The approach it takes with chording is similar to `qmk-chorded`.
+This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards. The approach it takes with chording is similar to `qmk-chorded`.
 
 Note: There are some issues with overlapping combos not triggering which I haven't worked out the cause, if you have any idea please let me know
 
