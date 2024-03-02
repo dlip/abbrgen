@@ -226,7 +226,7 @@ SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
 
 ### zmk-chorded.py
 
-This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards. The approach it takes with chording is similar to `qmk-chorded`.
+This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards. The approach it takes with chording is similar to [qmk-chorded.py](#qmk-chordedpy)
 
 Note: There are some issues with overlapping combos not triggering which I haven't worked out the cause, if you have any idea please let me know
 
