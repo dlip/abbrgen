@@ -64,17 +64,28 @@ key_positions_map = {}
 for i, key in enumerate(key_positions):
     key_positions_map[key] = i
 
+seen_positions = {}
+
 
 def translate_keys(abbr):
     result = []
     for k in abbr:
         k = k.upper()
         if k in key_positions_map:
-            result.append(str(key_positions_map[k]))
+            result.append(key_positions_map[k])
         else:
             raise Exception(
                 f'Unable to find key position for {k}, is it in "key_positions"?'
             )
+    # ensure there is no duplicate positions used since zmk doesn't check
+    result.sort()
+    result = [str(i) for i in result]
+    name = " ".join(result)
+    if name in seen_positions:
+        raise Exception(
+            f"Error: duplicate combos on lines {seen_positions[name]} and {line_no}"
+        )
+    seen_positions[name] = line_no
     return result
 
 
@@ -132,9 +143,12 @@ with open("abbr.tsv") as file:
                 combos += f'COMBO({name}, &macro_{name}, {" ".join(positions)})\n'
 
                 # shifted
+                positions = translate_keys(
+                    list(abbr) + trigger_keys + alt + shifted_keys
+                )
                 macro = translate_macro(word + " ", True)
                 macros += f'MACRO(s_{name}, {" ".join(macro)})\n'
-                combos += f'COMBO(s_{name}, &macro_s_{name}, {" ".join(positions + translate_keys(shifted_keys))})\n'
+                combos += f'COMBO(s_{name}, &macro_s_{name}, {" ".join(positions)})\n'
 
 print("writing macros.dtsi")
 with open("macros.dtsi", "w") as file:
