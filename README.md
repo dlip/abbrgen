@@ -41,7 +41,7 @@ The approach it takes with combos is to define combo, shift, and alt1/2 keys tha
 
 ### Text Expansion
 
-The approach it takes with text expansion is to define a trigger which you type after the abbreviation. The default trigger is ',;'. Read below about setting up a trigger key so you can automate typing this on one key. Alternate versions and punctuation is accessed by adding an extra suffix after the abbreviation.
+The approach it takes with text expansion is to define a trigger which you type after the abbreviation. The default trigger is `,;`. Read below about setting up a trigger key so you can automate typing this on one key. Alternate versions and punctuation is accessed by adding an extra suffix after the abbreviation.
 
 | Input         | Output           |
 | ------------- | ---------------- |
@@ -186,27 +186,6 @@ CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=10
 
 This is a text expansion importer for [Espanso](https://espanso.org)
 
-- Have a look at [abbr.tsv](abbr.tsv) to see the the second column for the abbrevation
-- For example typing `l,;` will output 'look '
-
-You can access the alt versions of a word by adding a suffix on the end of the word before the trigger. The default suffixes are 'qjz', here is how you can use it:
-
-| Input | Output  |
-| ----- | ------- |
-| l     | look    |
-| lq    | looked  |
-| lj    | looking |
-| lz    | looks   |
-
-Other features are auto capitalization and suffixes for punctuation characters '.,;' so you don't have to backspace to remove the automatic spacing then add the punctuation:
-
-| Input | Output |
-| ----- | ------ |
-| L     | Look   |
-| L.    | Look.  |
-| L,    | Look,  |
-| L;    | Look;  |
-
 It reads `abbr.tsv` and generates `abbr.yml` which you can then copy to `~/.config/espanso/match/`. The yaml file is quite verbose since it adds multiple matches for all the possible suffixes, so you'll probably want to make any changes to `abbr.tsv` then run this command again.
 
 Here are some settings you might want to change:
@@ -228,7 +207,7 @@ undo_backspace: false
 
 The `abbr.yml` file is very verbose, so if you want to add/update words I recommend reading on so you can edit `abbr.tsv` then generate the file again from that.
 
-### Setting up a trigger key
+### Setting up a trigger key for text expansion
 
 Having to type 2 characters eg. ',;' reduces the improvement gain considerably, especially for shorter words. You can bind a key on your keyboard that you don't usually use eg. right alt, caps lock via softwarwe or programmable keyboard firmware
 
