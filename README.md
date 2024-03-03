@@ -39,6 +39,13 @@ The approach it takes with combos is to define combo, shift, and alt1/2 keys tha
 | , + combo                       | `<backspace>`,`<space>` |
 | ; + combo                       | `<backspace>`;`<space>` |
 
+This is how I have set up my 4 key thumb cluster from left to right:
+
+- alt1 (normally tab on tap or my navigation/number/symbol layer on hold)
+- alt2 (normally space on tap or my media/function layer on hold)
+- shift (normally backspace on tap or shift on hold)
+- combo (normally nothing, but i have tried backspace here with only the occasional missfire)
+
 ### Text Expansion
 
 The approach it takes with text expansion is to define a trigger which you type after the abbreviation. The default trigger is `,;`. Read below about setting up a trigger key so you can automate typing this on one key. Alternate versions and punctuation is accessed by adding an extra suffix after the abbreviation.
@@ -101,7 +108,7 @@ t   a   y   h    th   f   w    ti   n   b
 
 This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards.
 
-#### Setup
+You can check my config [here](https://github.com/dlip/qmk_firmware/tree/dlip/keyboards/mushi/keymaps/dlip) for reference
 
 - Setup combos as per this [gboards guide](https://combos.gboards.ca/docs/install/)
 - Add definitions for KC_COMBO, KC_COMBO_SFT, KC_COMBO_ALT1, KC_COMBO_ALT2, and your other thumb keys to your `keymap.c`
@@ -155,6 +162,8 @@ SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
 ### zmk-chorded.py
 
 This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards.
+
+You can check my config [here](https://github.com/dlip/nixconfig/blob/master/keymaps/zmk/config/cradio.keymap) for reference
 
 - Open [zmk-chorded.py](zmk-chorded.py) and ensure `key_positions` matches all the key positions on your keyboard
 - Run `python zmk-chorded.py`
