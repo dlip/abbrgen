@@ -183,12 +183,13 @@ This is a chorded importer for [Kanata](https://github.com/jtroo/kanata) which i
 Be aware that many keyboards, especially laptop ones do not support having many keys held at the same time. You can check what combinations work for your one [here](https://www.mechanical-keyboard.org/key-rollover-test/)
 
 - Open [kanata-chorded.py](kanata-chorded.py) and customize the `output` with your base mappings
-- Run `python kanata-chorded.py` and copy `abbr.kbd` to your keymap directory
+- Run `python kanata-chorded.py` and copy [abbr.kbd](./abbr.kbd) to your keymap directory
 - Copy from the example [canary-chorded.kbd](./canary-chorded.kbd) and update your keymap
-  - Add the include for `abbr.kbd`
+  - Add `(include abbr.kbd)
+`
   - Add the `defalias` references to the `combos` chords
   - Include all the references in your base layer using the `@` symbol
-- Run `sudo kanata <keymap.kbd>`
+- Run `sudo kanata -c <keymap.kbd>`
 
 ### espanso-text-expansion.py
 
