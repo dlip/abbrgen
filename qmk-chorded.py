@@ -3,7 +3,7 @@ import utils
 
 # Limit how many rows to process since microcontrollers such as pro micro have quite limited memory
 # You'll need to lower this if you get memory errors when compiling
-limit = 100
+limit = 0
 # Needs to match what you have defined in your keymap. If you have other mod tap with alphas you need to map each to a letter. If you aren't using mod tap you can remove the alpha mappings here and restore `KC_SCLN` for semicolon.
 key_map = {
     "C": "KC_SFT_C",
