@@ -6,6 +6,13 @@ Every day, we find ourselves typing commonly used words repetitively, consuming 
 
 However, compiling such a list manually can be a daunting task. This is where abbrgen comes in handy, it helps by automating the generation of the initial list and streamlines the process of importing them into different tools, so you can enhance and customize them over time.
 
+Given a list of common words it can generate a list like the following, the way you input each word and alternate word depends on if you are using chording or text expansion
+
+| Word | Abbreviation | Alt1   | Alt2    | Alt3  |
+| ---- | ------------ | ------ | ------- | ----- |
+| look | l            | looked | looking | looks |
+| give | ge           | given  | giving  | gives |
+
 ## Chording vs text expansion
 
 Chording involves pressing multiple keys at the same time, while text expansion is typing as usual followed by a trigger key. There are pros and cons of each approach to consider:
@@ -15,6 +22,37 @@ Chording involves pressing multiple keys at the same time, while text expansion 
 - Chording can be heaver on the fingers especially if you have heavy key switches
 - There are more possible combinations with text expansion since you can use abbreviatons that repeat letters
 - Text expansion is easier to setup with a standard keyboard
+
+### Chording
+
+The approach it takes with combos is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them. There are some extra combos to help with punctuation.
+
+| Input                           | Output       |
+| ------------------------------- | ------------ |
+| l + combo                       | look         |
+| l + combo + shift               | Look         |
+| l + combo + alt1                | looked       |
+| l + combo + alt2                | looking      |
+| l + combo + alt1 + alt2         | looks        |
+| l + combo + shift + alt1 + alt2 | Looks        |
+| . + combo                       | <backspace>. |
+| , + combo                       | <backspace>, |
+| ; + combo                       | <backspace>; |
+
+### Text Expansion
+
+The approach it takes with text expansion is to define a trigger which you type after the abbreviation. The default trigger is ',;'. Read below about setting up a trigger key so you can automate typing this on one key. Alternate versions and punctuation is accessed by adding an extra suffix after the abbreviation.
+
+| Input       | Output  |
+| ----------- | ------- |
+| l<trigger>  | look    |
+| lq<trigger> | looked  |
+| lj<trigger> | looking |
+| lz<trigger> | looks   |
+| L<trigger>  | Look    |
+| L.<trigger> | Look.   |
+| L,<trigger> | Look,   |
+| L;<trigger> | Look;   |
 
 ## Setup
 
@@ -39,11 +77,6 @@ To run the commands use `python <file.py>`
 
 This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`:
 
-| Word | Abbr | Alt1   | Alt2    | Alt3  |
-| ---- | ---- | ------ | ------- | ----- |
-| look | l    | looked | looking | looks |
-| give | ge   | given  | giving  | gives |
-
 The approach it uses is:
 
 - Generate all combinations of the letters in the word which start with the first letter and keep the order from left to right
@@ -66,16 +99,7 @@ t   a   y   h    th   f   w    ti   n   b
 
 ### qmk-chorded.py
 
-This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards. The approach it takes with combos is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them.
-
-| Input                           | Output  |
-| ------------------------------- | ------- |
-| l + combo                       | look    |
-| l + combo + shift               | Look    |
-| l + combo + alt1                | looked  |
-| l + combo + alt2                | looking |
-| l + combo + alt1 + alt2         | looks   |
-| l + combo + shift + alt1 + alt2 | Looks   |
+This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards.
 
 #### Setup
 
@@ -130,7 +154,7 @@ SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
 
 ### zmk-chorded.py
 
-This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards. The approach it takes with chording is similar to [qmk-chorded.py](#qmk-chordedpy)
+This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards.
 
 - Open [zmk-chorded.py](zmk-chorded.py) and ensure `key_positions` matches all the key positions on your keyboard
 - Run `python zmk-chorded.py`
@@ -158,11 +182,10 @@ CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=10
 
 - Flash your keyboard
 
-### espanso.py
+### espanso-text-expansion.py
 
 This is a text expansion importer for [Espanso](https://espanso.org)
 
-- The default trigger is ',;'. Read below about setting up a trigger key so you can automate typing this on one key
 - Have a look at [abbr.tsv](abbr.tsv) to see the the second column for the abbrevation
 - For example typing `l,;` will output 'look '
 
