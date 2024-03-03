@@ -1,8 +1,8 @@
 import csv
 import utils
 
-# Limit how many rows to process, this approach is a bit inneficient and microcontrollers such as nice nano have quite limited memory
-# you'll need to lower this if you get "region `RAM' overflowed errors" when compiling
+# Limit how many rows to process since microcontrollers such as nice nano have quite limited memory
+# You'll need to lower this if you get "region `RAM' overflowed errors" when compiling
 limit = 100
 # How long in ms you have to press the combo keys together, you can be pretty relaxed here if combo is its own unique key
 combo_timeout = 100

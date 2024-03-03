@@ -1,6 +1,9 @@
 import csv
 import utils
 
+# Limit how many rows to process since microcontrollers such as pro micro have quite limited memory
+# You'll need to lower this if you get memory errors when compiling
+limit = 100
 # Needs to match what you have defined in your keymap. If you have other mod tap with alphas you need to map each to a letter. If you aren't using mod tap you can remove the alpha mappings here and restore `KC_SCLN` for semicolon.
 key_map = {
     "C": "KC_SFT_C",
@@ -16,6 +19,7 @@ key_map = {
     ",": "KC_COMMA",
     ".": "KC_DOT",
     "'": "KC_QUOT",
+    "←": "KC_BSPC",
 }
 
 seen = {}
@@ -38,10 +42,19 @@ def translate_keys(abbr):
     return result
 
 
+print("Processing abbr.tsv")
 with open("abbr.tsv") as file:
     file = csv.reader(file, delimiter="\t")
+    for p in [";", ",", "."]:
+        name = f"c_{key_map[p]}"
+        keys = translate_keys(p)
+        output += f'SUBS({name}, SS_TAP(X_BSPC)"{p} ", {", ".join(keys)})\n'
+
     for line in file:
         line_no += 1
+        if line_no > limit:
+            print(f"Stopping at line {limit} due to limit setting")
+            break
 
         if line[1]:
             abbr = line.pop(1)
@@ -66,5 +79,7 @@ with open("abbr.tsv") as file:
                 output += f'SUBS({name}, "{word} ", {", ".join(keys + alt)})\n'
                 output += f'SUBS({name}s, "{word.capitalize()} ", {", ".join(keys + alt + shifted_keys)})\n'
 
+print("writing abbr.def")
 with open("abbr.def", "w") as file:
     file.write(output)
+print("done")
