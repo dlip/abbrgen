@@ -19,9 +19,9 @@ Chording involves pressing multiple keys at the same time, while text expansion 
 
 - Chording is quicker since the time taken is about the same as a single key press
 - Text expansion can feel more natural in the flow of typing other words
-- Chording can be heaver on the fingers especially if you have heavy key switches
-- There are more possible combinations with text expansion since you can use abbreviatons that repeat letters
-- Text expansion is easier to setup with a standard keyboard
+- Chording can be heavier on the fingers especially if you have heavy key switches
+- There are more possible combinations with text expansion since you can use abbreviations that repeat letters
+- Text expansion is easier to set up with a standard keyboard
 
 ### Chording
 
