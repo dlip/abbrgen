@@ -5,9 +5,8 @@ import utils
 limit = 0
 # How long in ms you have to press the combo keys together, you can be pretty relaxed here if combo is its own unique key
 combo_timeout = 100
-
-# Needs to match what you have defined in your keymap. If you have other mod tap with alphas you need to map each to a letter. If you aren't using mod tap you can remove the alpha mappings here and restore `KC_SCLN` for semicolon.
-
+# Configure your base mappings here
+# Note: there are some issues with tap-holds in combos https://github.com/jtroo/kanata/issues/743
 output = (
     f"(defchords combos {combo_timeout}"
     + """
@@ -45,9 +44,6 @@ output = (
   (alt2) (tap-hold $tap-timeout $hold-timeout spc (layer-toggle media))
   (sft) (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
   (cbo) XX
-  (cbo ;) (macro bspc ; spc)
-  (cbo ,) (macro bspc , spc)
-  (cbo .) (macro bspc . spc)
 """
 )
 
@@ -90,6 +86,13 @@ def translate_combo(abbr):
 print("Processing abbr.tsv")
 with open("abbr.tsv") as file:
     file = csv.reader(file, delimiter="\t")
+
+    for p in [";", ",", "."]:
+        combo = translate_combo(p)
+        macro = translate_macro(f"←{p} ")
+        output += (
+            f'  ({" ".join(combo_keys)} {" ".join(combo)}) (macro {" ".join(macro)})\n'
+        )
 
     for line in file:
         line_no += 1

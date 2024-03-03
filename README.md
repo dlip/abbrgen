@@ -140,7 +140,7 @@ KC_NNM_TAB, KC_MED_SPC, KC_SFT_BSPC, KC_COMBO,
 
 - Open [qmk-chorded.py](qmk-chorded.py) and ensure `key_map` matches any other custom definitions you may have
 - Run `python qmk-chorded.py`
-- It will generate `abbr.def` which you need to copy to your QMK keymap folder
+- It will generate `abbr.def` which you need to copy to your QMK keymap directory
 - Add `#include "abbr.def"` to the top of your QMK `combos.def` file
 - Flash your keyboard
 
@@ -152,7 +152,7 @@ You can check my config [here](https://github.com/dlip/zmk-sweep/blob/main/confi
 
 - Open [zmk-chorded.py](zmk-chorded.py) and ensure `key_positions` matches all the key positions on your keyboard
 - Run `python zmk-chorded.py`
-- It will generate `macros.dtsi` and `combos.dtsi` which you can then copy to your zmk keymap folder
+- It will generate `macros.dtsi` and `combos.dtsi` which you can then copy to your zmk keymap directory
 - Include these lines in your zmk keymap keymap file
 
 ```
@@ -175,6 +175,20 @@ CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=10
 ```
 
 - Flash your keyboard
+
+### kanata-chorded.py
+
+This is a chorded importer for [Kanata](https://github.com/jtroo/kanata) which is a software keyboard remapper.
+
+Be aware that many keyboards, especially laptop ones do not support having many keys held at the same time. You can check what combinations work for your one [here](https://www.mechanical-keyboard.org/key-rollover-test/)
+
+- Open [kanata-chorded.py](kanata-chorded.py) and customize the `output` with your base mappings
+- Run `python kanata-chorded.py` and copy `abbr.kbd` to your keymap directory
+- Copy from the example [canary-chorded.kbd](./canary-chorded.kbd) and update your keymap
+  - Add the include for `abbr.kbd`
+  - Add the `defalias` references to the `combos` chords
+  - Include all the references in your base layer using the `@` symbol
+- Run `sudo kanata <keymap.kbd>`
 
 ### espanso-text-expansion.py
 

@@ -1,0 +1,155 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
+(defvar
+  tap-timeout 0
+  hold-timeout 200
+)
+
+(include abbr.kbd)
+
+(defalias
+  w (chord combos w)
+  l (chord combos l)
+  y (chord combos y)
+  p (chord combos p)
+  b (chord combos b)
+
+  c (chord combos c)
+  r (chord combos r)
+  s (chord combos s)
+  t (chord combos t)
+  g (chord combos g)
+
+  q (chord combos q)
+  j (chord combos j)
+  v (chord combos v)
+  d (chord combos d)
+  k (chord combos k)
+
+
+  z (chord combos z)
+  f (chord combos f)
+  o (chord combos o)
+  u (chord combos u)
+  ' (chord combos ')
+
+  m (chord combos m)
+  n (chord combos n)
+  e (chord combos e)
+  i (chord combos i)
+  a (chord combos a)
+
+  h (chord combos h)
+  x (chord combos x)
+  ; (chord combos ;)
+  , (chord combos ,)
+  . (chord combos .)
+
+  alt1 (chord combos alt1)
+  alt2 (chord combos alt2)
+  sft (chord combos sft)
+  cbo (chord combos cbo)
+)
+
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt muhenkan  spc  henkan ralt prtsc katakanahiragana rctl cmp
+)
+
+
+(defalias
+  rpt rpt-any
+  na (layer-switch base)
+  med (layer-toggle media)
+  nav (layer-toggle nav)
+  gam (layer-switch gaming)
+  dis (layer-switch disable)
+  bse (layer-switch base)
+
+  snv (one-shot 1000 @nav)
+  ssf (one-shot 1000 lsft)
+  sct (one-shot 1000 lctl)
+  sal (one-shot 1000 lalt)
+  smt (one-shot 1000 lmet)
+
+  lft (tap-hold $tap-timeout $hold-timeout left lalt)
+  dwn (tap-hold $tap-timeout $hold-timeout down lmet)
+  rgt (tap-hold $tap-timeout $hold-timeout rght lctl)
+
+  4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
+  5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
+  6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
+  0 (tap-hold $tap-timeout $hold-timeout 0 @med)
+
+  del (tap-hold $tap-timeout $hold-timeout del lalt)
+  ret (tap-hold $tap-timeout $hold-timeout ret lctl)
+  esr (tap-hold $tap-timeout $hold-timeout esc @med)
+
+  cpy C-c
+  pst C-v
+  cut C-x
+  udo C-z
+  all C-a
+
+)
+
+(deflayer base
+  _    _    _     _      _     _    _    _    _    _    _    _    _
+  _    _    _     _      _     _    _    _    _    _    _    _    _    @dis
+  @w   @l   @y    @p     @b    XX   XX   @z   @f   @o   @u   @'   _    _
+  @c   @r   @s    @t     @g    XX   XX   @m   @n   @e   @i   @a   _
+  @q   @j   @v    @d     @k    XX   XX   @x   @h   @;   @,   @.
+  _    lrld @alt1 @alt1  @alt2           @sft @sft @cbo @cbo @rpt bspc
+)
+
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  `    esc  up   ret  del  XX   XX   \    7    8    9    /    _    _
+  tab @lft @dwn @rgt  [    XX   XX   =    @4   @5   @6   0    _
+  home pgup pgdn end  ]    XX   XX   -    1    2    3    .
+  _    _    _    _         _         _    _    _    _    _    _
+)
+
+(deflayer media
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    prnt XX   XX   f7   f8   f9   f10  _    _    _
+  prnt prev pp   next volu XX   @gam f4   f5   f6   f11  _    _
+  @udo @cut @cpy @pst vold XX   XX   f1   f2   f3   f12  _
+  _    _    _   _          _         _    _    _    _    _    _
+)
+
+(deflayer disable
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    @bse
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX         XX         XX    XX    XX    XX    XX    XX
+)
+
+(deflayer gaming
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  tab  q    w    e    r    t    _    _    _    up   _    _    _    _
+  lsft a    s    d    f    g    _    @bse lft  down rght _    _
+  lctl z    x    c    v    b    _    _    _    _    _    _
+  _    lalt esc  _         spc       _    _    _    _    _    _
+)
+
+(deflayer empty
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _         _         _    _    _    _    _    _
+)
