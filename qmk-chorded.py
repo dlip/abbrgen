@@ -52,7 +52,7 @@ with open("abbr.tsv") as file:
 
     for line in file:
         line_no += 1
-        if line_no > limit:
+        if limit != 0 and line_no > limit:
             print(f"Stopping at line {limit} due to limit setting")
             break
 
