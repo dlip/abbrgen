@@ -35,13 +35,13 @@ key_map = {
     " ": "SPC",
     "@": "AT",
     "?": "QUESTION",
+    "←": "BSPC",
 }
 
 key_positions = [item for items in key_positions for item in items]
 seen = {}
 output = ""
-macros = """#define str(s) #s
-#define MACRO(NAME, BINDINGS) \\
+macros = """#define MACRO(NAME, BINDINGS) \\
   macro_##NAME: macro_##NAME { \\
       compatible = "zmk,behavior-macro"; \\
       #binding-cells = <0>; \\
@@ -120,6 +120,13 @@ def translate_macro(word, capitalize=False):
 print("Processing abbr.tsv")
 with open("abbr.tsv") as file:
     file = csv.reader(file, delimiter="\t")
+    for p in [";", ",", "."]:
+        name = f"c_{key_map[p]}"
+        macro = translate_macro(f"←{p} ")
+        positions = translate_keys([p] + trigger_keys)
+        macros += f'MACRO({name}, {" ".join(macro)})\n'
+        combos += f'COMBO({name}, &macro_{name}, {" ".join(positions)})\n'
+
     for line in file:
         line_no += 1
         if line_no > limit:

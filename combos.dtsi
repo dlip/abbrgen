@@ -6,6 +6,9 @@
     layers = <0>; \
   };
 
+COMBO(c_SEMI, &macro_c_SEMI, 27 33)
+COMBO(c_COMMA, &macro_c_COMMA, 28 33)
+COMBO(c_DOT, &macro_c_DOT, 29 33)
 COMBO(c_t, &macro_c_t, 13 33)
 COMBO(s_c_t, &macro_s_c_t, 13 32 33)
 COMBO(c_t___, &macro_c_t___, 13 30 31 33)
