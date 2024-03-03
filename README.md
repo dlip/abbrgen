@@ -18,6 +18,8 @@ Chording involves pressing multiple keys at the same time, while text expansion 
 
 ## Setup
 
+Clone the repo `git clone https://github.com/dlip/abbrgen.git` and change to the directory with `cd abbrgen`
+
 ### Python
 
 - Install [Python 3.11+](https://www.python.org/downloads/)
@@ -28,8 +30,6 @@ Chording involves pressing multiple keys at the same time, while text expansion 
 If you have [Nix](https://nixos.org/download) you can run `nix develop` to get into a shell with Python and the required dependencies. If you have [direnv](https://direnv.net/docs/installation.html) also, you can run `direnv allow` instead to have the dependencies available as soon as you change to the directory.
 
 ### Running
-
-Clone the repo `git clone https://github.com/dlip/abbrgen.git` and change to the directory with `cd abbrgen`
 
 To run the commands use `python <file.py>`
 
@@ -63,6 +63,100 @@ This generates a [training.txt](training.txt) file from `abbr.tsv` for you to co
 the and you have that for with this not but
 t   a   y   h    th   f   w    ti   n   b
 ```
+
+### qmk-chorded.py
+
+This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards. The approach it takes with combos is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them.
+
+| Input                           | Output  |
+| ------------------------------- | ------- |
+| l + combo                       | look    |
+| l + combo + shift               | Look    |
+| l + combo + alt1                | looked  |
+| l + combo + alt2                | looking |
+| l + combo + alt1 + alt2         | looks   |
+| l + combo + shift + alt1 + alt2 | Looks   |
+
+#### Setup
+
+- Setup combos as per this [gboards guide](https://combos.gboards.ca/docs/install/)
+- Add definitions for KC_COMBO, KC_COMBO_SFT, KC_COMBO_ALT1, KC_COMBO_ALT2, and your other thumb keys to your `keymap.c`
+- Move the `#include "g/keymap_combo.h"` line below all your definitions
+
+```
+enum custom_keycodes {
+    KC_COMBO = SAFE_RANGE,
+};
+
+// Other definitions
+
+#define KC_SFT_BSPC MT(MOD_LSFT, KC_BSPC)
+#define KC_NNM_TAB LT(1, KC_TAB)
+#define KC_MED_SPC LT(2, KC_SPC)
+
+#define KC_COMBO_SFT KC_SFT_BSPC
+#define KC_COMBO_ALT1 KC_NNM_TAB
+#define KC_COMBO_ALT2 KC_MED_SPC
+
+#include "g/keymap_combo.h"
+```
+
+- Add the definitions to your thumb keys in the keymap
+
+```
+KC_NNM_TAB, KC_MED_SPC, KC_SFT_BSPC, KC_COMBO,
+```
+
+- Add the following to your `combos.def`. It includes shortcuts for punctuation eg. combo + dot will backspace then add dot plus space for the start of a new sentence. If you have mod tap keys you will have to add a definition for it and change it eg. `KC_S` to `KC_GUI_S`. It also includes `abbr.def` which you will generate next
+
+```
+#include "abbr.def"
+
+// Punctuation
+SUBS(dot, SS_TAP(X_BSPC)". ", KC_COMBO, KC_DOT)
+SUBS(comma, SS_TAP(X_BSPC)", ", KC_COMBO, KC_COMMA)
+SUBS(scln, SS_TAP(X_BSPC)"; ", KC_COMBO, KC_SCLN)
+SUBS(quot, SS_TAP(X_BSPC)"' ", KC_COMBO, KC_QUOT)
+SUBS(quotS, SS_TAP(X_BSPC)"\" ", KC_COMBO, KC_COMBO_SFT, KC_QUOT)
+SUBS(appve, SS_TAP(X_BSPC)"'ve ", KC_COMBO, KC_QUOT, KC_V)
+SUBS(apps, SS_TAP(X_BSPC)"'s ", KC_COMBO, KC_QUOT, KC_S)
+SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
+```
+
+- Open [qmk-chorded.py](qmk-chorded.py) and ensure `key_map` matches any other custom definitions you may have
+- Run `python qmk-chorded.py`
+- It will generate `abbr.def` which you can then copy to your qmk keymap folder
+- Flash your keyboard
+
+### zmk-chorded.py
+
+This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards. The approach it takes with chording is similar to [qmk-chorded.py](#qmk-chordedpy)
+
+- Open [zmk-chorded.py](zmk-chorded.py) and ensure `key_positions` matches all the key positions on your keyboard
+- Run `python zmk-chorded.py`
+- It will generate `macros.dtsi` and `combos.dtsi` which you can then copy to your zmk keymap folder
+- Include these lines in your zmk keymap keymap file
+
+```
+  macros {
+    #include "macros.dtsi"
+  };
+
+  combos {
+    compatible = "zmk,combos";
+    #include "combos.dtsi"
+  };
+```
+
+- Include these lines in your zmk keymap conf file, you may have to increase `CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY` if you are able to fit more combos on your controller
+
+```
+CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY=512
+CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO=10
+CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=10
+```
+
+- Flash your keyboard
 
 ### espanso.py
 
@@ -159,100 +253,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 };
 ```
-
-### qmk-chorded.py
-
-This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for custom keyboards. The approach it takes with combos is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them.
-
-| Input                           | Output  |
-| ------------------------------- | ------- |
-| l + combo                       | look    |
-| l + combo + shift               | Look    |
-| l + combo + alt1                | looked  |
-| l + combo + alt2                | looking |
-| l + combo + alt1 + alt2         | looks   |
-| l + combo + shift + alt1 + alt2 | Looks   |
-
-#### Setup
-
-- Setup combos as per this [gboards guide](https://combos.gboards.ca/docs/install/)
-- Add definitions for KC_COMBO, KC_COMBO_SFT, KC_COMBO_ALT1, KC_COMBO_ALT2, and your other thumb keys to your `keymap.c`
-- Move the `#include "g/keymap_combo.h"` line below all your definitions
-
-```
-enum custom_keycodes {
-    KC_COMBO = SAFE_RANGE,
-};
-
-// Other definitions
-
-#define KC_SFT_BSPC MT(MOD_LSFT, KC_BSPC)
-#define KC_NNM_TAB LT(1, KC_TAB)
-#define KC_MED_SPC LT(2, KC_SPC)
-
-#define KC_COMBO_SFT KC_SFT_BSPC
-#define KC_COMBO_ALT1 KC_NNM_TAB
-#define KC_COMBO_ALT2 KC_MED_SPC
-
-#include "g/keymap_combo.h"
-```
-
-- Add the definitions to your thumb keys in the keymap
-
-```
-KC_NNM_TAB, KC_MED_SPC, KC_SFT_BSPC, KC_COMBO,
-```
-
-- Add the following to your `combos.def`. It includes shortcuts for punctuation eg. combo + dot will backspace then add dot plus space for the start of a new sentence. If you have mod tap keys you will have to add a definition for it and change it eg. `KC_S` to `KC_GUI_S`. It also includes `abbr.def` which you will generate next
-
-```
-#include "abbr.def"
-
-// Punctuation
-SUBS(dot, SS_TAP(X_BSPC)". ", KC_COMBO, KC_DOT)
-SUBS(comma, SS_TAP(X_BSPC)", ", KC_COMBO, KC_COMMA)
-SUBS(scln, SS_TAP(X_BSPC)"; ", KC_COMBO, KC_SCLN)
-SUBS(quot, SS_TAP(X_BSPC)"' ", KC_COMBO, KC_QUOT)
-SUBS(quotS, SS_TAP(X_BSPC)"\" ", KC_COMBO, KC_COMBO_SFT, KC_QUOT)
-SUBS(appve, SS_TAP(X_BSPC)"'ve ", KC_COMBO, KC_QUOT, KC_V)
-SUBS(apps, SS_TAP(X_BSPC)"'s ", KC_COMBO, KC_QUOT, KC_S)
-SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
-```
-
-- Open [qmk-chorded.py](qmk-chorded.py) and ensure `key_map` matches any other custom definitions you may have
-- Run `python qmk-chorded.py`
-- It will generate `abbr.def` which you can then copy to your qmk keymap folder
-- Flash your keyboard
-
-### zmk-chorded.py
-
-This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards. The approach it takes with chording is similar to [qmk-chorded.py](#qmk-chordedpy)
-
-- Open [zmk-chorded.py](zmk-chorded.py) and ensure `key_positions` matches all the key positions on your keyboard
-- Run `python zmk-chorded.py`
-- It will generate `macros.dtsi` and `combos.dtsi` which you can then copy to your zmk keymap folder
-- Include these lines in your zmk keymap keymap file
-
-```
-  macros {
-    #include "macros.dtsi"
-  };
-
-  combos {
-    compatible = "zmk,combos";
-    #include "combos.dtsi"
-  };
-```
-
-- Include these lines in your zmk keymap conf file, you may have to increase `CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY` if you are able to fit more combos on your controller
-
-```
-CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY=512
-CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO=10
-CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=10
-```
-
-- Flash your keyboard
 
 ## Credits
 
