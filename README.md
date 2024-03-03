@@ -163,7 +163,7 @@ SUBS(appnt, SS_TAP(X_BSPC)"n't ", KC_COMBO, KC_QUOT, KC_T)
 
 This is a chorded importer for [ZMK](https://zmk.dev/) which is a firmware for custom keyboards.
 
-You can check my config [here](https://github.com/dlip/nixconfig/blob/master/keymaps/zmk/config/cradio.keymap) for reference
+You can check my config [here](https://github.com/dlip/zmk-sweep/blob/main/config/cradio.keymap) for reference
 
 - Open [zmk-chorded.py](zmk-chorded.py) and ensure `key_positions` matches all the key positions on your keyboard
 - Run `python zmk-chorded.py`
