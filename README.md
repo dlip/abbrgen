@@ -140,8 +140,8 @@ KC_NNM_TAB, KC_MED_SPC, KC_SFT_BSPC, KC_COMBO,
 
 - Open [qmk-chorded.py](qmk-chorded.py) and ensure `key_map` matches any other custom definitions you may have
 - Run `python qmk-chorded.py`
-- It will generate `abbr.def` which you need to copy to your qmk keymap folder
-- Add `#include "abbr.def"` to the top of your `combos.def`
+- It will generate `abbr.def` which you need to copy to your QMK keymap folder
+- Add `#include "abbr.def"` to the top of your QMK `combos.def` file
 - Flash your keyboard
 
 ### zmk-chorded.py
