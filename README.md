@@ -27,32 +27,32 @@ Chording involves pressing multiple keys at the same time, while text expansion 
 
 The approach it takes with combos is to define combo, shift, and alt1/2 keys that are pressed in combination with the abbreviation to get the desired output. These keys work well on the thumbs to ensure all the abbreviations are possible to press with them. There are some extra combos to help with punctuation.
 
-| Input                           | Output       |
-| ------------------------------- | ------------ |
-| l + combo                       | look         |
-| l + combo + shift               | Look         |
-| l + combo + alt1                | looked       |
-| l + combo + alt2                | looking      |
-| l + combo + alt1 + alt2         | looks        |
-| l + combo + shift + alt1 + alt2 | Looks        |
-| . + combo                       | <backspace>. |
-| , + combo                       | <backspace>, |
-| ; + combo                       | <backspace>; |
+| Input                           | Output                  |
+| ------------------------------- | ----------------------- |
+| l + combo                       | look`<space>`           |
+| l + combo + shift               | Look`<space>`           |
+| l + combo + alt1                | looked`<space>`         |
+| l + combo + alt2                | looking`<space>`        |
+| l + combo + alt1 + alt2         | looks`<space>`          |
+| l + combo + shift + alt1 + alt2 | Looks`<space>`          |
+| . + combo                       | `<backspace>`.`<space>` |
+| , + combo                       | `<backspace>`,`<space>` |
+| ; + combo                       | `<backspace>`;`<space>` |
 
 ### Text Expansion
 
 The approach it takes with text expansion is to define a trigger which you type after the abbreviation. The default trigger is ',;'. Read below about setting up a trigger key so you can automate typing this on one key. Alternate versions and punctuation is accessed by adding an extra suffix after the abbreviation.
 
-| Input       | Output  |
-| ----------- | ------- |
-| l<trigger>  | look    |
-| lq<trigger> | looked  |
-| lj<trigger> | looking |
-| lz<trigger> | looks   |
-| L<trigger>  | Look    |
-| L.<trigger> | Look.   |
-| L,<trigger> | Look,   |
-| L;<trigger> | Look;   |
+| Input         | Output           |
+| ------------- | ---------------- |
+| l`<trigger>`  | look`<space>`    |
+| lq`<trigger>` | looked`<space>`  |
+| lj`<trigger>` | looking`<space>` |
+| lz`<trigger>` | looks`<space>`   |
+| L`<trigger>`  | Look`<space>`    |
+| L.`<trigger>` | Look.`<space>`   |
+| L,`<trigger>` | Look,`<space>`   |
+| L;`<trigger>` | Look;`<space>`   |
 
 ## Setup
 
