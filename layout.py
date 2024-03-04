@@ -1,4 +1,5 @@
 import logging
+import utils
 
 log = logging.getLogger("abbrgen")
 
@@ -61,8 +62,31 @@ class EffortCalculator:
                 self.effort_map[layout[r][c]] = effort_map[r][c]
                 self.hand_row_map[layout[r][c]] = hand_row_maping[r][c]
 
-    def calculate(self, abbr, sfb_penalty, scissor_penalty, chorded_mode):
+    def get_scissor_count(self, abbr):
         result = 0
+        for i in range(0, len(abbr)):
+            if i < len(abbr) - 1:
+                a = self.hand_row_map[abbr[i]]
+                b = self.hand_row_map[abbr[i + 1]]
+                if a != b:
+                    if (a < 0 and b < 0) or (a > 0 and b > 0):
+                        result += 1
+        return result
+
+    def get_sfb_count(self, abbr):
+        result = 0
+        for i in range(0, len(abbr)):
+            if i < len(abbr) - 1:
+                if self.layout_map[abbr[i]] == self.layout_map[abbr[i + 1]]:
+                    result += 1
+        return result
+
+    def calculate(self, abbr, sfb_penalty, scissor_penalty, chorded_mode):
+        for i in range(0, len(abbr)):
+            if abbr[i] not in self.layout_map:
+                log.debug(f"rejected: letter '{abbr[i]}' not in keyboard layout")
+                return
+
         if chorded_mode:
             seen = set()
             for char in abbr:
@@ -72,22 +96,23 @@ class EffortCalculator:
                     )
                     return
                 seen.add(char)
+            combinations = utils.find_all_combinations(abbr)
+            for combination in combinations:
+                if self.get_scissor_count(combination) > 0:
+                    log.debug("rejected: scissors not accepted in chorded mode")
+                    return
 
-        for i in range(0, len(abbr)):
-            if abbr[i] not in self.layout_map:
-                log.debug(f"rejected: letter '{abbr[i]}' not in keyboard layout")
-                return
+                if self.get_sfb_count(combination) > 0:
+                    log.debug("rejected: SFBs not accepted in chorded mode")
+                    return
 
+        result = 0
         for i in range(0, len(abbr)):
             result += self.effort_map[abbr[i]]
-            # check penalties
-            if i < len(abbr) - 1:
+            # check text expansion penalties
+            if not chorded_mode and i < len(abbr) - 1:
                 # sfb
                 if self.layout_map[abbr[i]] == self.layout_map[abbr[i + 1]]:
-                    if chorded_mode:
-                        log.debug("rejected: SFBs not accepted in chorded mode")
-                        return
-
                     log.debug("Applying SFB penalty")
                     result += sfb_penalty
                 # scissor
@@ -95,9 +120,6 @@ class EffortCalculator:
                 b = self.hand_row_map[abbr[i + 1]]
                 if a != b:
                     if (a < 0 and b < 0) or (a > 0 and b > 0):
-                        if chorded_mode:
-                            log.debug("rejected: scissors not accepted in chorded mode")
-                            return
                         log.debug("Applying scissor penalty")
                         result += scissor_penalty
 
