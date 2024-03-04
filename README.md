@@ -17,11 +17,18 @@ Given a list of common words it can generate a list like the following, the way 
 
 Chording involves pressing multiple keys at the same time, while text expansion is typing as usual followed by a trigger key. There are pros and cons of each approach to consider:
 
-- Chording is quicker since the time taken is about the same as a single key press
-- Text expansion can feel more natural in the flow of typing other words
-- Chording can be heavier on the fingers especially if you have heavy key switches
-- There are more possible combinations with text expansion since you can use abbreviations that repeat letters
-- Text expansion is easier to set up with a standard keyboard
+### Chording Pros and Cons
+
+- Quicker since the time taken is about the same as a single key press
+- Can take time to get used to pressing multiple keys together
+- Heavier on the fingers especially if you have heavy key switches
+
+### Text Expansion Pros and Cons
+
+- More possible combinations since you can use abbreviations that reverse and repeat letters
+- Easier to set up with a standard keyboard
+- Can be buggy with some programs due to the way it replaces text
+- Can be a security issue at work since it captures keypresses and might need administration privilages to install
 
 ### Chording
 
@@ -41,10 +48,10 @@ The approach it takes with combos is to define combo, shift, and alt1/2 keys tha
 
 This is how I have set up my 4 key thumb cluster from left to right:
 
-- alt1 (normally tab on tap or my navigation/number/symbol layer on hold)
-- alt2 (normally space on tap or my media/function layer on hold)
-- shift (normally backspace on tap or shift on hold)
-- combo (normally nothing, but i have tried backspace here with only the occasional missfire)
+- alt1 (normally tab on tap or my navigation/number/symbol layer on hold, with hold preferred setting)
+- alt2 (normally space on tap or my media/function layer on hold, with tap preferred setting)
+- shift (normally backspace on tap or shift on hold, with hold preferred setting)
+- combo (normally delete word, this is great when making mistakes while learning)
 
 ### Text Expansion
 
@@ -111,31 +118,18 @@ This is a chorded importer for [QMK](https://qmk.fm) which is a firmware for cus
 You can check my config [here](https://github.com/dlip/qmk_firmware/tree/dlip/keyboards/mushi/keymaps/dlip) for reference
 
 - Setup combos as per this [gboards guide](https://combos.gboards.ca/docs/install/)
-- Add definitions for KC_COMBO, KC_COMBO_SFT, KC_COMBO_ALT1, KC_COMBO_ALT2, and your other thumb keys to your `keymap.c`
+- Add definitions for KC_COMBO, KC_COMBO_SFT, KC_COMBO_ALT1, KC_COMBO_ALT2 thumb keys to your `keymap.c`. Feel free to change the actions here to whatever works for you. If you have other special keys on your letters eg. home row mods, add definitions for these also so they can be referred to in the script. Use these in your keymap.
 - Move the `#include "g/keymap_combo.h"` line below all your definitions
 
 ```
-enum custom_keycodes {
-    KC_COMBO = SAFE_RANGE,
-};
-
 // Other definitions
 
-#define KC_SFT_BSPC MT(MOD_LSFT, KC_BSPC)
-#define KC_NNM_TAB LT(1, KC_TAB)
-#define KC_MED_SPC LT(2, KC_SPC)
-
-#define KC_COMBO_SFT KC_SFT_BSPC
-#define KC_COMBO_ALT1 KC_NNM_TAB
-#define KC_COMBO_ALT2 KC_MED_SPC
+#define KC_COMBO_ALT1 LT(1, KC_TAB)
+#define KC_COMBO_ALT2 LT(2, KC_SPC)
+#define KC_COMBO_SFT MT(MOD_LSFT, KC_BSPC)
+#define KC_COMBO C(KC_BSPC)
 
 #include "g/keymap_combo.h"
-```
-
-- Add the definitions to your thumb keys in the keymap
-
-```
-KC_NNM_TAB, KC_MED_SPC, KC_SFT_BSPC, KC_COMBO,
 ```
 
 - Open [qmk-chorded.py](qmk-chorded.py) and ensure `key_map` matches any other custom definitions you may have
