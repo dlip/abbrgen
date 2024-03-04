@@ -109,18 +109,13 @@ class EffortCalculator:
         result = 0
         for i in range(0, len(abbr)):
             result += self.effort_map[abbr[i]]
-            # check text expansion penalties
-            if not chorded_mode and i < len(abbr) - 1:
-                # sfb
-                if self.layout_map[abbr[i]] == self.layout_map[abbr[i + 1]]:
-                    log.debug("Applying SFB penalty")
-                    result += sfb_penalty
-                # scissor
-                a = self.hand_row_map[abbr[i]]
-                b = self.hand_row_map[abbr[i + 1]]
-                if a != b:
-                    if (a < 0 and b < 0) or (a > 0 and b > 0):
-                        log.debug("Applying scissor penalty")
-                        result += scissor_penalty
+
+        if not chorded_mode:
+            scissor_result = self.get_scissor_count(abbr) * scissor_penalty
+            if scissor_result:
+                log.debug("Applying scissor penalty")
+            sfb_result = self.get_sfb_count(abbr) * sfb_penalty
+            if sfb_result:
+                log.debug("Applying SFB penalty")
 
         return result
