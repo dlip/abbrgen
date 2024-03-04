@@ -28,7 +28,7 @@ Chording involves pressing multiple keys at the same time, while text expansion 
 - More possible combinations since you can use abbreviations that reverse and repeat letters
 - Easier to set up with a standard keyboard
 - Can be buggy with some programs due to the way it replaces text
-- Can be a security issue at work since it captures keypresses and might need administration privilages to install
+- Can be a security issue at work since it captures key presses and might need administrator privilages to install
 
 ### Chording
 
