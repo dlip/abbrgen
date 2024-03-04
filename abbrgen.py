@@ -116,8 +116,8 @@ with open("words.txt") as file:
             alt = ["", "", ""]
             if word in verb_data:
                 verb = verb_data[word]
-                if "participle" in verb:
-                    alt[0] = verb["participle"][0]
+                if "imperfect" in verb["indicative"]:
+                    alt[0] = verb["indicative"]["imperfect"][0]
                 if "gerund" in verb:
                     alt[1] = verb["gerund"][0]
             plural = p.plural_noun(word)
