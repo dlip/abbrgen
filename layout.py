@@ -31,9 +31,9 @@ finger_maping = [
 ]
 
 hand_row_maping = [
-    [-1, -1, -1, -1, -1, 1, 1, 1, 1, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [-2, -2, -2, -2, -2, 2, 2, 2, 2, 2],
+    ["tl", "tl", "tl", "tl", "tl", "tr", "tr", "tr", "tr", "tr"],
+    ["ml", "ml", "ml", "ml", "ml", "mr", "mr", "mr", "mr", "mr"],
+    ["bl", "bl", "bl", "bl", "bl", "br", "br", "br", "br", "br"],
 ]
 
 # https://colemakmods.github.io/mod-dh/model.html
@@ -64,21 +64,38 @@ class EffortCalculator:
 
     def get_scissor_count(self, abbr):
         result = 0
+        indexes = {
+            "tl": 0,
+            "ml": 0,
+            "bl": 0,
+            "tr": 0,
+            "mr": 0,
+            "br": 0,
+        }
         for i in range(0, len(abbr)):
-            if i < len(abbr) - 1:
-                a = self.hand_row_map[abbr[i]]
-                b = self.hand_row_map[abbr[i + 1]]
-                if a != b:
-                    if (a < 0 and b < 0) or (a > 0 and b > 0):
-                        result += 1
+            indexes[self.hand_row_map[abbr[i]]] += 1
+
+        if indexes["tl"] and indexes["bl"]:
+            result += min(indexes["tl"], indexes["bl"])
+
+        if indexes["tr"] and indexes["br"]:
+            result += min(indexes["tr"], indexes["br"])
+
         return result
 
     def get_sfb_count(self, abbr):
         result = 0
+        indexes = {}
         for i in range(0, len(abbr)):
-            if i < len(abbr) - 1:
-                if self.layout_map[abbr[i]] == self.layout_map[abbr[i + 1]]:
-                    result += 1
+            index = self.layout_map[abbr[i]]
+            if not index in indexes:
+                indexes[index] = 1
+            else:
+                indexes[index] += 1
+        for x in indexes.values():
+            if x > 1:
+                result += x - 1
+
         return result
 
     def calculate(self, abbr, sfb_penalty, scissor_penalty, chorded_mode):
@@ -87,6 +104,8 @@ class EffortCalculator:
                 log.debug(f"rejected: letter '{abbr[i]}' not in keyboard layout")
                 return
 
+        scissor_count = self.get_scissor_count(abbr)
+        sfb_count = self.get_sfb_count(abbr)
         if chorded_mode:
             seen = set()
             for char in abbr:
@@ -96,26 +115,24 @@ class EffortCalculator:
                     )
                     return
                 seen.add(char)
-            combinations = utils.find_all_combinations(abbr)
-            for combination in combinations:
-                if self.get_scissor_count(combination) > 0:
-                    log.debug("rejected: scissors not accepted in chorded mode")
-                    return
+            if scissor_count:
+                log.debug("rejected: scissors not accepted in chorded mode")
+                return
 
-                if self.get_sfb_count(combination) > 0:
-                    log.debug("rejected: SFBs not accepted in chorded mode")
-                    return
+            if sfb_count:
+                log.debug("rejected: SFBs not accepted in chorded mode")
+                return
 
         result = 0
         for i in range(0, len(abbr)):
             result += self.effort_map[abbr[i]]
 
         if not chorded_mode:
-            scissor_result = self.get_scissor_count(abbr) * scissor_penalty
-            if scissor_result:
+            if scissor_count:
                 log.debug("Applying scissor penalty")
-            sfb_result = self.get_sfb_count(abbr) * sfb_penalty
-            if sfb_result:
+                result += scissor_count * scissor_penalty
+            if sfb_count:
                 log.debug("Applying SFB penalty")
+                result += sfb_count * sfb_penalty
 
         return result
