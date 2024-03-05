@@ -46,6 +46,7 @@ def add_abbr(word, trigger):
     seen[trigger] = word
 
 
+print("Processing abbr.tsv")
 with open("abbr.tsv") as file:
     file = csv.reader(file, delimiter="\t")
     for line in file:
@@ -60,5 +61,7 @@ with open("abbr.tsv") as file:
             if line[4]:
                 add_abbr(line[4], f"{line[1]}{alt_suffix_3}")
 
+print("Writing abbr.yml")
 with open("abbr.yml", "w") as file:
     file.write(output)
+print("Done")
