@@ -97,8 +97,10 @@ The approach it uses is:
 - Reject abbreviations it has already used
 - Reject abbreviations that are shorter than a minimum amount of characters or don't provide a minimum percentage improvement over typing the full word
 - Score remaining abbreviations by effort and select the best option depending on your particular keyboard layout and if you are using chorded mode
-- Add verb tenses with the data in `verbs-conjugations.json`
-- Add plurals using [inflect](https://pypi.org/project/inflect/)
+- Add alt versions
+  - Use [alt.tsv](./alt.tsv) if available, else:
+  - Add verb tenses with the data in `verbs-conjugations.json`
+  - Add plurals using [inflect](https://pypi.org/project/inflect/)
 
 There are some options that you might want to change near the top of [abbrgen.py](abbrgen.py). In particular set `chorded_mode` to `True` or `False` depending on what method you are using.
 

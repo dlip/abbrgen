@@ -1,5 +1,6 @@
 import csv
 import logging
+import os
 import sys
 import json
 import inflect
@@ -9,11 +10,11 @@ import utils
 # stop after processing this many lines in words.txt
 limit = 0
 # any word shorter than this will be excluded
-min_chars = 3
+min_chars = 2
 # any percent improvement below this will not be considered and the word might be excluded if there are no other options
-min_improvement = 40
+min_improvement = 30
 # the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms or punctuation
-banned_suffixes = "qjzx;,.:'?"
+banned_suffixes = "qjzx;,.:?"
 # output the words with no abbreviation found so you can add them by hand
 output_all = False
 # change this to your keyboard layout, ensure its listed in layout.py
@@ -95,10 +96,20 @@ def find_abbr(word):
 
 with open("words.txt") as file:
     verb_data = {}
+    log.debug("loading verbs-conjugations.json")
     with open("verbs-conjugations.json") as verbs_file:
         data = json.load(verbs_file)
         for verb in data:
             verb_data[verb["verb"]] = verb
+
+    alt_data = {}
+    if os.path.isfile("alt.tsv"):
+        log.debug("loading alt.tsv")
+        with open("alt.tsv") as alt_file:
+            alt_file = csv.reader(alt_file, delimiter="\t")
+            for line in alt_file:
+                if line:
+                    alt_data[line[0]] = line[1:]
 
     output = ""
     while True:
@@ -114,15 +125,19 @@ with open("words.txt") as file:
         if output_all or abbr:
             abbr = abbr or ""
             alt = ["", "", ""]
-            if word in verb_data:
+            if word in alt_data:
+                alt = alt_data[word]
+            elif word in verb_data:
                 verb = verb_data[word]
                 if "imperfect" in verb["indicative"]:
                     alt[0] = verb["indicative"]["imperfect"][0]
                 if "gerund" in verb:
                     alt[1] = verb["gerund"][0]
-            plural = p.plural_noun(word)
-            if plural:
-                alt[2] = plural
+
+            if not alt[2]:
+                plural = p.plural_noun(word)
+                if plural:
+                    alt[2] = plural
 
             for a in alt:
                 if a:

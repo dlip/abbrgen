@@ -8,11 +8,13 @@ seen = {}
 output = "matches:\n"
 line_no = 0
 
+print("Processing abbr.tsv")
 with open("abbr.tsv") as abbr_file:
     abbr_file = csv.reader(abbr_file, delimiter="\t")
     index = 0
     words = ""
     abbrs = ""
+    print("Writing training.txt")
     with open("training.txt", "w") as training_file:
         for line in abbr_file:
             word = line[0]
@@ -29,3 +31,4 @@ with open("abbr.tsv") as abbr_file:
                 training_file.write("\n")
                 words = ""
                 abbrs = ""
+print("Done")
