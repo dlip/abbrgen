@@ -6,13 +6,14 @@ import json
 import inflect
 import layout
 import utils
+from effort_calculator import EffortCalculator
 
 # stop after processing this many lines in words.txt
 limit = 0
 # any word shorter than this will be excluded
 min_chars = 2
 # any percent improvement below this will not be considered and the word might be excluded if there are no other options
-min_improvement = 30
+min_improvement = 35
 # the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms or punctuation
 banned_suffixes = "qjzx;,.:?"
 # output the words with no abbreviation found so you can add them by hand
@@ -33,7 +34,7 @@ log = logging.getLogger("abbrgen")
 log.addHandler(logging.StreamHandler(sys.stdout))
 log.setLevel(logging.DEBUG)
 
-calc = layout.EffortCalculator(keyboard_layout, effort_map)
+calc = EffortCalculator(keyboard_layout, effort_map)
 p = inflect.engine()
 
 used = {}
