@@ -19,6 +19,7 @@ on
 with
 at
 as
+have
 had
 for
 but
@@ -29,7 +30,6 @@ up
 out
 look
 so
-have
 what
 not
 just
