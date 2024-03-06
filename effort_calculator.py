@@ -1,5 +1,6 @@
 import logging
 import utils
+import json
 
 log = logging.getLogger("abbrgen")
 
@@ -18,14 +19,19 @@ hand_row_maping = [
 # you can ban chords that you find uncomfortable
 banned_chords = [
     [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1],
+        [0, 0, 1, 0, 0],
     ],
     [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+        [1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+    ],
+    [
+        [1, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0],
     ],
 ]
 
@@ -43,6 +49,19 @@ class EffortCalculator:
                 self.effort_map[layout[r][c]] = effort_map[r][c]
                 self.hand_row_map[layout[r][c]] = hand_row_maping[r][c]
         self.banned_chords_sets = []
+
+        # Add mirrored chords and padding
+        mirrored = []
+        global banned_chords
+        padding = [0, 0, 0, 0, 0]
+        for ban in banned_chords:
+            mirror = []
+            for r in range(0, len(ban)):
+                mirror.append(padding + list(reversed(ban[r])))
+                ban[r] += padding
+            mirrored.append(mirror)
+        banned_chords += mirrored
+
         for ban in banned_chords:
             s = set()
             for r in range(0, len(ban)):

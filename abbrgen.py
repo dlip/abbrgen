@@ -11,9 +11,11 @@ from effort_calculator import EffortCalculator
 # stop after processing this many lines in words.txt
 limit = 0
 # any word shorter than this will be excluded
-min_chars = 2
+min_chars = 3
+# except some words since they have enough alts to make it still worth using
+word_exceptions = {"i", "he"}
 # any percent improvement below this will not be considered and the word might be excluded if there are no other options
-min_improvement = 35
+min_improvement = 40
 # the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms or punctuation
 banned_suffixes = "qjzx;,.:?"
 # output the words with no abbreviation found so you can add them by hand
@@ -45,7 +47,8 @@ line_no = 0
 def find_abbr(word):
     word = word.lower()
     log.debug(f"=== {word} ===")
-    if len(word) < min_chars:
+    word_exception = word in word_exceptions
+    if len(word) < min_chars and not word_exception:
         log.debug(f"rejected: minimum chars less than {min_chars}")
         return None
     if word in seen:
@@ -57,6 +60,7 @@ def find_abbr(word):
     combinations.sort(key=len)
     sfb_option = None
     options = []
+
     for abbr in combinations:
         log.debug(abbr)
         if not abbr in used:
@@ -64,7 +68,7 @@ def find_abbr(word):
                 log.debug(f"rejected: '{abbr[-1]}' is a banned suffix")
                 continue
             improvement = ((len(word) - len(abbr)) / len(word)) * 100
-            if improvement >= min_improvement:
+            if improvement >= min_improvement or word_exception:
                 effort = calc.calculate(
                     abbr, sfb_penalty, scissor_penalty, chorded_mode
                 )
@@ -121,6 +125,8 @@ with open("words.txt") as file:
         if not word:
             break
         word = word.strip()
+        if word[0] == "#":
+            continue
         abbr = find_abbr(word)
 
         if output_all or abbr:
@@ -142,7 +148,10 @@ with open("words.txt") as file:
 
             for a in alt:
                 if a:
-                    seen[a] = True
+                    if a in seen:
+                        log.debug(f"Alt already seen '{a}'")
+                    else:
+                        seen[a] = True
 
             line = f"{word}\t{abbr}\t" + "\t".join(alt)
             log.info(line)
