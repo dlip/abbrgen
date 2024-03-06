@@ -815,52 +815,100 @@ matches:
     replace: "withs? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "ha,;"
+  - trigger: "he,;"
+    replace: "have "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "he.,;"
+    replace: "have. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "he,,;"
+    replace: "have, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "he;,;"
+    replace: "have; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "he:,;"
+    replace: "have: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "he?,;"
+    replace: "have? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "heq,;"
     replace: "had "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "ha.,;"
+  - trigger: "heq.,;"
     replace: "had. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "ha,,;"
+  - trigger: "heq,,;"
     replace: "had, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "ha;,;"
+  - trigger: "heq;,;"
     replace: "had; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "ha:,;"
+  - trigger: "heq:,;"
     replace: "had: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "ha?,;"
+  - trigger: "heq?,;"
     replace: "had? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "haz,;"
-    replace: "hads "
+  - trigger: "hej,;"
+    replace: "having "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "haz.,;"
-    replace: "hads. "
+  - trigger: "hej.,;"
+    replace: "having. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "haz,,;"
-    replace: "hads, "
+  - trigger: "hej,,;"
+    replace: "having, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "haz;,;"
-    replace: "hads; "
+  - trigger: "hej;,;"
+    replace: "having; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "haz:,;"
-    replace: "hads: "
+  - trigger: "hej:,;"
+    replace: "having: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "haz?,;"
-    replace: "hads? "
+  - trigger: "hej?,;"
+    replace: "having? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hez,;"
+    replace: "haves "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hez.,;"
+    replace: "haves. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hez,,;"
+    replace: "haves, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hez;,;"
+    replace: "haves; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hez:,;"
+    replace: "haves: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hez?,;"
+    replace: "haves? "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "f,;"
@@ -1197,102 +1245,6 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "lz?,;"
     replace: "looks? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "he,;"
-    replace: "have "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "he.,;"
-    replace: "have. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "he,,;"
-    replace: "have, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "he;,;"
-    replace: "have; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "he:,;"
-    replace: "have: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "he?,;"
-    replace: "have? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "heq,;"
-    replace: "had "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "heq.,;"
-    replace: "had. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "heq,,;"
-    replace: "had, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "heq;,;"
-    replace: "had; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "heq:,;"
-    replace: "had: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "heq?,;"
-    replace: "had? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hej,;"
-    replace: "having "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hej.,;"
-    replace: "having. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hej,,;"
-    replace: "having, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hej;,;"
-    replace: "having; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hej:,;"
-    replace: "having: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hej?,;"
-    replace: "having? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hez,;"
-    replace: "haves "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hez.,;"
-    replace: "haves. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hez,,;"
-    replace: "haves, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hez;,;"
-    replace: "haves; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hez:,;"
-    replace: "haves: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "hez?,;"
-    replace: "haves? "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "wh,;"
@@ -3551,99 +3503,99 @@ matches:
     replace: "sees? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hd,;"
+  - trigger: "ha,;"
     replace: "hand "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hd.,;"
+  - trigger: "ha.,;"
     replace: "hand. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hd,,;"
+  - trigger: "ha,,;"
     replace: "hand, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hd;,;"
+  - trigger: "ha;,;"
     replace: "hand; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hd:,;"
+  - trigger: "ha:,;"
     replace: "hand: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hd?,;"
+  - trigger: "ha?,;"
     replace: "hand? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdq,;"
+  - trigger: "haq,;"
     replace: "handed "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdq.,;"
+  - trigger: "haq.,;"
     replace: "handed. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdq,,;"
+  - trigger: "haq,,;"
     replace: "handed, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdq;,;"
+  - trigger: "haq;,;"
     replace: "handed; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdq:,;"
+  - trigger: "haq:,;"
     replace: "handed: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdq?,;"
+  - trigger: "haq?,;"
     replace: "handed? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdj,;"
+  - trigger: "haj,;"
     replace: "handing "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdj.,;"
+  - trigger: "haj.,;"
     replace: "handing. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdj,,;"
+  - trigger: "haj,,;"
     replace: "handing, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdj;,;"
+  - trigger: "haj;,;"
     replace: "handing; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdj:,;"
+  - trigger: "haj:,;"
     replace: "handing: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdj?,;"
+  - trigger: "haj?,;"
     replace: "handing? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdz,;"
+  - trigger: "haz,;"
     replace: "hands "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdz.,;"
+  - trigger: "haz.,;"
     replace: "hands. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdz,,;"
+  - trigger: "haz,,;"
     replace: "hands, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdz;,;"
+  - trigger: "haz;,;"
     replace: "hands; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdz:,;"
+  - trigger: "haz:,;"
     replace: "hands: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "hdz?,;"
+  - trigger: "haz?,;"
     replace: "hands? "
     propagate_case: true
     uppercase_style: "capitalize_words"
@@ -3693,6 +3645,102 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "anz?,;"
     replace: "arounds? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hd,;"
+    replace: "head "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hd.,;"
+    replace: "head. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hd,,;"
+    replace: "head, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hd;,;"
+    replace: "head; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hd:,;"
+    replace: "head: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hd?,;"
+    replace: "head? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdq,;"
+    replace: "headed "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdq.,;"
+    replace: "headed. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdq,,;"
+    replace: "headed, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdq;,;"
+    replace: "headed; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdq:,;"
+    replace: "headed: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdq?,;"
+    replace: "headed? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdj,;"
+    replace: "heading "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdj.,;"
+    replace: "heading. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdj,,;"
+    replace: "heading, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdj;,;"
+    replace: "heading; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdj:,;"
+    replace: "heading: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdj?,;"
+    replace: "heading? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdz,;"
+    replace: "heads "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdz.,;"
+    replace: "heads. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdz,,;"
+    replace: "heads, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdz;,;"
+    replace: "heads; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdz:,;"
+    replace: "heads: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hdz?,;"
+    replace: "heads? "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "wl,;"
