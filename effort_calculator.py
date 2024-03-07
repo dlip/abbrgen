@@ -16,7 +16,7 @@ hand_row_maping = [
     ["bl", "bl", "bl", "bl", "bl", "br", "br", "br", "br", "br"],
 ]
 
-# you can ban chords that you find uncomfortable
+# you can ban chords that you find uncomfortable, this left hand side is mirrored
 banned_chords = [
     [
         [0, 0, 0, 0, 0],
