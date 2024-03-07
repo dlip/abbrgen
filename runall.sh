@@ -14,6 +14,7 @@ for script in "${scripts[@]}"; do
 	python ${script}.py
 done
 
+cp abbr.yml ~/.config/espanso/match
 cp abbr.def ../qmk_firmware/keyboards/mushi/keymaps/dlip
 cp combos.dtsi ../zmk-sweep/config
 cp macros.dtsi ../zmk-sweep/config

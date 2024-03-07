@@ -1247,6 +1247,102 @@ matches:
     replace: "likes? "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "g,;"
+    replace: "go "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "g.,;"
+    replace: "go. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "g,,;"
+    replace: "go, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "g;,;"
+    replace: "go; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "g:,;"
+    replace: "go: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "g?,;"
+    replace: "go? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gq,;"
+    replace: "went "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gq.,;"
+    replace: "went. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gq,,;"
+    replace: "went, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gq;,;"
+    replace: "went; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gq:,;"
+    replace: "went: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gq?,;"
+    replace: "went? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gj,;"
+    replace: "going "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gj.,;"
+    replace: "going. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gj,,;"
+    replace: "going, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gj;,;"
+    replace: "going; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gj:,;"
+    replace: "going: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gj?,;"
+    replace: "going? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gz,;"
+    replace: "goes "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gz.,;"
+    replace: "goes. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gz,,;"
+    replace: "goes, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gz;,;"
+    replace: "goes; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gz:,;"
+    replace: "goes: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gz?,;"
+    replace: "goes? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "te,;"
     replace: "they "
     propagate_case: true
@@ -1583,6 +1679,102 @@ matches:
     replace: "backs? "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "d,;"
+    replace: "do "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "d.,;"
+    replace: "do. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "d,,;"
+    replace: "do, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "d;,;"
+    replace: "do; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "d:,;"
+    replace: "do: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "d?,;"
+    replace: "do? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dq,;"
+    replace: "did "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dq.,;"
+    replace: "did. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dq,,;"
+    replace: "did, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dq;,;"
+    replace: "did; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dq:,;"
+    replace: "did: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dq?,;"
+    replace: "did? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dj,;"
+    replace: "doing "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dj.,;"
+    replace: "doing. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dj,,;"
+    replace: "doing, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dj;,;"
+    replace: "doing; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dj:,;"
+    replace: "doing: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dj?,;"
+    replace: "doing? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dz,;"
+    replace: "does "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dz.,;"
+    replace: "does. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dz,,;"
+    replace: "does, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dz;,;"
+    replace: "does; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dz:,;"
+    replace: "does: "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dz?,;"
+    replace: "does? "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "at,;"
     replace: "about "
     propagate_case: true
@@ -1773,102 +1965,6 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "wnz?,;"
     replace: "whens? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "g,;"
-    replace: "get "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "g.,;"
-    replace: "get. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "g,,;"
-    replace: "get, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "g;,;"
-    replace: "get; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "g:,;"
-    replace: "get: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "g?,;"
-    replace: "get? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gq,;"
-    replace: "got "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gq.,;"
-    replace: "got. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gq,,;"
-    replace: "got, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gq;,;"
-    replace: "got; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gq:,;"
-    replace: "got: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gq?,;"
-    replace: "got? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gj,;"
-    replace: "getting "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gj.,;"
-    replace: "getting. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gj,,;"
-    replace: "getting, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gj;,;"
-    replace: "getting; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gj:,;"
-    replace: "getting: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gj?,;"
-    replace: "getting? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gz,;"
-    replace: "gets "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gz.,;"
-    replace: "gets. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gz,,;"
-    replace: "gets, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gz;,;"
-    replace: "gets; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gz:,;"
-    replace: "gets: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "gz?,;"
-    replace: "gets? "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "tn,;"
@@ -2111,147 +2207,147 @@ matches:
     replace: "coulds? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "d,;"
+  - trigger: "dn,;"
     replace: "don't "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "d.,;"
+  - trigger: "dn.,;"
     replace: "don't. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "d,,;"
+  - trigger: "dn,,;"
     replace: "don't, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "d;,;"
+  - trigger: "dn;,;"
     replace: "don't; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "d:,;"
+  - trigger: "dn:,;"
     replace: "don't: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "d?,;"
+  - trigger: "dn?,;"
     replace: "don't? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dq,;"
+  - trigger: "dnq,;"
     replace: "didn't "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dq.,;"
+  - trigger: "dnq.,;"
     replace: "didn't. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dq,,;"
+  - trigger: "dnq,,;"
     replace: "didn't, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dq;,;"
+  - trigger: "dnq;,;"
     replace: "didn't; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dq:,;"
+  - trigger: "dnq:,;"
     replace: "didn't: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dq?,;"
+  - trigger: "dnq?,;"
     replace: "didn't? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dj,;"
+  - trigger: "dnj,;"
     replace: "doesn't "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dj.,;"
+  - trigger: "dnj.,;"
     replace: "doesn't. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dj,,;"
+  - trigger: "dnj,,;"
     replace: "doesn't, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dj;,;"
+  - trigger: "dnj;,;"
     replace: "doesn't; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dj:,;"
+  - trigger: "dnj:,;"
     replace: "doesn't: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dj?,;"
+  - trigger: "dnj?,;"
     replace: "doesn't? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dz,;"
+  - trigger: "dnz,;"
     replace: "donts "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dz.,;"
+  - trigger: "dnz.,;"
     replace: "donts. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dz,,;"
+  - trigger: "dnz,,;"
     replace: "donts, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dz;,;"
+  - trigger: "dnz;,;"
     replace: "donts; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dz:,;"
+  - trigger: "dnz:,;"
     replace: "donts: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dz?,;"
+  - trigger: "dnz?,;"
     replace: "donts? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dn,;"
+  - trigger: "do,;"
     replace: "down "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dn.,;"
+  - trigger: "do.,;"
     replace: "down. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dn,,;"
+  - trigger: "do,,;"
     replace: "down, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dn;,;"
+  - trigger: "do;,;"
     replace: "down; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dn:,;"
+  - trigger: "do:,;"
     replace: "down: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dn?,;"
+  - trigger: "do?,;"
     replace: "down? "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dnz,;"
+  - trigger: "doz,;"
     replace: "downs "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dnz.,;"
+  - trigger: "doz.,;"
     replace: "downs. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dnz,,;"
+  - trigger: "doz,,;"
     replace: "downs, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dnz;,;"
+  - trigger: "doz;,;"
     replace: "downs; "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dnz:,;"
+  - trigger: "doz:,;"
     replace: "downs: "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "dnz?,;"
+  - trigger: "doz?,;"
     replace: "downs? "
     propagate_case: true
     uppercase_style: "capitalize_words"
@@ -13365,54 +13461,6 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "sloz?,;"
     replace: "slowlies? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "do,;"
-    replace: "done "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "do.,;"
-    replace: "done. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "do,,;"
-    replace: "done, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "do;,;"
-    replace: "done; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "do:,;"
-    replace: "done: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "do?,;"
-    replace: "done? "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "doz,;"
-    replace: "dones "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "doz.,;"
-    replace: "dones. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "doz,,;"
-    replace: "dones, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "doz;,;"
-    replace: "dones; "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "doz:,;"
-    replace: "dones: "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "doz?,;"
-    replace: "dones? "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "ch,;"
