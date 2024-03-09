@@ -13,7 +13,7 @@ limit = 0
 # any word shorter than this will be excluded
 min_chars = 3
 # except some short words since they have enough alts to make it still worth using
-short_exceptions = {"i", "he", "do", "go"}
+short_exceptions = {"he", "do", "go"}
 # any percent improvement below this will not be considered and the word might be excluded if there are no other options
 min_improvement = 40
 # the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms or punctuation
@@ -21,7 +21,7 @@ banned_suffixes = "qjzx;,.:?"
 # output the words with no abbreviation found so you can add them by hand
 output_all = False
 # change this to your keyboard layout, ensure its listed in layout.py
-keyboard_layout = layout.canary
+keyboard_layout = layout.engram
 # change this to the effort map for your keyboard shape: effort_map_standard, effort_map_matrix
 effort_map = layout.effort_map_matrix
 # chorded mode will ensure its possible to chord and remove sfb's and scissors completely

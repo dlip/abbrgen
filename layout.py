@@ -18,6 +18,11 @@ canary = [
     ["c", "r", "s", "t", "g", "m", "n", "e", "i", "a"],
     ["q", "j", "v", "d", "k", "x", "h", ";", ",", "."],
 ]
+engram = [
+    ["b", "y", "o", "u", "'", '"', "l", "d", "v", "w"],
+    ["c", "i", "e", "a", ",", ".", "h", "t", "s", "n"],
+    ["g", "x", "j", "k", "-", "?", "r", "m", "f", "p"],
+]
 
 # https://colemakmods.github.io/mod-dh/model.html
 effort_map_standard = [

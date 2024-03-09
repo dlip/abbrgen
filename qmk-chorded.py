@@ -7,18 +7,20 @@ limit = 0
 # Needs to match what you have defined in your keymap. If you have other mod tap with alphas you need to map each to a letter. If you aren't using mod tap you can remove the alpha mappings here and restore `KC_SCLN` for semicolon.
 key_map = {
     "C": "KC_SFT_C",
-    "R": "KC_ALT_R",
-    "S": "KC_GUI_S",
-    "T": "KC_CTL_T",
-    "N": "KC_CTL_N",
-    "E": "KC_GUI_E",
     "I": "KC_ALT_I",
-    "A": "KC_SFT_A",
-    "V": "KC_CAG_V",
-    ";": "KC_CAG_SCLN",  # normally KC_SCLN
+    "E": "KC_GUI_E",
+    "A": "KC_CTL_A",
+    "H": "KC_CTL_H",
+    "T": "KC_GUI_T",
+    "S": "KC_ALT_S",
+    "N": "KC_SFT_N",
+    "J": "KC_CAG_J",
+    "M": "KC_CAG_M",
+    ";": "KC_SCLN",
     ",": "KC_COMMA",
     ".": "KC_DOT",
     "'": "KC_QUOT",
+    "-": "KC_MINUS",
     "←": "KC_BSPC",
 }
 
@@ -74,7 +76,7 @@ with open("abbr.tsv") as file:
                 alt = []
                 if i != 0:
                     alt = alt_keys[i - 1]
-                name = f"c_{abbr}{i}".replace("'", "_")
+                name = f"c_{abbr}{i}".replace("'", "_").replace("-", "_")
 
                 output += f'SUBS({name}, "{word} ", {", ".join(keys + alt)})\n'
                 output += f'SUBS({name}s, "{word.capitalize()} ", {", ".join(keys + alt + shifted_keys)})\n'
