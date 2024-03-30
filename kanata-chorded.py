@@ -10,42 +10,44 @@ combo_timeout = 100
 output = (
     f"(defchords combos {combo_timeout}"
     + """
-  (w) w
-  (l) l
-  (y) y
-  (p) p
   (b) b
-  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
-  (r) (tap-hold $tap-timeout $hold-timeout r lalt)
-  (s) (tap-hold $tap-timeout $hold-timeout s lmet)
-  (t) (tap-hold $tap-timeout $hold-timeout t lctl)
-  (g) g
-  (q) q
-  (j) j
-  (d) d
-  (v) v
-  (k) k
-  (z) z
-  (f) f
+  (y) y
   (o) o
   (u) u
-  (') '
-  (m) m
-  (n) (tap-hold $tap-timeout $hold-timeout n rctl)
-  (e) (tap-hold $tap-timeout $hold-timeout e rmet)
+  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
   (i) (tap-hold $tap-timeout $hold-timeout i lalt)
-  (a) (tap-hold $tap-timeout $hold-timeout a lsft)
-  (;) ;
+  (e) (tap-hold $tap-timeout $hold-timeout e lmet)
+  (a) (tap-hold $tap-timeout $hold-timeout a lctl)
+  (g) g
   (x) x
-  (h) h
-  (,) ,
-  (.) .
+  (j) j
+  (k) k
+  (l) l
+  (d) d
+  (w) w
+  (v) v
+  (h) (tap-hold $tap-timeout $hold-timeout h rctl)
+  (t) (tap-hold $tap-timeout $hold-timeout t rmet)
+  (s) (tap-hold $tap-timeout $hold-timeout s lalt)
+  (n) (tap-hold $tap-timeout $hold-timeout n lsft)
+  (r) r
+  (m) m
+  (f) f
+  (p) p
   (alt1) (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle nav))
   (alt2) (tap-hold $tap-timeout $hold-timeout spc (layer-toggle media))
   (sft) (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
   (cbo) XX
+  (j k) .
+  (x j) ,
+  (x k) '
+  (g k) ;
 """
 )
+
+# (cbo ;) (macro bspc ; spc)
+# (cbo ,) (macro bspc , spc)
+# (cbo .) (macro bspc . spc)
 
 seen = {}
 line_no = 0
@@ -86,13 +88,6 @@ def translate_combo(abbr):
 print("Processing abbr.tsv")
 with open("abbr.tsv") as file:
     file = csv.reader(file, delimiter="\t")
-
-    for p in [";", ",", "."]:
-        combo = translate_combo(p)
-        macro = translate_macro(f"←{p} ")
-        output += (
-            f'  ({" ".join(combo_keys)} {" ".join(combo)}) (macro {" ".join(macro)})\n'
-        )
 
     for line in file:
         line_no += 1
