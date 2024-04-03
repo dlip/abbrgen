@@ -16,5 +16,6 @@ done
 
 cp abbr.yml ../nixconfig/home/espanso/match
 cp abbr.def ../qmk_firmware/keyboards/mushi/keymaps/engram
+cp abbr.def ../qmk_firmware/keyboards/tamatama/keymaps/engram
 cp combos.dtsi ../zmk-sweep/config
 cp macros.dtsi ../zmk-sweep/config

@@ -15,11 +15,11 @@ min_chars = 3
 # except some short words since they have enough alts to make it still worth using eg. {"i", "he", "do", "go"}
 short_exceptions = {}
 # any percent improvement below this will not be considered and the word might be excluded if there are no other options
-min_improvement = 40
+min_improvement = 33
 # the abbreviations will not end with any of these characters so you can use them as a suffix to access the alternate abbreviation forms or punctuation
 banned_suffixes = "qjzx;,.:?"
 # don't accept any abbreviation shorter than this, useful for example if you want to keep all the single character abbreviations free to manually assign to punctuation etc. you could set it to 2
-min_abbreviation_length = 1
+min_abbreviation_length = 2
 # output the words with no abbreviation found so you can add them by hand
 output_all = False
 # change this to your keyboard layout, ensure its listed in layout.py
