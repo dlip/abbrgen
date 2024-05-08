@@ -1,47 +1,17 @@
+;; Dlip's 28 Key Engram Layout
+;; Adapted from the QMK version https://github.com/dlip/qmk_firmware/blob/dlip/keyboards/tamatama/keymaps/engram/README.md
+
 (defcfg
   linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
-)
-
-(defvar
-  tap-timeout 0
-  hold-timeout 200
+  concurrent-tap-hold yes
 )
 
 (include abbr.kbd)
 
-(defalias
-
-  b (chord combos b)
-  y (chord combos y)
-  o (chord combos o)
-  u (chord combos u)
-  c (chord combos c)
-  i (chord combos i)
-  e (chord combos e)
-  a (chord combos a)
-  g (chord combos g)
-  x (chord combos x)
-  j (chord combos j)
-  k (chord combos k)
-  l (chord combos l)
-  d (chord combos d)
-  w (chord combos w)
-  v (chord combos v)
-  h (chord combos h)
-  t (chord combos t)
-  s (chord combos s)
-  n (chord combos n)
-  r (chord combos r)
-  m (chord combos m)
-  f (chord combos f)
-  p (chord combos p)
-
-  alt1 (chord combos alt1)
-  alt2 (chord combos alt2)
-  sft (chord combos sft)
-  cbo (chord combos cbo)
+(defvar
+  tap-timeout 0
+  hold-timeout 180
 )
-
 
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -55,65 +25,99 @@
 
 (defalias
   rpt rpt-any
-  na (layer-switch base)
-  med (layer-toggle media)
+  bse (layer-switch base)
+  num (layer-toggle num)
   nav (layer-toggle nav)
+  fun (layer-toggle fun)
   gam (layer-switch gaming)
   dis (layer-switch disable)
-  bse (layer-switch base)
 
-  snv (one-shot 1000 @nav)
-  ssf (one-shot 1000 lsft)
-  sct (one-shot 1000 lctl)
-  sal (one-shot 1000 lalt)
-  smt (one-shot 1000 lmet)
+  c (tap-hold $tap-timeout $hold-timeout c lsft)
+  i (tap-hold $tap-timeout $hold-timeout i lalt)
+  e (tap-hold $tap-timeout $hold-timeout e lmet)
+  a (tap-hold $tap-timeout $hold-timeout a lctl)
 
-  lft (tap-hold $tap-timeout $hold-timeout left lalt)
-  dwn (tap-hold $tap-timeout $hold-timeout down lmet)
-  rgt (tap-hold $tap-timeout $hold-timeout rght lctl)
+  h (tap-hold $tap-timeout $hold-timeout h rctl)
+  t (tap-hold $tap-timeout $hold-timeout t rmet)
+  s (tap-hold $tap-timeout $hold-timeout s lalt)
+  n (tap-hold $tap-timeout $hold-timeout n lsft)
+
+
+  q (tap-hold $tap-timeout $hold-timeout q lsft)
+  ' (tap-hold $tap-timeout $hold-timeout ' lalt)
+  , (tap-hold $tap-timeout $hold-timeout , lmet)
+  . (tap-hold $tap-timeout $hold-timeout . lalt)
 
   4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
   5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
   6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
-  0 (tap-hold $tap-timeout $hold-timeout 0 @med)
+  0 (tap-hold $tap-timeout $hold-timeout 0 rsft)
 
+
+  all (tap-hold $tap-timeout $hold-timeout C-a lsft)
   del (tap-hold $tap-timeout $hold-timeout del lalt)
+  esc (tap-hold $tap-timeout $hold-timeout esc lmet)
   ret (tap-hold $tap-timeout $hold-timeout ret lctl)
-  esr (tap-hold $tap-timeout $hold-timeout esc @med)
 
+  lft (tap-hold $tap-timeout $hold-timeout left lctl)
+  dwn (tap-hold $tap-timeout $hold-timeout down lmet)
+  rgt (tap-hold $tap-timeout $hold-timeout rght lalt)
+
+  udo C-z
+  cut C-x
   cpy C-c
   pst C-v
-  cut C-x
-  udo C-z
-  all C-a
 
+  mut (tap-hold $tap-timeout $hold-timeout mute lsft)
+  prv (tap-hold $tap-timeout $hold-timeout prev lalt)
+  pp (tap-hold $tap-timeout $hold-timeout pp lmet)
+  nxt (tap-hold $tap-timeout $hold-timeout next lctl)
+
+  f4 (tap-hold $tap-timeout $hold-timeout f4 rctl)
+  f5 (tap-hold $tap-timeout $hold-timeout f5 rmet)
+  f6 (tap-hold $tap-timeout $hold-timeout f6 lalt)
+  f10 (tap-hold $tap-timeout $hold-timeout f10 rsft)
+
+  alt1 (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle num))
+  alt2 (tap-hold $tap-timeout $hold-timeout spc (layer-toggle nav))
+  sft (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
+  cbo C-bspc
 )
 
 (deflayer base
   _    _    _     _      _     _    _    _    _    _    _    _    _
   _    _    _     _      _     _    _    _    _    _    _    _    _    @dis
-  @b   @y   @o    @u     XX    XX   XX   XX   @l   @d   @w   @v   _    _
+  b    y    o     u      XX    XX   XX   XX   l    d    w    v    _    _
   @c   @i   @e    @a     XX    XX   XX   XX   @h   @t   @s   @n   _
-  @g   @x   @j    @k     XX    XX   XX   XX   @r   @m   @f   @p
+  g    x    j     k      XX    XX   XX   XX   r    m    f    p
   _    lrld @alt1 @alt1  @alt2           @sft @sft @cbo @cbo @rpt bspc
 )
 
-(deflayer nav
+(deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    esc  up   ret  XX   XX   XX   XX   7    8    9    \    _    _
-  del @lft  @dwn @rgt XX   XX   XX   XX   @4   @5   @6   0    _
-  [   ]     pgdn end  XX   XX   XX   XX   1    2    3    .
-  _    _    _    _         _         _    _    _    _    _    _
+  `    ;    -    =    _    _    _    _    7    8    9    \    _    _
+  @q   @'   @,   @.   _    _    _    _    @4   @5   @6   @0   _
+  z    spc  [    ]    _    _    _    _    1    2    3    /
+  _    _    _    _    @fun           _    _    _    _    _    _
 )
 
-(deflayer media
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _     _    _
+  _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  @udo @cut @cpy @pst _    _    _    _    home up   end   XX   _    _
+  @all @del @esc @ret _    _    _    _    @lft @dwn @rgt  rsft _
+  _    _    _    prnt _    _    _    _    pgdn pgup XX    XX
+  _    _    @fun @fun      -              _    _    _     _    _    _
+)
+
+(deflayer fun
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    prnt vold volu XX  XX   XX   XX    f7   f8   f9   f11  _    _
-  @udo @cut @cpy @pst XX  XX   XX   XX    f4   f5   f6   f10  _
-  XX   prev pp   next XX  XX   XX   XX    f1   f2   f3   f12
-  _    _    _   _          _         _    _    _    _    _    _
+  XX   XX   vold volu XX  XX   XX   XX    f7   f8   f9   f11  _    _
+  @mut @prv @pp  @nxt XX  XX   XX   XX    @f4  @f5  @f6  @f10 -
+  XX   XX   brdn brup XX  XX   XX   XX    f1   f2   f3   f12
+  _    _    _    _        _         _    _    _    _    _    _
 )
 
 (deflayer disable

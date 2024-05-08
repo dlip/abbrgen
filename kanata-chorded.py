@@ -6,60 +6,47 @@ limit = 0
 # How long in ms you have to press the combo keys together, you can be pretty relaxed here if combo is its own unique key
 combo_timeout = 100
 # Configure your base mappings here
-# Note: there are some issues with tap-holds in combos https://github.com/jtroo/kanata/issues/743
-output = (
-    f"(defchords combos {combo_timeout}"
-    + """
-  (b) b
-  (y) y
-  (o) o
-  (u) u
-  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
-  (i) (tap-hold $tap-timeout $hold-timeout i lalt)
-  (e) (tap-hold $tap-timeout $hold-timeout e lmet)
-  (a) (tap-hold $tap-timeout $hold-timeout a lctl)
-  (g) g
-  (x) x
-  (j) j
-  (k) k
-  (l) l
-  (d) d
-  (w) w
-  (v) v
-  (h) (tap-hold $tap-timeout $hold-timeout h rctl)
-  (t) (tap-hold $tap-timeout $hold-timeout t rmet)
-  (s) (tap-hold $tap-timeout $hold-timeout s lalt)
-  (n) (tap-hold $tap-timeout $hold-timeout n lsft)
-  (r) r
-  (m) m
-  (f) f
-  (p) p
-  (alt1) (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle nav))
-  (alt2) (tap-hold $tap-timeout $hold-timeout spc (layer-toggle media))
-  (sft) (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
-  (cbo) XX
-  (j k) .
-  (x j) ,
-  (x k) '
-  (g k) ;
-"""
-)
+mapping = {
+    "b": "tab",
+    "y": "q",
+    "o": "w",
+    "u": "e",
+    "c": "caps",
+    "i": "a",
+    "e": "s",
+    "a": "d",
+    "g": "lsft",
+    "x": "z",
+    "j": "x",
+    "k": "c",
+    "l": "i",
+    "d": "o",
+    "w": "p",
+    "v": "[",
+    "h": "k",
+    "t": "l",
+    "s": ";",
+    "n": "'",
+    "r": ",",
+    "m": ".",
+    "f": "/",
+    "p": "rsft",
+    " ": "spc",
+}
 
-# (cbo ;) (macro bspc ; spc)
-# (cbo ,) (macro bspc , spc)
-# (cbo .) (macro bspc . spc)
+combo_keys = ["prtsc"]
+shifted_keys = ["ralt"]
+alt_keys = [["lalt"], ["spc"], ["lalt", "spc"]]
 
 seen = {}
 line_no = 0
-
-combo_keys = ["cbo"]
-shifted_keys = ["sft"]
-alt_keys = [["alt1"], ["alt2"], ["alt1", "alt2"]]
 
 key_map = {
     " ": "spc",
     "←": "bspc",
 }
+
+output = "(defchordsv2-experimental\n"
 
 
 def translate_macro(word):
@@ -78,10 +65,10 @@ def translate_macro(word):
 def translate_combo(abbr):
     result = []
     for i, k in enumerate(abbr):
-        if k in key_map:
-            result.append(key_map[k])
+        if k in mapping:
+            result.append(mapping[k])
         else:
-            result.append(k.lower())
+            raise Exception(f"No key_map for {k}")
     return result
 
 
@@ -116,9 +103,9 @@ with open("abbr.tsv") as file:
                 combo = translate_combo(abbr)
                 macro = translate_macro(word + " ")
 
-                output += f'  ({" ".join(combo_keys + alt)} {" ".join(combo)}) (macro {" ".join(macro)})\n'
+                output += f'  ({" ".join(combo_keys + alt)} {" ".join(combo)}) (macro {" ".join(macro)}) {combo_timeout} first-release ()\n'
                 shifted_macro = translate_macro(word.capitalize() + " ")
-                output += f'  ({" ".join(combo_keys + alt + shifted_keys)} {" ".join(combo)}) (macro {" ".join(shifted_macro)})\n'
+                output += f'  ({" ".join(combo_keys + alt + shifted_keys)} {" ".join(combo)}) (macro {" ".join(shifted_macro)}) {combo_timeout} first-release ()\n'
     output += ")"
 
 
