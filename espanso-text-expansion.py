@@ -56,10 +56,6 @@ with open("abbr.tsv") as file:
             add_abbr(line[0], line[1])
             if line[2]:
                 add_abbr(line[2], f"{line[1]}{alt_suffix_1}")
-            if line[3]:
-                add_abbr(line[3], f"{line[1]}{alt_suffix_2}")
-            if line[4]:
-                add_abbr(line[4], f"{line[1]}{alt_suffix_3}")
 
 print("Writing abbr.yml")
 with open("abbr.yml", "w") as file:
