@@ -89,7 +89,7 @@ To run the commands use `python <file.py>`
 
 ### abbrgen.py
 
-This reads `words.txt` and outputs abbreviations in tsv format to `abbr.tsv`:
+This reads `words.tsv` and outputs abbreviations in tsv format to `abbr.tsv`:
 
 The approach it uses is:
 

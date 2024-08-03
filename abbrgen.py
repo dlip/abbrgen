@@ -8,7 +8,7 @@ import layout
 import utils
 from effort_calculator import EffortCalculator
 
-# stop after processing this many lines in words.txt
+# stop after processing this many lines in words.tsv
 limit = 0
 # any word shorter than this will be excluded
 min_chars = 3
@@ -106,7 +106,8 @@ def find_abbr(word):
     return None
 
 
-with open("words.txt") as file:
+with open("words.tsv") as file:
+    file = csv.reader(file, delimiter="\t")
     verb_data = {}
     log.debug("loading verbs-conjugations.json")
     with open("verbs-conjugations.json") as verbs_file:
@@ -124,13 +125,14 @@ with open("words.txt") as file:
                     alt_data[line[0]] = line[1:]
 
     output = ""
-    while True:
+    for line in file:
         line_no += 1
         if limit > 0 and line_no > limit:
             break
-        word = file.readline()
+        word = line[0]
         if not word:
             break
+        type = line[1]
         word = word.strip()
         if word[0] == "#":
             continue
@@ -141,17 +143,18 @@ with open("words.txt") as file:
             alt = ["", "", ""]
             if word in alt_data:
                 alt = alt_data[word]
-            elif word in verb_data:
+            elif type == "VERB" and word in verb_data:
                 verb = verb_data[word]
                 if "imperfect" in verb["indicative"]:
                     alt[0] = verb["indicative"]["imperfect"][0]
                 if "gerund" in verb:
                     alt[1] = verb["gerund"][0]
-
-            if not alt[2]:
-                plural = p.plural_noun(word)
-                if plural:
-                    alt[2] = plural
+            if type == "NOUN":
+                alt[2] = p.plural_noun(word)
+            elif type == "VERB":
+                alt[2] = p.plural_verb(word)
+            elif type == "ADJ":
+                alt[2] = p.plural_adj(word)
 
             for a in alt:
                 if a:
