@@ -3,10 +3,16 @@ import logging
 import os
 import sys
 import json
-import inflect
 import layout
 import utils
 from effort_calculator import EffortCalculator
+from pattern import en
+
+# hack to fix https://github.com/clips/pattern/issues/243
+try:
+    en.conjugate("purred", "3sg")
+except RuntimeError:
+    pass
 
 # stop after processing this many lines in words.tsv
 limit = 0
@@ -39,7 +45,6 @@ log.addHandler(logging.StreamHandler(sys.stdout))
 log.setLevel(logging.DEBUG)
 
 calc = EffortCalculator(keyboard_layout, effort_map)
-p = inflect.engine()
 
 used = {}
 seen = {}
@@ -108,12 +113,6 @@ def find_abbr(word):
 
 with open("words.tsv") as file:
     file = csv.reader(file, delimiter="\t")
-    verb_data = {}
-    log.debug("loading verbs-conjugations.json")
-    with open("verbs-conjugations.json") as verbs_file:
-        data = json.load(verbs_file)
-        for verb in data:
-            verb_data[verb["verb"]] = verb
 
     alt_data = {}
     if os.path.isfile("alt.tsv"):
@@ -143,18 +142,12 @@ with open("words.tsv") as file:
             alt = ["", "", ""]
             if word in alt_data:
                 alt = alt_data[word]
-            elif type == "VERB" and word in verb_data:
-                verb = verb_data[word]
-                if "imperfect" in verb["indicative"]:
-                    alt[0] = verb["indicative"]["imperfect"][0]
-                if "gerund" in verb:
-                    alt[1] = verb["gerund"][0]
-            if type == "NOUN":
-                alt[2] = p.plural_noun(word)
             elif type == "VERB":
-                alt[2] = p.plural_verb(word)
-            elif type == "ADJ":
-                alt[2] = p.plural_adj(word)
+                alt[0] = en.conjugate(word, "3sg")
+                alt[1] = en.conjugate(word, "1sgp")
+                alt[2] = en.conjugate(word, "part")
+            elif type == "NOUN":
+                alt[0] = en.pluralize(word, pos=en.NOUN)
 
             for a in alt:
                 if a:

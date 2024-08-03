@@ -99,8 +99,7 @@ The approach it uses is:
 - Score remaining abbreviations by effort and select the best option depending on your particular keyboard layout and if you are using chorded mode
 - Add alt versions
   - Use [alt.tsv](./alt.tsv) if available, else:
-  - Add verb tenses with the data in `verbs-conjugations.json`
-  - Add plurals using [inflect](https://pypi.org/project/inflect/)
+  - Add verb tenses and plurals using [pattern](https://github.com/clips/pattern)
 
 There are some options that you might want to change near the top of [abbrgen.py](abbrgen.py). In particular set `chorded_mode` to `True` or `False` depending on what method you are using.
 

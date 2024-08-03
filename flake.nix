@@ -20,10 +20,17 @@
       in {
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
-            (python3.withPackages (python-pkgs: [
-              python-pkgs.inflect
-            ]))
+            python39
+            libmysqlclient
+            pkg-config
+            libffi
           ];
+          shellHook = ''
+            if [ ! -d "./venv "]; then
+            	python3 -m venv venv
+            fi
+            source venv/bin/activate
+          '';
         };
       }
     );
