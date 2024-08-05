@@ -8,10 +8,10 @@ However, compiling such a list manually can be a daunting task. This is where ab
 
 Given a list of common words it can generate a list like the following, the way you input each word and alternate word depends on if you are using chording or text expansion
 
-| Word | Abbreviation | Alt1   | Alt2    | Alt3  |
-| ---- | ------------ | ------ | ------- | ----- |
-| look | l            | looked | looking | looks |
-| give | ge           | given  | giving  | gives |
+| Word | Abbreviation | Alt1  | Alt2   | Alt3    |
+| ---- | ------------ | ----- | ------ | ------- |
+| look | l            | looks | looked | looking |
+| give | ge           | gives | gave   | giving  |
 
 ## Chording vs text expansion
 
