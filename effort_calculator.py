@@ -1,10 +1,9 @@
 import logging
-import utils
-import json
 
 log = logging.getLogger("abbrgen")
 
 finger_maping = [
+    [1, 2, 3, 4, 4, 5, 5, 6, 7, 8],
     [1, 2, 3, 4, 4, 5, 5, 6, 7, 8],
     [1, 2, 3, 4, 4, 5, 5, 6, 7, 8],
     [1, 2, 3, 4, 4, 5, 5, 6, 7, 8],
@@ -13,6 +12,7 @@ finger_maping = [
 hand_row_maping = [
     ["tl", "tl", "tl", "tl", "tl", "tr", "tr", "tr", "tr", "tr"],
     ["ml", "ml", "ml", "ml", "ml", "mr", "mr", "mr", "mr", "mr"],
+    ["bl", "bl", "bl", "bl", "bl", "br", "br", "br", "br", "br"],
     ["bl", "bl", "bl", "bl", "bl", "br", "br", "br", "br", "br"],
 ]
 
@@ -96,7 +96,7 @@ class EffortCalculator:
         indexes = {}
         for i in range(0, len(abbr)):
             index = self.layout_map[abbr[i]]
-            if not index in indexes:
+            if index not in indexes:
                 indexes[index] = 1
             else:
                 indexes[index] += 1
@@ -129,9 +129,9 @@ class EffortCalculator:
                     log.debug("rejected: banned chord")
                     return
 
-            if scissor_count:
-                log.debug("rejected: scissors not accepted in chorded mode")
-                return
+            # if scissor_count:
+            #     log.debug("rejected: scissors not accepted in chorded mode")
+            #     return
 
             if sfb_count:
                 log.debug("rejected: SFBs not accepted in chorded mode")
@@ -141,10 +141,11 @@ class EffortCalculator:
         for i in range(0, len(abbr)):
             result += self.effort_map[abbr[i]]
 
+        if scissor_count:
+            log.debug("Applying scissor penalty")
+            result += scissor_count * scissor_penalty
+
         if not chorded_mode:
-            if scissor_count:
-                log.debug("Applying scissor penalty")
-                result += scissor_count * scissor_penalty
             if sfb_count:
                 log.debug("Applying SFB penalty")
                 result += sfb_count * sfb_penalty

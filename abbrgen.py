@@ -29,9 +29,9 @@ min_abbreviation_length = 1
 # output the words with no abbreviation found so you can add them by hand
 output_all = False
 # change this to your keyboard layout, ensure its listed in layout.py
-keyboard_layout = layout.engram
+keyboard_layout = layout.stained
 # change this to the effort map for your keyboard shape: effort_map_standard, effort_map_matrix
-effort_map = layout.effort_map_matrix
+effort_map = layout.effort_map_directional
 # chorded mode will ensure its possible to chord and remove sfb's and scissors completely
 chorded_mode = True
 # this is the effort penalty added to sequences with same finger bigrams (using the same finger for 2 keys in a row)
