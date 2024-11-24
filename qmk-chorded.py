@@ -68,6 +68,8 @@ with open("abbr.tsv") as file:
                 seen[a] = line[0]
 
             keys = translate_keys(abbr)
+            no_combo = keys.copy()
+            no_combo.pop(0)  # quick hack to make shifted_keys individual for harite
             for i, word in enumerate(line):
                 if not word:
                     continue
@@ -77,7 +79,7 @@ with open("abbr.tsv") as file:
                 name = f"c_{abbr}{i}".replace("'", "_").replace("-", "_")
 
                 output += f'SUBS({name}, "{word} ", {", ".join(keys + alt)})\n'
-                output += f'SUBS({name}s, "{word.capitalize()} ", {", ".join(keys + alt + shifted_keys)})\n'
+                output += f'SUBS({name}s, "{word.capitalize()} ", {", ".join(no_combo + alt + shifted_keys)})\n'
 
 print("writing abbr.def")
 with open("abbr.def", "w") as file:

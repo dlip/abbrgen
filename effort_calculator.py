@@ -13,7 +13,7 @@ hand_row_maping = [
     ["tl", "tl", "tl", "tl", "tl", "tr", "tr", "tr", "tr", "tr"],
     ["ml", "ml", "ml", "ml", "ml", "mr", "mr", "mr", "mr", "mr"],
     ["bl", "bl", "bl", "bl", "bl", "br", "br", "br", "br", "br"],
-    ["bl", "bl", "bl", "bl", "bl", "br", "br", "br", "br", "br"],
+    ["dl", "dl", "dl", "dl", "dl", "dr", "dr", "dr", "dr", "dr"],
 ]
 
 # you can ban chords that you find uncomfortable, this left hand side is mirrored
@@ -76,9 +76,11 @@ class EffortCalculator:
             "tl": 0,
             "ml": 0,
             "bl": 0,
+            "dl": 0,
             "tr": 0,
             "mr": 0,
             "br": 0,
+            "dr": 0,
         }
         for i in range(0, len(abbr)):
             indexes[self.hand_row_map[abbr[i]]] += 1
@@ -90,6 +92,35 @@ class EffortCalculator:
             result += min(indexes["tr"], indexes["br"])
 
         return result
+
+    def get_directional_changes(self, abbr):
+        indexes = {
+            "tl": 0,
+            "ml": 0,
+            "bl": 0,
+            "dl": 0,
+            "tr": 0,
+            "mr": 0,
+            "br": 0,
+            "dr": 0,
+        }
+        for i in range(0, len(abbr)):
+            indexes[self.hand_row_map[abbr[i]]] += 1
+
+        resultl = 0
+        resultr = 0
+        for k in indexes.keys():
+            if indexes[k] and "l" in k:
+                resultl += 1
+            elif indexes[k] and "r" in k:
+                resultr += 1
+
+        if resultl:
+            resultl -= 1
+        if resultr:
+            resultr -= 1
+
+        return max(resultl, resultr)
 
     def get_sfb_count(self, abbr):
         result = 0
@@ -106,13 +137,21 @@ class EffortCalculator:
 
         return result
 
-    def calculate(self, abbr, sfb_penalty, scissor_penalty, chorded_mode):
+    def calculate(
+        self,
+        abbr,
+        sfb_penalty,
+        scissor_penalty,
+        directional_change_penalty,
+        chorded_mode,
+    ):
         for i in range(0, len(abbr)):
             if abbr[i] not in self.layout_map:
                 log.debug(f"rejected: letter '{abbr[i]}' not in keyboard layout")
                 return
 
-        scissor_count = self.get_scissor_count(abbr)
+        # scissor_count = self.get_scissor_count(abbr)
+
         sfb_count = self.get_sfb_count(abbr)
         if chorded_mode:
             seen = set()
@@ -141,9 +180,13 @@ class EffortCalculator:
         for i in range(0, len(abbr)):
             result += self.effort_map[abbr[i]]
 
-        if scissor_count:
-            log.debug("Applying scissor penalty")
-            result += scissor_count * scissor_penalty
+        # if scissor_count:
+        #     log.debug("Applying scissor penalty")
+        #     result += scissor_count * scissor_penalty
+        directional_changes = self.get_directional_changes(abbr)
+        print(f"dc {directional_changes}")
+        if directional_changes:
+            result += directional_changes * directional_change_penalty
 
         if not chorded_mode:
             if sfb_count:

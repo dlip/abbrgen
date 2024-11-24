@@ -2,7 +2,6 @@ import csv
 import logging
 import os
 import sys
-import json
 import layout
 import utils
 from effort_calculator import EffortCalculator
@@ -38,6 +37,8 @@ chorded_mode = True
 sfb_penalty = 0.8
 # this is the effort penalty added to sequences with scissors (travelling between the top and bottom rows on the same hand)
 scissor_penalty = 0.5
+# this is the effort penalty added to sequences with directional changes (keyboards with directional switches like harite)
+directional_change_penalty = 2.0
 
 # internal variables
 log = logging.getLogger("abbrgen")
@@ -59,13 +60,12 @@ def find_abbr(word):
         log.debug(f"rejected: minimum chars less than {min_chars}")
         return None
     if word in seen:
-        log.debug(f"rejected: already seen")
+        log.debug("rejected: already seen")
         return None
 
     seen[word] = True
     combinations = utils.find_combinations(word)
     combinations.sort(key=len)
-    sfb_option = None
     options = []
 
     for abbr in combinations:
@@ -75,14 +75,18 @@ def find_abbr(word):
                 f"rejected: abbreviation length less than {min_abbreviation_length}"
             )
             continue
-        if not abbr in used:
+        if abbr not in used:
             if len(abbr) > 1 and abbr[-1] in banned_suffixes:
                 log.debug(f"rejected: '{abbr[-1]}' is a banned suffix")
                 continue
             improvement = ((len(word) - len(abbr)) / len(word)) * 100
             if improvement >= min_improvement or short_exception:
                 effort = calc.calculate(
-                    abbr, sfb_penalty, scissor_penalty, chorded_mode
+                    abbr,
+                    sfb_penalty,
+                    scissor_penalty,
+                    directional_change_penalty,
+                    chorded_mode,
                 )
                 if not effort:
                     continue
