@@ -150,7 +150,7 @@ often	oen
 believe	bl	believes	believed	believing
 offer	or	offers	offered	offering
 death	dt	deaths		
-person	pe	people		
+person	pro	people		
 example	ex	examples		
 power	pw	powers		
 continue	cne	continues	continued	continuing
@@ -161,7 +161,7 @@ free	fr
 both	bt			
 choose	ch	chooses	chose	choosing
 begin	be	begins	began	beginning
-region	rn	regions		
+region	rio	regions		
 friend	fn	friends		
 speak	spa	speaks	spoke	speaking
 effect	ect	effects		
@@ -199,7 +199,7 @@ game	ge	games
 energy	eny	energies		
 right	rit	rights		
 health	hea	healths		
-public	pu			
+public	pic			
 condition	cnd	conditions		
 learn	lr	learns	learnt	learning
 development	dn	developments		
@@ -208,13 +208,13 @@ least	lst
 yourself	yl			
 cause	cse	causes	caused	causing
 since	snc			
-position	pn	positions		
-return	rtn	returns	returned	returning
+position	pst	positions		
+return	rn	returns	returned	returning
 remain	rmi	remains	remained	remaining
 appear	apr	appears	appeared	appearing
 close	cle			
 candidate	cde	candidates		
-paper	pae	papers		
+paper	pe	papers		
 control	cnt	controls		
 question	q	questions		
 himself	hi			
@@ -230,7 +230,7 @@ material	mte	materials
 especially	eia			
 island	isa	islands		
 happen	hen	happens	happened	happening
-plant	pl	plants		
+plant	pn	plants		
 apply	ay	applies	applied	applying
 accord	ard			
 locate	lot	locates	located	locating
@@ -246,21 +246,21 @@ course	cus	courses
 reason	ran	reasons		
 social	scl			
 century	cnu	centuries		
-project	pro	projects		
+project	prc	projects		
 field	fed	fields		
 cover	cv	covers	covered	covering
 fact	fc	facts		
 interview	ite	interviews		
-improve	iro	improves	improved	improving
+improve	ipo	improves	improved	improving
 village	vag	villages		
-campaign	cpi	campaigns		
+campaign	cpn	campaigns		
 office	ofe	offices		
 action	ati	actions		
 current	cut			
-response	ron	responses		
+response	rsp	responses		
 rather	rah			
 human	han			
-represent	rps	represents	represented	representing
+represent	rnt	represents	represented	representing
 market	mk	markets		
 carry	cry	carries	carried	carrying
 force	for	forces		
@@ -278,14 +278,14 @@ population	pai	populations
 marry	mry	marries	married	marrying
 usually	ual			
 obtain	otn	obtains	obtained	obtaining
-period	pio	periods		
+period	pri	periods		
 kind	kn	kinds		
 property	pry	properties		
 already	aed			
 strong	sg			
 analysis	any	analyses		
 determine	det	determines	determined	determining
-product	prc	products		
+product	pu	products		
 leader	led	leaders		
 quality	qu	qualities		
 father	fh	fathers		
@@ -295,7 +295,7 @@ center	cnr	centers
 anything	atg	anythings		
 music	mus	musics		
 form	fm	forms		
-probably	pal			
+probably	pl			
 court	crt	courts		
 spend	snd	spends	spent	spending
 attack	ak	attacks		
@@ -318,14 +318,14 @@ amount	aun	amounts
 mother	mhe	mothers		
 approach	aph	approaches		
 daughter	dhe	daughters		
-present	pst	presents	presented	presenting
+present	pen	presents	presented	presenting
 surface	sua	surfaces		
 airport	aipt	airports		
 affect	aet	affects	affected	affecting
 application	apn	applications		
 enough	eog			
 certain	cei			
-patient	pte	patients		
+patient	pae	patients		
 article	atle	articles		
 stay	sy	stays	stayed	staying
 remember	rmb	remembers	remembered	remembering
@@ -344,7 +344,7 @@ someone	son	someones
 quite	qe			
 connect	cnet	connects	connected	connecting
 restaurant	rsta	restaurants		
-price	pri	prices		
+price	pie	prices		
 focus	fou	focuses	focussed	focussing
 environment	eio	environments		
 sometimes	sot			
@@ -352,9 +352,9 @@ break	bea	breaks	broke	breaking
 popular	pua			
 contain	cti	contains	contained	containing
 operate	ort	operates	operated	operating
-program	pg	programs		
+program	prm	programs		
 design	dg	designs		
-relationship	rlt	relationships		
+relationship	rhp	relationships		
 solution	slu	solutions		
 table	tab	tables		
 short	sor			
@@ -367,17 +367,17 @@ function	fno	functions
 distance	dtn	distances		
 capital	ctl	capitals		
 share	sha	shares	shared	sharing
-temperature	tmu	temperatures		
+temperature	tpra	temperatures		
 effort	eft	efforts		
 whole	woe			
-security	sct	securities		
+security	srit	securities		
 previous	pv			
 actually	atul			
 ground	gou	grounds		
 production	ptn	productions		
 organization	oz	organizations		
 decide	dei	decides	decided	deciding
-structure	src	structures		
+structure	stc	structures		
 size	sz	sizes		
 arrive	aiv	arrives	arrived	arriving
 technology	tog	technologies		
@@ -388,13 +388,13 @@ record	rod	records
 drive	dri	drives	drove	driving
 travel	tvl	travels	travelled	travelling
 wife	wf	wives		
-parent	pen	parents		
+parent	pet	parents		
 specific	sei			
 moment	mnt	moments		
 black	blc			
 enjoy	ej	enjoys	enjoyed	enjoying
 release	rls	releases	released	releasing
-president	prn	presidents		
+president	prst	presidents		
 everything	ehg	everythings		
 brother	bh	brethren		
 associate	aste	associates	associated	associating
@@ -405,7 +405,7 @@ address	ads	addresses	addrest	addressing
 range	rag	ranges		
 situation	stan	situations		
 significant	sga			
-industry	iu	industries		
+industry	iry	industries		
 morning	mrn	mornings		
 establish	elh	establishes	established	establishing
 attention	aen	attentions		
@@ -413,13 +413,14 @@ beach	bch	beaches
 select	sel	selects	selected	selecting
 exist	exi	exists	existed	existing
 avoid	avd	avoids	avoided	avoiding
+resource	rsc	resources		
 either	eih			
 disease	dsea	diseases		
 official	ofl	officials		
 matter	mtr	matters		
 training	trg	trainings		
 traditional	tadn			
-particular	part			
+particular	pari			
 likely	ley			
 color	clr	colors		
 natural	nu			
@@ -433,6 +434,7 @@ regard	rgd	regards	regarded	regarding
 culture	cul	cultures		
 single	sge			
 simple	sml			
+letter	ltr	letters		
 whose	ws			
 necessary	nesa			
 hotel	hoe	hotels		
@@ -455,18 +457,18 @@ protect	pot	protects	protected	protecting
 tourist	tui	tourists		
 style	sye	styles		
 themselves	tsv			
-private	pva			
+private	prit			
 general	gea			
 education	edat	educations		
 resident	rsn	residents		
-plane	ple	planes		
+plane	pla	planes		
 story	sry	stories		
 board	bar	boards		
 message	meg	messages		
 chance	chn	chances		
 strategy	stag	strategies		
-practice	pie	practices		
-special	seal			
+practice	prci	practices		
+special	spia			
 around	aud			
 province	pon	provinces		
 below	blo			
@@ -477,6 +479,7 @@ whom	wm
 economic	emi			
 multiple	mul			
 environmental	eol			
+page	pg	pages		
 vehicle	vh	vehicles		
 choice	che	choices		
 ticket	tke	tickets		
@@ -484,7 +487,7 @@ safety	say	safeties
 generally	gy			
 conduct	cdt	conducts	conducted	conducting
 directly	dy			
-personal	psn			
+personal	prsa			
 technique	tq	techniques		
 mention	mti	mentions	mentioned	mentioning
 mountain	mun	mountains		
@@ -493,7 +496,7 @@ challenge	chl	challenges
 define	dfi	defines	defined	defining
 traffic	trf	traffics		
 device	dvc	devices		
-operation	oetn	operations		
+operation	orn	operations		
 management	mgt	managements		
 finally	fy			
 purpose	puo	purposes		
@@ -504,10 +507,10 @@ famous	fau
 investigate	ivt	investigates	investigated	investigating
 climate	clte	climates		
 easily	eay			
-promote	prm	promotes	promoted	promoting
+promote	pmt	promotes	promoted	promoting
 algorithm	alh	algorithms		
 front	fnt	fronts		
-influence	iuc	influences		
+influence	iu	influences		
 connection	ceti	connections		
 introduction	iou	introductions		
 detail	dtl	details		
@@ -520,12 +523,12 @@ floor	flr	floors
 destination	dno	destinations		
 warning	wan	warnings		
 limit	lmt	limits	limited	limiting
-introduce	iod	introduces	introduced	introducing
+introduce	iuc	introduces	introduced	introducing
 winter	wnr	winters		
 answer	asw	answers	answered	answering
 behavior	bv	behaviors		
 appoint	apnt	appoints	appointed	appointing
-perhaps	prh			
+perhaps	peh			
 simply	sly			
 machine	mhn	machines		
 trade	trd	trades		
@@ -538,7 +541,7 @@ complete	cpl	completes	completed	completing
 citizen	cz	citizens		
 investigation	ieta	investigations		
 check	ck	checks	checked	checking
-positive	pov			
+positive	psit			
 expression	exo	expressions		
 final	fna			
 driver	div	drivers		
@@ -555,7 +558,7 @@ ability	ablt	abilities
 measure	msr	measures	measured	measuring
 district	dic	districts		
 surround	suo	surrounds	surrounded	surrounding
-presence	pnc	presences		
+presence	prn	presences		
 visitor	vto	visitors		
 painting	pag	paintings		
 myself	mye			
@@ -601,7 +604,7 @@ reaction	ratn	reactions
 demonstrate	dent	demonstrates	demonstrated	demonstrating
 global	gb			
 unique	unq			
-previously	pul			
+previously	prio			
 reference	rfn	references		
 branch	ban	branches		
 mechanism	mhi	mechanisms		
@@ -612,10 +615,10 @@ successful	scel
 platform	pfr	platforms		
 ready	ray			
 maybe	mb			
-measurement	munt	measurements		
+measurement	mut	measurements		
 forest	fot	forests		
 drink	dk	drinks		
-interesting	itrs			
+interesting	ites			
 garden	gad	gardens		
 concentration	ctri	concentrations		
 respond	rsd	responds	responded	responding
@@ -640,8 +643,8 @@ speech	sch	speeches
 shall	shl			
 relation	rlat	relations		
 independent	iept			
-northern	nohe			
-purchase	phe	purchases	purchased	purchasing
+northern	note			
+purchase	prch	purchases	purchased	purchasing
 recommend	rmd	recommends	recommended	recommending
 combine	cbn	combines	combined	combining
 additional	adtl			
@@ -654,7 +657,7 @@ background	bou	backgrounds
 movie	mvi	movies		
 downtown	dow	downtowns		
 ahead	ahd			
-hospital	hol	hospitals		
+hospital	hpi	hospitals		
 interaction	iteo	interactions		
 victim	vct	victims		
 primary	pmy			
@@ -664,7 +667,7 @@ document	doen	documents
 apartment	aprn	apartments		
 benefit	bi	benefits		
 professional	pfi			
-respect	rspt	respects		
+respect	rsct	respects		
 taxis	tx	taxes		
 conference	cfr	conferences		
 director	dto	directors		
@@ -673,10 +676,10 @@ bridge	bri	bridges
 replace	rpl	replaces	replaced	replacing
 south	suh	souths		
 analyze	az	analyzes	analyzed	analyzing
-passenger	pasr	passengers		
+passenger	psn	passengers		
 weather	war	weathers		
-importance	imte	importances		
-protein	prti	proteins		
+importance	impr	importances		
+protein	pten	proteins		
 bottom	btm	bottoms		
 capacity	ciy	capacities		
 construction	cnst	constructions		
@@ -690,20 +693,20 @@ negative	nav
 generation	geto	generations		
 investment	ivs	investments		
 frequency	fq	frequencies		
-presidential	pria			
+presidential	prsi			
 declare	dcl	declares	declared	declaring
 fully	ful			
-instance	iste	instances		
-participate	pric	participates	participated	participating
+instance	isae	instances		
+participate	parti	participates	participated	participating
 penalty	pey	penalties		
-relatively	riy			
+relatively	rly			
 ferry	fey	ferries		
-respectively	rly			
+respectively	rpiy			
 characteristic	chi	characteristics		
 violence	von	violences		
 resolution	rotn	resolutions		
 majority	mjy	majorities		
-domain	dmi	domains		
+domain	doi	domains		
 injury	ij	injuries		
 chief	chf	chiefs		
 unknown	uow			
@@ -715,6 +718,7 @@ journalist	ja	journalists
 overall	ovl			
 appropriate	apie			
 audience	audn	audiences		
+employ	epl	employs	employed	employing
 objective	ojv	objectives		
 version	vsn	versions		
 handle	hnd	handles	handled	handling
@@ -736,8 +740,9 @@ digital	dgt
 journey	jy	journeys		
 forward	fow			
 chemical	chel			
-resistance	rstn	resistances		
+resistance	rsita	resistances		
 failure	fir	failures		
+prove	pov	proves	proved	proving
 conflict	cfl	conflicts		
 birth	bit	births		
 basis	bas	bases		
@@ -760,7 +765,7 @@ expensive	epns
 request	rqt	requests		
 sight	sgh	sights		
 television	tvn	televisions		
-improvement	iovt	improvements		
+improvement	imet	improvements		
 possibly	poy			
 spring	srg	springs		
 responsibility	roy	responsibilities		
@@ -770,7 +775,7 @@ implement	impe	implements	implemented	implementing
 landscape	lds	landscapes		
 mission	mis	missions		
 employee	eloy	employees		
-perspective	psti	perspectives		
+perspective	pcv	perspectives		
 typically	tpal			
 budget	but	budgets		
 thousand	tusa	thousands		
@@ -804,15 +809,15 @@ slowly	slw
 otherwise	owi			
 detection	dton	detections		
 finger	fge	fingers		
-historical	hia			
+historical	hol			
 exactly	exy			
 Australian	ausl			
 difficulty	dut	difficulties		
 crowd	crw	crowds		
 certainly	ceny			
-intervention	itro	interventions		
+intervention	itvo	interventions		
 equipment	eqn	equipment		
-specifically	siy			
+specifically	seal			
 religious	rlos			
 context	cnx	contexts		
 regulation	rlto	regulations		
@@ -824,10 +829,12 @@ preserve	psv	preserves	preserved	preserving
 assessment	asent	assessments		
 reporter	rpot	reporters		
 enhance	enha	enhances	enhanced	enhancing
-publication	pui	publications		
+publication	pul	publications		
 science	scie	sciences		
 forget	fog	forgets	forgot	forgetting
 damage	dmg	damages		
+input	ipu	inputs		
+middle	mid	middles		
 simulation	sult	simulations		
 standard	stad	standards		
 brain	brn	brains		
@@ -841,7 +848,7 @@ settlement	semn	settlements
 comparison	cps	comparisons		
 execute	exct	executes	executed	executing
 transfer	tanf	transfers		
-protection	pten	protections		
+protection	prtn	protections		
 whatever	wav			
 battle	btl	battles		
 quarter	qa	quarters		
@@ -850,13 +857,13 @@ surgery	sug	surgeries
 originally	ony			
 separate	sepa			
 friendly	fend			
-spatial	spai			
+spatial	spal			
 lawyer	lay	lawyers		
 accident	aide	accidents		
 suddenly	sden			
 restore	rsto	restores	restored	restoring
 researcher	rsah	researchers		
-pronounce	pnu	pronounces	pronounced	pronouncing
+pronounce	pron	pronounces	pronounced	pronouncing
 convert	cnv	converts	converted	converting
 advance	advn	advances	advanced	advancing
 experiment	exnt	experiments		
@@ -867,25 +874,24 @@ volume	vlm	volumes
 strange	sage			
 agricultural	agu			
 farmer	frm	farmers		
-percent	prnt	percents		
-Israeli	isae			
+percent	prct	percents		
 British	bts			
 inform	ifm	informs	informed	informing
 billion	bon	billions		
 storey	soy	storeys		
-formation	fmn	formations		
-transportation	trasi	transportations		
+formation	fori	formations		
+transportation	trns	transportations		
 clothes	ches	clothess		
 Click	clk	clicks	clicked	clicking
 contribution	crb	contributions		
 conversation	cvs	conversations		
 freedom	fdo	freedoms		
 wonder	wdr	wonders	wondered	wondering
-architecture	aitu	architectures		
+architecture	ahi	architectures		
 session	seon	sessions		
 tourism	tous	tourisms		
 biological	bga			
-industrial	idta			
+industrial	iuta			
 quick	qi			
 western	wsr			
 sustainable	sbl			
@@ -894,7 +900,7 @@ terminal	teml	terminals
 fashion	fho	fashions		
 judge	jg	judges		
 female	fml			
-participant	parti	participants		
+participant	ptic	participants		
 belief	blf	beliefs		
 shore	sho	shores		
 slightly	sih			
@@ -909,16 +915,16 @@ emergency	egy	emergencies
 characterize	chz	characterizes	characterized	characterizing
 household	hou	households		
 civil	cvl			
-profile	proi	profiles		
+profile	prof	profiles		
 exposure	expo	exposures		
 enable	ebl	enables	enabled	enabling
-dangerous	dou			
+dangerous	danes			
 exercise	exci	exercises		
 button	btn	buttons		
-breakfast	bet	breakfasts		
+breakfast	bast	breakfasts		
 plastic	pltc	plastics		
 clearly	cley			
-inspire	ispr	inspires	inspired	inspiring
+inspire	ispe	inspires	inspired	inspiring
 justice	jt	justices		
 politician	poit	politicians		
 package	pck	packages		
@@ -938,17 +944,14 @@ somewhat	sow
 trouble	tubl	troubles		
 careful	cfu			
 compound	cund	compounds		
-historic	hio			
+historic	hirc			
 quiet	qet			
-predict	prct	predicts	predicted	predicting
 magazine	mz	magazines		
 evaluation	elto	evaluations		
 attitude	atud	attitudes		
 block	blk	blocks		
 strongly	sog			
-temple	tmp	temples		
 accuracy	auy	accuracies		
-captain	cpti	captains		
 properly	poey			
 consumer	cnsr	consumers		
 housing	hun	housings		
@@ -960,16 +963,17 @@ shopping	spg	shoppings
 subsequently	subt			
 bright	bgt			
 leadership	ldh	leaderships		
+territory	trio	territories		
 index	ix	indices		
 award	awd	awards	awarded	awarding
-Japanese	jn			
+Japanese	jas			
 composition	csit	compositions		
 expedition	exdn	expeditions		
-prisoner	pron	prisoners		
+prisoner	pioe	prisoners		
 carefully	cefl			
 opening	opg	openings		
 nearby	nby			
-suitable	stab			
+suitable	suab			
 afternoon	afte	afternoons		
 accompany	apny	accompanies	accompanied	accompanying
 injure	ijr	injures	injured	injuring
@@ -982,17 +986,17 @@ atmosphere	ashe	atmospheres
 impossible	iob			
 department	demn	departments		
 distribute	dstu	distributes	distributed	distributing
-satisfy	saiy	satisfies	satisfied	satisfying
+satisfy	siy	satisfies	satisfied	satisfying
 pathway	paw	pathways		
 boundary	buy	boundaries		
 residential	rsna			
 construct	cstu	constructs	constructed	constructing
-CHAPTER	chpr	CHAPTERs		
+CHAPTER	chpe	CHAPTERs		
 hundred	hud	hundreds		
 biography	bah	biographies		
 maximum	mx			
 celebrate	cebt	celebrates	celebrated	celebrating
-indicator	idto	indicators		
+indicator	idat	indicators		
 valley	vay	valleys		
 supporter	spte	supporters		
 closely	csy			
@@ -1011,7 +1015,7 @@ accessible	asbl
 prominent	pmn			
 mistake	mke	mistakes		
 framework	frw	frameworks		
-professor	prof	professors		
+professor	pofe	professors		
 thick	tck			
 efficient	efnt			
 expansion	exno	expansions		
@@ -1019,10 +1023,11 @@ fairly	fly
 innovation	ivat	innovations		
 disorder	dioe	disorders		
 enzyme	ez	enzymes		
+doubt	dou	doubts		
 craft	cft	crafts		
 coverage	cvg	coverages		
 infrastructure	ifat	infrastructures		
-afterwards	afw			
+afterwards	ateds			
 fight	fgt	fights	fought	fighting
 apparently	arny			
 attribute	atbu	attributes	attributed	attributing
@@ -1033,7 +1038,7 @@ particle	parl	particles
 scientist	sciet	scientists		
 domestic	dmt			
 reportedly	rdy			
-primarily	pml			
+primarily	prmy			
 promise	pms	promises	promised	promising
 stable	sbe			
 knife	kne	knives		
@@ -1045,10 +1050,10 @@ storage	stog	storages
 long-term	lrm	long-terms		
 guest	gut	guests		
 equal	eql			
-beauty	bey	beauties		
+beauty	bet	beauties		
 disaster	datr	disasters		
 shoulder	sole	shoulders		
 sufficient	sunt			
-sustainability	suab	sustainabilities		
+sustainability	stbl	sustainabilities		
 diverse	dvs			
 victory	voy	victories		

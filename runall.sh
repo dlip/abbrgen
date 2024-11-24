@@ -2,8 +2,8 @@
 set -euo pipefail
 
 declare -a scripts=(
-  # abbrgen
-  # training
+  abbrgen
+  training
   qmk-chorded
   # zmk-chorded
   # kanata-chorded

@@ -28,7 +28,7 @@ line_no = 0
 
 trigger_keys = ["KC_COMBO"]
 shifted_keys = ["KC_COMBO_SFT"]
-alt_keys = [["KC_COMBO_ALT1"], ["KC_COMBO_ALT2"], ["KC_COMBO_ALT1", "KC_COMBO_ALT2"]]
+alt_keys = [["KC_COMBO_ALT1"], ["KC_COMBO_ALT2"], ["KC_COMBO_ALT3"]]
 
 
 def translate_keys(abbr):

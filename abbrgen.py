@@ -38,7 +38,7 @@ sfb_penalty = 0.8
 # this is the effort penalty added to sequences with scissors (travelling between the top and bottom rows on the same hand)
 scissor_penalty = 0.5
 # this is the effort penalty added to sequences with directional changes (keyboards with directional switches like harite)
-directional_change_penalty = 2.0
+directional_change_penalty = 3.0
 
 # internal variables
 log = logging.getLogger("abbrgen")
