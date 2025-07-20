@@ -45,7 +45,7 @@ key_positions = [
     ],
     [
         "COMBO_ALT1",
-        "DEL",
+        "COMBO_ALT3",
         "COMBO_SFT",
         "SPC",
     ],
@@ -65,7 +65,7 @@ key_positions = [
 
 trigger_keys = ["COMBO"]
 shifted_keys = ["COMBO_SFT"]
-alt_keys = [["COMBO_ALT1"], ["COMBO_ALT2"], ["COMBO_ALT1", "COMBO_ALT2"]]
+alt_keys = [["COMBO_ALT1"], ["COMBO_ALT2"], ["COMBO_ALT3"]]
 
 key_map = {
     "'": "QUOT",
