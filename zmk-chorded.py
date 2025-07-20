@@ -5,14 +5,54 @@ import utils
 # You'll need to lower this if you get "region `RAM' overflowed errors" when compiling
 limit = 100
 # How long in ms you have to press the combo keys together, you can be pretty relaxed here if combo is its own unique key
-combo_timeout = 100
+combo_timeout = 200
 # You need to map all of your keys here since zmk combos are offset based
 # You can use an empty string ("") for anything other than letters, punctuation and combo positions such that it adds up to the total numbers of keys on your keyboard, check the example below
+
 key_positions = [
-    ["W", "L", "Y", "P", "B", "Z", "F", "O", "U", "'"],
-    ["C", "R", "S", "T", "G", "M", "N", "E", "I", "A"],
-    ["Q", "J", "V", "D", "K", "X", "H", ";", ",", "."],
-    ["COMBO_ALT1", "COMBO_ALT2", "COMBO_SFT", "COMBO"],
+    ["Q", "F", "W", "O", "L", "U", "B", "Z"],
+    [
+        "\\",
+        "'",
+        "X",
+        "K",
+        "Y",
+        "H",
+        "M",
+        "C",
+        "I",
+        "G",
+        "R",
+        "V",
+        "P",
+        "J",
+        ";",
+        "/",
+    ],
+    [
+        ",",
+        "S",
+        "T",
+        "A",
+        "N",
+        "E",
+        "D",
+        ".",
+    ],
+    [
+        "COMBO_ALT2",
+        "COMBO",
+    ],
+    [
+        "COMBO_ALT1",
+        "DEL",
+        "COMBO_SFT",
+        "SPC",
+    ],
+    [
+        "ESC",
+        "ENTER",
+    ],
 ]
 
 # 42-key keyboard example
@@ -124,8 +164,8 @@ with open("abbr.tsv") as file:
         name = f"c_{key_map[p]}"
         macro = translate_macro(f"←{p} ")
         positions = translate_keys([p] + trigger_keys)
-        macros += f'MACRO({name}, {" ".join(macro)})\n'
-        combos += f'COMBO({name}, &macro_{name}, {" ".join(positions)})\n'
+        macros += f"MACRO({name}, {' '.join(macro)})\n"
+        combos += f"COMBO({name}, &macro_{name}, {' '.join(positions)})\n"
 
     for line in file:
         line_no += 1
@@ -150,20 +190,18 @@ with open("abbr.tsv") as file:
                 alt = []
                 if i != 0:
                     alt = alt_keys[i - 1]
-                name = f'c_{abbr}{"_" * i}'.replace("'", "_")
+                name = f"c_{abbr}{'_' * i}".replace("'", "_")
                 macro = translate_macro(word + " ")
 
                 positions = translate_keys(list(abbr) + trigger_keys + alt)
-                macros += f'MACRO({name}, {" ".join(macro)})\n'
-                combos += f'COMBO({name}, &macro_{name}, {" ".join(positions)})\n'
+                macros += f"MACRO({name}, {' '.join(macro)})\n"
+                combos += f"COMBO({name}, &macro_{name}, {' '.join(positions)})\n"
 
                 # shifted
-                positions = translate_keys(
-                    list(abbr) + trigger_keys + alt + shifted_keys
-                )
+                positions = translate_keys(list(abbr) + alt + shifted_keys)
                 macro = translate_macro(word + " ", True)
-                macros += f'MACRO(s_{name}, {" ".join(macro)})\n'
-                combos += f'COMBO(s_{name}, &macro_s_{name}, {" ".join(positions)})\n'
+                macros += f"MACRO(s_{name}, {' '.join(macro)})\n"
+                combos += f"COMBO(s_{name}, &macro_s_{name}, {' '.join(positions)})\n"
 
 print("writing macros.dtsi")
 with open("macros.dtsi", "w") as file:
