@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/c5dd43934613ae0f8ff37c59f61c507c2e8f980d";
+      url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
     flake-utils = {
       url = "github:numtide/flake-utils";
@@ -23,10 +23,11 @@
       {
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
-            python39
+            python311
             uv
           ];
           shellHook = ''
+            export UV_PYTHON=${pkgs.python311}/bin/python
             if [ ! -d "./.venv" ]; then
             	uv venv
             fi
