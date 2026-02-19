@@ -3,7 +3,17 @@ name = "abbrgen"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9"
+authors = [
+    { name = "Dane Lipscombe", email = "danelipscombe@gmail.com" }
+]
+requires-python = ">=3.11"
 dependencies = [
     "patternlite>=3.6",
 ]
+
+[project.scripts]
+abbrgen = "abbrgen:main"
+
+[build-system]
+requires = ["uv_build>=0.10.2,<0.11.0"]
+build-backend = "uv_build"
