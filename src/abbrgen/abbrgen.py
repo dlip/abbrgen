@@ -19,6 +19,7 @@ def file_with_line_numbers(f):
 
 
 def abbrgen() -> None:
+    logging.basicConfig(level="DEBUG")
     with open("words.tsv") as file:
         file = csv.reader(file, delimiter="\t")
 
@@ -31,6 +32,7 @@ def abbrgen() -> None:
                     if line:
                         alt_data[line[0]] = line[1:]
         lines = list(file_with_line_numbers(file))
+        logging.info("Finding combinations")
         with ProcessPoolExecutor() as executor:
             results = list(
                 tqdm(executor.map(compute, lines, chunksize=10), total=len(lines))
