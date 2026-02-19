@@ -1,2 +1,5 @@
+from .abbrgen import abbrgen
+
+
 def main() -> None:
-    print("Hello from abbrgen!")
+    abbrgen()
