@@ -28,7 +28,7 @@
           ];
           shellHook = ''
             if [ ! -d "./.venv" ]; then
-            	python3 -m venv .venv
+            	uv venv
             fi
             source .venv/bin/activate
           '';
