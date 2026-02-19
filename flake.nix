@@ -24,6 +24,7 @@
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
             python39
+            uv
           ];
           shellHook = ''
             if [ ! -d "./.venv" ]; then
