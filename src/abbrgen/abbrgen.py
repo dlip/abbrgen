@@ -5,12 +5,17 @@ from itertools import count
 from concurrent.futures import ProcessPoolExecutor
 from tqdm import tqdm
 
+from abbrgen.keyboard import Keyboard
+from abbrgen.standard_keyboard import StandardKeyboard
+
+
 from .utils import find_combinations
 
 
-def compute(line: tuple[int, tuple[str, str]]) -> str:
+def compute(line: tuple[int, tuple[str, str]], keyboard: Keyboard) -> str:
     combinations = find_combinations(line[1][0])
-    return f"{line[0]}: {line[1][0].upper()} : {combinations}"
+    scores = [keyboard.score(combination) for combination in combinations]
+    return f"{line[0]}: {line[1][0].upper()} : {combinations} : {scores}"
 
 
 def file_with_line_numbers(f):
@@ -20,6 +25,7 @@ def file_with_line_numbers(f):
 
 def abbrgen() -> None:
     logging.basicConfig(level="DEBUG")
+    keyboard = StandardKeyboard("engram")
     with open("words.tsv") as file:
         file = csv.reader(file, delimiter="\t")
 
@@ -35,6 +41,9 @@ def abbrgen() -> None:
         logging.info("Finding combinations")
         with ProcessPoolExecutor() as executor:
             results = list(
-                tqdm(executor.map(compute, lines, chunksize=10), total=len(lines))
+                tqdm(
+                    executor.map(compute, lines, [keyboard], chunksize=10),
+                    total=len(lines),
+                )
             )
             print(results[0])

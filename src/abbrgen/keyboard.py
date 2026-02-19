@@ -9,3 +9,7 @@ class Keyboard(ABC):
     @abstractmethod
     def get_layouts(self) -> list[str]:
         pass
+
+    @abstractmethod
+    def score(self, abbr: str) -> int:
+        pass

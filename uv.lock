@@ -8,10 +8,14 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "patternlite" },
+    { name = "tqdm" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "patternlite", specifier = ">=3.6" }]
+requires-dist = [
+    { name = "patternlite", specifier = ">=3.6" },
+    { name = "tqdm", specifier = ">=4.67.3" },
+]
 
 [[package]]
 name = "click"
