@@ -18,7 +18,7 @@ keyboard = StandardKeyboard("engram")
 
 
 def score(line: tuple[str, str]) -> dict:
-    combinations = find_combinations(line[0])
+    combinations = find_combinations(line[0].lower())
     scores = [keyboard.score(combination) for combination in combinations]
     options = [
         {"combination": combination, "score": scores[i]}
@@ -82,11 +82,11 @@ def abbrgen() -> None:
 
     logging.info("Selecting combinations")
     for abbr in tqdm(abbrs):
-        word = abbr["word"]
+        word = abbr["word"].lower()
         if word in seen:
             logging.debug(f"{word} rejected: already seen")
             continue
-        seen["word"] = True
+        seen[word] = True
         for option in abbr["options"]:
             combination = option["combination"]
             # ensure combination is sorted so we can quickly check if they have been used
