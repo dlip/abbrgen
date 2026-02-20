@@ -79,12 +79,13 @@ def abbrgen() -> None:
     seen = {}
     selected_abbrs = []
     no_options = []
+    duplicate = []
 
     logging.info("Selecting combinations")
     for abbr in tqdm(abbrs):
         word = abbr["word"].lower()
         if word in seen:
-            logging.debug(f"{word} rejected: already seen")
+            duplicate.append(word)
             continue
         seen[word] = True
         for option in abbr["options"]:
@@ -103,6 +104,7 @@ def abbrgen() -> None:
     logging.info(
         f"Unable to find any options for {len(no_options)} words: {', '.join(no_options)}"
     )
+    logging.info(f"Ignored {len(duplicate)} duplicate words: {', '.join(duplicate)}")
 
     logging.info("Adding alternate modifiers")
     with ProcessPoolExecutor() as executor:
