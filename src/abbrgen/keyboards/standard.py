@@ -1,19 +1,21 @@
 import logging
 from typing import ClassVar, Literal
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import Any
 
 # https://colemakmods.github.io/mod-dh/model.html
-EFFORT_MAP_STANDARD = [
-    [3, 2.5, 2.1, 2.3, 2.6, 3.4, 2.2, 2.0, 2.4, 3.0],
-    [1.6, 1.3, 1.1, 1.0, 2.9, 2.9, 1.0, 1.1, 1.3, 1.6],
-    [2.7, 2.4, 1.8, 2.2, 3.7, 2.2, 1.8, 2.4, 2.7, 3.3],
-]
-EFFORT_MAP_MATRIX = [
-    [3, 2.4, 2.0, 2.2, 3.2, 3.2, 2.2, 2.0, 2.4, 3],
-    [1.6, 1.3, 1.1, 1.0, 2.9, 2.9, 1.0, 1.1, 1.3, 1.6],
-    [3.2, 2.6, 2.3, 1.6, 3.0, 3.0, 1.6, 2.3, 2.6, 3.2],
-]
+EFFORT_MAP = {
+    "row": [
+        [3, 2.5, 2.1, 2.3, 2.6, 3.4, 2.2, 2.0, 2.4, 3.0],
+        [1.6, 1.3, 1.1, 1.0, 2.9, 2.9, 1.0, 1.1, 1.3, 1.6],
+        [2.7, 2.4, 1.8, 2.2, 3.7, 2.2, 1.8, 2.4, 2.7, 3.3],
+    ],
+    "column": [
+        [3, 2.4, 2.0, 2.2, 3.2, 3.2, 2.2, 2.0, 2.4, 3],
+        [1.6, 1.3, 1.1, 1.0, 2.9, 2.9, 1.0, 1.1, 1.3, 1.6],
+        [3.2, 2.6, 2.3, 1.6, 3.0, 3.0, 1.6, 2.3, 2.6, 3.2],
+    ],
+}
 
 FINGER_MAPPING = [
     [1, 2, 3, 4, 4, 5, 5, 6, 7, 8],
@@ -79,6 +81,7 @@ LAYOUTS = {
 class StandardKeyboard(BaseModel):
     type: Literal["standard"] = "standard"
     layout: Literal[tuple(LAYOUTS.keys())] = "engram"
+    stagger: Literal[tuple(EFFORT_MAP.keys())] = "column"
     effort_map: ClassVar[dict] = {}
     layout_map: ClassVar[dict] = {}
     hand_row_map: ClassVar[dict] = {}
@@ -89,7 +92,7 @@ class StandardKeyboard(BaseModel):
         for r in range(0, len(layout)):
             for c in range(0, len(layout[r])):
                 self.layout_map[layout[r][c]] = FINGER_MAPPING[r][c]
-                self.effort_map[layout[r][c]] = EFFORT_MAP_MATRIX[r][c]
+                self.effort_map[layout[r][c]] = EFFORT_MAP[self.stagger][r][c]
                 self.hand_row_map[layout[r][c]] = HAND_ROW_MAPPING[r][c]
 
         # Add mirrored chords and padding
