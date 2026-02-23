@@ -18,6 +18,7 @@ class Config(BaseModel):
         default_factory=lambda: StandardKeyboard(),
     )
     abbreviation_file: Path = DEFAULT_ABBREVIATION_FILE
+    overwrite_abbreviations: bool = False
 
     @field_serializer("abbreviation_file")
     def serialize_path(self, value: Path) -> str:

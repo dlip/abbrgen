@@ -17,7 +17,11 @@ min_len = 3
 keyboard = None
 
 
-def score(line: tuple[str, str]) -> dict:
+def score(line: dict) -> dict:
+    result = line
+    if result["abbr"]:
+        return result
+
     combinations = find_combinations(line[0].lower())
     scores = [keyboard.score(combination) for combination in combinations]
     options = [
@@ -57,19 +61,12 @@ def abbreviate(config_path: Path) -> None:
     config = load_or_create_config(config_path)
     global keyboard
     keyboard = config.keyboard
-    with open("words.tsv") as file:
-        file = csv.reader(file, delimiter="\t")
-
-        alt_data = {}
-        if os.path.isfile("alt.tsv"):
-            logging.debug("loading alt.tsv")
-            with open("alt.tsv") as alt_file:
-                alt_file = csv.reader(alt_file, delimiter="\t")
-                for abbr in alt_file:
-                    if abbr:
-                        alt_data[abbr[0]] = abbr[1:]
+    with open(config.abbreviation_file) as f:
+        reader = csv.DictReader(f)
         logging.info("Finding combinations")
-        rows = [line for line in file if len(line[0]) >= min_len]
+        for l in reader:
+            raise Exception(l)
+        rows = [line for line in reader if len(line[0]) >= min_len]
         with ProcessPoolExecutor() as executor:
             abbrs = list(
                 tqdm(
