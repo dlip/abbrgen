@@ -1,22 +1,27 @@
 import typer
 from pathlib import Path
 
-from .abbrgen import abbrgen
+from abbrgen.config import DEFAULT_CONFIG
+
+from .abbreviate import abbreviate as abbr
+
 
 app = typer.Typer()
-DEFAULT_CONFIG = Path.home() / ".abbrgen" / "config.yaml"
+state = {"config": DEFAULT_CONFIG}
 
 
-@app.command()
+@app.callback()
 def run(
     config: Path = typer.Option(
         DEFAULT_CONFIG, "-c", "--config", help="Path to config file"
     ),
 ):
-    if config != DEFAULT_CONFIG and not config.exists():
-        raise typer.BadParameter(f"Config file does not exist: {config}")
+    state["config"] = config
 
-    abbrgen(config)
+
+@app.command()
+def abbreviate():
+    abbr(state["config"])
 
 
 if __name__ == "__main__":

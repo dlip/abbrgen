@@ -6,6 +6,8 @@ import yaml
 from pydantic import BaseModel, Field
 from .keyboards.standard import StandardKeyboard
 
+DEFAULT_CONFIG = Path.home() / ".abbrgen" / "config.yaml"
+
 
 class Config(BaseModel):
     keyboard: StandardKeyboard = Field(
@@ -14,22 +16,25 @@ class Config(BaseModel):
     )
 
 
-def load_or_create_config(config_path: Path) -> Config:
-    config_path.parent.mkdir(parents=True, exist_ok=True)
+def load_or_create_config(config_file: Path = DEFAULT_CONFIG) -> Config:
+    if config_file != DEFAULT_CONFIG and not config_file.exists():
+        raise Exception(f"Config file does not exist: {config_file}")
 
-    if config_path.exists():
-        raw = yaml.safe_load(config_path.read_text()) or {}
+    config_file.parent.mkdir(parents=True, exist_ok=True)
+
+    if config_file.exists():
+        raw = yaml.safe_load(config_file.read_text()) or {}
     else:
         raw = {}
         # write defaults immediately
         default_config = Config()
-        config_path.write_text(yaml.safe_dump(default_config.model_dump()))
+        config_file.write_text(yaml.safe_dump(default_config.model_dump()))
         return default_config
 
     # Validate + apply defaults
     config = Config.model_validate(raw)
 
     # Optionally rewrite file if missing fields were added
-    config_path.write_text(yaml.safe_dump(config.model_dump()))
+    config_file.write_text(yaml.safe_dump(config.model_dump()))
 
     return config

@@ -51,7 +51,7 @@ def add_alt(abbr):
     return abbr
 
 
-def abbrgen(config_path: Path) -> None:
+def abbreviate(config_path: Path) -> None:
     logging.basicConfig(level="INFO")
 
     config = load_or_create_config(config_path)
