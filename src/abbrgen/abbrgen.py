@@ -4,8 +4,7 @@ import os
 from concurrent.futures import ProcessPoolExecutor
 from tqdm import tqdm
 
-from abbrgen.keyboard import Keyboard
-from abbrgen.standard_keyboard import StandardKeyboard
+from abbrgen.config import load_or_create_config
 
 
 from .utils import find_combinations
@@ -14,7 +13,8 @@ from pattern import en
 
 
 min_len = 3
-keyboard = StandardKeyboard("engram")
+config = load_or_create_config()
+keyboard = config.keyboard
 
 
 def score(line: tuple[str, str]) -> dict:
@@ -52,7 +52,7 @@ def add_alt(abbr):
 
 
 def abbrgen() -> None:
-    logging.basicConfig(level="DEBUG")
+    logging.basicConfig(level="INFO")
     with open("words.tsv") as file:
         file = csv.reader(file, delimiter="\t")
 

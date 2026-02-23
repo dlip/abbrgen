@@ -1,5 +1,7 @@
 import logging
-from abbrgen.keyboard import Keyboard
+from typing import ClassVar, Literal
+from pydantic import BaseModel, Field
+from typing import Any
 
 # https://colemakmods.github.io/mod-dh/model.html
 effort_map_standard = [
@@ -46,48 +48,79 @@ banned_chords = [
 ]
 
 
-class StandardKeyboard(Keyboard):
-    _layouts = {
-        "qwerty": [
-            ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
-            ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";"],
-            ["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"],
-        ],
-        "colemak": [
-            ["q", "w", "f", "p", "g", "j", "l", "u", "y", ";"],
-            ["a", "r", "s", "t", "d", "h", "n", "e", "i", "o"],
-            ["z", "x", "c", "v", "b", "k", "m", ",", ".", "/"],
-        ],
-        "colemak_dh": [
-            ["q", "w", "f", "p", "b", "j", "l", "u", "y", ";"],
-            ["a", "r", "s", "t", "g", "m", "n", "e", "i", "o"],
-            ["z", "x", "c", "d", "v", "k", "h", ",", ".", "/"],
-        ],
-        "canary": [
-            ["w", "l", "y", "p", "b", "z", "f", "o", "u", "'"],
-            ["c", "r", "s", "t", "g", "m", "n", "e", "i", "a"],
-            ["q", "j", "v", "d", "k", "x", "h", ";", ",", "."],
-        ],
-        "engram": [
+class QwertyLayout(BaseModel):
+    name: Literal["qwerty"] = "qwerty"
+
+    def get_layout(self):
+        return [
             ["b", "y", "o", "u", "", "", "l", "d", "v", "w"],
             ["c", "i", "e", "a", "", "", "h", "t", "s", "n"],
             ["g", "x", "j", "k", "", "", "r", "m", "f", "p"],
-        ],
-    }
+        ]
 
-    def __init__(self, layout: str) -> None:
-        if layout not in self._layouts.keys():
-            raise Exception("Unknown Layout")
-        self.layout = self._layouts[layout]
-        self.effort_map = {}
-        self.layout_map = {}
-        self.hand_row_map = {}
-        for r in range(0, len(self.layout)):
-            for c in range(0, len(self.layout[r])):
-                self.layout_map[self.layout[r][c]] = finger_maping[r][c]
-                self.effort_map[self.layout[r][c]] = effort_map_matrix[r][c]
-                self.hand_row_map[self.layout[r][c]] = hand_row_maping[r][c]
-        self.banned_chords_sets = []
+
+class ColemakLayout(BaseModel):
+    name: Literal["colemak"] = "colemak"
+
+    def get_layout(self):
+        return [
+            ["b", "y", "o", "u", "", "", "l", "d", "v", "w"],
+            ["c", "i", "e", "a", "", "", "h", "t", "s", "n"],
+            ["g", "x", "j", "k", "", "", "r", "m", "f", "p"],
+        ]
+
+
+class ColemakDhLayout(BaseModel):
+    name: Literal["colemak_dh"] = "colemak_dh"
+
+    def get_layout(self):
+        return [
+            ["b", "y", "o", "u", "", "", "l", "d", "v", "w"],
+            ["c", "i", "e", "a", "", "", "h", "t", "s", "n"],
+            ["g", "x", "j", "k", "", "", "r", "m", "f", "p"],
+        ]
+
+
+class CanaryLayout(BaseModel):
+    name: Literal["canary"] = "canary"
+
+    def get_layout(self):
+        return [
+            ["b", "y", "o", "u", "", "", "l", "d", "v", "w"],
+            ["c", "i", "e", "a", "", "", "h", "t", "s", "n"],
+            ["g", "x", "j", "k", "", "", "r", "m", "f", "p"],
+        ]
+
+
+class EngramLayout(BaseModel):
+    name: Literal["engram"] = "engram"
+
+    def get_layout(self):
+        return [
+            ["b", "y", "o", "u", "", "", "l", "d", "v", "w"],
+            ["c", "i", "e", "a", "", "", "h", "t", "s", "n"],
+            ["g", "x", "j", "k", "", "", "r", "m", "f", "p"],
+        ]
+
+
+class StandardKeyboard(BaseModel):
+    type: Literal["standard"] = "standard"
+    layout: (
+        QwertyLayout | ColemakLayout | ColemakDhLayout | CanaryLayout | EngramLayout
+    ) = Field(discriminator="name", default_factory=lambda: EngramLayout())
+
+    effort_map: ClassVar[dict] = {}
+    layout_map: ClassVar[dict] = {}
+    hand_row_map: ClassVar[dict] = {}
+    banned_chords_sets: ClassVar[list] = []
+
+    def model_post_init(self, context: Any) -> None:
+        layout = self.layout.get_layout()
+        for r in range(0, len(layout)):
+            for c in range(0, len(layout[r])):
+                self.layout_map[layout[r][c]] = finger_maping[r][c]
+                self.effort_map[layout[r][c]] = effort_map_matrix[r][c]
+                self.hand_row_map[layout[r][c]] = hand_row_maping[r][c]
 
         # Add mirrored chords and padding
         mirrored = []
@@ -106,11 +139,8 @@ class StandardKeyboard(Keyboard):
             for r in range(0, len(ban)):
                 for c in range(0, len(ban[r])):
                     if ban[r][c]:
-                        s.add(self.layout[r][c])
+                        s.add(layout[r][c])
             self.banned_chords_sets.append(s)
-
-    def get_layouts(self) -> list[str]:
-        return list(self._layouts.keys())
 
     def get_scissor_count(self, abbr):
         result = 0
