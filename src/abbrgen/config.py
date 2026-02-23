@@ -14,10 +14,8 @@ class Config(BaseModel):
     )
 
 
-def load_or_create_config() -> Config:
-    config_dir = Path.home() / ".abbrgen"
-    config_path = config_dir / "config.yaml"
-    config_dir.mkdir(parents=True, exist_ok=True)
+def load_or_create_config(config_path: Path) -> Config:
+    config_path.parent.mkdir(parents=True, exist_ok=True)
 
     if config_path.exists():
         raw = yaml.safe_load(config_path.read_text()) or {}

@@ -2,6 +2,7 @@ import csv
 import logging
 import os
 from concurrent.futures import ProcessPoolExecutor
+from pathlib import Path
 from tqdm import tqdm
 
 from abbrgen.config import load_or_create_config
@@ -13,8 +14,7 @@ from pattern import en
 
 
 min_len = 3
-config = load_or_create_config()
-keyboard = config.keyboard
+keyboard = None
 
 
 def score(line: tuple[str, str]) -> dict:
@@ -51,8 +51,12 @@ def add_alt(abbr):
     return abbr
 
 
-def abbrgen() -> None:
+def abbrgen(config_path: Path) -> None:
     logging.basicConfig(level="INFO")
+
+    config = load_or_create_config(config_path)
+    global keyboard
+    keyboard = config.keyboard
     with open("words.tsv") as file:
         file = csv.reader(file, delimiter="\t")
 

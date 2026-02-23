@@ -12,10 +12,11 @@ dependencies = [
     "pydantic>=2.12.5",
     "pyyaml>=6.0.3",
     "tqdm>=4.67.3",
+    "typer>=0.24.1",
 ]
 
 [project.scripts]
-abbrgen = "abbrgen:main"
+abbrgen = "abbrgen.cli:app"
 
 [build-system]
 requires = ["uv_build>=0.10.2,<0.11.0"]
