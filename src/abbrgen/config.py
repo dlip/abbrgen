@@ -2,11 +2,14 @@ from datetime import datetime
 
 from pathlib import Path
 import yaml
+import shutil
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_serializer, field_validator
 from .keyboards.standard import StandardKeyboard
 
-DEFAULT_CONFIG = Path.home() / ".abbrgen" / "config.yaml"
+CONFIG_DIR = Path.home() / ".abbrgen"
+DEFAULT_CONFIG = CONFIG_DIR / "config.yaml"
+DEFAULT_ABBREVIATION_FILE = CONFIG_DIR / "abbreviations.csv"
 
 
 class Config(BaseModel):
@@ -14,6 +17,35 @@ class Config(BaseModel):
         discriminator="type",
         default_factory=lambda: StandardKeyboard(),
     )
+    abbreviation_file: Path = DEFAULT_ABBREVIATION_FILE
+
+    @field_serializer("abbreviation_file")
+    def serialize_path(self, value: Path) -> str:
+        try:
+            return f"~/{value.relative_to(Path.home())}"
+        except ValueError:
+            return str(value)
+
+    @field_validator("abbreviation_file", mode="before")
+    @classmethod
+    def expand_user(cls, v):
+        # Ensure "~" gets expanded if user provides it
+        return Path(v).expanduser()
+
+    @field_validator("abbreviation_file", mode="after")
+    @classmethod
+    def ensure_parent_dir(cls, v: Path):
+        v.parent.mkdir(parents=True, exist_ok=True)
+        return v
+
+    @field_validator("abbreviation_file", mode="after")
+    @classmethod
+    def create_abbreviation_file(cls, v: Path):
+        if not v.exists() and v == DEFAULT_ABBREVIATION_FILE:
+            here = Path(__file__).resolve().parent
+            source = here / "assets" / "abbreviations.csv"
+            shutil.copy2(source, v)
+        return v
 
 
 def load_or_create_config(config_file: Path = DEFAULT_CONFIG) -> Config:

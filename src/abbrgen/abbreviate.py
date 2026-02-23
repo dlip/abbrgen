@@ -119,13 +119,13 @@ def abbreviate(config_path: Path) -> None:
             )
         )
 
-    logging.info("Writing abbr.tsv")
-    with open("abbr.tsv", "w", newline="") as tsvfile:
-        tsv_writer = csv.writer(tsvfile, delimiter="\t")
+    logging.info(f"Writing {config.abbreviation_file}")
+    with open(config.abbreviation_file, "w", newline="") as f:
+        writer = csv.writer(f)
 
-        tsv_writer.writerow(["word", "combo", "alt1", "alt2", "alt3"])
+        writer.writerow(["word", "combo", "alt1", "alt2", "alt3"])
         for abbr in selected_abbrs:
             alt = abbr["alt"]
-            tsv_writer.writerow(
+            writer.writerow(
                 [abbr["word"], abbr["option"]["combination"], alt[0], alt[1], alt[2]]
             )
