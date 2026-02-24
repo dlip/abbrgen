@@ -1,27 +1,53 @@
+import logging
 import typer
 from pathlib import Path
 
-from abbrgen.config import DEFAULT_CONFIG
+from abbrgen.config import DEFAULT_CONFIG, Config, load_or_create_config
 
 from .abbreviate import abbreviate as abbr
 
 
 app = typer.Typer()
-state = {"config": DEFAULT_CONFIG}
+
+
+class State:
+    config: Config
 
 
 @app.callback()
-def run(
+def callback(
+    ctx: typer.Context,
     config: Path = typer.Option(
         DEFAULT_CONFIG, "-c", "--config", help="Path to config file"
     ),
 ):
-    state["config"] = config
+    logging.basicConfig(level="INFO")
+    if ctx.invoked_subcommand != "setup":
+        if not config.exists():
+            print(
+                f"Error: config {config} does not exist, run 'abbrgen setup' to create it"
+            )
+            raise typer.Abort()
+
+    loaded_config = load_or_create_config(config)
+    if ctx.invoked_subcommand != "setup":
+        if not loaded_config.abbreviation_file.exists():
+            print(
+                f"Error: abrreviation file {loaded_config.abbreviation_file} does not exist, run 'abbrgen setup' to create it"
+            )
+            raise typer.Abort()
+
+    State.config = loaded_config
+
+
+@app.command()
+def setup():
+    print("Setup Complete")
 
 
 @app.command()
 def abbreviate():
-    abbr(state["config"])
+    abbr(State.config)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+import logging
 from pathlib import Path
 import yaml
 import shutil
@@ -7,7 +8,7 @@ import shutil
 from pydantic import BaseModel, Field, field_serializer, field_validator
 from .keyboards.standard import StandardKeyboard
 
-CONFIG_DIR = Path.home() / ".abbrgen"
+CONFIG_DIR = Path.home() / ".config" / "abbrgen"
 DEFAULT_CONFIG = CONFIG_DIR / "config.yaml"
 DEFAULT_ABBREVIATION_FILE = CONFIG_DIR / "abbreviations.csv"
 
@@ -58,6 +59,7 @@ def load_or_create_config(config_file: Path = DEFAULT_CONFIG) -> Config:
     if config_file.exists():
         raw = yaml.safe_load(config_file.read_text()) or {}
     else:
+        print(f"Creating config {config_file}")
         raw = {}
         # write defaults immediately
         default_config = Config()

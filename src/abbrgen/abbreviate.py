@@ -5,7 +5,7 @@ from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 from tqdm import tqdm
 
-from abbrgen.config import load_or_create_config
+from abbrgen.config import Config, load_or_create_config
 
 
 from .utils import find_combinations
@@ -55,10 +55,7 @@ def add_alt(abbr):
     return abbr
 
 
-def abbreviate(config_path: Path) -> None:
-    logging.basicConfig(level="INFO")
-
-    config = load_or_create_config(config_path)
+def abbreviate(config: Config) -> None:
     global keyboard
     keyboard = config.keyboard
     with open(config.abbreviation_file) as f:
