@@ -1,42 +1,17 @@
 import csv
 import logging
-import os
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 from tqdm import tqdm
 
-from abbrgen.config import Config, load_or_create_config
+from abbrgen.config import Config
+from abbrgen.scorer import Scorer
 
-
-from .utils import find_combinations
 
 from pattern import en
 
 
 min_len = 3
 keyboard = None
-
-
-def score(line: dict) -> dict:
-    result = line
-    if result["abbr"]:
-        return result
-
-    combinations = find_combinations(line[0].lower())
-    scores = [keyboard.score(combination) for combination in combinations]
-    options = [
-        {"combination": combination, "score": scores[i]}
-        for i, combination in enumerate(combinations)
-        if scores[i] != -1
-    ]
-    options = sorted(options, key=lambda x: x["score"])
-    result = {
-        "word": line[0],
-        "type": line[1],
-        "options": options,
-    }
-    logging.debug(f"Computed: {result}")
-    return result
 
 
 def add_alt(abbr):
@@ -58,16 +33,15 @@ def add_alt(abbr):
 def abbreviate(config: Config) -> None:
     global keyboard
     keyboard = config.keyboard
+    scorer = Scorer(config)
     with open(config.abbreviation_file) as f:
         reader = csv.DictReader(f)
         logging.info("Finding combinations")
-        for l in reader:
-            raise Exception(l)
-        rows = [line for line in reader if len(line[0]) >= min_len]
+        rows = [line for line in reader if len(line["word"]) >= min_len]
         with ProcessPoolExecutor() as executor:
             abbrs = list(
                 tqdm(
-                    executor.map(score, rows, chunksize=10),
+                    executor.map(scorer.score, rows, chunksize=10),
                     total=len(rows),
                 )
             )

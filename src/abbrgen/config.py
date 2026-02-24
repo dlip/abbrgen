@@ -6,7 +6,7 @@ import yaml
 import shutil
 
 from pydantic import BaseModel, Field, field_serializer, field_validator
-from .keyboards.standard import StandardKeyboard
+from .keyboards import Keyboard
 
 CONFIG_DIR = Path.home() / ".config" / "abbrgen"
 DEFAULT_CONFIG = CONFIG_DIR / "config.yaml"
@@ -14,7 +14,7 @@ DEFAULT_ABBREVIATION_FILE = CONFIG_DIR / "abbreviations.csv"
 
 
 class Config(BaseModel):
-    keyboard: StandardKeyboard = Field(
+    keyboard: Keyboard = Field(
         discriminator="type",
         default_factory=lambda: StandardKeyboard(),
     )
@@ -46,7 +46,7 @@ class Config(BaseModel):
         if not v.exists() and v == DEFAULT_ABBREVIATION_FILE:
             here = Path(__file__).resolve().parent
             source = here / "assets" / "abbreviations.csv"
-            shutil.copy2(source, v)
+            shutil.copyfile(source, v)
         return v
 
 
