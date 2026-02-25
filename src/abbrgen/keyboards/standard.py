@@ -80,11 +80,12 @@ class StandardKeyboard(BaseModel):
     stagger: Literal[tuple(EFFORT_MAP.keys())] = "column"
     scissor_penalty: int = 3
     same_column_combo_penalty: int = 2
+    same_row_combo_penalty: int = 2
 
     def model_post_init(self, context: Any) -> None:
         self._layout = LAYOUTS[self.layout]
 
-        self._layout_map = {}
+        self._finger_map = {}
         self._effort_map = {}
         self._hand_row_map = {}
         self._banned_chords_sets = []
@@ -93,7 +94,7 @@ class StandardKeyboard(BaseModel):
 
         for r in range(0, len(self._layout)):
             for c in range(0, len(self._layout[r])):
-                self._layout_map[self._layout[r][c]] = FINGER_MAPPING[r][c]
+                self._finger_map[self._layout[r][c]] = FINGER_MAPPING[r][c]
                 self._effort_map[self._layout[r][c]] = EFFORT_MAP[self.stagger][r][c]
                 self._hand_row_map[self._layout[r][c]] = HAND_ROW_MAPPING[r][c]
                 self._combo_map[r][c] = 0
@@ -144,7 +145,7 @@ class StandardKeyboard(BaseModel):
         result = 0
         indexes = {}
         for i in range(0, len(abbr)):
-            index = self._layout_map[abbr[i]]
+            index = self._finger_map[abbr[i]]
             if index not in indexes:
                 indexes[index] = 1
             else:
@@ -155,29 +156,60 @@ class StandardKeyboard(BaseModel):
 
         return result
 
-    def get_same_column_combo(self, abbr: str) -> int:
+    def get_combo_map(self, abbr: str):
         map = copy.deepcopy(self._combo_map)
         for c in abbr:
             offset = self._combo_lookup[c]
             map[offset[0]][offset[1]] = 1
+        return map
 
+    def get_same_column_combo(self, combo_map) -> int:
         count = 0
-        for i in range(0, len(map[0])):
-            if map[0][i] and map[1][i]:
+        for i in range(0, len(combo_map[0])):
+            if combo_map[0][i] and combo_map[1][i]:
                 if self.same_column_combo_penalty == -1:
                     return -1
 
                 count += 1
 
-            # Top and bottom row on same finger is impossible
-            if map[0][i] and map[2][i]:
+            # Top and bottom row on same finger is excluded
+            if combo_map[0][i] and combo_map[2][i]:
                 return -1
+
+        return count
+
+    def get_same_row_combo(self, combo_map) -> int:
+        def check(r1, c1, r2):
+            return (
+                combo_map[r1][c1]
+                and combo_map[r2][c1 + 1]
+                and FINGER_MAPPING[r][c] == FINGER_MAPPING[r2][c1 + 1]
+            )
+
+        count = 0
+        for r in range(0, len(combo_map)):
+            for c in range(0, len(combo_map[r]) - 1):
+                if check(r, c, r):
+                    if self.same_row_combo_penalty == -1:
+                        return -1
+                    count += 1
+
+                # Different row on same finger is excluded
+                if r == 0:
+                    if check(r, c, r + 1) or check(r, c, r + 2):
+                        return -1
+                elif r == 1:
+                    if check(r, c, r - 1) or check(r, c, r + 1):
+                        return -1
+                elif r == 2:
+                    if check(r, c, r - 1) or check(r, c, r - 2):
+                        return -1
 
         return count
 
     def score(self, abbr: str) -> int:
         for i in range(0, len(abbr)):
-            if abbr[i] not in self._layout_map:
+            if abbr[i] not in self._finger_map:
                 logging.debug(f"rejected: letter '{abbr[i]}' not in keyboard layout")
                 return -1
 
@@ -198,14 +230,22 @@ class StandardKeyboard(BaseModel):
         #     logging.debug("rejected: SFBs")
         #     return -1
 
+        combo_map = self.get_combo_map(abbr)
         result = 0
-        same_column_combo = self.get_same_column_combo(abbr)
+        same_column_combo = self.get_same_column_combo(combo_map)
         if same_column_combo == -1:
             # raise Exception(abbr)
             logging.debug("rejected: same column combo")
             return -1
 
         result += same_column_combo * self.same_column_combo_penalty
+
+        same_row_combo = self.get_same_row_combo(combo_map)
+        if same_row_combo == -1:
+            logging.debug("rejected: same column combo")
+            return -1
+
+        result += same_row_combo * self.same_row_combo_penalty
 
         scissor_count = self.get_scissor_count(abbr)
         if scissor_count:
