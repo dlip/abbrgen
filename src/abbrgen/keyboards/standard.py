@@ -232,9 +232,9 @@ class StandardKeyboard(BaseModel):
 
         combo_map = self.get_combo_map(abbr)
         result = 0
+        # TODO: should consider same column and row combos together since both on the same finger could be impossible
         same_column_combo = self.get_same_column_combo(combo_map)
         if same_column_combo == -1:
-            # raise Exception(abbr)
             logging.debug("rejected: same column combo")
             return -1
 
