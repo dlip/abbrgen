@@ -1,7 +1,8 @@
 import logging
-from typing import ClassVar, Literal
+from typing import Literal
 from pydantic import BaseModel
 from typing import Any
+import copy
 
 # https://colemakmods.github.io/mod-dh/model.html
 EFFORT_MAP = {
@@ -38,14 +39,9 @@ BANNED_CHORDS = [
         [0, 0, 1, 0, 0],
     ],
     [
-        [1, 0, 0, 0, 0],
         [0, 1, 0, 0, 0],
         [0, 0, 0, 0, 0],
-    ],
-    [
         [1, 0, 0, 0, 0],
-        [0, 0, 1, 0, 0],
-        [0, 0, 0, 0, 0],
     ],
 ]
 
@@ -82,20 +78,26 @@ class StandardKeyboard(BaseModel):
     type: Literal["standard"] = "standard"
     layout: Literal[tuple(LAYOUTS.keys())] = "engram"
     stagger: Literal[tuple(EFFORT_MAP.keys())] = "column"
+    scissor_penalty: int = 3
+    same_column_combo_penalty: int = 2
 
     def model_post_init(self, context: Any) -> None:
-        layout = LAYOUTS[self.layout]
+        self._layout = LAYOUTS[self.layout]
 
         self._layout_map = {}
         self._effort_map = {}
         self._hand_row_map = {}
         self._banned_chords_sets = []
+        self._combo_map = copy.deepcopy(self._layout)
+        self._combo_lookup = {}
 
-        for r in range(0, len(layout)):
-            for c in range(0, len(layout[r])):
-                self._layout_map[layout[r][c]] = FINGER_MAPPING[r][c]
-                self._effort_map[layout[r][c]] = EFFORT_MAP[self.stagger][r][c]
-                self._hand_row_map[layout[r][c]] = HAND_ROW_MAPPING[r][c]
+        for r in range(0, len(self._layout)):
+            for c in range(0, len(self._layout[r])):
+                self._layout_map[self._layout[r][c]] = FINGER_MAPPING[r][c]
+                self._effort_map[self._layout[r][c]] = EFFORT_MAP[self.stagger][r][c]
+                self._hand_row_map[self._layout[r][c]] = HAND_ROW_MAPPING[r][c]
+                self._combo_map[r][c] = 0
+                self._combo_lookup[self._layout[r][c]] = (r, c)
 
         # Add mirrored chords and padding
         mirrored = []
@@ -114,7 +116,7 @@ class StandardKeyboard(BaseModel):
             for r in range(0, len(ban)):
                 for c in range(0, len(ban[r])):
                     if ban[r][c]:
-                        s.add(layout[r][c])
+                        s.add(self._layout[r][c])
             self._banned_chords_sets.append(s)
 
     def get_scissor_count(self, abbr):
@@ -153,14 +155,32 @@ class StandardKeyboard(BaseModel):
 
         return result
 
+    def get_same_column_combo(self, abbr: str) -> int:
+        map = copy.deepcopy(self._combo_map)
+        for c in abbr:
+            offset = self._combo_lookup[c]
+            map[offset[0]][offset[1]] = 1
+
+        count = 0
+        for i in range(0, len(map[0])):
+            if map[0][i] and map[1][i]:
+                if self.same_column_combo_penalty == -1:
+                    return -1
+
+                count += 1
+
+            # Top and bottom row on same finger is impossible
+            if map[0][i] and map[2][i]:
+                return -1
+
+        return count
+
     def score(self, abbr: str) -> int:
         for i in range(0, len(abbr)):
             if abbr[i] not in self._layout_map:
                 logging.debug(f"rejected: letter '{abbr[i]}' not in keyboard layout")
                 return -1
 
-        scissor_count = self.get_scissor_count(abbr)
-        sfb_count = self.get_sfb_count(abbr)
         seen = set()
         for char in abbr:
             if char in seen:
@@ -173,15 +193,27 @@ class StandardKeyboard(BaseModel):
                 logging.debug("rejected: banned chord")
                 return -1
 
-        if scissor_count:
-            logging.debug("rejected: scissor")
-            return -1
-
-        if sfb_count:
-            logging.debug("rejected: SFBs")
-            return -1
+        # sfb_count = self.get_sfb_count(abbr)
+        # if sfb_count:
+        #     logging.debug("rejected: SFBs")
+        #     return -1
 
         result = 0
+        same_column_combo = self.get_same_column_combo(abbr)
+        if same_column_combo == -1:
+            # raise Exception(abbr)
+            logging.debug("rejected: same column combo")
+            return -1
+
+        result += same_column_combo * self.same_column_combo_penalty
+
+        scissor_count = self.get_scissor_count(abbr)
+        if scissor_count:
+            if self.scissor_penalty == -1:
+                logging.debug("rejected: scissor")
+                return -1
+            result += self.scissor_penalty * scissor_count
+
         for i in range(0, len(abbr)):
             result += self._effort_map[abbr[i]]
 
