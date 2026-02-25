@@ -1,7 +1,6 @@
 import logging
 from abbrgen.abbreviation import Abbreviation, Option
 from abbrgen.config import Config
-from abbrgen.keyboards import Keyboard
 from abbrgen.utils import find_combinations
 
 
@@ -13,7 +12,10 @@ class Scorer:
         if not self.config.overwrite_abbreviations and abbr["abbreviation"]:
             return abbr
 
-        combinations = find_combinations(abbr["abbreviation"].lower())
+        if len(abbr["word"]) < self.config.min_word_length:
+            return abbr
+
+        combinations = find_combinations(abbr["word"].lower())
         scores = [
             self.config.keyboard.score(combination) for combination in combinations
         ]

@@ -3,31 +3,9 @@ import logging
 from concurrent.futures import ProcessPoolExecutor
 from tqdm import tqdm
 
+from abbrgen.alt_generator import AltGenerator
 from abbrgen.config import Config
 from abbrgen.scorer import Scorer
-
-
-from pattern import en
-
-
-min_len = 3
-keyboard = None
-
-
-def add_alt(abbr):
-    alt = ["", "", ""]
-    word = abbr["word"]
-    type = abbr["type"]
-    # if word in alt_data:
-    #     alt = alt_data[word]
-    if type == "VERB":
-        alt[0] = en.conjugate(word, "3sg")
-        alt[1] = en.conjugate(word, "1sgp")
-        alt[2] = en.conjugate(word, "part")
-    elif type == "NOUN":
-        alt[0] = en.pluralize(word, pos=en.NOUN)
-    abbr["alt"] = alt
-    return abbr
 
 
 def abbreviate(config: Config) -> None:
@@ -37,19 +15,19 @@ def abbreviate(config: Config) -> None:
     with open(config.abbreviation_file) as f:
         reader = csv.DictReader(f)
         logging.info("Finding combinations")
-        rows = [line for line in reader if len(line["word"]) >= min_len]
+        abbrs = [line for line in reader]
+        if len(abbrs) == 0:
+            raise Exception("No rows found in abbreviation file")
         with ProcessPoolExecutor() as executor:
             abbrs = list(
                 tqdm(
-                    executor.map(scorer.score, rows, chunksize=10),
-                    total=len(rows),
+                    executor.map(scorer.score, abbrs, chunksize=10),
+                    total=len(abbrs),
                 )
             )
 
-    # output = ""
     used = {}
     seen = {}
-    selected_abbrs = []
     no_options = []
     duplicate = []
 
@@ -60,40 +38,48 @@ def abbreviate(config: Config) -> None:
             duplicate.append(word)
             continue
         seen[word] = True
-        for option in abbr["options"]:
-            combination = option["combination"]
-            # ensure combination is sorted so we can quickly check if they have been used
-            sorted_combination = "".join(sorted(combination))
-            if sorted_combination not in used:
-                abbr["option"] = option
-                used[sorted_combination] = word
-                break
-        if "option" not in abbr:
-            no_options.append(word)
-            continue
-        selected_abbrs.append(abbr)
+        options = abbr.get("options")
+        if options:
+            for option in options:
+                combination = option["combination"]
+                # ensure combination is sorted so we can quickly check if they have been used
+                sorted_combination = "".join(sorted(combination))
+                if sorted_combination not in used:
+                    abbr["abbreviation"] = option["combination"]
+                    break
+            if not abbr["abbreviation"]:
+                no_options.append(word)
 
-    logging.info(
-        f"Unable to find any options for {len(no_options)} words: {', '.join(no_options)}"
-    )
-    logging.info(f"Ignored {len(duplicate)} duplicate words: {', '.join(duplicate)}")
+        if abbr["abbreviation"]:
+            sorted_abbreviation = "".join(sorted(abbr["abbreviation"]))
+            used[sorted_abbreviation] = word
+
+    if len(no_options) > 0:
+        logging.info(
+            f"Unable to find any options for {len(no_options)} words: {', '.join(no_options)}"
+        )
+    if len(duplicate) > 0:
+        logging.info(
+            f"Ignored {len(duplicate)} duplicate words: {', '.join(duplicate)}"
+        )
 
     logging.info("Adding alternate modifiers")
+    alt_generator = AltGenerator(config)
     with ProcessPoolExecutor() as executor:
-        selected_abbrs = list(
+        abbrs = list(
             tqdm(
-                executor.map(add_alt, selected_abbrs, chunksize=10),
-                total=len(selected_abbrs),
+                executor.map(alt_generator.add_alt, abbrs, chunksize=10),
+                total=len(abbrs),
             )
         )
 
     logging.info(f"Writing {config.abbreviation_file}")
     with open(config.abbreviation_file, "w", newline="") as f:
-        writer = csv.writer(f)
-
-        writer.writerow(["word", "combo", "alt1", "alt2", "alt3"])
-        for abbr in selected_abbrs:
-            alt = abbr["alt"]
-            writer.writerow(
-                [abbr["word"], abbr["option"]["combination"], alt[0], alt[1], alt[2]]
-            )
+        fieldnames = list(abbrs[0].keys())
+        if "options" in fieldnames:
+            fieldnames.remove("options")
+        writer = csv.DictWriter(
+            f, fieldnames=fieldnames, extrasaction="ignore", lineterminator="\n"
+        )
+        writer.writeheader()
+        writer.writerows(abbrs)

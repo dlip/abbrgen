@@ -82,18 +82,20 @@ class StandardKeyboard(BaseModel):
     type: Literal["standard"] = "standard"
     layout: Literal[tuple(LAYOUTS.keys())] = "engram"
     stagger: Literal[tuple(EFFORT_MAP.keys())] = "column"
-    effort_map: ClassVar[dict] = {}
-    layout_map: ClassVar[dict] = {}
-    hand_row_map: ClassVar[dict] = {}
-    banned_chords_sets: ClassVar[list] = []
 
     def model_post_init(self, context: Any) -> None:
         layout = LAYOUTS[self.layout]
+
+        self._layout_map = {}
+        self._effort_map = {}
+        self._hand_row_map = {}
+        self._banned_chords_sets = []
+
         for r in range(0, len(layout)):
             for c in range(0, len(layout[r])):
-                self.layout_map[layout[r][c]] = FINGER_MAPPING[r][c]
-                self.effort_map[layout[r][c]] = EFFORT_MAP[self.stagger][r][c]
-                self.hand_row_map[layout[r][c]] = HAND_ROW_MAPPING[r][c]
+                self._layout_map[layout[r][c]] = FINGER_MAPPING[r][c]
+                self._effort_map[layout[r][c]] = EFFORT_MAP[self.stagger][r][c]
+                self._hand_row_map[layout[r][c]] = HAND_ROW_MAPPING[r][c]
 
         # Add mirrored chords and padding
         mirrored = []
@@ -113,7 +115,7 @@ class StandardKeyboard(BaseModel):
                 for c in range(0, len(ban[r])):
                     if ban[r][c]:
                         s.add(layout[r][c])
-            self.banned_chords_sets.append(s)
+            self._banned_chords_sets.append(s)
 
     def get_scissor_count(self, abbr):
         result = 0
@@ -126,7 +128,7 @@ class StandardKeyboard(BaseModel):
             "br": 0,
         }
         for i in range(0, len(abbr)):
-            indexes[self.hand_row_map[abbr[i]]] += 1
+            indexes[self._hand_row_map[abbr[i]]] += 1
 
         if indexes["tl"] and indexes["bl"]:
             result += min(indexes["tl"], indexes["bl"])
@@ -140,7 +142,7 @@ class StandardKeyboard(BaseModel):
         result = 0
         indexes = {}
         for i in range(0, len(abbr)):
-            index = self.layout_map[abbr[i]]
+            index = self._layout_map[abbr[i]]
             if index not in indexes:
                 indexes[index] = 1
             else:
@@ -153,7 +155,7 @@ class StandardKeyboard(BaseModel):
 
     def score(self, abbr: str) -> int:
         for i in range(0, len(abbr)):
-            if abbr[i] not in self.layout_map:
+            if abbr[i] not in self._layout_map:
                 logging.debug(f"rejected: letter '{abbr[i]}' not in keyboard layout")
                 return -1
 
@@ -166,7 +168,7 @@ class StandardKeyboard(BaseModel):
                 return -1
             seen.add(char)
 
-        for ban in self.banned_chords_sets:
+        for ban in self._banned_chords_sets:
             if ban.issubset(seen):
                 logging.debug("rejected: banned chord")
                 return -1
@@ -181,6 +183,6 @@ class StandardKeyboard(BaseModel):
 
         result = 0
         for i in range(0, len(abbr)):
-            result += self.effort_map[abbr[i]]
+            result += self._effort_map[abbr[i]]
 
         return result

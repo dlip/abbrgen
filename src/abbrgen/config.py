@@ -20,6 +20,8 @@ class Config(BaseModel):
     )
     abbreviation_file: Path = DEFAULT_ABBREVIATION_FILE
     overwrite_abbreviations: bool = False
+    overwrite_alts: bool = False
+    min_word_length: int = 3
 
     @field_serializer("abbreviation_file")
     def serialize_path(self, value: Path) -> str:
