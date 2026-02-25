@@ -9,7 +9,7 @@ class Scorer:
         self.config = config
 
     def score(self, abbr: Abbreviation) -> Abbreviation:
-        if not self.config.overwrite_abbreviations and abbr["abbreviation"]:
+        if not self.config.overwrite_abbreviations and abbr["combo"]:
             return abbr
 
         if len(abbr["word"]) < self.config.min_word_length:
@@ -20,7 +20,7 @@ class Scorer:
             self.config.keyboard.score(combination) for combination in combinations
         ]
         options: list[Option] = [
-            {"combination": combination, "score": scores[i]}
+            {"combo": combination, "score": scores[i]}
             for i, combination in enumerate(combinations)
             if scores[i] != -1
         ]

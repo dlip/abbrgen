@@ -41,18 +41,18 @@ def abbreviate(config: Config) -> None:
         options = abbr.get("options")
         if options:
             for option in options:
-                combination = option["combination"]
+                combo = option["combo"]
                 # ensure combination is sorted so we can quickly check if they have been used
-                sorted_combination = "".join(sorted(combination))
+                sorted_combination = "".join(sorted(combo))
                 if sorted_combination not in used:
-                    abbr["abbreviation"] = option["combination"]
+                    abbr["combo"] = option["combo"]
                     break
-            if not abbr["abbreviation"]:
+            if not abbr["combo"]:
                 no_options.append(word)
 
-        if abbr["abbreviation"]:
-            sorted_abbreviation = "".join(sorted(abbr["abbreviation"]))
-            used[sorted_abbreviation] = word
+        if abbr["combo"]:
+            sorted_combo = "".join(sorted(abbr["combo"]))
+            used[sorted_combo] = word
 
     if len(no_options) > 0:
         logging.info(

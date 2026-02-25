@@ -2,13 +2,13 @@ from typing import TypedDict
 
 
 class Option(TypedDict):
-    combination: str
+    combo: str
     score: int
 
 
 class Abbreviation(TypedDict):
     word: str
-    abbreviation: str
+    combo: str
     type: str
     alt1: str
     alt2: str
