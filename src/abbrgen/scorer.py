@@ -12,6 +12,8 @@ class Scorer:
         if not self.config.overwrite_abbreviations and abbr["combo"]:
             return abbr
 
+        abbr["combo"] = ""
+
         if len(abbr["word"]) < self.config.min_word_length:
             return abbr
 

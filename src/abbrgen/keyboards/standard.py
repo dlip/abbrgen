@@ -257,7 +257,6 @@ class StandardKeyboard(BaseModel):
 
         same_row_combo = self.get_same_row_combo(combo_map)
         if same_row_combo == -1:
-            raise Exception(abbr)
             logging.debug("rejected: same column combo")
             return -1
 

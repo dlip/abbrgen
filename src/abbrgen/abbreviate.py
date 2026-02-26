@@ -39,19 +39,24 @@ def abbreviate(config: Config) -> None:
             continue
         seen[word] = True
         options = abbr.get("options")
-        if options:
+        if options is not None:
             for option in options:
                 combo = option["combo"]
-                # ensure combination is sorted so we can quickly check if they have been used
-                sorted_combination = "".join(sorted(combo))
-                if sorted_combination not in used:
+                # ensure combo is sorted so we can quickly check if they have been used
+                sorted_combo = "".join(sorted(combo))
+                if sorted_combo not in used:
                     abbr["combo"] = option["combo"]
+                    used[sorted_combo] = word
                     break
             if not abbr["combo"]:
                 no_options.append(word)
-
-        if abbr["combo"]:
+        elif abbr["combo"]:
             sorted_combo = "".join(sorted(abbr["combo"]))
+
+            if sorted_combo in used:
+                raise Exception(
+                    f"combo for word {abbr['word']} already used for {used[sorted_combo]}"
+                )
             used[sorted_combo] = word
 
     if len(no_options) > 0:
