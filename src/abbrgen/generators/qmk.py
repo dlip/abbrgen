@@ -1,6 +1,5 @@
-from abbrgen.abbreviation import load_abbreviation_file, validate_combos
-from abbrgen.config import Config
-
+from abbrgen.abbreviation import Abbreviation, load_abbreviation_file, validate_combos
+from pydantic import BaseModel
 
 key_map = {
     "C": "KC_SFT_C",
@@ -37,15 +36,12 @@ def translate_keys(combo):
     return result
 
 
-class QmkGenerator:
-    def __init__(self, config: Config) -> None:
-        self._config = config
-        self._abbrs = load_abbreviation_file(self._config.abbreviation_file)
-        validate_combos(self._abbrs)
+class QmkGenerator(BaseModel):
+    alt1_keys: list[str] = ["KC_COMBO_ALT1"]
 
-    def generate(self):
+    def generate(self, abbrs: list[Abbreviation]):
         output = ""
-        for abbr in self._abbrs:
+        for abbr in abbrs:
             combo = abbr["combo"]
             if combo:
                 words = [abbr["word"], abbr["alt1"], abbr["alt2"], abbr["alt3"]]
