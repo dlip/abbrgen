@@ -1,4 +1,5 @@
 import logging
+from abbrgen.generators.qmk import QmkGenerator
 import typer
 from pathlib import Path
 
@@ -48,6 +49,12 @@ def setup():
 @app.command()
 def abbreviate():
     abbr(State.config)
+
+
+@app.command()
+def generate():
+    generator = QmkGenerator(State.config)
+    generator.generate()
 
 
 if __name__ == "__main__":
