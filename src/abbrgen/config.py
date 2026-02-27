@@ -4,7 +4,8 @@ import yaml
 import shutil
 
 from abbrgen.generators.qmk import QmkGenerator
-from abbrgen.keyboards.standard import StandardKeyboardOptions, StandardKeyboard
+from abbrgen.keyboards.standard import StandardKeyboardOptions
+from abbrgen.keyboards import Keyboard
 from pydantic import BaseModel, field_serializer, field_validator
 
 CONFIG_DIR = Path.home() / ".config" / "abbrgen"
@@ -32,7 +33,7 @@ class Config(BaseModel):
     generators: list[Literal[tuple(GeneratorOptions.model_fields.keys())]] = ["qmk"]
     generator_options: GeneratorOptions = GeneratorOptions()
 
-    _keyboard: StandardKeyboard | None = None
+    _keyboard: Keyboard | None = None
 
     def get_keyboard(self):
         if not self._keyboard:
