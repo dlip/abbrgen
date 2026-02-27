@@ -7,6 +7,7 @@ from abbrgen.utils import find_combinations
 class Scorer:
     def __init__(self, config: Config) -> None:
         self.config = config
+        self._keyboard = config.get_keyboard()
 
     def score(self, abbr: Abbreviation) -> Abbreviation:
         if not self.config.overwrite_abbreviations and abbr["combo"]:
@@ -18,9 +19,7 @@ class Scorer:
             return abbr
 
         combinations = find_combinations(abbr["word"].lower())
-        scores = [
-            self.config.keyboard.score(combination) for combination in combinations
-        ]
+        scores = [self._keyboard.score(combination) for combination in combinations]
         options: list[Option] = [
             {"combo": combination, "score": scores[i]}
             for i, combination in enumerate(combinations)

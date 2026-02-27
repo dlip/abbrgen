@@ -1,7 +1,6 @@
 import logging
 from typing import Literal
 from pydantic import BaseModel
-from typing import Any
 import copy
 
 # https://colemakmods.github.io/mod-dh/model.html
@@ -104,16 +103,21 @@ LAYOUTS = {
 }
 
 
-class StandardKeyboard(BaseModel):
-    type: Literal["standard"] = "standard"
+class StandardKeyboardOptions(BaseModel):
     layout: Literal[tuple(LAYOUTS.keys())] = "engram"
     stagger: Literal[tuple(EFFORT_MAP.keys())] = "column"
     scissor_penalty: int = 3
     same_column_combo_penalty: int = 2
     same_row_combo_penalty: int = 2
 
-    def model_post_init(self, context: Any) -> None:
-        self._layout = LAYOUTS[self.layout]
+    def create(self):
+        return StandardKeyboard(self)
+
+
+class StandardKeyboard:
+    def __init__(self, options: StandardKeyboardOptions) -> None:
+        self._layout = LAYOUTS[options.layout]
+        self._options = options
 
         # self._finger_map = {}
         self._effort_map = {}
@@ -125,24 +129,25 @@ class StandardKeyboard(BaseModel):
         for r in range(0, len(self._layout)):
             for c in range(0, len(self._layout[r])):
                 # self._finger_map[self._layout[r][c]] = FINGER_MAPPING[r][c]
-                self._effort_map[self._layout[r][c]] = EFFORT_MAP[self.stagger][r][c]
+                self._effort_map[self._layout[r][c]] = EFFORT_MAP[
+                    self._options.stagger
+                ][r][c]
                 self._hand_row_map[self._layout[r][c]] = HAND_ROW_MAPPING[r][c]
                 self._combo_map[r][c] = 0
                 self._combo_lookup[self._layout[r][c]] = (r, c)
 
         # Add mirrored chords and padding
         mirrored = []
-        global BANNED_CHORDS
         padding = [0, 0, 0, 0, 0]
-        for ban in BANNED_CHORDS:
+        for ban in banned_chords:
             mirror = []
             for r in range(0, len(ban)):
                 mirror.append(padding + list(reversed(ban[r])))
                 ban[r] += padding
             mirrored.append(mirror)
-        BANNED_CHORDS += mirrored
+        banned_chords += mirrored
 
-        for ban in BANNED_CHORDS:
+        for ban in banned_chords:
             s = set()
             for r in range(0, len(ban)):
                 for c in range(0, len(ban[r])):
@@ -197,7 +202,7 @@ class StandardKeyboard(BaseModel):
         count = 0
         for i in range(0, len(combo_map[0])):
             if combo_map[0][i] and combo_map[1][i]:
-                if self.same_column_combo_penalty == -1:
+                if self._options.same_column_combo_penalty == -1:
                     return -1
 
                 count += 1
@@ -217,7 +222,7 @@ class StandardKeyboard(BaseModel):
                     and combo_map[r][c + 1]
                     and FINGER_MAPPING[r][c] == FINGER_MAPPING[r][c + 1]
                 ):
-                    if self.same_row_combo_penalty == -1:
+                    if self._options.same_row_combo_penalty == -1:
                         return -1
                     count += 1
 
@@ -253,21 +258,21 @@ class StandardKeyboard(BaseModel):
             logging.debug("rejected: same column combo")
             return -1
 
-        result += same_column_combo * self.same_column_combo_penalty
+        result += same_column_combo * self._options.same_column_combo_penalty
 
         same_row_combo = self.get_same_row_combo(combo_map)
         if same_row_combo == -1:
             logging.debug("rejected: same column combo")
             return -1
 
-        result += same_row_combo * self.same_row_combo_penalty
+        result += same_row_combo * self._options.same_row_combo_penalty
 
         scissor_count = self.get_scissor_count(abbr)
         if scissor_count:
-            if self.scissor_penalty == -1:
+            if self._options.scissor_penalty == -1:
                 logging.debug("rejected: scissor")
                 return -1
-            result += self.scissor_penalty * scissor_count
+            result += self._options.scissor_penalty * scissor_count
 
         for i in range(0, len(abbr)):
             result += self._effort_map[abbr[i]]

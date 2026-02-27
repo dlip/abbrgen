@@ -9,8 +9,6 @@ from abbrgen.scorer import Scorer
 
 
 def abbreviate(config: Config) -> None:
-    global keyboard
-    keyboard = config.keyboard
     scorer = Scorer(config)
     with open(config.abbreviation_file) as f:
         reader = csv.DictReader(f)

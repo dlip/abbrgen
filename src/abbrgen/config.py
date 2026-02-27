@@ -4,30 +4,40 @@ import yaml
 import shutil
 
 from abbrgen.generators.qmk import QmkGenerator
-from pydantic import BaseModel, Field, field_serializer, field_validator
-from .keyboards import Keyboard
+from abbrgen.keyboards.standard import StandardKeyboardOptions, StandardKeyboard
+from pydantic import BaseModel, field_serializer, field_validator
 
 CONFIG_DIR = Path.home() / ".config" / "abbrgen"
 DEFAULT_CONFIG = CONFIG_DIR / "config.yaml"
 DEFAULT_ABBREVIATION_FILE = CONFIG_DIR / "abbreviations.csv"
 
 
-class Generators(BaseModel):
+class GeneratorOptions(BaseModel):
     qmk: QmkGenerator = QmkGenerator()
 
 
+class KeyboardOptions(BaseModel):
+    standard: StandardKeyboardOptions = StandardKeyboardOptions()
+
+
 class Config(BaseModel):
-    keyboard: Keyboard = Field(
-        discriminator="type",
-        default_factory=lambda: StandardKeyboard(),
-    )
+    keyboard: Literal[tuple(KeyboardOptions.model_fields.keys())] = "standard"
+    keyboard_options: KeyboardOptions = KeyboardOptions()
+
     abbreviation_file: Path = DEFAULT_ABBREVIATION_FILE
     overwrite_abbreviations: bool = False
     overwrite_alts: bool = False
     min_word_length: int = 3
 
-    generators: list[Literal[tuple(Generators.model_fields.keys())]] = ["qmk"]
-    generator_options: Generators = Generators()
+    generators: list[Literal[tuple(GeneratorOptions.model_fields.keys())]] = ["qmk"]
+    generator_options: GeneratorOptions = GeneratorOptions()
+
+    _keyboard: StandardKeyboard | None = None
+
+    def get_keyboard(self):
+        if not self._keyboard:
+            self._keyboard = getattr(self.keyboard_options, self.keyboard).create()
+        return self._keyboard
 
     @field_serializer("abbreviation_file")
     def serialize_path(self, value: Path) -> str:
