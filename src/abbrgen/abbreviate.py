@@ -29,6 +29,17 @@ def abbreviate(config: Config) -> None:
     no_options = []
     duplicate = []
 
+    # Reserve existing abbreviations
+    if not config.overwrite_abbreviations:
+        for abbr in abbrs:
+            sorted_combo = "".join(sorted(abbr["combo"]))
+            if sorted_combo:
+                if sorted_combo in used:
+                    raise Exception(
+                        f"combo for word {abbr['word']} already used for {used[sorted_combo]['word']}"
+                    )
+                used[sorted_combo] = abbr
+
     logging.info("Selecting combinations")
     for abbr in tqdm(abbrs):
         word = abbr["word"].lower()
@@ -44,18 +55,10 @@ def abbreviate(config: Config) -> None:
                 sorted_combo = "".join(sorted(combo))
                 if sorted_combo not in used:
                     abbr["combo"] = option["combo"]
-                    used[sorted_combo] = word
+                    used[sorted_combo] = abbr
                     break
             if not abbr["combo"]:
                 no_options.append(word)
-        elif abbr["combo"]:
-            sorted_combo = "".join(sorted(abbr["combo"]))
-
-            if sorted_combo in used:
-                raise Exception(
-                    f"combo for word {abbr['word']} already used for {used[sorted_combo]}"
-                )
-            used[sorted_combo] = word
 
     if len(no_options) > 0:
         logging.info(
