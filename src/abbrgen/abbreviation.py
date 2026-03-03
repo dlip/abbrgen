@@ -11,6 +11,7 @@ class Option(TypedDict):
 class Abbreviation(TypedDict):
     word: str
     combo: str
+    reserved_combo: str
     type: str
     alt1: str
     alt2: str

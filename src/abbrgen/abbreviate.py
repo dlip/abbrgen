@@ -12,7 +12,7 @@ def abbreviate(config: Config) -> None:
     scorer = Scorer(config)
     with open(config.abbreviation_file) as f:
         reader = csv.DictReader(f)
-        logging.info("Finding combinations")
+        logging.info("Finding combos")
         abbrs = [line for line in reader]
         if len(abbrs) == 0:
             raise Exception("No rows found in abbreviation file")
@@ -29,36 +29,40 @@ def abbreviate(config: Config) -> None:
     no_options = []
     duplicate = []
 
-    # Reserve existing abbreviations
-    if not config.overwrite_abbreviations:
-        for abbr in abbrs:
-            sorted_combo = "".join(sorted(abbr["combo"]))
-            if sorted_combo:
-                if sorted_combo in used:
-                    raise Exception(
-                        f"combo for word {abbr['word']} already used for {used[sorted_combo]['word']}"
-                    )
-                used[sorted_combo] = abbr
+    logging.info("Reserving combos")
+    for abbr in tqdm(abbrs):
+        reserved_combo = abbr["reserved_combo"]
+        abbr["combo"] = reserved_combo
+        if not reserved_combo:
+            continue
+        sorted_combo = "".join(sorted(reserved_combo))
+        if sorted_combo in used:
+            raise Exception(
+                f"Reserved combo for word {abbr['word']} already used for {used[sorted_combo]['word']}"
+            )
+        used[sorted_combo] = abbr
 
-    logging.info("Selecting combinations")
+    logging.info("Selecting combos")
     for abbr in tqdm(abbrs):
         word = abbr["word"].lower()
         if word in seen:
             duplicate.append(word)
             continue
         seen[word] = True
-        options = abbr.get("options")
-        if options is not None:
-            for option in options:
-                combo = option["combo"]
-                # ensure combo is sorted so we can quickly check if they have been used
-                sorted_combo = "".join(sorted(combo))
-                if sorted_combo not in used:
-                    abbr["combo"] = option["combo"]
-                    used[sorted_combo] = abbr
-                    break
-            if not abbr["combo"]:
-                no_options.append(word)
+        if len(word) < config.min_word_length:
+            continue
+        reserved_combo = abbr["reserved_combo"]
+        if reserved_combo:
+            continue
+        for option in abbr["options"]:
+            sorted_combo = "".join(sorted(option["combo"]))
+            if sorted_combo not in used:
+                abbr["combo"] = option["combo"]
+                used[sorted_combo] = abbr
+                break
+
+        if not abbr["combo"]:
+            no_options.append(word)
 
     if len(no_options) > 0:
         logging.info(

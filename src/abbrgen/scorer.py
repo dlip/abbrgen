@@ -10,10 +10,8 @@ class Scorer:
         self._keyboard = config.get_keyboard()
 
     def score(self, abbr: Abbreviation) -> Abbreviation:
-        if not self.config.overwrite_abbreviations and abbr["combo"]:
+        if abbr["reserved_combo"]:
             return abbr
-
-        abbr["combo"] = ""
 
         if len(abbr["word"]) < self.config.min_word_length:
             return abbr

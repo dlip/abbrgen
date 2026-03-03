@@ -26,7 +26,6 @@ class Config(BaseModel):
     keyboard_options: KeyboardOptions = KeyboardOptions()
 
     abbreviation_file: Path = DEFAULT_ABBREVIATION_FILE
-    overwrite_abbreviations: bool = False
     overwrite_alts: bool = False
     min_word_length: int = 3
 
