@@ -3,9 +3,9 @@ from typing import Literal
 import yaml
 import shutil
 
-from abbrgen.generators.qmk import QmkGenerator
 from abbrgen.keyboards.standard import StandardKeyboardOptions
 from abbrgen.keyboards import Keyboard
+from abbrgen.output.qmk import QmkOutput
 from pydantic import BaseModel, field_serializer, field_validator
 
 CONFIG_DIR = Path.home() / ".config" / "abbrgen"
@@ -13,8 +13,8 @@ DEFAULT_CONFIG = CONFIG_DIR / "config.yaml"
 DEFAULT_ABBREVIATION_FILE = CONFIG_DIR / "abbreviations.csv"
 
 
-class GeneratorOptions(BaseModel):
-    qmk: QmkGenerator = QmkGenerator()
+class OutputOptions(BaseModel):
+    qmk: QmkOutput = QmkOutput()
 
 
 class KeyboardOptions(BaseModel):
@@ -29,8 +29,8 @@ class Config(BaseModel):
     overwrite_alts: bool = False
     min_word_length: int = 3
 
-    generators: list[Literal[tuple(GeneratorOptions.model_fields.keys())]] = ["qmk"]
-    generator_options: GeneratorOptions = GeneratorOptions()
+    outputs: list[Literal[tuple(OutputOptions.model_fields.keys())]] = ["qmk"]
+    generator_options: OutputOptions = OutputOptions()
 
     _keyboard: Keyboard | None = None
 

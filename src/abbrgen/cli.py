@@ -1,6 +1,5 @@
 import logging
 from abbrgen.abbreviation import load_abbreviation_file, validate_combos
-from abbrgen.generators.qmk import QmkGenerator
 import typer
 from pathlib import Path
 
@@ -53,11 +52,11 @@ def abbreviate():
 
 
 @app.command()
-def generate():
+def output():
     abbrs = load_abbreviation_file(State.config.abbreviation_file)
     validate_combos(abbrs)
 
-    for generator in State.config.generators:
+    for generator in State.config.outputs:
         print(f"Running generator '{generator}'")
         generator = getattr(State.config.generator_options, generator)
         generator.generate(abbrs)
