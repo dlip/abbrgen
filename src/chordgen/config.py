@@ -10,7 +10,7 @@ from pydantic import BaseModel, field_serializer, field_validator
 
 CONFIG_DIR = Path.home() / ".config" / "chordgen"
 DEFAULT_CONFIG = CONFIG_DIR / "config.yaml"
-DEFAULT_ABBREVIATION_FILE = CONFIG_DIR / "abbreviations.csv"
+DEFAULT_CHORDS_FILE = CONFIG_DIR / "chords.csv"
 
 
 class OutputOptions(BaseModel):
@@ -25,7 +25,7 @@ class Config(BaseModel):
     keyboard: Literal[tuple(KeyboardOptions.model_fields.keys())] = "standard"
     keyboard_options: KeyboardOptions = KeyboardOptions()
 
-    abbreviation_file: Path = DEFAULT_ABBREVIATION_FILE
+    chords_file: Path = DEFAULT_CHORDS_FILE
     overwrite_alts: bool = False
     min_word_length: int = 3
 
@@ -39,31 +39,31 @@ class Config(BaseModel):
             self._keyboard = getattr(self.keyboard_options, self.keyboard).create()
         return self._keyboard
 
-    @field_serializer("abbreviation_file")
+    @field_serializer("chords_file")
     def serialize_path(self, value: Path) -> str:
         try:
             return f"~/{value.relative_to(Path.home())}"
         except ValueError:
             return str(value)
 
-    @field_validator("abbreviation_file", mode="before")
+    @field_validator("chords_file", mode="before")
     @classmethod
     def expand_user(cls, v):
         # Ensure "~" gets expanded if user provides it
         return Path(v).expanduser()
 
-    @field_validator("abbreviation_file", mode="after")
+    @field_validator("chords_file", mode="after")
     @classmethod
     def ensure_parent_dir(cls, v: Path):
         v.parent.mkdir(parents=True, exist_ok=True)
         return v
 
-    @field_validator("abbreviation_file", mode="after")
+    @field_validator("chords_file", mode="after")
     @classmethod
     def create_abbreviation_file(cls, v: Path):
-        if not v.exists() and v == DEFAULT_ABBREVIATION_FILE:
+        if not v.exists() and v == DEFAULT_CHORDS_FILE:
             here = Path(__file__).resolve().parent
-            source = here / "assets" / "abbreviations.csv"
+            source = here / "assets" / "chords.csv"
             shutil.copyfile(source, v)
         return v
 

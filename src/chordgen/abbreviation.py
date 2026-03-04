@@ -4,14 +4,14 @@ import csv
 
 
 class Option(TypedDict):
-    combo: str
+    chord: str
     score: int
 
 
-class Abbreviation(TypedDict):
+class Chord(TypedDict):
     word: str
-    combo: str
-    reserved_combo: str
+    chord: str
+    reserved_chord: str
     type: str
     alt1: str
     alt2: str
@@ -19,23 +19,23 @@ class Abbreviation(TypedDict):
     options: list[Option] | None
 
 
-def load_abbreviation_file(abbreviation_file: Path) -> list[Abbreviation]:
-    with open(abbreviation_file) as f:
+def load_chords_file(file: Path) -> list[Chord]:
+    with open(file) as f:
         reader = csv.DictReader(f)
-        abbrs: list[Abbreviation] = [line for line in reader]
+        abbrs: list[Chord] = [line for line in reader]
         return abbrs
 
 
-def validate_combos(abbrs: list[Abbreviation]):
+def validate_chords(abbrs: list[Chord]):
     used = {}
 
     for abbr in abbrs:
-        combo = abbr["combo"]
-        if combo:
-            sorted_combo = "".join(sorted(combo))
-            if sorted_combo in used:
+        chord = abbr["chord"]
+        if chord:
+            sorted_chord = "".join(sorted(chord))
+            if sorted_chord in used:
                 raise Exception(
-                    f"Error: combo '{combo}' for word {abbr['word']} already used by {used[sorted_combo]}"
+                    f"Error: chord '{chord}' for word {abbr['word']} already used by {used[sorted_chord]}"
                 )
 
-            used[sorted_combo] = abbr["word"]
+            used[sorted_chord] = abbr["word"]

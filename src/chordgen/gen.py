@@ -10,17 +10,17 @@ from chordgen.scorer import Scorer
 
 def gen(config: Config) -> None:
     scorer = Scorer(config)
-    with open(config.abbreviation_file) as f:
+    with open(config.chords_file) as f:
         reader = csv.DictReader(f)
-        logging.info("Finding combos")
-        abbrs = [line for line in reader]
-        if len(abbrs) == 0:
+        print("Finding and scoring chords")
+        chords = [line for line in reader]
+        if len(chords) == 0:
             raise Exception("No rows found in abbreviation file")
         with ProcessPoolExecutor() as executor:
-            abbrs = list(
+            chords = list(
                 tqdm(
-                    executor.map(scorer.score, abbrs, chunksize=10),
-                    total=len(abbrs),
+                    executor.map(scorer.score, chords, chunksize=10),
+                    total=len(chords),
                 )
             )
 
@@ -29,39 +29,39 @@ def gen(config: Config) -> None:
     no_options = []
     duplicate = []
 
-    logging.info("Reserving combos")
-    for abbr in tqdm(abbrs):
-        reserved_combo = abbr["reserved_combo"]
-        abbr["combo"] = reserved_combo
-        if not reserved_combo:
+    print("Setting reserved chords")
+    for chord in tqdm(chords):
+        reserved_chord = chord["reserved_chord"]
+        chord["chord"] = reserved_chord
+        if not reserved_chord:
             continue
-        sorted_combo = "".join(sorted(reserved_combo))
-        if sorted_combo in used:
+        sorted_chord = "".join(sorted(reserved_chord))
+        if sorted_chord in used:
             raise Exception(
-                f"Reserved combo for word {abbr['word']} already used for {used[sorted_combo]['word']}"
+                f"Reserved chord for word {chord['word']} already used for {used[sorted_chord]['word']}"
             )
-        used[sorted_combo] = abbr
+        used[sorted_chord] = chord
 
-    logging.info("Selecting combos")
-    for abbr in tqdm(abbrs):
-        word = abbr["word"].lower()
+    print("Selecting chords")
+    for chord in tqdm(chords):
+        word = chord["word"].lower()
         if word in seen:
             duplicate.append(word)
             continue
         seen[word] = True
         if len(word) < config.min_word_length:
             continue
-        reserved_combo = abbr["reserved_combo"]
-        if reserved_combo:
+        reserved_chord = chord["reserved_chord"]
+        if reserved_chord:
             continue
-        for option in abbr["options"]:
-            sorted_combo = "".join(sorted(option["combo"]))
-            if sorted_combo not in used:
-                abbr["combo"] = option["combo"]
-                used[sorted_combo] = abbr
+        for option in chord["options"]:
+            sorted_chord = "".join(sorted(option["chord"]))
+            if sorted_chord not in used:
+                chord["chord"] = option["chord"]
+                used[sorted_chord] = chord
                 break
 
-        if not abbr["combo"]:
+        if not chord["chord"]:
             no_options.append(word)
 
     if len(no_options) > 0:
@@ -73,23 +73,23 @@ def gen(config: Config) -> None:
             f"Ignored {len(duplicate)} duplicate words: {', '.join(duplicate)}"
         )
 
-    logging.info("Adding alternate modifiers")
+    print("Generating alts")
     alt_generator = AltGenerator(config)
     with ProcessPoolExecutor() as executor:
-        abbrs = list(
+        chords = list(
             tqdm(
-                executor.map(alt_generator.add_alt, abbrs, chunksize=10),
-                total=len(abbrs),
+                executor.map(alt_generator.add_alt, chords, chunksize=10),
+                total=len(chords),
             )
         )
 
-    logging.info(f"Writing {config.abbreviation_file}")
-    with open(config.abbreviation_file, "w", newline="") as f:
-        fieldnames = list(abbrs[0].keys())
+    print(f"Writing {config.chords_file}")
+    with open(config.chords_file, "w", newline="") as f:
+        fieldnames = list(chords[0].keys())
         if "options" in fieldnames:
             fieldnames.remove("options")
         writer = csv.DictWriter(
             f, fieldnames=fieldnames, extrasaction="ignore", lineterminator="\n"
         )
         writer.writeheader()
-        writer.writerows(abbrs)
+        writer.writerows(chords)

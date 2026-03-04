@@ -1,5 +1,5 @@
 import logging
-from chordgen.abbreviation import load_abbreviation_file, validate_combos
+from chordgen.abbreviation import load_chords_file, validate_chords
 import typer
 from pathlib import Path
 
@@ -31,9 +31,9 @@ def callback(
 
     loaded_config = load_or_create_config(config)
     if ctx.invoked_subcommand != "setup":
-        if not loaded_config.abbreviation_file.exists():
+        if not loaded_config.chords_file.exists():
             print(
-                f"Error: abrreviation file {loaded_config.abbreviation_file} does not exist, run 'chordgen setup' to create it"
+                f"Error: abrreviation file {loaded_config.chords_file} does not exist, run 'chordgen setup' to create it"
             )
             raise typer.Abort()
 
@@ -52,8 +52,8 @@ def gen():
 
 @app.command()
 def output():
-    abbrs = load_abbreviation_file(State.config.abbreviation_file)
-    validate_combos(abbrs)
+    abbrs = load_chords_file(State.config.abbreviation_file)
+    validate_chords(abbrs)
 
     for output in State.config.outputs:
         print(f"Running generator '{output}'")

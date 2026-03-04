@@ -1,5 +1,5 @@
 from pathlib import Path
-from chordgen.abbreviation import Abbreviation, load_abbreviation_file, validate_combos
+from chordgen.abbreviation import Chord, load_chords_file, validate_chords
 from pydantic import BaseModel, field_serializer, field_validator
 
 
@@ -62,7 +62,7 @@ class QmkOutput(BaseModel):
 
         return result
 
-    def generate(self, abbrs: list[Abbreviation]):
+    def generate(self, abbrs: list[Chord]):
         output = ""
         for abbr in abbrs:
             combo = abbr["combo"]
