@@ -62,7 +62,7 @@ class QmkOutput(BaseModel):
 
         return result
 
-    def generate(self, chords: list[Chord]):
+    def output(self, chords: list[Chord]):
         output = ""
         for chord in chords:
             if chord["chord"]:

@@ -58,8 +58,8 @@ def output():
     for output in State.config.outputs:
         print(f"Running output '{output}'")
         output = getattr(State.config.output_options, output)
-        output.generate(chords)
+        output.output(chords)
 
 
 if __name__ == "__main__":
-    app(i)
+    app()
