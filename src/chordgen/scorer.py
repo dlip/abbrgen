@@ -1,5 +1,5 @@
 import logging
-from chordgen.abbreviation import Chord, Option
+from chordgen.chord import Chord, Option
 from chordgen.config import Config
 from chordgen.utils import find_combinations
 

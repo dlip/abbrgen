@@ -1,5 +1,5 @@
 from pathlib import Path
-from chordgen.abbreviation import Chord, load_chords_file, validate_chords
+from chordgen.chord import Chord
 from pydantic import BaseModel, field_serializer, field_validator
 
 
@@ -62,16 +62,15 @@ class QmkOutput(BaseModel):
 
         return result
 
-    def generate(self, abbrs: list[Chord]):
+    def generate(self, chords: list[Chord]):
         output = ""
-        for abbr in abbrs:
-            combo = abbr["combo"]
-            if combo:
-                words = [abbr["word"], abbr["alt1"], abbr["alt2"], abbr["alt3"]]
+        for chord in chords:
+            if chord["chord"]:
+                words = [chord["word"], chord["alt1"], chord["alt2"], chord["alt3"]]
                 for i, word in enumerate(words):
                     if not word:
                         continue
-                    keys = self.translate_keys(abbr["combo"] + ",")
+                    keys = self.translate_keys(chord["chord"] + ",")
                     alt_keys = [self.alt1_keys, self.alt2_keys, self.alt3_keys]
                     alt = []
                     if i > 0:

@@ -1,5 +1,5 @@
 import logging
-from chordgen.abbreviation import Chord
+from chordgen.chord import Chord
 from chordgen.config import Config
 
 from pattern import en

@@ -1,5 +1,5 @@
 import logging
-from chordgen.abbreviation import load_chords_file, validate_chords
+from chordgen.chord import load_chords_file, validate_chords
 import typer
 from pathlib import Path
 
@@ -52,13 +52,13 @@ def gen():
 
 @app.command()
 def output():
-    abbrs = load_chords_file(State.config.abbreviation_file)
-    validate_chords(abbrs)
+    chords = load_chords_file(State.config.chords_file)
+    validate_chords(chords)
 
     for output in State.config.outputs:
-        print(f"Running generator '{output}'")
+        print(f"Running output '{output}'")
         output = getattr(State.config.output_options, output)
-        output.generate(abbrs)
+        output.generate(chords)
 
 
 if __name__ == "__main__":
