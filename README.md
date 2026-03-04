@@ -1,10 +1,10 @@
-# abbrgen
+# chordgen
 
 Abbreviation generator for chording and text expansion
 
 Every day, we find ourselves typing commonly used words repetitively, consuming time and effort. Text expansion offers a solution by allowing us to replace these frequently used words with unique abbreviations, thereby saving keystrokes. For instance, typing 't' with a trigger key could automatically generate 'the '. The objective isn't to abbreviate every word, but rather to focus on those that offer significant savings for the effort invested in memorization. Ideally you also want the abbreviations to be the most comfortable effort wise for your particular keyboard layout (qwerty, colemak, canary etc).
 
-However, compiling such a list manually can be a daunting task. This is where abbrgen comes in handy, it helps by automating the generation of the initial list and streamlines the process of importing them into different tools, so you can enhance and customize them over time.
+However, compiling such a list manually can be a daunting task. This is where chordgen comes in handy, it helps by automating the generation of the initial list and streamlines the process of importing them into different tools, so you can enhance and customize them over time.
 
 Given a list of common words it can generate a list like the following, the way you input each word and alternate word depends on if you are using chording or text expansion
 
@@ -70,7 +70,7 @@ The approach it takes with text expansion is to define a trigger which you type 
 
 ## Setup
 
-Clone the repo `git clone https://github.com/dlip/abbrgen.git` and change to the directory with `cd abbrgen`
+Clone the repo `git clone https://github.com/dlip/chordgen.git` and change to the directory with `cd chordgen`
 
 ### Python
 
@@ -87,7 +87,7 @@ To run the commands use `python <file.py>`
 
 ## Commands
 
-### abbrgen.py
+### chordgen.py
 
 This reads `words.tsv` and outputs abbreviations in tsv format to `abbr.tsv`:
 
@@ -101,7 +101,7 @@ The approach it uses is:
   - Use [alt.tsv](./alt.tsv) if available, else:
   - Add verb tenses and plurals using [pattern](https://github.com/clips/pattern)
 
-There are some options that you might want to change near the top of [abbrgen.py](abbrgen.py). In particular set `chorded_mode` to `True` or `False` depending on what method you are using.
+There are some options that you might want to change near the top of [chordgen.py](chordgen.py). In particular set `chorded_mode` to `True` or `False` depending on what method you are using.
 
 ### training.py
 

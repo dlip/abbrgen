@@ -1,7 +1,7 @@
 import logging
-from abbrgen.abbreviation import Abbreviation, Option
-from abbrgen.config import Config
-from abbrgen.utils import find_combinations
+from chordgen.abbreviation import Abbreviation, Option
+from chordgen.config import Config
+from chordgen.utils import find_combinations
 
 
 class Scorer:

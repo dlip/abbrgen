@@ -1,5 +1,5 @@
 [project]
-name = "abbrgen"
+name = "chordgen"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -16,7 +16,7 @@ dependencies = [
 ]
 
 [project.scripts]
-abbrgen = "abbrgen.cli:app"
+chordgen = "chordgen.cli:app"
 
 [build-system]
 requires = ["uv_build>=0.10.2,<0.11.0"]

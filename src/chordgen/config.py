@@ -3,12 +3,12 @@ from typing import Literal
 import yaml
 import shutil
 
-from abbrgen.keyboards.standard import StandardKeyboardOptions
-from abbrgen.keyboards import Keyboard
-from abbrgen.output.qmk import QmkOutput
+from chordgen.keyboards.standard import StandardKeyboardOptions
+from chordgen.keyboards import Keyboard
+from chordgen.output.qmk import QmkOutput
 from pydantic import BaseModel, field_serializer, field_validator
 
-CONFIG_DIR = Path.home() / ".config" / "abbrgen"
+CONFIG_DIR = Path.home() / ".config" / "chordgen"
 DEFAULT_CONFIG = CONFIG_DIR / "config.yaml"
 DEFAULT_ABBREVIATION_FILE = CONFIG_DIR / "abbreviations.csv"
 

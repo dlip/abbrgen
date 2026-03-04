@@ -3,7 +3,7 @@ revision = 3
 requires-python = ">=3.11"
 
 [[package]]
-name = "abbrgen"
+name = "chordgen"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

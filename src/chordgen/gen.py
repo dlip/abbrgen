@@ -3,12 +3,12 @@ import logging
 from concurrent.futures import ProcessPoolExecutor
 from tqdm import tqdm
 
-from abbrgen.alt_generator import AltGenerator
-from abbrgen.config import Config
-from abbrgen.scorer import Scorer
+from chordgen.alt_generator import AltGenerator
+from chordgen.config import Config
+from chordgen.scorer import Scorer
 
 
-def abbreviate(config: Config) -> None:
+def gen(config: Config) -> None:
     scorer = Scorer(config)
     with open(config.abbreviation_file) as f:
         reader = csv.DictReader(f)

@@ -1,6 +1,6 @@
 import logging
-from abbrgen.abbreviation import Abbreviation
-from abbrgen.config import Config
+from chordgen.abbreviation import Abbreviation
+from chordgen.config import Config
 
 from pattern import en
 

@@ -1,5 +1,5 @@
 from pathlib import Path
-from abbrgen.abbreviation import Abbreviation, load_abbreviation_file, validate_combos
+from chordgen.abbreviation import Abbreviation, load_abbreviation_file, validate_combos
 from pydantic import BaseModel, field_serializer, field_validator
 
 
@@ -57,7 +57,7 @@ class QmkOutput(BaseModel):
                 result.append(f"KC_{k}")
             else:
                 raise Exception(
-                    f"Unknown QMK code to map '{k}', add it to the abbrgen config"
+                    f"Unknown QMK code to map '{k}', add it to the chordgen config"
                 )
 
         return result

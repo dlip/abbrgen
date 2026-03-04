@@ -1,11 +1,10 @@
 import logging
-from abbrgen.abbreviation import load_abbreviation_file, validate_combos
+from chordgen.abbreviation import load_abbreviation_file, validate_combos
 import typer
 from pathlib import Path
 
-from abbrgen.config import DEFAULT_CONFIG, Config, load_or_create_config
-
-from .abbreviate import abbreviate as abbr
+from chordgen.config import DEFAULT_CONFIG, Config, load_or_create_config
+from chordgen.gen import gen as run_gen
 
 
 app = typer.Typer()
@@ -26,7 +25,7 @@ def callback(
     if ctx.invoked_subcommand != "setup":
         if not config.exists():
             print(
-                f"Error: config {config} does not exist, run 'abbrgen setup' to create it"
+                f"Error: config {config} does not exist, run 'chordgen setup' to create it"
             )
             raise typer.Abort()
 
@@ -34,7 +33,7 @@ def callback(
     if ctx.invoked_subcommand != "setup":
         if not loaded_config.abbreviation_file.exists():
             print(
-                f"Error: abrreviation file {loaded_config.abbreviation_file} does not exist, run 'abbrgen setup' to create it"
+                f"Error: abrreviation file {loaded_config.abbreviation_file} does not exist, run 'chordgen setup' to create it"
             )
             raise typer.Abort()
 
@@ -47,8 +46,8 @@ def setup():
 
 
 @app.command()
-def abbreviate():
-    abbr(State.config)
+def gen():
+    run_gen(State.config)
 
 
 @app.command()
@@ -63,4 +62,4 @@ def output():
 
 
 if __name__ == "__main__":
-    app()
+    app(i)
