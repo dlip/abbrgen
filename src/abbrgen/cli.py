@@ -56,10 +56,10 @@ def output():
     abbrs = load_abbreviation_file(State.config.abbreviation_file)
     validate_combos(abbrs)
 
-    for generator in State.config.outputs:
-        print(f"Running generator '{generator}'")
-        generator = getattr(State.config.generator_options, generator)
-        generator.generate(abbrs)
+    for output in State.config.outputs:
+        print(f"Running generator '{output}'")
+        output = getattr(State.config.output_options, output)
+        output.generate(abbrs)
 
 
 if __name__ == "__main__":

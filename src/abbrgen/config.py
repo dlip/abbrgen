@@ -30,7 +30,7 @@ class Config(BaseModel):
     min_word_length: int = 3
 
     outputs: list[Literal[tuple(OutputOptions.model_fields.keys())]] = ["qmk"]
-    generator_options: OutputOptions = OutputOptions()
+    output_options: OutputOptions = OutputOptions()
 
     _keyboard: Keyboard | None = None
 
