@@ -1,6 +1,7 @@
 from pathlib import Path
 from chordgen.chord import Chord
-from pydantic import BaseModel, field_serializer, field_validator
+from pydantic import BaseModel
+from chordgen.pydantic import File
 
 
 qmk_key_codes = {
@@ -13,7 +14,7 @@ qmk_key_codes = {
 
 
 class QmkOutput(BaseModel):
-    file: Path = Path.cwd() / "abbr.def"
+    file: File = Path.cwd() / "qmk_chords.def"
     combo_keys: list[str] = ["KC_COMBO"]
     shift_keys: list[str] = ["KC_COMBO_SFT"]
     alt1_keys: list[str] = ["KC_COMBO_ALT1"]
@@ -31,19 +32,6 @@ class QmkOutput(BaseModel):
         "J": "KC_CAG_J",
         "M": "KC_CAG_M",
     }
-
-    @field_serializer("file")
-    def serialize_path(self, value: Path) -> str:
-        try:
-            return f"~/{value.relative_to(Path.home())}"
-        except ValueError:
-            return str(value)
-
-    @field_validator("file", mode="before")
-    @classmethod
-    def expand_user(cls, v):
-        # Ensure "~" gets expanded if user provides it
-        return Path(v).expanduser()
 
     def translate_keys(self, combo):
         result = self.combo_keys.copy()
@@ -63,22 +51,23 @@ class QmkOutput(BaseModel):
         return result
 
     def output(self, chords: list[Chord]):
+        alt_keys = [self.alt1_keys, self.alt2_keys, self.alt3_keys]
         output = ""
         for chord in chords:
-            if chord["chord"]:
-                words = [chord["word"], chord["alt1"], chord["alt2"], chord["alt3"]]
-                for i, word in enumerate(words):
-                    if not word:
-                        continue
-                    keys = self.translate_keys(chord["chord"] + ",")
-                    alt_keys = [self.alt1_keys, self.alt2_keys, self.alt3_keys]
-                    alt = []
-                    if i > 0:
-                        alt = alt_keys[i - 1]
-                    name = f"c_{word}{i}".replace("'", "_").replace("-", "_")
+            if not chord["chord"]:
+                continue
+            words = [chord["word"], chord["alt1"], chord["alt2"], chord["alt3"]]
+            for i, word in enumerate(words):
+                if not word:
+                    continue
+                keys = self.translate_keys(chord["chord"] + ",")
+                alt = []
+                if i > 0:
+                    alt = alt_keys[i - 1]
+                name = f"c_{word}{i}".replace("'", "_").replace("-", "_")
 
-                    output += f'SUBS({name}, "{word} ", {", ".join(keys + alt)})\n'
-                    output += f'SUBS({name}s, "{word.capitalize()} ", {", ".join(keys + alt + self.shift_keys)})\n'
+                output += f'SUBS({name}, "{word} ", {", ".join(keys + alt)})\n'
+                output += f'SUBS({name}s, "{word.capitalize()} ", {", ".join(keys + alt + self.shift_keys)})\n'
 
         print(f"Writing {self.file}")
         with open(self.file, "w") as file:

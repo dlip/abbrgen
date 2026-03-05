@@ -6,7 +6,9 @@ import shutil
 from chordgen.keyboards.standard import StandardKeyboardOptions
 from chordgen.keyboards import Keyboard
 from chordgen.output.qmk import QmkOutput
-from pydantic import BaseModel, field_serializer, field_validator
+from chordgen.output.zmk import ZmkOutput
+from pydantic import BaseModel, field_validator
+from chordgen.pydantic import File
 
 CONFIG_DIR = Path.home() / ".config" / "chordgen"
 DEFAULT_CONFIG = CONFIG_DIR / "config.yaml"
@@ -15,6 +17,7 @@ DEFAULT_CHORDS_FILE = CONFIG_DIR / "chords.csv"
 
 class OutputOptions(BaseModel):
     qmk: QmkOutput = QmkOutput()
+    zmk: ZmkOutput = ZmkOutput()
 
 
 class KeyboardOptions(BaseModel):
@@ -25,7 +28,7 @@ class Config(BaseModel):
     keyboard: Literal[tuple(KeyboardOptions.model_fields.keys())] = "standard"
     keyboard_options: KeyboardOptions = KeyboardOptions()
 
-    chords_file: Path = DEFAULT_CHORDS_FILE
+    chords_file: File = DEFAULT_CHORDS_FILE
     overwrite_alts: bool = False
     min_word_length: int = 3
 
@@ -38,19 +41,6 @@ class Config(BaseModel):
         if not self._keyboard:
             self._keyboard = getattr(self.keyboard_options, self.keyboard).create()
         return self._keyboard
-
-    @field_serializer("chords_file")
-    def serialize_path(self, value: Path) -> str:
-        try:
-            return f"~/{value.relative_to(Path.home())}"
-        except ValueError:
-            return str(value)
-
-    @field_validator("chords_file", mode="before")
-    @classmethod
-    def expand_user(cls, v):
-        # Ensure "~" gets expanded if user provides it
-        return Path(v).expanduser()
 
     @field_validator("chords_file", mode="after")
     @classmethod

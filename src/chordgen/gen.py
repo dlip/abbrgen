@@ -65,13 +65,11 @@ def gen(config: Config) -> None:
             no_options.append(word)
 
     if len(no_options) > 0:
-        logging.info(
+        print(
             f"Unable to find any options for {len(no_options)} words: {', '.join(no_options)}"
         )
     if len(duplicate) > 0:
-        logging.info(
-            f"Ignored {len(duplicate)} duplicate words: {', '.join(duplicate)}"
-        )
+        print(f"Ignored {len(duplicate)} duplicate words: {', '.join(duplicate)}")
 
     print("Generating alts")
     alt_generator = AltGenerator(config)
