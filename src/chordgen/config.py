@@ -5,6 +5,7 @@ import shutil
 
 from chordgen.keyboards.standard import StandardKeyboardOptions
 from chordgen.keyboards import Keyboard
+from chordgen.output.kanata import KanataOutput
 from chordgen.output.qmk import QmkOutput
 from chordgen.output.zmk import ZmkOutput
 from pydantic import BaseModel, field_validator
@@ -18,6 +19,7 @@ DEFAULT_CHORDS_FILE = CONFIG_DIR / "chords.csv"
 class OutputOptions(BaseModel):
     qmk: QmkOutput = QmkOutput()
     zmk: ZmkOutput = ZmkOutput()
+    kanata: KanataOutput = KanataOutput()
 
 
 class KeyboardOptions(BaseModel):
