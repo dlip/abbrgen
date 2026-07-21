@@ -2,6 +2,8 @@
 
 Abbreviation generator for chording and text expansion
 
+> If you are only interested in chording, check out [chordgen](https://dlip.github.io/chordgen/)
+
 Every day, we find ourselves typing commonly used words repetitively, consuming time and effort. Text expansion offers a solution by allowing us to replace these frequently used words with unique abbreviations, thereby saving keystrokes. For instance, typing 't' with a trigger key could automatically generate 'the '. The objective isn't to abbreviate every word, but rather to focus on those that offer significant savings for the effort invested in memorization. Ideally you also want the abbreviations to be the most comfortable effort wise for your particular keyboard layout (qwerty, colemak, canary etc).
 
 However, compiling such a list manually can be a daunting task. This is where abbrgen comes in handy, it helps by automating the generation of the initial list and streamlines the process of importing them into different tools, so you can enhance and customize them over time.
